@@ -1,0 +1,14 @@
+<h2><?= __('module_label_edit_label') ?></h2>
+
+<form <?= $this->request->getHTML() ?>>
+	<input type="text" name="key" placeholder="<?= __('module_label_key') ?>" value="<?= $this->label->key ?>" disabled="disabled">
+	<input type="text" name="group" placeholder="<?= __('module_label_group') ?>" value="<?= $this->label->group ?>">
+
+	<?php foreach($this->languages AS $language): ?>
+		<input type="text" name="<?= $language ?>" placeholder="<?= __('module_label_'.$language) ?>" value="<?= $this->label->$language ?>">
+	<?php endforeach; ?>
+		
+	<hr>
+
+	<input type="submit" value="<?= __('save') ?>">
+</form>

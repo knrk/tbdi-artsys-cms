@@ -1,0 +1,39 @@
+<form>
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_review_header') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+	</div>
+</div>
+</form>
+	<div class="clear"></div>
+
+	<table class="table-default">
+		<tr>
+			<th><?= __('fullname') ?></th>
+			<th><?= __('review') ?></th>
+			<th><?= __('module_review_reply_body') ?></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<?php 
+			foreach( $this->reviews as $review ) : /* @var $review Review */ 
+		?>
+			<tr>
+				<td><?= Art_Filter::cutString($review->p_fullname,60) ?></td>
+				<td><a href="<?= $review->a_detail ?>"><?= Art_Filter::cutString($review->note,200) ?></a></td>
+				<td><?= Art_Filter::cutString($review->reply,100) ?></td>
+				<td class="text-center"><a href="<?= $review->a_reply ?>"><?= (NULL == $review->reply) ? __('module_review_reply_do') : __('module_review_reply_edit') ?></a></td>
+				<td class="text-center">
+					<?php if( $review->visible ): ?>
+						<button <?= $this->active_request->getHTML(array('id' => $review->id)) ?> title="<?= __('published') ?>"><i class="fa fa-check"></i></button>
+					<?php else: ?>
+						<button <?= $this->active_request->getHTML(array('id' => $review->id)) ?> title="<?= __('unpublished') ?>"><i class="fa fa-times"></i></button>
+					<?php endif; ?>
+				</td>
+				<td class="text-center"><button <?= $this->delete_single_request->getHTML(array('id'=>$review->id,'fullname'=>$review->p_fullname)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button></td>
+			</tr>
+		<?php endforeach; ?>
+	</table>

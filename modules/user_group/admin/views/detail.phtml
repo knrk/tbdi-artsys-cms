@@ -1,0 +1,68 @@
+
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_user_group_detail_header') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+		<div class="action-new">
+			<a href="/<?= Art_Router::getLayer() ?>/user_group/addservice/<?= $this->id ?>">
+			<i class="fa fa-plus fa-2x"></i>
+			<?= __('module_user_group_add_service') ?></a>
+		</div>
+		<?php if ( $this->isUserManipulationPermitted ) : ?>
+		<div class="action-new">
+			<a href="/<?= Art_Router::getLayer() ?>/user_group/adduser/<?= $this->id ?>">
+			<i class="fa fa-plus fa-2x"></i>
+			<?= __('module_user_group_add_user') ?></a>
+		</div>
+		<?php endif; ?>
+	</div>
+</div>
+
+	<table class="table-default">
+		<tr>
+			<th><?= Art_Filter::cutString($this->userGroup->name,60) ?></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th><?= Art_Filter::cutString($this->userGroup->description,150) ?></th>
+			<th><?= Art_Filter::cutString($this->right->name,20).' ('.Art_Filter::cutString($this->right->value,20).')' ?></th>
+		</tr>
+		<?php 
+				foreach( $this->userGroup->extendedServicePrices as $extendedServicePrice ) : /* @var $service Service */ 
+			?>
+				<tr>
+					<td><?= Art_Filter::cutString($this->userGroup->services[$extendedServicePrice->id_service]->name,80) ?></td>
+					<td><?= Art_Filter::cutString($extendedServicePrice->price,20) ?></td>
+					<td><?= Art_Filter::cutString($extendedServicePrice->time_interval,10) ?></td>
+					<td><?= Art_Filter::date($extendedServicePrice->time_from) ?></td>
+					<td><?= Art_Filter::date($extendedServicePrice->time_to) ?></td>
+					<td class="text-center"><button <?= $this->taky_away_service_single_request->getHTML(array('id'=>$extendedServicePrice->user_group_x_service_price->id)) ?> title="<?= __('take_away') ?>"><i class="fa fa-trash-o"></i></button></td>
+				</tr>
+		<?php endforeach; ?>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+		<?php 
+			foreach( $this->userGroup->users as $user ) : 
+				$userData = $user->getData();
+		?>
+			<tr>
+				<td><?= Art_Filter::cutString($userData->name,40) ?></td>
+				<td><?= Art_Filter::cutString($userData->surname,60) ?></td>
+				<td><?= Art_Filter::cutString($userData->email,80) ?></td>
+				<td></td>
+				<td></td>
+				<td class="text-center">
+					<?php if ( $this->isUserManipulationPermitted ) : ?>
+					<button <?= $this->taky_away_user_single_request->getHTML(array('id'=>$user->user_x_user_group->id)) ?> title="<?= __('take_away') ?>"><i class="fa fa-trash-o"></i></button>
+					<?php endif; ?>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</table>

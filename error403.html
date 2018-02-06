@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="IT ART">
+    <title>Error 403</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <style type="text/css">
+	@import url(http://fonts.googleapis.com/css?family=Oswald:400&subset=latin,latin-ext);
+	@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400&subset=latin,latin-ext);
+
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+	{
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+	    outline: 0;
+	    font-weight: inherit;
+	    font-style: inherit;
+	    font-size: 100%;
+	    font-family: inherit;
+	    vertical-align: baseline;
+	}
+
+	body {
+	    width:97%;
+	    max-width: 500px;
+	    margin:15vh auto 50px auto;
+	    min-height:100vh;
+	    background-color:#F2F2F2;
+	    overflow:hidden;
+	    color:#333333;
+	    font-family: 'Roboto Condensed', 'Times New Roman', sans-serif;
+	    font-weight:300;
+	}
+
+	h1 {
+	    font-family: 'Oswald', 'Times New Roman', sans-serif;
+	    font-weight:400;
+	    font-size:68px;
+	    line-height:1.2;
+	    color:#333333;
+	    text-transform: uppercase;
+	    margin-bottom:3px;
+	    text-align: center;
+	}
+
+	h2 {
+	    font-family: 'Oswald', 'Times New Roman', sans-serif;
+	    font-weight:400;
+	    font-size:39px;
+	    line-height:1.3;
+	    color:#333333;
+	    text-transform: uppercase;
+	    text-align: center;
+	}
+
+	.actualLink {
+	    font-size:22px;
+	    text-align:center;
+	    margin-top:60px;
+	    max-height:135px;
+	    overflow: hidden;
+	    word-wrap: break-word;
+	}
+
+	.homeButton {
+	    width: 100%;
+	    height:50px;
+	    margin-top: 50px;
+	    background-color:#333333;
+	    text-transform: uppercase;
+	}
+
+	.homeButton:hover {
+	    border-bottom:3px solid #AAAAAA;
+	}
+
+	.homeButton a {
+	    line-height: 50px;
+	    display:block;
+	    width:100%;
+	    text-align: center;
+	    text-decoration:none;
+	    font-size:23px;
+	    color:#F2F2F2;
+	    font-weight:400;
+	}
+
+	.footer {
+	    position: fixed;
+	    width:100%;
+	    bottom:0;
+	    left:0;
+	    text-align: center;
+	    background-color:#333333;
+	    color:#F2F2F2;
+	    padding: 4px 0;
+	}
+
+	.footer a {
+	    color:#F2F2F2;
+	    font-weight:bold;
+	    text-decoration: none;
+	}
+
+	.footer a:hover {
+	    text-decoration: underline;
+	}
+    </style>
+</head>
+<body>
+        <h1>Chyba 403</h1>
+        <h2>Přístup odmítnut</h2>
+	
+        <div class="actualLink">Nemáte oprávnění k přístupu do tohoto adresáře.<br /></div>
+	
+        <div class="homeButton">
+	    <a target="_self" rel="prefetch" id="link-origin">Přejít na domovskou stránku</a>
+	</div>
+	
+	<div class="footer">
+	    VYTVOŘIL <a href="http://itart.cz" rel="author" target="_blank" title="Přejít na stránky www.itart.cz">IT ART</a>
+	</div>
+
+	<script type="text/javascript">
+	    document.getElementById('link-origin').setAttribute('href', document.location.origin);
+	    document.getElementById('link-origin').innerHTML = 'Přejít na '+document.domain;
+	    document.title = document.domain+' | Error 403';
+	</script>
+</body>
+</html>

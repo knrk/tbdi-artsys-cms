@@ -1,0 +1,93 @@
+
+
+<input type="text" name="name" placeholder="Název">
+<div class="url_fixed"></div>
+<input type="text" name="url" placeholder="URL">
+<select name="parent_id">
+	
+</select>
+<select name="rights">
+	<?php foreach($this->rights AS $rights): ?>
+		<option value="<?= $rights->value ?>"><?= $rights->name ?></option>
+	<?php endforeach; ?>
+</select>
+<select name="nodeable_sections"></select>
+<select name="nodeable_actions"></select>
+<select name="nodeable_items"></select>
+
+<script type="text/javascript">
+	var $url_fixed = $('.url_fixed');
+	var $nodeable_sections = $('select[name="nodeable_sections"]');
+	var $nodeable_items = $('select[name="nodeable_items"]');
+	var $nodeable_actions = $('select[name="nodeable_actions"]');
+	for( var section in nodeable_actions )
+	{
+		$nodeable_sections.append('<option value="'+section+'">'+nodeable_actions[section].label+"</option>");	
+	}
+	
+	var change_url_fixed = function()
+	{
+		var action = $nodeable_actions.val();
+		var section = $nodeable_sections.val();
+		
+		if( typeof nodeable_actions[section] !== "undefined" &&  typeof nodeable_actions[section].nodes[action] !== "undefined" )
+		{
+			var output = [];
+			for(var i in nodeable_actions[section].nodes[action].route)
+			{
+				if( nodeable_actions[section].nodes[action].route[i][0] !== "$" )
+				{
+					output.push(nodeable_actions[section].nodes[action].route[i]);
+				}
+			}
+
+			$url_fixed.html(output.join('/')+"/");
+		}
+	};
+	
+	var change_actions = function(){
+		var section = $nodeable_sections.val();
+		
+		if( typeof nodeable_actions[section] !== "undefined" )
+		{
+			$nodeable_actions.find('option').remove();
+			
+			for( var action in nodeable_actions[section].nodes )
+			{
+				$nodeable_actions.append('<option value="'+action+'">'+nodeable_actions[section].nodes[action].label+'</option>');
+				change_url_fixed();
+				getItemList();
+			}
+		}
+	};
+	
+	var getItemList = function() {		
+		Art_Ajax.call({
+			name: "<?= $this->request_getitemlist ?>",
+			data: {"action" : $nodeable_actions.val(), "section" : $nodeable_sections.val()},
+			success: function(data)
+			{
+				var list = data.variables.list;
+				$nodeable_items.find('option').remove();
+				for(var i in list)
+				{
+					$nodeable_items.append('<option name="'+list[i].id+'">'+list[i].name+'</option>');
+				}
+				
+				console.log(data);
+			},
+			error: function(data)
+			{
+				console.log(data.responseText);
+			}
+		});
+	};
+	
+	$nodeable_sections.change(function(){
+		change_actions();
+	});
+	
+	change_actions();
+	
+	console.log(nodeable_actions);
+</script>

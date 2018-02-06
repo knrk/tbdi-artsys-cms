@@ -1,0 +1,26 @@
+<div>	
+	<?php $userData = Art_user::getCurrentUser()->getData(); ?>
+	<?php if( Art_User::isLogged() && NULL == $userData->gender && 10 == $userData->verif_id ): ?>
+
+			<div class="text-center" style="padding-top:30px;">
+			<?= Art_Widget::render('registration','setdata'); ?>
+		</div>
+	
+	<?php elseif( Art_User::isLogged() && strtotime(Art_User::getCurrentUser()->getData()->pass_changed_date) < 1262300400 ): ?>
+	
+		<div class="text-center" style="padding-top:30px;">
+			<?= Art_Widget::render('registration','setpassword'); ?>
+		</div>
+
+	<?php else: ?>
+
+		<div class="text-center" style="padding-top:30px;">
+			<?= Art_Widget::render('login'); ?>
+		</div>
+
+		<?php if ( !$this->isActive ) : ?>	
+			<?= sprintf(__('module_error_membership_ended'),$this->membershipEndDate) ?>
+		<?php endif; ?>
+	
+	<?php endif; ?>
+</div>

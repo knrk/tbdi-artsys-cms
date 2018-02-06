@@ -1,0 +1,30 @@
+<h2><?= __('module_contact_title') ?></h2>
+<form <?= $this->edit_request->getHTML() ?>>
+<input type="text" name="name" value="<?= $this->data->name ?>" placeholder="<?= __('module_contact_placeholder_name') ?>">
+<input type="text" name="surname" value="<?= $this->data->surname ?>" placeholder="<?= __('module_contact_placeholder_surname') ?>">
+<input type="text" name="company_name" value="<?= $this->data->company_name ?>" placeholder="<?= __('module_contact_placeholder_company_name') ?>">
+
+<input type="text" name="phone" value="<?= $this->data->phone ?>" placeholder="<?= __('module_contact_placeholder_phone') ?>">
+<input type="text" name="mobile" value="<?= $this->data->mobile ?>" placeholder="<?= __('module_contact_placeholder_mobile') ?>">
+<input type="text" name="email" value="<?= $this->data->email ?>" placeholder="<?= __('module_contact_placeholder_email') ?>">
+
+<input type="text" name="street" value="<?= $this->data->street ?>" placeholder="<?= __('module_contact_placeholder_street') ?>">
+<input type="text" name="city" value="<?= $this->data->city ?>" placeholder="<?= __('module_contact_placeholder_city') ?>">
+<input type="text" name="zip" value="<?= $this->data->zip ?>" placeholder="<?= __('module_contact_placeholder_zip') ?>">
+<input type="text" name="country" value="<?= $this->data->country ?>" placeholder="<?= __('module_contact_placeholder_country') ?>">
+
+<input type="text" name="fb_link" value="<?= $this->data->fb_link ?>" placeholder="<?= __('module_contact_placeholder_fb_link') ?>">
+<input type="text" name="tw_link" value="<?= $this->data->tw_link ?>" placeholder="<?= __('module_contact_placeholder_tw_link') ?>">
+<input type="text" name="gp_link" value="<?= $this->data->gp_link ?>" placeholder="<?= __('module_contact_placeholder_gp_link') ?>">
+<input type="text" name="yt_link" value="<?= $this->data->yt_link ?>" placeholder="<?= __('module_contact_placeholder_yt_link') ?>">
+
+<input type="text" name="map" value="<?= htmlentities($this->data->map) ?>" placeholder="<?= __('module_contact_placeholder_map') ?>">
+
+<!--
+<div class="file_uploader" data-name="test_file" data-placeholder="Přetažením nebo kliknutím nahrajte soubory"></div>
+-->
+
+<input type="text" name="mail_to" value="<?= $this->data->mail_to ?>" placeholder="<?= __('module_contact_placeholder_mail_to') ?>">
+
+<input type="submit" value="<?= __('save') ?>">
+</form>

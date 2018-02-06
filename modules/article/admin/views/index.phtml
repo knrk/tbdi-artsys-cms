@@ -1,0 +1,57 @@
+<form>
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_article_articles') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+		<button <?= $this->delete_selected_request->getHTML() ?>>
+			<i class="fa fa-trash-o fa-2x"></i>
+			<?= __('delete') ?>
+		</button>
+		<?php /*
+		<button <?= $this->unpublish_request->getHTML() ?>>
+			<i class="fa fa-eye-slash fa-2x"></i>
+			<?= __('unpublish') ?>
+		</button>
+		<button <?= $this->publish_request->getHTML() ?>>
+			<i class="fa fa-eye fa-2x"></i>
+			<?= __('publish') ?>
+		</button>
+		 */
+		?>
+		<a href="/<?= Art_Router::getLayer() ?>/article/new">
+			<div>
+				<i class="fa fa-plus fa-2x"></i>
+				<?= __('add') ?>
+			</div>
+		</a>
+	</div>
+</div>
+<div class="clear"></div>
+<table class="table-default">
+	<tr>
+		<th class="text-center"><input type="checkbox" onclick="toggleCheck(this,'.module_article_index .cb-article-list')"></th>
+		<th></th>
+		<th class="text-center"><?= __('module_article_title') ?></th>
+		<th class="text-center"><?= __('module_article_perex') ?></th>
+		<th></th>
+	</tr>
+	<?php foreach($this->articles AS $article): ?>
+	<?php $href = '/'.Art_Router::getLayer().'/article/edit/'.$article->id; ?>
+		<tr>
+			<td class="xsmall-td text-center"><input type="checkbox" name="article_<?= $article->id ?>" class="cb-article-list"></td>
+			<td class="small-td">
+				<?php if($this->sort_buttons[$article->id][Art_Model::SORT_UP]): ?>
+					<button <?= $this->move_up_request->getHTML(array('id' => $article->id)) ?> class="arrow-up" title="<?= __('move_up') ?>"><i class="fa fa-arrow-up"></i></button>
+				<?php endif; ?>
+				<?php if($this->sort_buttons[$article->id][Art_Model::SORT_DOWN]): ?>
+					<button <?= $this->move_down_request->getHTML(array('id' => $article->id)) ?> class="arrow-down" title="<?= __('move_down') ?>"><i class="fa fa-arrow-down"></i></button>
+				<?php endif; ?>	
+			</td>
+			<td class="text-left"><a href="<?= $href ?>"><?= Art_Filter::cutString($article->title,30) ?></a></td>
+			<td class="text-left"><a href="<?= $href ?>"><?= Art_Filter::cutString($article->perex,70) ?></a></td>
+			<td class="text-center"><button <?= $this->delete_single_request->getHTML(array('id'=>$article->id,'name'=>$article->title)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button></td>
+		</tr>
+	<?php endforeach; ?>
+</table>
+</form>

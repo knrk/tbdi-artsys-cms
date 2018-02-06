@@ -1,0 +1,10 @@
+<div class="col-md-4 col-sm-4"></div>
+<div class="col-md-4 col-sm-4 col-xs-12">
+	<?php if( Art_User::isLogged() ): ?>
+		<div style="text-align:center;"><?= __('module_error_no_access') ?></div>
+	<?php else: ?>
+		<div style="text-align:center;"><?= __('module_error_no_access_try_login') ?></div>
+		<?= Art_Widget::render('login'); ?>
+	<?php endif; ?>
+</div>
+<div class="col-md-4 col-sm-4"></div>

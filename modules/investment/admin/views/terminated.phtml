@@ -1,0 +1,47 @@
+
+<div class="row">
+    <div class="col-sm-6 action-name">
+        <h2><?= __('module_investment_terminated_header') ?></h2>
+    </div>
+</div>
+
+<div class="clear"></div>
+
+<table class="table-default">
+    <tr>
+        <th>
+            <?= Helper_Default::renderSortUpDown($this->sortBy, 'surname') ?>
+            <?= __('fullname') ?>
+        </th>
+        <th>
+            <?= Helper_Default::renderSortUpDown($this->sortBy, 'value') ?>
+            <?= __('module_investment_value') ?>
+        </th>
+        <th>
+            <?= Helper_Default::renderSortUpDown($this->sortBy, 'date') ?>
+            <?= __('module_investment_date') ?>
+        </th>
+        <th>
+            <?= Helper_Default::renderSortUpDown($this->sortBy, 'expiry_date') ?>
+            <?= __('module_investment_expiry_date') ?>
+        </th>
+        <th>
+            <?= __('module_investment_note') ?>
+        </th>
+    </tr>
+    <?php
+    foreach( $this->deposit as $value ) : /* @var $value Service_Investment_Deposit */
+        if ( $value->terminated ) :
+            ?>
+            <tr>
+                <td><?= Art_Filter::cutString($value->getUser()->fullname,40) ?></td>
+                <td><?= $value->value ?></td>
+                <td><?= nice_date($value->date) ?></td>
+                <td><?= nice_date($value->expiry_date) ?></td>
+                <td><?= Art_Filter::cutString($value->note,40) ?></td>
+            </tr>
+            <?php
+        endif;
+    endforeach;
+    ?>
+</table>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8">
+	<?= Art_Template::renderMeta() ?>
+	<meta name="viewport" content="width=1200 initial-scale=0.5" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="icon" href="/favicon.png">
+	<?= Art_Template::loadExtensions(array( 'bootstrap' )) ?>
+	<?= Art_Template::renderCSS(array( 'system.less', 'style.less' )); ?>
+	<?= Art_Template::renderJS(); ?>
+</head>
+<body>
+	<div class="clearfix"></div>
+	<div class="header">
+		<div class="logo">
+			<a href="/cabinet"><img src="/files/img/tblogo-white.svg"></a>
+		</div>
+		<div class="head-navigation">
+			<div class="col-xs-1 np">
+				<div class="config-border">
+					<div id="config" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle">
+						<button class="small-ico"><i class="fa fa-cog fa-2x"></i></button>
+					</div>
+					<div class="dropdown-menu config-box" aria-labelledby="config">
+						<ul class="fa-ul">
+							<li><a href="<?= '/'.Art_Router::getLayer().'/users/changePassword' ?>"><i class="fa fa-lock"></i> Změna hesla</a></li>
+							<li><a href="<?= '/'.Art_Router::getLayer().'/users/edit' ?>"><i class="fa fa-cogs"></i> Upravit osobní údaje</a></li>
+							<li><a href="<?= '/'.Art_Router::getLayer().'/users/bank_account' ?>"><i class="fa fa-credit-card"></i> Bankovní účet</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<?= Art_Widget::render('users', 'embedd'); ?>
+			 
+		</div>
+	</div>
+	<div class="main">
+		<div class="navigation">
+			<ul class="nav-ul">
+				<li><div><a href="<?= '/'.Art_Router::getLayer().'/' ?>"><i class="fa fa-home"></i> Přehled</a></div></li>
+				<li><div><a href="<?= '/'.Art_Router::getLayer().'/dashboard' ?>"><i class="fa fa-dashboard"></i> Nástěnka</a></div></li>
+				<?= Art_Widget::render('service', 'embeddmenu'); ?>		
+				<li><div><a href="<?= '/'.Art_Router::getLayer().'/review' ?>"><i class="fa fa-pencil"></i> <?= __('review') ?></a></div></li>
+				<li><div><a href="<?= '/'.Art_Router::getLayer().'/users/invCodes' ?>"><i class="fa fa-lock"></i> Kódy</a></div></li>
+			</ul>
+		</div>
+		<div class="page-content">
+			<div class="page-content-inner">
+				
+					<?= Art_Template::renderContent() ?>
+					
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.dropdown-toggle').on('click', function () {
+    $(this).parent().toggleClass('open');
+});
+</script>
+	
+	
+</body>
+</html>

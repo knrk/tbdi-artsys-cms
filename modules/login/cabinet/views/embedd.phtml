@@ -1,0 +1,5 @@
+<?php if(Art_User::getRights()!=0) : ?>
+<form name="login-embedd-logout" <?= $this->logout_request->getHTML() ?>>
+		<input type="submit" class="btn btn-info logout-button" value="<?= __('log_out') ?>">
+</form>
+<?php endif; ?>

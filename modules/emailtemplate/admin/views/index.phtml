@@ -1,0 +1,31 @@
+<form>
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_emailtemplate') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+		<a href="/<?= Art_Router::getLayer() ?>/emailtemplate/new">
+			<div>
+				<i class="fa fa-plus fa-2x"></i>
+				<?= __('add') ?>
+			</div>
+		</a>
+	</div>
+</div>
+<div class="clear"></div>
+<table class="table-default">
+	<tr>
+		<th class="text-center">Název</th>
+		<th class="text-center">Předmět</th>
+		<th></th>
+	</tr>
+	<?php foreach($this->emailtemplates AS $emailtemplate): ?>
+	<?php $href = '/'.Art_Router::getLayer().'/emailtemplate/edit/'.$emailtemplate->id; ?>
+		<tr>
+			<td class="text-left"><a href="<?= $href ?>"><?= Art_Filter::cutString($emailtemplate->name,30) ?></a></td>
+			<td class="text-left"><a href="<?= $href ?>"><?= Art_Filter::cutString($emailtemplate->subject,150) ?></a></td>
+			<td class="text-center"><button <?= $this->delete_single_request->getHTML(array('id'=>$emailtemplate->id,'name'=>$emailtemplate->guid)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button></td>
+		</tr>
+	<?php endforeach; ?>
+</table>
+</form>

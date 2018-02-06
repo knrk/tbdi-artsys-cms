@@ -1,0 +1,84 @@
+<form>
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_users_new_mail') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+	</div>
+</div>
+</form>
+	<div class="clear"></div>
+
+	<div><?= Art_Widget::render('filter') ?></div>
+	
+<form  <?= $this->send_request->getHTML() ?>>	
+<?php if ( !empty($this->usersData) ) : ?>	
+	<table class="table-default">
+		<tr>
+			<th class="td-xsmall text-left"><input type="checkbox" onclick="toggleCheck(this,'.module_users_sendmail .cb-user-list')"></th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'id') ?>
+				ID
+			</th>
+			
+			<th></th>
+			
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'firstname') ?>
+				<?= __('firstname') ?>
+			</th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'surname') ?>
+				<?= __('surname') ?> 
+			</th>
+			<th><?= __('email') ?></th>
+			<th><?= __('phone_number') ?></th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_from') ?>
+				<?= __('module_users_membership_from') ?> 
+			</th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_to') ?>
+				<?= __('module_users_membership_to') ?> 
+			</th>
+		</tr>
+		<?php 
+			foreach( $this->usersData as $data ) : /* @var $data Art_Model_User_Data */ 
+		?>
+			<tr>
+				<td class="text-left td-xsmall"><input type="checkbox" name="user_<?= $data->p_userId?>" class="cb-user-list"></td>
+				<td><?= $data->_user->user_number ?></td>
+				<td><?= ($data->gender) ? '<i class="fa fa-mars" aria-hidden="true"></i>' : '<i class="fa fa-venus" aria-hidden="true"></i>' ?></td>
+				<td><?= Art_Filter::cutString($data->name,60) ?></td>
+				<td><a href="<?= $data->a_detail ?>" <?= $data->getUser()->active ? null : 'style="color: #999999"' ?>><?= Art_Filter::cutString($data->surname,40) ?></a></td>
+				<td><?= Art_Filter::cutString($data->email,100) ?></td>
+				<td><?= Art_Filter::cutString($data->p_phone,100) ?></td>
+				<td><?= $data->membership_from ?></td>
+				<td><?= $data->membership_to_colored ?></td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+	
+	<div>
+		<?php echo __('module_users_count') . ': ' . $this->count ?>
+	</div>
+	
+<h2><?= __('module_users_create_mail') ?></h2>
+<div class="background-white pa-15">
+	<div class="col-md-2 col-xs-2 lh-35 text-right"><?= __('mail-subject') ?></div>	
+	<div class="col-md-6 col-xs-6">
+		<input name="subject" type="text" class="form-control" placeholder="<?= __('mail-subject') ?>">
+	</div>
+	<div class="clearfix"></div>
+	<div class="col-md-2 col-xs-2 mt-15 text-right"><?= __('mail-body') ?></div>
+	<div class="col-md-10 col-xs-10 mt-15">
+		<textarea name="body" class="form-control" rows="8" placeholder="<?= __('mail-body') ?>"></textarea>
+	</div>	
+	<div class="col-xs-9"></div>
+	<div class="col-md-3 col-xs-3 text-center mt-15">
+		<input type="submit" class="btn" value="<?= __('module_users_send') ?>">
+	</div>
+	<div class="clearfix"></div>
+</div>
+</form>

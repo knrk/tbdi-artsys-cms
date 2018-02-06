@@ -1,0 +1,55 @@
+<?php $prefix = Helper_Default::getPropertyOrNull($this->bankAccount,'prefix'); ?>
+
+<h2><?= __('module_users_edit_bank_account') ?></h2>
+
+<div class="background-white pt-20 pb-20">
+	
+	<?php 
+		foreach ($this->bankAccounts as $value) :
+			$prefix = Helper_Default::getPropertyOrNull($value,'prefix');
+	?>
+		<div class="col-md-7 col-xs-7">
+			<?= ($prefix == 0 || NULL == $prefix) ? null : $prefix.' - ' ?>
+			<?= Helper_Default::getPropertyOrNull($value,'basic') ?>
+			/
+			<?= Helper_Default::getPropertyOrNull($value,'bank_code') ?>
+		</div>
+	
+		<div class="col-md-4 col-xs-4 lh-35">
+			<?= Helper_Default::getPropertyOrNull($value,'note') ?>
+		</div>	
+	
+		<div class="col-md-1 col-xs-1">
+			<button <?= $this->requestRemove->getHTML(array('id' => $value->id)) ?>><i class="fa fa-trash-o"></i></button>
+		</div>
+	<?php 
+		endforeach;
+	?>
+	<div class="clearfix"></div>
+	
+<form <?= $this->request->getHTML() ?>>	
+	
+		<div class="col-md-3 col-xs-3">
+			<input name="prefix" type="text" class="form-control" placeholder="<?= __('bank_account_prefix') ?>">
+		</div>
+		<div class="col-md-4 col-xs-4 lh-35">
+			<div style="position: absolute; margin-left: -17px; margin-top: 5px;">-</div> <input name="basic" type="text" class="form-control" placeholder="<?= __('bank_account_basic') ?>">
+		</div>	
+		
+		<div class="col-md-2 col-xs-2">
+			<div style="position: absolute; margin-left: -17px; margin-top: 5px;">/</div>
+			<input name="bank_code" type="text" class="form-control" placeholder="<?= __('bank_account_bank_code') ?>">
+		</div>
+	
+		<div class="col-md-3 col-xs-3 lh-35">
+			<input name="note" type="text" class="form-control" placeholder="<?= __('note') ?>">
+		</div>	
+	
+	<div class="clearfix"></div>
+	
+	<div class="col-md-12 col-xs-12 text-center">
+		<input type="submit" class="btn btn-info mt-20 mb-20" value="<?= __('module_users_bank_account_set') ?>">
+	</div>
+</form>
+	
+</div>

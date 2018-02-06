@@ -1,0 +1,151 @@
+<h2><?= __('module_users_add_user') ?></h2>
+
+<form name="register" <?= $this->request->getHTML() ?>>
+	<div class="col-md-2 col-xs-2"><?= __('degree') ?></div>
+	<div class="col-md-10 col-xs-10">
+		<input name="degree" type="text" class="form-control" placeholder="<?= __('degree') ?>">
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('firstname') ?></div>	
+	<div class="col-md-10 col-xs-10">
+		<input name="name" type="text" class="form-control" placeholder="<?= __('firstname') ?>">
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('surname') ?></div>
+	<div class="col-md-10 col-xs-10">
+		<input name="surname" type="text" class="form-control" placeholder="<?= __('surname') ?>">
+	</div>	
+	
+	<div class="col-md-3 col-xs-3"><?= __('gender') ?></div>
+	<div class="col-md-4 col-xs-4">
+		<?= __('male') ?>
+		<input name="gender" type="radio" class="form-control" value="1" checked="checked">
+	</div>
+	<div class="col-md-4 col-xs-4">
+		<?= __('female') ?>
+		<input name="gender" type="radio" class="form-control" value="0">
+	</div>
+	<div class="col-md-5 col-xs-5">
+		<input name="salutation" type="text" class="form-control" placeholder="<?= __('salutation') ?>">
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('born_date') ?></div>		
+	<div class="col-md-10 col-xs-10">
+		<div class="col-sm-4">
+			<div class="form-group">
+			  <label for="day"><?= __('day') ?></label>
+			  <select class="form-control" id="day" name="born_day">
+				<?php foreach ($this->days as $day) : ?>
+				  <option value="<?= $day ?>"
+						  ><?= $day ?></option>
+				<?php endforeach; ?>
+			  </select>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="form-group">
+			  <label for="month"><?= __('month') ?></label>
+			  <select class="form-control" id="month" name="born_month">
+				<?php foreach ($this->months as $month) : ?>
+				  <option value="<?= $month ?>"
+						  ><?= $month ?></option>
+				<?php endforeach; ?>
+			  </select>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="form-group">
+			  <label for="year"><?= __('year') ?></label>
+			  <select class="form-control" id="year" name="born_year">
+				<?php foreach ($this->years as $year) : ?>
+				  <option value="<?= $year ?>"
+						  ><?= $year ?></option>
+				<?php endforeach; ?>
+			  </select>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('delivery_address') ?></div>	
+	<div class="col-md-10 col-xs-10">
+		<div class="form-group">
+		  <label for="country1"><?= __('country') ?></label>
+		  <select class="form-control" id="country1" name="<?= Art_Model_Address::DELIVERY_PREFIX ?>country">
+			<?php foreach ($this->countryList as $country) : ?>
+			  <option value="<?= $country->id ?>"><?= $country->name ?></option>
+			<?php endforeach; ?>
+		  </select>
+		</div>
+	</div>	
+	<div class="col-md-10 col-xs-10">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>city" type="text" class="form-control" placeholder="<?= __('city') ?>">
+	</div>	
+	<div class="col-md-10 col-xs-10">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>street" type="text" class="form-control" placeholder="<?= __('street') ?>">
+	</div>		
+	<div class="col-md-10 col-xs-10">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>housenum" type="text" class="form-control" placeholder="<?= __('house_number') ?>">
+	</div>	
+	<div class="col-md-10 col-xs-10">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>zip" type="text" class="form-control" placeholder="<?= __('zip_code') ?>">
+	</div>
+	
+	<div style="clear: both"></div>
+	
+	<div class="col-md-2 col-xs-2"><input type="checkbox" name="<?= Art_Model_Address::CONTACT_PREFIX ?>active"></div>
+	<div class="col-md-10 col-xs-10"><?= __('module_registration_contact_address_different') ?></div>
+	
+	<div style="clear: both"></div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('contact_address') ?></div>	
+	<div class="col-md-10 col-xs-10">
+		<div class="form-group">
+		  <label for="country2"><?= __('country') ?></label>
+		  <select class="form-control" id="country2" name="<?= Art_Model_Address::CONTACT_PREFIX ?>country">
+			<?php foreach ($this->countryList as $country) : ?>
+			  <option value="<?= $country->id ?>"><?= $country->name ?></option>
+			<?php endforeach; ?>
+		  </select>
+		</div>
+	</div>
+	<div class="col-md-10 col-xs-10">
+		<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>city" type="text" class="form-control" placeholder="<?= __('city') ?>">
+	</div>	
+	<div class="col-md-10 col-xs-10">
+		<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>street" type="text" class="form-control" placeholder="<?= __('street') ?>">
+	</div>		
+	<div class="col-md-10 col-xs-10">
+		<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>housenum" type="text" class="form-control" placeholder="<?= __('house_number') ?>">
+	</div>	
+	<div class="col-md-10 col-xs-10">
+		<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>zip" type="text" class="form-control" placeholder="<?= __('zip_code') ?>">
+	</div>
+	
+	<div style="clear: both"></div>
+				
+	<div class="col-md-2 col-xs-2"><?= __('phone_number') ?></div>
+	<div class="col-md-2 col-xs-2">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>area_code" type="text" class="form-control" placeholder="<?= __('area_number') ?>">
+	</div>
+	<div class="col-md-8 col-xs-8">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>phone" type="text" class="form-control" placeholder="<?= __('phone_number') ?>">
+	</div>
+	
+	<div style="clear: both"></div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('email') ?></div>
+	<div class="col-md-10 col-xs-10">
+		<input name="email" type="email" class="form-control" placeholder="<?= __('email') ?>">
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('code_message') ?></div>
+	<div class="col-md-10 col-xs-10">
+	<input name="reg-code" type="text" placeholder="Registrační kód" class="input-code">
+	<i class="fa fa-question-circle">
+		<div class="code-message"><?= __('code_message') ?></div>
+	</i>
+	
+	<div class="col-md-12 col-xs-12 text-center">
+		<input type="submit" class="btn btn-info" value="<?= __('save') ?>">
+	</div>
+</form>

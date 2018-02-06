@@ -1,0 +1,81 @@
+
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_users_companies_header') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+	<!--	
+		<div class="action-new">
+			<a href="/<?= ''//Art_Router::getLayer() ?>/users/new">
+			<i class="fa fa-plus fa-2x"></i>
+			<?= ''//__('add') ?></a>
+		</div>
+	-->
+	</div>
+</div>
+
+	<div class="clear"></div>
+
+	<div><?= Art_Widget::render('filter') ?></div>
+	
+<?php if ( !empty($this->usersData) ) : ?>	
+	<table class="table-default">
+		<tr>
+			<th class="td-xsmall"><input type="checkbox" onclick="toggleCheck(this,'.module_users_index .cb-user-list')"></th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'id') ?>
+				ID
+			</th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'company_name') ?>
+				<?= __('company_name') ?>
+			</th>
+			<th><?= __('fullname') ?></th>
+			<th><?= __('email') ?></th>
+			<th><?= __('phone_number') ?></th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_from') ?>
+				<?= __('module_users_membership_from') ?>
+			</th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_to') ?>
+				<?= __('module_users_membership_to') ?>
+			</th>
+			<th><?= __('services') ?></th>
+			<th><?= __('note') ?></th>
+			<th></th>
+		</tr>
+		<?php 
+			foreach( $this->usersData as $data ) : /* @var $data Art_Model_User_Data */ 
+		?>
+			<tr>
+				<td class="td-xsmall text-left"><input type="checkbox" name="user_<?= $data->p_userId?>" class="cb-user-list"></td>
+				<td><?= $data->_user->user_number ?></td>
+				<td><a href="<?= $data->a_detail ?>"><?= Art_Filter::cutString($data->company_name,60) ?></a></td>
+				<td <?= $data->getUser()->active ? null : 'style="color: #FFCCCC"' ?>><?= Art_Filter::cutString($data->fullname,40) ?></td>
+				<td><?= Art_Filter::cutString($data->email,100) ?></td>
+				<td><?= Art_Filter::cutString($data->p_phone,14) ?></td>
+				<td><?= $data->membership_from ?></td>
+				<td><?= $data->membership_to_colored ?></td>
+				<td>
+					<?php foreach( $data->services as $service ) : /* @var $service Service */ ?>
+						<a href="<?= $data->a_service.$service->id ?>" style="display:inline"><i class="fa fa-<?= $service->fa_icon ?> pr-10"
+							 <?= $serviceColor = in_array($service->type, $data->actServices) ? ' style="color: green"' : null ?>></i></a>
+					<?php endforeach; ?>
+				</td>
+				<td><?= Art_Widget::render('note','embedd',array('id_user'=>$data->p_userId)) ?></td>
+				<td class="text-center"><a href="<?= $data->a_edit ?>"><i class="fa fa-pencil edit"></i></a></td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+		
+	<div>
+		<?php echo __('module_users_count') . ': ' . $this->count ?>
+	</div>
+	
+	<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>

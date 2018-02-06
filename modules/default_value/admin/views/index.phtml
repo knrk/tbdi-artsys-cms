@@ -1,0 +1,34 @@
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_default_value') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+		<div class="action-new">
+			<a href="/<?= Art_Router::getLayer() ?>/default_value/new">
+			<i class="fa fa-plus fa-2x"></i>
+			<?= __('add') ?></a>
+		</div>
+	</div>
+</div>
+	<div class="clear"></div>
+
+
+	
+<table class="table-default">
+	<tr>
+		<th class="text-center"><?= __('module_default_value_name') ?></th>
+		<th class="text-center"><?= __('note') ?></th>
+		<th class="text-center"><?= __('module_default_value_type') ?></th>
+		<th><?= __('module_default_value_value') ?></th>
+		<th></th>
+	</tr>
+	<?php foreach($this->items AS $item): ?>
+		<tr>
+			<td class="text-center"><?= Art_Filter::cutString($item->name,40) ?></td>
+			<td><?= $item->note ?></td>
+			<td class="text-center"><?= $this->types[$item->type] ?></td>
+			<td><?= Art_Filter::cutString($item->value, 100) ?></td>
+			<td class="text-center"><a href="<?= '/'.Art_Router::getLayer().'/default_value/edit/'.$item->id ?>"><i class="fa fa-pencil edit"></i></a></td>
+		</tr>
+	<?php endforeach; ?>
+</table>

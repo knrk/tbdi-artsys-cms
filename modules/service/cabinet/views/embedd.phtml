@@ -1,0 +1,16 @@
+	<?php
+		foreach ( $this->services as $service ) : /* @var $service Service */
+	?>
+		<div class="col-xs-12 serviceInUseBox">
+			<div class="col-xs-9 serviceName">
+			<h3><?= $service->name ?></h3>
+
+			</div>
+			<div class="col-xs-3 serviceIcon">
+				<i class="fa fa-<?= $service->fa_icon ?> fa-3x"></i>
+			</div>
+
+		</div>
+	<?php
+		endforeach;
+	?>

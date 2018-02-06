@@ -1,0 +1,95 @@
+
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_investment_header') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+		<div class="action-new">
+			<a href="/<?= Art_Router::getLayer() ?>/investment/new">
+			<i class="fa fa-plus fa-2x"></i>
+			<?= __('add') ?></a>
+		</div>
+		<div class="action-new">
+			<a href="/<?= Art_Router::getLayer() ?>/investment/newmonth">
+				<i class="fa fa-times fa-2x"></i>
+				<?= __('create') ?></a>
+		</div>
+		<div class="action-new">
+			<a href="/<?= Art_Router::getLayer() ?>/investment/terminated">
+				<i class="fa fa-file fa-2x"></i>
+				<?= __('terminated') ?></a>
+		</div>
+	</div>
+</div>
+
+	<div class="clear"></div>
+
+	<?= __('module_investment_default_interest') ?>: <?= $this->defaultInterest ?>% 
+	<?php if ( NULL !== $this->defaultInterestId ) : ?>
+			(<a href="/<?= Art_Router::getLayer() ?>/default_value/edit/<?= $this->defaultInterestId ?>">upravit</a>)
+	<?php endif; ?>
+	
+	<div class="clearer"></div>	
+	
+	<?php foreach ( $this->links as $key => $val ) : ?>
+	
+	<div>
+		<a href="/<?= Art_Router::getLayer() ?>/investment/detail/<?= $key ?>"><?= $val ?></a>
+	</div>
+
+	<?php endforeach; ?>
+	
+	<div class="clear"></div>
+
+	<table class="table-default">
+		<tr>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'surname') ?>
+				<?= __('fullname') ?>
+			</th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'value') ?>
+				<?= __('module_investment_value') ?>
+			</th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'date') ?>
+				<?= __('module_investment_date') ?>
+			</th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'expiry_date') ?>
+				<?= __('module_investment_expiry_date') ?>
+			</th>
+			<th>
+				<?= __('module_investment_note') ?>
+			</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<?php
+			foreach( $this->deposit as $value ) : /* @var $value Service_Investment_Deposit */
+				if ( !$value->terminated ) :
+		?>
+			<tr>
+				<td><?= Art_Filter::cutString($value->getUser()->fullname,40) ?></td>
+				<td><?= $value->value ?></td>
+				<td><?= nice_date($value->date) ?></td>
+				<td<?= ( strtotime($value->expiry_date) < time() ) ? ' style="color: red;"' : null ?>><?= nice_date($value->expiry_date) ?></td>
+				<td><?= Art_Filter::cutString($value->note,40) ?></td>
+				<td class="text-center"><a href="<?= $this->deposit_edit.$value->id ?>"><i class="fa fa-pencil edit"></i></a></td>
+				<td class="text-center">
+					<button <?= $this->delete_single_request->getHTML(array('id'=>$value->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
+				</td>
+				<td class="text-center">
+					<?php if ( $value->terminable ) : ?>
+						<button <?= $this->terminate_single_request->getHTML(array('id'=>$value->id)) ?> title="<?= __('terminate') ?>"><i class="fa fa-check"></i></button>
+					<?php else : ?>
+						&nbsp;
+					<?php endif; ?>
+				</td>
+			</tr>
+		<?php
+			endif;
+			endforeach;
+		?>
+	</table>

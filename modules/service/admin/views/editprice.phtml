@@ -1,0 +1,31 @@
+<h2><?= __('module_service_price_edit') ?></h2>
+	<form <?= $this->request->getHTML() ?>>
+		<div class="background-white pa-15" style="padding-top: 0px">
+			<div class="clearfix"></div>
+			<div class="col-xs-2"><h3><?= $this->service->name ?></h3></div>
+			<div class="col-xs-1 mt-20">
+				<input type="text" name="price" placeholder="<?= __('module_service_price_price') ?>" value="<?= $this->servicePrice->price ?>">	
+			</div>
+			<div class="col-xs-1 text-left lh-35 mt-20 np"><?= __('czk') ?></div>
+			<div class="col-xs-1 mt-20">
+				<input type="text" name="time_interval_value" placeholder="<?= __('module_service_price_time_interval_value') ?>" value="<?= $this->intervalValue ?>">
+			</div>
+			<div class='col-xs-2 mt-20'>
+				<select name="time_interval_type">
+					<?php foreach ($this->intervalTypes as $key => $value): ?>
+					<option value="<?= $key ?>"<?= 
+						Helper_Default::getSelectedOrNull($this,'intervalType',$key) ?>
+							><?= $value ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+			<div class="col-xs-3 lh-35 mt-20">
+				<input type="checkbox" name="is_default" placeholder="<?= __('module_service_price_is_default') ?>"<?= ($this->servicePrice->is_default) ? ' checked="checked"' : null ?>>
+					<?= __('module_service_price_default') ?>
+			</div>
+		<div class="text-right col-xs-2 mt-20">
+			<input type="submit" value="<?= __('save') ?>" class="btn">
+		</div>
+			<div class="clearfix"></div>
+		</div>
+	</form>

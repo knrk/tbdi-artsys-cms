@@ -1,0 +1,29 @@
+
+<h2><?= __('module_dashboard_header') ?></h2>
+
+<?php
+	foreach ($this->dashboard as $post) :	/* @var $post Dashboard */
+?>
+<div class="dashboard-post <?= ($post->important == 1) ? 'important' : null ?>" id="dashboard-<?= $post->id ?>">
+
+	<div class="col-xs-6 text-left">
+	<h4>
+		<?php if ( NULL != $post->header ) : ?>
+			<?= $post->header ?> 
+		<?php endif; ?>
+		<?php if($post->important == 1) : ?>
+			<i class="fa fa-exclamation"></i>
+		<?php endif; ?>
+	</h4>
+		
+	</div>
+	<div class="col-xs-6 text-right">
+		<?= nice_date($post->created_date) ?>
+	</div>
+	<div class="clearfix"></div>
+	<p><?= $post->body ?></p>
+
+</div>
+<?php		
+	endforeach;
+?>

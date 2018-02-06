@@ -1,0 +1,43 @@
+<form>
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_label_labels') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+		<button class="action-delete" <?= $this->delete_request->getHTML() ?>>
+			<i class="fa fa-trash-o fa-2x"></i>
+			<?= __('delete') ?>
+		</button>
+		<div class="action-new">
+			<a href="/<?= Art_Router::getLayer() ?>/label/new">
+			<i class="fa fa-plus fa-2x"></i>
+			<?= __('add') ?></a>
+		</div>
+	</div>
+</div>
+	
+<div class="clear"></div>
+	<table class="table-default">
+		<tr>
+			<th class="text-center"><input type="checkbox" onclick="toggleCheck(this,'.module_label_index .cb-label-list')"></th>
+			<th class="text-center"><?= __('module_label_key') ?></th>
+			<th><?= __('module_label_group') ?></th>
+			<?php foreach($this->languages AS $language): ?>
+				<th><?= __('module_label_'.$language) ?></th>
+			<?php endforeach; ?>
+			<th></th>
+		</tr>
+		<?php foreach($this->labels AS $label): ?>
+		<?php $href = '/'.Art_Router::getLayer().'/label/edit/'.$label->id ?>
+			<tr>
+				<td class="text-center"><input type="checkbox" name="label_<?= $label->id ?>" class="cb-label-list"></td>
+				<td><a href="<?= $href ?>"><?= Art_Filter::cutString($label->key,60) ?></a></td>
+				<td><a href="<?= $href ?>"><?= Art_Filter::cutString($label->group,40) ?></a></td>
+				<?php foreach($this->languages AS $language): ?>
+					<td><a href="<?= $href ?>"><?= Art_Filter::cutString($label->$language,100) ?></a></td>
+				<?php endforeach; ?>
+				<td class="text-center"><a href="<?= $href ?>"><i class="fa fa-pencil edit"></i></a></td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
+</form>

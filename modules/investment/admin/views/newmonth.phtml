@@ -1,0 +1,15 @@
+<form <?= $this->request->getHTML() ?>>
+	<input type="text" name="target" placeholder="<?= __('module_investment_target') ?>">
+	
+	<div class="form-group">
+		<select class="form-control" name="month">
+		  <?php foreach ($this->months as $key => $val) : ?>
+			<option value="<?= $key ?>"><?= $val ?></option>
+		  <?php endforeach; ?>
+		</select>
+	</div>
+	
+	<input type="text" name="year" placeholder="<?= __('year') ?>">
+				
+	<input type="submit" value="<?= __('next') ?>" class="btn">
+</form>

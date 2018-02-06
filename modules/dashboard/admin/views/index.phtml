@@ -1,0 +1,42 @@
+<form>
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_dashboard_header') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+		<div class="action-new">
+			<a href="/<?= Art_Router::getLayer() ?>/dashboard/new">
+			<i class="fa fa-plus fa-2x"></i>
+			<?= __('add') ?></a>
+		</div>
+	</div>
+</div>
+</form>
+	<div class="clear"></div>
+	
+	<table class="table-default">
+		<tr>
+			<th><?= __('module_dashboard_content_header') ?></th>
+			<th><?= __('module_dashboard_content_body') ?></th>
+			<th><?= __('module_dashboard_content_date') ?></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<?php 
+			foreach( $this->dashboard as $post ) : /* @var $post Dashboard */ 
+		?>
+			<tr>
+				<td><?= Art_Filter::cutString($post->header,50) ?></td>
+				<td><a href="<?= $post->a_detail ?>"><?= Art_Filter::cutString($post->body,200) ?></a></td>
+				<td><?= nice_date($post->created_date) ?></td>
+				<td class="text-center">
+					<?php if ($post->important) : ?>
+						<i title="<?= __('module_dashboard_important') ?>" class="fa fa-exclamation"></i>
+					<?php endif; ?>
+				</td>
+				<td class="text-center"><a href="<?= $post->a_edit ?>"><i class="fa fa-pencil edit"></i></a></td>
+				<td class="text-center"><button <?= $this->delete_single_request->getHTML(array('id'=>$post->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button></td>
+			</tr>
+		<?php endforeach; ?>
+	</table>

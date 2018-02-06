@@ -1,0 +1,124 @@
+* {
+    line-height: 150%;
+}
+/*
+table {
+    border: 1px dashed black;
+}
+th, td {
+    border: 1px dashed black;
+}
+*/
+
+
+.width20 {
+    width:20px;
+}
+
+.width50 {
+    width:50px;
+}
+.width55 {
+    width:55px;
+}
+.width60 {
+    width:60px;
+}
+.width70 {
+    width:70px;
+}
+.width75 {
+    width:75px;
+}
+.width80 {
+    width:80px;
+}
+.width85 {
+    width:85px;
+}
+.width95 {
+    width:95px;
+}
+
+.width100 {
+    width:100px;
+}
+.width120 {
+    width:120px;
+}
+.width140 {
+    width:140px;
+}
+.width240 {
+    width:240px;
+}
+
+.width350 {
+    width:350px;
+}
+
+.width150 {
+    width:150px;
+}
+.width240 {
+    width: 240px;
+}
+.width300 {
+    width:300px;
+}
+.width310 {
+    width:310px;
+}
+
+.height30 td {
+    height:30px;
+}
+
+.height15 td {
+    height:15px;
+}
+
+.height5 td {
+    height:5px;
+    line-height: 5px;
+}
+.height10 td {
+    height:10px;
+}
+
+
+.height45 td {
+    height:45px;
+}
+
+.borderRight {
+    border-right:1px solid #AAAAAA;
+}
+
+.borderTop {
+    border-top:1px solid #AAAAAA;
+}
+
+.textAlignRight {
+    text-align: right;
+}
+
+.tableHeader {
+    font-weight:bold;
+    font-size:10px;
+}
+.fontSize10 td {
+    font-size:10px;
+}
+.description {
+    font-size:10px;
+    color:#555555;
+}
+
+.borderTopInner {
+    border-top:1px solid #AAAAAA;
+}
+
+.alignRight {
+    text-align: right;
+}

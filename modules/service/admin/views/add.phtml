@@ -1,0 +1,21 @@
+<?php if ( !empty($this->services) ) : ?>	
+<form <?= $this->request->getHTML() ?>>	
+	<div class="col-xs-3 lh-35">
+		
+		  <label for="service_price"><?= __('module_service_type_service') ?></label>
+	</div>
+	<div class="col-xs-3">
+		  <select class="form-control" id="service" name="id_service">
+			<?php foreach ($this->services as $service) : ?>
+				<option value="<?= $service->id ?>"><?= $service->name ?></option>
+			<?php endforeach; ?>
+		  </select>		
+	</div>
+	
+	<div class="col-xs-3 text-right">
+		<input type="submit" class="btn" value="<?= __('save') ?>">
+	</div>
+</form>
+<?php else : ?>
+	<?= __('module_service_user_has_all') ?>
+<?php endif; ?>

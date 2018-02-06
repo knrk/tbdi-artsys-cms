@@ -1,0 +1,72 @@
+<h2><?= __('module_service_edit_service') ?></h2>
+	<form <?= $this->request->getHTML() ?>>
+		
+		<input type="text" name="name" placeholder="<?= __('module_service_name') ?>" 
+			   value="<?= $this->service->name ?>">
+		
+		<?= __('module_service_icon') ?>
+		<select name="icon">
+			<?php foreach ($this->icons as $value): /* @var $value Article */ ?>
+				<option value="<?= $value['name'] ?>"
+					<?= Helper_Default::getSelectedOrNull($this->service,'icon',$value['name']) ?>
+						><?= $value['name'] ?></option>
+			<?php endforeach; ?>
+		</select>
+		
+		<div id="icon-box">
+		<?php foreach ($this->icons as $value): /* @var $value Article */ ?>
+		
+			<div class="col-xs-4"><i class="fa fa-<?= $value['name'] ?>"></i> <?= $value['name'] ?> </div>
+		
+		<?php endforeach; ?> 
+			<i class="fa fa-angle-down fa-3x icon-box-button"></i>
+		</div>
+		<br><?= __('module_service_article') ?>
+		<select name="article_url_name">
+			<?php foreach ($this->articles as $value): /* @var $value Article */ ?>
+				<option value="<?= $value->url_name ?>"
+					<?= Helper_Default::getSelectedOrNull($this->service,'article',$value->url_name) ?>
+						><?= $value->title.' ('.$value->perex.')' ?></option>
+			<?php endforeach; ?>
+		</select>
+		
+		<br><?= __('promo') ?>
+		<select name="promo_url_name">
+			<?php foreach ($this->articles as $value): /* @var $value Article */ ?>
+				<option value="<?= $value->url_name ?>"
+					<?= Helper_Default::getSelectedOrNull($this->service,'promo',$value->url_name) ?>
+						><?= $value->title.' ('.$value->perex.')' ?></option>
+			<?php endforeach; ?>
+		</select>
+		
+		<br><?= __('conditions') ?>
+		<select name="conditions_name">
+			<?php foreach ($this->scannedDirectory as $value): /* @var $value  */ ?>
+				<option value="<?= $value ?>"
+					<?= Helper_Default::getSelectedOrNull($this->service,'conditions',$value) ?>
+						><?= $value ?></option>
+			<?php endforeach; ?>
+		</select>
+		
+		<div class="text-center">
+			<input type="submit" value="<?= __('save') ?>" class="button-save">
+		</div>
+	</form>
+
+
+<script>
+	$('.icon-box-button').click(
+				function(){
+					
+					if($(this).hasClass('fa-angle-down')){
+						$('#icon-box').css({'height':'4650px'});
+						$(this).removeClass('fa-angle-down').addClass('fa-angle-up');
+					}else{
+						$('#icon-box').css({'height':'58px'});
+						$(this).removeClass('fa-angle-up').addClass('fa-angle-down');
+					}
+					
+				}
+			);
+
+</script>

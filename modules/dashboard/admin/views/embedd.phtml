@@ -1,0 +1,27 @@
+<?php
+	foreach ($this->dashboard as $post) :	/* @var $post Dashboard */
+?>
+
+<div class="dashboard-embed-post<?= ($post->important == 1) ? ' post-important': null ?>">
+	<div class="col-xs-6 text-left">	
+		<?php if ($post->important == 1) : ?>
+			<span style="color: red;"><i class="fa fa-exclamation"></i></span>
+		<?php endif; ?>
+
+		<?php if ( NULL !== $post->header ) : ?>	
+			<?= $post->header ?>	
+		<?php endif; ?>
+	</div>
+	
+	<div class="col-xs-6 text-right">
+		<?= nice_date($post->created_date) ?>
+	</div><div class="clearfix"></div>
+	<div class="col-xs-12">
+		<?= $post->body ?>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<?php		
+	endforeach;
+?>

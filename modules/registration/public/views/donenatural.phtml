@@ -1,0 +1,16 @@
+<div class="col-sm-12 confirm-box">
+<?php if ( !empty($this->email)) : ?>
+
+<div class="col-md-12 col-xs-12 text-center">	
+	<h2><?= __('module_registration_done_sended_email') ?></h2>
+	<h3><?= $this->email ?></h3>
+</div>
+
+<form name="register" <?= $this->request->getHTML() ?>>	
+	<div class="col-md-12 col-xs-12 text-center">
+		<p><?= __('module_registration_done_message') ?></p>
+		<input type="submit" class="btn btn-info" value="<?= __('module_registration_send_again') ?>">
+	</div>
+</form>
+<?php endif; ?>
+</div>

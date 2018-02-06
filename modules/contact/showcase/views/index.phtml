@@ -1,0 +1,79 @@
+<?php if( !empty($this->data->company_name) ): ?>
+	<h2><?= $this->data->company_name ?></h2>
+<?php elseif( !empty($this->data->name) || !empty($this->data->surname) ): ?>
+	<h2>
+		<?php if( !empty($this->data->name) ): ?>
+			<?= $this->data->name ?>
+		<?php endif; ?>
+		<?php if( !empty($this->data->surname) ): ?>
+			<?= $this->data->surname ?>
+		<?php endif; ?>
+	</h2>
+<?php endif; ?>
+
+<h4>Adresa</h4>
+	<?php if( !empty($this->data->company_name) && ( !empty($this->data->name) || !empty($this->data->surname) ) ): ?>
+		<?php if( !empty($this->data->name) ): ?>
+			<?= $this->data->name ?>
+		<?php endif; ?>
+		<?php if( !empty($this->data->surname) ): ?>
+			<?= $this->data->surname ?>
+		<?php endif; ?>
+		<br />
+	<?php endif; ?>
+	<?php if( !empty($this->data->street) ): ?>
+		<?= $this->data->street ?><br />
+	<?php endif; ?>
+	<?php if( !empty($this->data->zip) ): ?>
+		<?= $this->data->zip ?>
+	<?php endif; ?>
+	<?php if( !empty($this->data->city) ): ?>
+		<?= $this->data->city ?><br /> 
+	<?php endif; ?>
+	<?php if( !empty($this->data->country) ): ?>
+		<?= $this->data->country ?>
+	<?php endif; ?>
+ 
+<?php if( !empty($this->data->phone) || !empty($this->data->mobile) ): ?>
+<h4>Telefon</h4>
+	<?php if( !empty($this->data->phone) ): ?>
+		<a href="callto:<?= str_replace(' ','',$this->data->phone) ?>"><?= $this->data->phone ?></a><br /> 
+	<?php endif; ?>
+	<?php if( !empty($this->data->mobile) ): ?>
+		<a href="callto:<?= str_replace(' ','',$this->data->mobile) ?>"><?= $this->data->mobile ?></a>
+	<?php endif; ?>
+<?php endif; ?>
+
+<?php if( !empty($this->data->email) ): ?>
+<h4>E-mail</h4>
+	<?= $this->emailProtection($this->data->email) ?>
+<?php endif; ?>
+	
+<?php if( $this->social == true ): ?>
+	<br />
+	<?php if( !empty($this->data->fb_link) ): ?>
+		<a class="btn btn-lg btn-social-icon btn-facebook" href="<?= $this->data->fb_link ?>" target="_blank" rel="nofollow">
+			<span class="fa fa-facebook"></span> 
+		</a>
+	<?php endif; ?>
+	<?php if( !empty($this->data->gp_link) ): ?>
+		<a class="btn btn-lg btn-social-icon btn-google" href="<?= $this->data->gp_link ?>" target="_blank" rel="nofollow">
+			<span class="fa fa-google"></span>
+		</a>
+	<?php endif; ?>
+	<?php if( !empty($this->data->tw_link) ): ?>
+		<a class="btn btn-lg btn-social-icon btn-twitter" href="<?= $this->data->tw_link ?>" target="_blank" rel="nofollow">
+			<span class="fa fa-twitter"></span>
+		</a>
+	<?php endif; ?>
+	<?php if( !empty($this->data->yt_link) ): ?>
+		<a class="btn btn-lg btn-social-icon btn-youtube" href="<?= $this->data->yt_link ?>" target="_blank" rel="nofollow">
+			<span class="fa fa-youtube"></span>
+		</a>
+	<?php endif; ?>
+<?php endif; ?>
+
+<?php if( !empty($this->data->map) ): ?>
+	<br />
+	<?= $this->data->map ?>
+<?php endif; ?>

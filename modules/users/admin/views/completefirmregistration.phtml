@@ -1,0 +1,70 @@
+<form <?= $this->request->getHTML() ?>>
+
+	<div class="col-md-2 col-xs-2"><?= __('module_users_membership_for_year') ?></div>
+		<div class="col-md-10 col-xs-10">
+			<input name="membership_fee" type="text" class="form-control" placeholder="<?= __('membership') . ' za rok' ?>" 
+				   value="<?= $this->membershipPrice ?>">
+		</div>
+
+	<div class="mt-15"></div>
+	<div class="col-md-2 col-xs-2 lh-35"><?= __('module_service_from') ?></div>	
+	<div class="col-xs-1">
+		<select name="from_day">
+			<?php foreach ($this->days as $day) : ?>
+				  <option value="<?= $day ?>"
+						<?= Helper_Default::getSelectedOrNull($this,'currentDay',$day) ?>
+						  ><?= $day ?></option>
+				<?php endforeach; ?>
+		</select>
+	</div>
+	<div class="col-xs-1">
+		<select name="from_month">
+			<?php foreach ($this->months as $month) : ?>
+				  <option value="<?= $month ?>"
+						<?= Helper_Default::getSelectedOrNull($this,'currentMonth',$month) ?>
+						  ><?= $month ?></option>
+				<?php endforeach; ?>
+		</select>
+	</div>
+	
+	<div class="col-xs-2">
+		<select name="from_year">
+			<?php foreach ($this->years as $year) : ?>
+				  <option value="<?= $year ?>"
+						<?= Helper_Default::getSelectedOrNull($this,'currentYear',$year) ?>
+						  ><?= $year ?></option>
+				<?php endforeach; ?>
+		</select>
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('module_service_to') ?></div>
+	<div class="col-xs-1">
+		<select name="to_day">
+			<?php foreach ($this->days as $day) : ?>
+				  <option value="<?= $day ?>"
+						<?= Helper_Default::getSelectedOrNull($this,'currentDay',$day) ?>
+						  ><?= $day ?></option>
+				<?php endforeach; ?>
+		</select>
+	</div>
+	<div class="col-xs-1">
+		<select name="to_month">
+			<?php foreach ($this->months as $month) : ?>
+				  <option value="<?= $month ?>"
+						<?= Helper_Default::getSelectedOrNull($this,'currentMonth',$month) ?>
+						  ><?= $month ?></option>
+				<?php endforeach; ?>
+		</select>
+	</div>
+	<div class="col-xs-2">
+		<select name="to_year">
+			<?php foreach ($this->years as $year) : ?>
+				  <option value="<?= $year ?>"
+						<?= Helper_Default::getSelectedOrNull($this,'nextYear',$year) ?>
+						  ><?= $year ?></option>
+				<?php endforeach; ?>
+		</select>
+	</div>
+	
+	<input type="submit" class="btn" value="<?= __('save') ?>">
+</form>

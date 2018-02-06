@@ -1,0 +1,209 @@
+.error_backtrace, .w3c_validation{
+    width: 98%;
+    margin: auto;
+    color:#333333;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.error_backtrace td {
+    color: #333333;
+}
+
+.error_backtrace {
+    border: 1px solid #ff0033;
+    background-color: #FFCCCC;    
+}
+
+.error_backtrace .error_backtrace_message, .w3c_validation_header{
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: #fff;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+.error_backtrace .error_backtrace_message {
+    background-color: #ff0033;
+}
+
+
+.error_backtrace_trace, .error_backtrace_source {
+    margin: auto;
+    margin-top: 15px;
+    width: 80%;
+}
+
+.error_backtrace_trace tr td, .error_backtrace_source tr td{
+    padding: 5px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.error_backtrace_trace tr:nth-of-type(2n){
+    background: #FFeeee;
+}
+
+.error_backtrace_source tr td {
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+}
+
+.error_backtrace_source tr td:first-of-type {
+    border-right: 1px solid #e5e5e5;
+}
+
+.error_backtrace_source_errline td:first-of-type {
+    border-left: 3px solid red;
+    border-right: 1px solid red !important;
+}
+
+.error_backtrace_source_errline {
+    color: red;
+    font-weight: bold;
+    border-left: 3px solid red;
+}
+
+.w3c_validation table{
+    width: 100%;
+    color:#333333;
+}
+
+.w3c_validation_header {
+    background-color: #333;
+}
+
+.w3c_validation {
+    border: 1px solid #333;
+    background-color: #DDD;
+}
+
+.w3c_validation table tr td{
+    padding-left: 10px;
+    text-align: left;
+    line-height: 24px !important;
+}
+
+.w3c_validation_result_row_1 td{
+    border-top: 1px dashed #333;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.w3c_validation_result_row_2 td{
+    padding-left: 85px !important;
+    font-family: Lucida Console;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.w3c_validation_result_type_error {
+    color:red;
+}
+
+.w3c_validation_result_type_warning {
+    color:yellow;
+}
+
+
+.art_ajax_loading_bar {
+    height: 3px;
+    width: 0;
+    position:fixed;
+    top:0;
+    opacity: 0;
+}
+
+.art_ajax_loading_bar_done {
+    background-color: #00CC00;
+}
+
+.art_ajax_loading_bar_progress {
+    background-color: #999900;
+}
+
+.art_ajax_loading_bar_stop {
+    background-color: #CC0000;
+}
+
+.art-alertbox {
+    width: 300px;
+    position:fixed;
+    top: 3%;
+    right: 3%;
+    z-index:100;
+    max-width: 94%;
+    margin: 0;
+    overflow: hidden;
+    
+    .art-alertbox-element {
+	background-color: rgba(30,30,30,0.96);
+	color: #FFFFFF;
+	height: 0px;
+	margin-bottom: 0px;
+	box-shadow: 1px 1px 3px 0px rgba(60,60,60,0.4);
+	border: 0px solid rgb(60, 60, 60);
+	text-align: center;
+	opacity: 0;
+	transition: height 0.3s linear, 
+		    opacity 0.3s linear, 
+		    margin-bottom 0.3s linear,
+		    border 0.3s linear;
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	
+	.art-alertbox-element-inner {
+	    display: table;
+	    width: 100%;
+	    height: 100%;
+	    min-height: 80px;
+	}
+	
+	&.art-alertbox-element-opened {
+	    opacity: 1;
+	    height: auto;
+	    min-height: 80px;
+	    margin-bottom: 10px;
+	    border: 1px solid rgb(60, 60, 60);
+	    transition: height 0.3s linear, 
+			opacity 0.3s linear, 
+			margin-bottom 0s linear,
+			border 0s linear;
+	}
+
+	.art-alertbox-element-close-button {
+	    height: 15px;
+	    display: block;
+	    text-align: center;
+	    position: absolute;
+	    width: 20px;
+	    right: 0;
+	    margin: 3px 3px 0 0;
+	    font-size:15px;
+	    line-height: 15px;
+	    cursor: pointer;
+	}
+	
+	.art-alertbox-element-close-button:before {
+	    content: "\f00d";
+	    font-family: FontAwesome;
+	}
+	
+	.art-alertbox-element-message-box {
+	    display: table-cell;
+	    vertical-align: middle;
+	    text-align: center;
+	    padding: 10px;
+	}
+		
+	&.art-alertbox-element-error {
+	    background-color: rgba(204, 0, 51, 0.96);
+	}	
+    }
+}

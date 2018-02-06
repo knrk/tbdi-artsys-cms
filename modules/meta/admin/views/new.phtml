@@ -1,0 +1,31 @@
+<h2><?= __('module_meta_new_meta') ?></h2>
+	<form <?= $this->request->getHTML() ?>>
+		<table class="table-default articles">
+			<?php if( !empty($this->default) ): ?>
+			<tr>
+				<td class="xsmall-td">
+					<?= __('module_meta_choose') ?>
+				</td>
+				<td>
+					<select name="choose" onchange="document.querySelector('input[name=\'key\']').value = this.options[this.selectedIndex].value;">
+							<option value=""></option>
+						<?php foreach($this->default AS $key => $default): ?>
+							<option value="<?= $key ?>"><?= $key ?></option>
+						<?php endforeach; ?>
+					</select>
+				</td>
+			</tr>
+			<?php endif; ?>
+			<tr>
+				<td><?= __('key') ?></td>
+				<td><input type="text" name="key" placeholder="<?= __('module_meta_key') ?>"></td>
+			</tr>
+			<tr>
+				<td><?= __('content') ?></td>
+				<td><input type="text" name="content_cs" placeholder="<?= __('module_meta_content_cs') ?>"></td>
+			</tr>
+		</table>
+		<div class="text-center">
+			<input type="submit" value="<?= __('save') ?>" class="button-save">
+		</div>
+</form>

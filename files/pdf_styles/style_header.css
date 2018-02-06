@@ -1,0 +1,13 @@
+table td {
+    font-size:20px;
+    border-bottom:1px solid #AAA;
+    line-height: 150%;
+}
+
+table td#1 {
+    text-align: left;
+}
+
+table td#2 {
+    text-align: right;
+}

@@ -1,0 +1,29 @@
+	<?php if ( $this->isManager ) : ?>
+	<li>
+		<a href="<?= '/'.Art_Router::LAYER_BACKEND ?>"><i class="fa fa-cog"></i> Administrace</a>
+	</li>
+	<?php endif; ?>
+	
+	<?php 
+		foreach ( $this->services as $service ) : /* @var $service Service */
+	?>
+	<?php if ( $service->type === Helper_TBDev::MEMBERSHIP_TYPE  ) : ?>
+		<?php if ( $service->active || $this->isManager  ) : ?>
+			<li><div><a href="/<?= Art_Router::getLayer() ?>/service"> <i class="fa fa-<?= $service->fa_icon ?>"></i> <?= 
+					Helper_Default::getPropertyOrValue($service->article,'title',__('article')) ?></a></div></li>
+	<?php /*		<li><div><a href="/<?= Art_Router::getLayer() ?>/service/payments/<?= $service->type ?>"><i class="fa fa-<?= $service->fa_icon ?>"></i> <?= 
+					__('payments') ?></a></div></li> */?>
+		<?php endif; ?>
+	<?php else : ?>
+		<?php if ( !$service->active || $this->isManager ) : ?>
+			<li><div><a href="<?= '/'.Art_Router::getLayer().'/service/promo/'.$service->type ?>"><i class="fa fa-<?= $service->fa_icon ?>"></i> <?= $this->isManager ? __('promo').'-' : null ?><?= 
+					Helper_Default::getPropertyOrValue($service->promo,'title',__('promo')) ?></a></div></li>
+		<?php endif; ?>
+		<?php if ( $service->active || $this->isManager  ) : ?>
+			<li><div><a href="/<?= Art_Router::getLayer() ?>/service/article/<?= $service->type ?>"> <i class="fa fa-<?= $service->fa_icon ?>"></i> <?= $this->isManager ? __('article').'-' : null ?><?= 
+					Helper_Default::getPropertyOrValue($service->article,'title',__('article')) ?></a></div></li>
+		<?php endif; ?>
+	<?php endif; ?>
+	<?php
+		endforeach;
+	?>

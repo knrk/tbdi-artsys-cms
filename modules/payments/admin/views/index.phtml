@@ -1,0 +1,45 @@
+
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_payments_header') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+		<div class="action-new">
+			<a href="/<?= Art_Router::getLayer() ?>/payments/new">
+			<i class="fa fa-plus fa-2x"></i>
+			<?= __('add') ?></a>
+		</div>
+	</div>
+</div>
+
+	<div class="clear"></div>
+
+	<table class="table-default">
+		<tr>
+			<th>ID</th>
+			<th><?= __('module_payments_user') ?></th>
+			<th><?= __('module_payments_payer') ?></th>
+			<th><?= __('module_payments_service') ?></th>
+			<th><?= __('module_payments_value') ?></th>
+			<th><?= __('module_payments_date') ?></th>
+			<th></th>
+		</tr>
+		<?php 
+			foreach( $this->payments as $key => $payment ) : /* @var $payment Service_Payment */
+		?>
+			<tr>
+				<td><?= $payment->user_number ?></td>
+				<td><?= Art_Filter::cutString($payment->user_fullname,60) ?></td>
+				<td><?= Art_Filter::cutString($payment->user_paid_by_fullname,40) ?></td>
+				<td><?= Art_Filter::cutString($payment->service_name,100) ?></td>
+				<td><?= Art_Filter::cutString($payment->value,100) ?></td>
+				<td><?= nice_date($payment->date) ?></td>
+				<td class="text-center">
+					<?php if ( $this->lastPayments[$payment->user_id][$payment->service_id] == $key ) : ?>
+						<button <?= $this->delete_single_request->getHTML(array('id'=>$payment->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
+					<?php endif; ?>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
+		

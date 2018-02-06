@@ -1,0 +1,53 @@
+<?php if ( NULL !== $this->conditions ) : ?>
+<a href="<?= $this->conditions ?>" target="_blank"><?= __('module_service_pdf_conditions') ?></a><br><br>
+<?php endif; ?>
+
+	<?= Art_Widget::render('article', 'embedd', array('url_name'=>$this->url_name)); ?>
+
+<?php if ( $this->isInvestment ) : ?>		
+
+		<div class="col-md-12 col-xs-12 mt-20"><h3><?= __('module_users_interests') ?></h3></div>
+		
+		<?php if ( !empty($this->investmentValues) ) : ?>
+		<table class="table-default">
+			<tr>
+				<th><?= __('module_investment_month_year') ?></th>
+				<th><?= __('module_investment_interest') ?></th>
+				<th><?= __('module_investment_invested') ?></th>
+				<th><?= __('module_investment_gain') ?></th>			
+				<?php if ( $this->hasCommission ) : ?>
+					<th><?= __('module_investment_commision') ?></th>
+				<?php endif; ?>
+				<th><?= __('module_investment_payment_date') ?></th>	
+				<th><?= __('note') ?></th>
+			</tr>
+			
+			<?php foreach ( $this->investmentValues as $value ): /* @var $value Service_Investment_Value */ ?>
+			<tr>
+				<td><?= Helper_Default::getCzechMonthName($value->investment->month).' '.$value->investment->year ?></td>
+				<td><?= $value->interest ?>%</td>
+				<td><?= $value->invested ?> Kč</td>
+				<td><?= $value->invested * $value->interest / 100 ?> Kč</td>
+				<?php if ( $this->hasCommission ) : ?>
+					<td><?= $value->commission ?></td>
+				<?php endif; ?>	
+					<td><?= nice_date($value->payment_date) ?></td>
+				<td><?= $value->note ?></td>
+			</tr>
+			<?php endforeach; ?>		
+		</table>	
+		<?php endif; ?>
+		<div class="clearfix mt-20"></div>
+		<div class="col-md-12 col-xs-12"><h3><?= __('module_users_deposits') ?></h3></div>
+
+		<?php if ( !empty($this->deposits) ) : ?>
+		<?php foreach ( $this->deposits as $value ): /* @var $value Service_Investment_Deposit */ ?>
+
+			<div class="col-md-6 col-xs-6"><?= $value->value ?></div>
+			<div class="col-md-3 col-xs-3"><?= __('module_investment_date').': '.nice_date($value->date) ?></div>
+			<div class="col-md-3 col-xs-3"><?= __('module_investment_expiry_date').': '.nice_date($value->expiry_date) ?></div>
+
+		<?php endforeach; ?>	
+		<?php endif; ?>
+		
+<?php endif; ?>

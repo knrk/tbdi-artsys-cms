@@ -1,0 +1,61 @@
+<?php if( !empty($this->data->company_name) ): ?>
+	<h4><?= $this->data->company_name ?></h4>
+	<?php if( !empty($this->data->name) ): ?>
+		<?= $this->data->name ?>
+	<?php endif; ?>
+	<?php if( !empty($this->data->surname) ): ?>
+		<?= $this->data->surname ?>
+	<?php endif; ?>
+	<?php if( !empty($this->data->name) || !empty($this->data->surname) ): ?>
+		<br />
+	<?php endif; ?>
+<?php elseif( !empty($this->data->name) || !empty($this->data->surname) ): ?>
+	<h4>
+		<?php if( !empty($this->data->name) ): ?>
+			<?= $this->data->name ?>
+		<?php endif; ?>
+		<?php if( !empty($this->data->surname) ): ?>
+			<?= $this->data->surname ?>
+		<?php endif; ?>
+	</h4>
+<?php endif; ?>
+	
+<?php if( !empty($this->data->street) ): ?>
+	<?= $this->data->street ?><br />
+<?php endif; ?>
+<?php if( !empty($this->data->city) ): ?>
+	<?= $this->data->city ?> <?= $this->data->zip ?><br />
+<?php endif; ?>
+<?php if( !empty($this->data->phone) ): ?>
+	Tel.: <a href="callto:<?= str_replace(' ','',$this->data->phone) ?>"><?= $this->data->phone ?></a><br />
+<?php endif; ?>
+<?php if( !empty($this->data->mobile) ): ?>
+	Mob.: <a href="callto:<?= str_replace(' ','',$this->data->mobile) ?>"><?= $this->data->mobile ?></a><br />
+<?php endif; ?>
+<?php if( !empty($this->data->email) ): ?>
+	E-mail: <?= $this->emailProtection($this->data->email) ?><br />
+<?php endif; ?>
+
+<?php if( $this->social == true ): ?>
+	<br />
+	<?php if( !empty($this->data->fb_link) ): ?>
+		<a class="btn btn-social-icon btn-facebook" href="<?= $this->data->fb_link ?>" target="_blank" rel="nofollow">
+			<span class="fa fa-facebook"></span> 
+		</a>
+	<?php endif; ?>
+	<?php if( !empty($this->data->gp_link) ): ?>
+		<a class="btn btn-social-icon btn-google" href="<?= $this->data->gp_link ?>" target="_blank" rel="nofollow">
+			<span class="fa fa-google"></span>
+		</a>
+	<?php endif; ?>
+	<?php if( !empty($this->data->tw_link) ): ?>
+		<a class="btn btn-social-icon btn-twitter" href="<?= $this->data->tw_link ?>" target="_blank" rel="nofollow">
+			<span class="fa fa-twitter"></span>
+		</a>
+	<?php endif; ?>
+	<?php if( !empty($this->data->yt_link) ): ?>
+		<a class="btn btn-social-icon btn-youtube" href="<?= $this->data->yt_link ?>" target="_blank" rel="nofollow">
+			<span class="fa fa-youtube"></span>
+		</a>
+	<?php endif; ?>
+<?php endif; ?>

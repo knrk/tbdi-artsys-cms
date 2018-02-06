@@ -1,0 +1,54 @@
+
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_service_header') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+		<div class="action-conditions">
+			<a href="/<?= Art_Router::getLayer() ?>/service/new">
+			<i class="fa fa-plus fa-2x"></i>
+			<?= __('add') ?></a>
+		</div>
+		<div class="action-conditions">
+			<a href="/<?= Art_Router::getLayer() ?>/service/conditions">
+			<i class="fa fa-file fa-2x"></i>
+			<?= __('conditions') ?></a>
+		</div>
+	</div>
+</div>
+
+	<div class="clear"></div>
+
+	<table class="table-default">
+		<tr>
+			<th><?= __('module_service_type') ?></th>
+			<th><?= __('module_service_name') ?></th>
+			<th colspan="4"><?= __('module_service_settings').' - '.__('icon').', '.__('article').', '.__('promo').', '.__('conditions') ?></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<?php 
+			foreach( $this->services as $service ) : /* @var $service Service */ 
+		?>
+			<tr>
+				<td><?= Art_Filter::cutString($service->type,60) ?></td>
+				<td><a href="<?= $service->a_detail ?>"><?= Art_Filter::cutString($service->name,40) ?></a></td>
+				<td><?= '<i class="fa fa-'.$service->icon.'"></i> '.$service->icon ?></td>
+				<td><abbr title="<?= $service->article.' ('.$service->perex_article.')' ?>"><?= $service->title_article ?></abbr></td>
+				<td><abbr title="<?= $service->promo.' ('.$service->perex_promo.')' ?>"><?= $service->title_promo ?></abbr></td>
+				<td><?= $service->conditions ?></td>
+				<td class="small-td">
+					<?php if($this->sort_buttons[$service->id][Art_Model::SORT_UP]): ?>
+						<button <?= $this->move_up_request->getHTML(array('id' => $service->id)) ?> class="arrow-up" title="<?= __('move_up') ?>"><i class="fa fa-arrow-up"></i></button>
+					<?php endif; ?>
+					<?php if($this->sort_buttons[$service->id][Art_Model::SORT_DOWN]): ?>
+						<button <?= $this->move_down_request->getHTML(array('id' => $service->id)) ?> class="arrow-down" title="<?= __('move_down') ?>"><i class="fa fa-arrow-down"></i></button>
+					<?php endif; ?>	
+				</td>
+				<td class="text-center"><a href="<?= $service->a_edit ?>"><i class="fa fa-pencil edit"></i></a></td>
+				<td class="text-center"><button <?= $this->delete_single_request->getHTML(array('id'=>$service->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button></td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
+	

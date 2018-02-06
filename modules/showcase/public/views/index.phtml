@@ -1,0 +1,128 @@
+<div class="row-fluid marg-top-30">
+		<div class="container text-center">
+			<h2>Kdo jsme?</h2>
+			<div class="line-small"></div>
+			<p>
+				TB DEVELOPMENT&INVESTMENT JE VYSOCE KVALIFIKOVANÁ A NA TRHU ZORIENTOVANÁ FIRMA ZABÝVAJÍCÍ SE REKLAMNÍ A DEVELOPERSKOU ČINNOSTÍ, VÝVOJEM WEBOVÝCH APLIKACÍ A AMBICIÓZNÍMI INVESTIČNÍMI ZÁMĚRY NA POLI OBCHODOVÁNÍ S NEMOVITOSTMI A BURZE.
+			</p>
+		</div>
+	</div>
+	<div class="row-fluid marg-top-50 marg-bot-50">
+		<div class="container">
+			<h2>Co děláme?</h2>
+			<div class="line-small"></div>
+			<div class="do_wrapper">
+				<div class="vc-border">
+					<div class="vc-content">
+						<div class="vc-content-cell col-md-4">
+							<img src="/files/img/marketing.svg" class="img-responsive">
+						</div>
+						<div class="vc-content-cell padd-left-20 padd-right-20">
+							<h3>REKLAMNÍ ČINNOST</h3>
+							<p>V oblasti marketingu je naše agentura na úplné špičce. K dispozici máme vlastní objemné databáze, prostřednictvím našeho projektu www.neuronmedia.cz úzce spolupracujeme s partnerskými firmami a výjimečnými nás dělají taktéž zákaznicky přitažlivé ceny. </p>
+							<a href="/sluzby/reklamni-cinnost"><i class="fa fa-angle-right"></i> Více informací</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="clearfix"></div>
+			<div class="do_wrapper">
+				<div class="vc-border">
+					<div class="vc-content">
+						<div class="vc-content-cell padd-left-20 padd-right-20">
+							<h3>DEVELOPERSKÁ ČINNOST</h3>
+							<p>Výnosná spolupráce s úspěšnými developery je ohniskem našeho podnikání. V kontaktu s dalšími investory připravujeme projekty menších rodinných domů, rekonstrukce větších bytových i komerčních nemovitostí.</p>
+							<a href="/sluzby/developerska-cinnost"><i class="fa fa-angle-right"></i> Více informací</a>
+						</div>
+						<div class="vc-content-cell col-md-4">
+							<img src="/files/img/develop.svg">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="do_wrapper">
+				<div class="vc-border">
+					<div class="vc-content">
+						<div class="vc-content-cell col-md-4">
+							<img src="/files/img/applications.svg">
+						</div>
+						<div class="vc-content-cell padd-left-20 padd-right-20">
+							<h3>VÝVOJ WEBOVÝCH APLIKACÍ</h3>
+							<p>Záměr rozvoje tohoto projektu v rámci partnerského marketingu reflektujeme prací na našich webových stránkách, z nichž plánujeme v budoucnu vyvinout interaktivní aplikace do chytrých telefonů.</p>
+							<a href="/sluzby/vyvoj-webovych-aplikaci"><i class="fa fa-angle-right"></i> Více informací</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="do_wrapper">
+				<div class="vc-border">
+					<div class="vc-content">
+						<div class="vc-content-cell padd-left-20 padd-right-20">
+							<h3>INVESTIČNÍ ZÁMĚRY</h3>
+							<p>V tomto úseku naší činnosti je hlavním cílem vyhledávání a porozumění trhu a využití tohoto know-how k rozvoji firemního kapitálu a volných prostředků. Těšíme se investicím do mnoha směrů, mezi nimiž vévodíme v oblasti investování do nemovitostí a projektů třetích stran s cílem rozvíjet zajímavé nápady a technologie. </p>
+							<a href="/sluzby/investicni-zamery"><i class="fa fa-angle-right"></i> Více informací</a>
+						</div>
+						<div class="vc-content-cell col-md-4">
+							<img src="/files/img/investment.svg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<?php
+		$quote[0]='Váš čas je omezený, tak jím neplýtvejte na to, abyste žili život někoho jiného.';
+		$author[0]='STEVE JOBS';
+		$quote[1]='Většina lidí je tak šťastná, jak šťastná se rozhodla být.';
+		$author[1]='ABRAHAM LINCOLN';
+		$num=  rand(0, 1);
+	?>
+	<div class="row-fluid img-box mt-20">
+		<div class="container zi text-center">
+			<i class="fa fa-quote-left fa-3x"></i>
+			<p class="quote">
+				<?= $quote[$num] ?><br>
+				<small><?= $author[$num] ?></small>
+			</p>
+			
+			<i class="fa fa-quote-right fa-3x"></i>
+		</div>
+	</div>
+	<div class="row-fluid marg-top-30">
+		<div class="container">
+			<h2>Co o nás řekli naši klienti</h2>
+			<div class="line-small"></div>
+			<div class="reference-box col-md-12">
+				<div class="col-md-6 reference-item">
+					<?php
+						$ref_left[0]='Jsem velmi spokojená se službami firmy, když jsem měla problém se službou jednali velmi rychle a během několika minut bylo vše vyřešeno.';
+						$author_left[0]='Martina K.';
+						$ref_left[1]='Služby klubu využívám s naprostou spokojeností něco přes rok. Zejména bych vyzvedl možnost bezpečně investovat peníze za velice výhodných a na poli působnosti ojedinělých podmínek. Doplňkové služby klubu jsou pak už jen velice příjemnou a vítanou třešničkou na dortu. Vřele doporučuji.';
+						$author_left[1]='Tomáš F.';
+						$ref_right[0]='Kvalitní produkt, vstřícnost jednatelů a bezproblémová komunikace, to je TB development. Díky za tu možnost být součástí.';
+						$author_right[0]='Iva M.';
+						$ref_right[1]='Jsem s Tébéčkem nadmíru spokojen, jednoduchá komunikace, levné služby, hodně výhod, skvělí lidé a stále nové výhody. Můžu jenom doporučit!';
+						$author_right[1]='Juraj D.';
+						$num_left=rand(0, 1);
+						$num_right=rand(0, 1);
+					?>
+					<div class="col-md-12">
+						<h3><?= $author_left[$num_left]; ?></h3>
+						<p><i>,,<?= $ref_left[$num_left]; ?>”</i></p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-md-6 reference-item">
+					
+					<div class="col-md-12">
+						<h3><?= $author_right[$num_right]; ?></h3>
+						<p><i>,,<?= $ref_right[$num_right]; ?>”</i></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

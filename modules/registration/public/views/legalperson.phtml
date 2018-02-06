@@ -1,0 +1,344 @@
+<h3><?= __('module_registration_header_company') ?></h3>
+<div class="linka-clenem"></div>
+<div class="form">
+<form name="register" <?= $this->request->getHTML() ?>>
+		<div class="col-md-11 col-xs-11">
+			<input name="company_name" type="text" class="form-control" placeholder="<?= __('company_name') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->data,'company_name') ?>">
+		</div>
+		<div class="col-md-5 col-xs-5">
+			<input name="ico" type="text" class="form-control" placeholder="<?= __('ico') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->data,'ico') ?>">
+		</div>	
+		<div class="col-md-6 col-xs-6">
+			<input name="dic" type="text" class="form-control" placeholder="<?= __('dic') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->data,'dic') ?>">
+		</div>
+		
+		<div class="text-center">
+		<h4><?= __('module_registration_firm_address') ?></h4>
+		<div class="linka-small"></div>
+	</div>
+	<div class="col-md-7 col-xs-4">
+		<input name="<?= Art_Model_Address::COMPANY_PREFIX ?>street" type="text" class="form-control" placeholder="<?= __('street') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::COMPANY_PREFIX.'street') ?>">
+	</div>
+	<div class="col-md-4 col-xs-4">
+		<input name="<?= Art_Model_Address::COMPANY_PREFIX ?>housenum" type="text" class="form-control" placeholder="<?= __('house_number') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::COMPANY_PREFIX.'housenum') ?>">
+	</div>
+	<div class="col-md-4 col-xs-10">
+		<input name="<?= Art_Model_Address::COMPANY_PREFIX ?>city" type="text" class="form-control" placeholder="<?= __('city') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::COMPANY_PREFIX.'city') ?>">
+	</div>	
+	<div class="col-md-3 col-xs-10">
+		<input name="<?= Art_Model_Address::COMPANY_PREFIX ?>zip" type="text" class="form-control" placeholder="<?= __('zip_code') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::COMPANY_PREFIX.'zip') ?>">
+	</div>
+	<div class="clearfix"></div>
+	<div class="col-md-4 col-xs-4">
+		<div class="form-group">
+		  <select class="form-control" id="country1" name="<?= Art_Model_Address::COMPANY_PREFIX ?>country">
+			<?php foreach ($this->countryList as $country) : ?>
+			  <option value="<?= $country->id ?>"<?= 
+				  Helper_Default::getSelectedOrNull($this->data,Art_Model_Address::COMPANY_PREFIX.'country',$country->id) ?>
+					  ><?= $country->name ?></option>
+			<?php endforeach; ?>
+		  </select>
+		</div>
+	</div>
+	
+	
+	<div class="clearfix"></div>
+	<div class="text-center">
+		<h4><?= __('module_registration_representant') ?></h4>
+		<div class="linka-small"></div>
+	</div>
+	<div class="col-md-2 col-xs-2">
+		<input name="degree" type="text" class="form-control" placeholder="<?= __('degree') ?>" 
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,'degree') ?>">
+	</div>
+	<div class="col-md-4 col-xs-4">
+		<input name="name" type="text" class="form-control" placeholder="<?= __('firstname') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,'name') ?>">
+	</div>
+	<div class="col-md-5 col-xs-5">
+		<input name="surname" type="text" class="form-control" placeholder="<?= __('surname') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,'surname') ?>">
+	</div>	
+	
+	<div class="col-md-12 col-xs-12">
+		<input name="person-function" type="text" class="form-control" placeholder="<?= __('person_function') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,'person-function') ?>">
+	</div>	
+	
+	<div class="col-md-3 col-xs-3"><?= __('gender') ?></div>
+	<div class="col-md-4 col-xs-4">
+		
+		<input name="gender" type="radio"value="1" checked="checked">
+		<?= __('male') ?>
+	</div>
+	<div class="col-md-4 col-xs-4">
+		
+		<input name="gender" type="radio"value="0"
+			<?= Helper_Default::getCheckedOrNull($this->data,'gender',0) ?>>
+		<?= __('female') ?>
+	</div>	
+	
+	
+	<div class="col-md-4 col-xs-4"><?= __('born_date') ?></div>
+		<div class="col-sm-2">
+			<div class="form-group">
+			  <select class="form-control" id="day" name="born_day">
+				<?php foreach ($this->days as $day) : ?>
+				  <option value="<?= $day ?>"<?= Helper_Default::getSelectedOrNull($this->data,'born_day',$day) ?>
+						  ><?= $day ?></option>
+				<?php endforeach; ?>
+			  </select>
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<div class="form-group">
+			  <select class="form-control" id="month" name="born_month">
+				<?php foreach ($this->months as $month) : ?>
+				  <option value="<?= $month ?>"<?= Helper_Default::getSelectedOrNull($this->data,'born_month',$month) ?>
+						  ><?= $month ?></option>
+				<?php endforeach; ?>
+			  </select>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+			  <select class="form-control" id="year" name="born_year">
+				<?php foreach ($this->years as $year) : ?>
+				  <option value="<?= $year ?>"<?= Helper_Default::getSelectedOrNull($this->data,'born_year',$year) ?>
+						  ><?= $year ?></option>
+				<?php endforeach; ?>
+			  </select>
+			</div>
+		</div>
+	
+	<div class="clearfix"></div>
+	
+	<div class="text-center">
+		<h4><?= __('module_registration_representant_adress') ?></h4>
+		<div class="linka-small"></div>
+	</div>
+	<div class="col-md-7 col-xs-4">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>street" type="text" class="form-control" placeholder="<?= __('street') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'street') ?>">
+	</div>
+	<div class="col-md-4 col-xs-4">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>housenum" type="text" class="form-control" placeholder="<?= __('house_number') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'housenum') ?>">
+	</div>
+	<div class="col-md-4 col-xs-10">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>city" type="text" class="form-control" placeholder="<?= __('city') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'city') ?>">
+	</div>	
+	<div class="col-md-3 col-xs-10">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>zip" type="text" class="form-control" placeholder="<?= __('zip_code') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'zip') ?>">
+	</div>
+		<div class="clearfix"></div>
+	<div class="col-md-4 col-xs-4">
+		<div class="form-group">
+		  <select class="form-control" id="country1" name="<?= Art_Model_Address::DELIVERY_PREFIX ?>country">
+			<?php foreach ($this->countryList as $country) : ?>
+			  <option value="<?= $country->id ?>"<?= 
+				  Helper_Default::getSelectedOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'country',$country->id) ?>
+					  ><?= $country->name ?></option>
+			<?php endforeach; ?>
+		  </select>
+		</div>
+	</div>
+	
+		
+		
+		
+		<div class="clearfix"></div>
+	<div class="text-center">
+		<h4><?= __('module_registration_authorized_person') ?></h4>
+		<div class="linka-small"></div>
+	</div>
+		<div class="col-xs-11">
+			<input type="checkbox" name="<?= Module_Registration::AUTH_PERSON ?>active" id="authorized_person"
+				<?=	Helper_Default::isPropertyChecked($this->data,Module_Registration::AUTH_PERSON.'active') ? 'checked="checked"' : null ?>>
+			<p class="podminky-text">
+				<label for="authorized_person"><?= __('module_registration_representant_equal_authorized') ?></label>
+			</p>
+		</div>
+		<div class="clearfix"></div>
+		<div class="authorized_person">
+	<div class="col-md-2 col-xs-2">
+		<input name="<?= Module_Registration::AUTH_PERSON ?>degree" type="text" class="form-control" placeholder="<?= __('degree') ?>" 
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Module_Registration::AUTH_PERSON.'degree') ?>">
+	</div>
+	<div class="col-md-4 col-xs-4">
+		<input name="<?= Module_Registration::AUTH_PERSON ?>name" type="text" class="form-control" placeholder="<?= __('firstname') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Module_Registration::AUTH_PERSON.'name') ?>">
+	</div>
+	<div class="col-md-5 col-xs-5">
+		<input name="<?= Module_Registration::AUTH_PERSON ?>surname" type="text" class="form-control" placeholder="<?= __('surname') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Module_Registration::AUTH_PERSON.'surname') ?>">
+	</div>	
+	
+	<div class="col-md-3 col-xs-3"><?= __('gender') ?></div>
+	<div class="col-md-4 col-xs-4">		
+		<input name="<?= Module_Registration::AUTH_PERSON ?>gender" type="radio"value="1" checked="checked">
+		<?= __('male') ?>
+	</div>
+	<div class="col-md-4 col-xs-4">		
+		<input name="<?= Module_Registration::AUTH_PERSON ?>gender" type="radio"value="0"
+			<?= Helper_Default::getCheckedOrNull($this->data,Module_Registration::AUTH_PERSON.'gender',0) ?>>
+		<?= __('female') ?>
+	</div>	
+	
+	
+	<div class="col-md-4 col-xs-4"><?= __('born_date') ?></div>
+		<div class="col-sm-2">
+			<div class="form-group">
+			  <select class="form-control" id="day" name="<?= Module_Registration::AUTH_PERSON ?>born_day">
+				<?php foreach ($this->days as $day) : ?>
+				  <option value="<?= $day ?>"<?= Helper_Default::getSelectedOrNull($this->data,Module_Registration::AUTH_PERSON.'born_day',$day) ?>
+						  ><?= $day ?></option>
+				<?php endforeach; ?>
+			  </select>
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<div class="form-group">
+			  <select class="form-control" id="month" name="<?= Module_Registration::AUTH_PERSON ?>born_month">
+				<?php foreach ($this->months as $month) : ?>
+				  <option value="<?= $month ?>"<?= Helper_Default::getSelectedOrNull($this->data,Module_Registration::AUTH_PERSON.'born_month',$month) ?>
+						  ><?= $month ?></option>
+				<?php endforeach; ?>
+			  </select>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+			  <select class="form-control" id="year" name="<?= Module_Registration::AUTH_PERSON ?>born_year">
+				<?php foreach ($this->years as $year) : ?>
+				  <option value="<?= $year ?>"<?= Helper_Default::getSelectedOrNull($this->data,Module_Registration::AUTH_PERSON.'born_year',$year) ?>
+						  ><?= $year ?></option>
+				<?php endforeach; ?>
+			  </select>
+			</div>
+		</div>
+	
+	<div class="clearfix"></div>
+	
+	<div class="text-center">
+		<h4><?= __('module_registration_authorized_person_adress') ?></h4>
+		<div class="linka-small"></div>
+	</div>
+	<div class="col-md-7 col-xs-4">
+		<input name="<?= Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX ?>street" type="text" class="form-control" placeholder="<?= __('street') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX.'street') ?>">
+	</div>
+	<div class="col-md-4 col-xs-4">
+		<input name="<?= Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX ?>housenum" type="text" class="form-control" placeholder="<?= __('house_number') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX.'housenum') ?>">
+	</div>
+	<div class="col-md-4 col-xs-10">
+		<input name="<?= Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX ?>city" type="text" class="form-control" placeholder="<?= __('city') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX.'city') ?>">
+	</div>	
+	<div class="col-md-3 col-xs-10">
+		<input name="<?= Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX ?>zip" type="text" class="form-control" placeholder="<?= __('zip_code') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX.'zip') ?>">
+	</div>
+		<div class="clearfix"></div>
+	<div class="col-md-4 col-xs-4">
+		<div class="form-group">
+		  <select class="form-control" id="country1" name="<?= Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX ?>country">
+			<?php foreach ($this->countryList as $country) : ?>
+			  <option value="<?= $country->id ?>"<?= 
+				  Helper_Default::getSelectedOrNull($this->data,Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX.'country',$country->id) ?>
+					  ><?= $country->name ?></option>
+			<?php endforeach; ?>
+		  </select>
+		</div>
+	</div>
+		<div class="clearfix"></div>
+</div>
+		
+		
+		
+		
+		
+		
+	<div class="clearfix"></div>
+	
+	
+	
+	<div class="text-center">
+		<h4><?= __('module_registration_authorized_person_contact_data') ?></h4>
+		<div class="linka-small"></div>
+	</div>
+	
+	<div class="clearfix"></div>
+	<div class="col-md-5">
+			<img src="/files/img/register.svg" class="img-responsive">
+		</div>
+		<div class="col-md-7">
+			<div class="col-md-3 col-xs-3">
+					<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>area_code" type="text" class="form-control" placeholder="<?= __('area_number') ?>" title="<?= __('module_registration_area_number_title') ?>"
+						value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'area_code') ?>">
+			</div>
+			<div class="col-md-8 col-xs-8">
+					<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>phone" type="text" class="form-control" placeholder="<?= __('phone_number') ?>"
+						value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'phone') ?>">
+			</div>
+			<div class="col-md-11 col-xs-11">
+					<input name="email" type="email" class="form-control" placeholder="<?= __('email') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,'email') ?>">
+			</div>
+			
+			<div class="text-center">
+				<h4><?= __('reg_code') ?></h4>
+				<div class="linka-small"></div>
+
+				<div class="clearfix"></div>
+				<input name="reg-code" type="text" placeholder="<?= __('reg_code') ?>" class="input-code"
+						value="<?= Helper_Default::getPropertyOrValue($this->data,'reg-code',$this->invCode) ?>">
+				<i class="fa fa-question-circle">
+					<div class="code-message"><?= __('code_message') ?></div>
+				</i>
+			
+				<div class="clearfix"></div>
+					<input type="checkbox" id="souhlas" name="charter" onclick="document.getElementById('submit-button').disabled=!this.checked">
+					<p class="podminky-text">
+						<label for="souhlas">Souhlasím se <a href="<?= $this->stanovy ?>" target="_blank" title="<?= __('club_statutes') ?>">stanovami klubu</a>.</label>
+					</p>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	
+	<div style="clear: both"></div>
+	
+	<div class="col-md-11 col-xs-11 text-center">
+		<input type="submit" class="btn" value="<?= __('module_registration_information_check') ?>" disabled="disabled" id="submit-button">
+	</div>
+</form>
+</div>
+
+<script>
+	$('.fa-question-circle').hover(function(){
+		$('.code-message').show();
+	});
+	$('.fa-question-circle').mouseleave(function(){
+		$('.code-message').hide();
+	});
+
+	$("#contact-active").click(function(){
+		$("#address_different").toggleClass('address_open');
+	});
+	if($("#authorized_person").prop('checked')){
+		$(".authorized_person").toggleClass('authorized_close');
+	}
+	$("#authorized_person").click(function(){
+		$(".authorized_person").toggleClass('authorized_close');
+	});
+</script>

@@ -1,0 +1,279 @@
+
+<h2><?= __('module_users_company_detail') ?></h2>
+<div class="background-white">
+	<div class="col-xs-6">
+		<div class="col-xs-12"><h3><?= __('module_users_company_info') ?></h3></div>
+		<div class="col-xs-4">ID</div>
+		<div class="col-xs-8">
+			<?= $this->user->user_number ?>
+		</div>
+			
+		<div class="col-xs-4"><?= __('company_name') ?></div>
+		<div class="col-xs-8">
+			<?= $this->company->company_name ?>
+		</div>
+	
+		<div class="col-xs-4"><?= __('ico') ?></div>	
+		<div class="col-xs-8">
+			<?= $this->company->ico ?>
+		</div>
+	
+		<div class="col-xs-4"><?= __('dic') ?></div>
+		<div class="col-xs-8">
+			<?= $this->company->dic ?>
+		</div>	
+		
+		<div class="col-xs-12"><h3><?= __('module_users_auth_person_info') ?></h3></div>
+		<div class="col-xs-4"><?= __('degree') ?></div>
+		<div class="col-xs-8">
+			<?= $this->data->degreeSA ?>
+		</div>
+	
+		<div class="col-xs-4"><?= __('firstname') ?></div>	
+		<div class="col-xs-8">
+			<?= $this->data->name ?>
+		</div>
+	
+		<div class="col-xs-4"><?= __('surname') ?></div>
+		<div class="col-xs-8">
+			<?= $this->data->surname ?>
+		</div>	
+		
+		<div class="col-xs-4"><?= __('gender') ?></div>
+		<div class="col-xs-8">
+			<?= $this->gender ?>
+		</div>	
+		<div class="col-xs-4"><?= __('born_date') ?></div>		
+		<div class="col-xs-8">
+			<?= $this->data->born ?>
+		</div>
+		<?php if ( !$this->isRepresentantDiff ) : ?>
+			<div class="col-xs-4"><?= __('person_function') ?></div>		
+			<div class="col-xs-8">
+				<?= $this->representantFunction ?>
+			</div>
+		<?php endif; ?>
+		
+		<div class="clearfix"></div>
+		<div class="col-xs-4"><?= __('phone_number') ?></div>
+		<div class="col-xs-8">
+			<?= $this->telephone ?>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-xs-4"><?= __('email') ?></div>
+		<div class="col-xs-8">
+			<?= $this->data->email ?>
+		</div>
+	
+		<div class="col-xs-4"><?= __('salutation') ?></div>
+		<form <?= $this->request->getHTML() ?>>
+			<div class="col-xs-6">
+			<input name="salutation" type="text" class="form-control" placeholder="<?= __('salutation') ?>" 
+				   value="<?= $this->data->salutation ?>">
+			</div>
+			<div class="col-xs-2">
+			<input type="submit" class="btn" value="<?= __('save') ?>">
+			</div>
+		</form>
+	
+		<?php if ( $this->isRepresentantDiff ) : ?>
+			<div class="col-xs-12"><h3><?= __('module_users_representant_person_info') ?></h3></div>
+			<div class="col-xs-4"><?= __('degree') ?></div>
+			<div class="col-xs-8">
+				<?= $this->representantData->degreeSA ?>
+			</div>
+
+			<div class="col-xs-4"><?= __('firstname') ?></div>	
+			<div class="col-xs-8">
+				<?= $this->representantData->name ?>
+			</div>
+
+			<div class="col-xs-4"><?= __('surname') ?></div>
+			<div class="col-xs-8">
+				<?= $this->representantData->surname ?>
+			</div>	
+
+			<div class="col-xs-4"><?= __('gender') ?></div>
+			<div class="col-xs-8">
+				<?= $this->representantGender ?>
+			</div>	
+			<div class="col-xs-4"><?= __('born_date') ?></div>		
+			<div class="col-xs-8">
+				<?= $this->representantData->born ?>
+			</div>
+			<div class="col-xs-4"><?= __('person_function') ?></div>		
+			<div class="col-xs-8">
+				<?= $this->representantFunction ?>
+			</div>
+						
+			<div class="col-md-12 col-xs-12"><h3><?= __('module_users_representant_person_address') ?></h3></div>	
+			<div class="col-xs-4"><?= __('country') ?></div>
+			<div class="col-xs-8">
+				<?= $this->representantState ?>
+			</div>
+			<div class="col-xs-4"><?= __('city') ?></div>
+			<div class="col-xs-8">
+				<?= $this->representantAddress->city ?>
+			</div>	
+			<div class="col-xs-4"><?= __('street') ?></div>
+			<div class="col-xs-8">
+				<?= $this->representantAddress->street ?>
+			</div>		
+			<div class="col-xs-4"><?= __('house_number') ?></div>
+			<div class="col-xs-8">
+				<?= $this->representantAddress->housenum ?>
+			</div>	
+			<div class="col-xs-4"><?= __('zip_code') ?></div>
+			<div class="col-xs-8">
+				<?= $this->representantAddress->zip ?>
+			</div>
+		<?php endif; ?>
+		
+		<div style="clear:both;"></div>
+		<div class="col-md-12 col-xs-12"><h3><?= __('services') ?></h3></div>
+	
+	<?php foreach ( $this->services as $service ): /* @var $service Service */ ?>
+	
+		<div class="col-md-11 col-xs-11"><a href="<?= $service->a_service ?>"><?= $service->name ?></a> <i class="fa fa-<?= $service->icon ?>"></i> <?= $service->active_to ?></div>
+		
+		<?php if ( Helper_TBDev::MEMBERSHIP_TYPE !== $service->type && $service->isActivated && $this->user->active) : ?>
+			<div class="col-md-1 col-xs-1"><button <?= $this->remove_service->getHTML(array('id' => $this->user->id.'-'.$service->id)) ?>><i class="fa fa-times" style="color:red;"></i></button></div>
+		<?php endif; ?>
+			
+	<?php endforeach; ?>
+
+	<?php if ( !empty($this->payments) ) : ?>
+			<div class="col-md-12 col-xs-12"><h3><?= __('module_users_payments') ?></h3></div>
+
+			<?php foreach ( $this->payments as $payment ): /* @var $payment Service_Payment */ ?>
+
+				<div class="col-md-4 col-xs-4"><?= $payment->service->name ?></div>
+				<div class="col-md-4 col-xs-4"><?= $payment->paid_by_fullname ?></div>
+				<div class="col-md-4 col-xs-4"><?= $payment->value ?></div>
+
+			<?php endforeach; ?>
+	<?php endif; ?>		
+			
+	<?php if ( NULL !== $this->manager ) : ?>	
+		<div class="col-md-12 col-xs-12"><h3><?= __('module_users_manager') ?></h3></div>
+	
+		<div class="col-md-12 col-xs-12"><?= $this->manager->fullname ?></div>
+	<?php endif; ?>	
+	
+	<div class="col-md-12 col-xs-12"><h3><?= __('module_users_invited_by') ?></h3></div>
+
+	<div class="col-md-12 col-xs-12"><?= $this->invitedBy ?></div>
+
+	<?php if ( !empty($this->invitedUsers) ) : ?>
+		<div class="col-md-12 col-xs-12"><h3><?= __('module_users_invited_users') ?></h3></div>
+	
+		<?php foreach ( $this->invitedUsers as $value ): /* @var $value User */ ?>
+			<div class="col-md-12 col-xs-12"><?= $value->fullname ?></div>
+		<?php endforeach; ?>
+	<?php endif; ?>
+		
+	<div style="clear: both"></div>
+	
+	</div>
+	
+	<div class="col-xs-6">
+	<div class="col-md-12 col-xs-12"><h3><?= __('module_users_company_address') ?></h3></div>	
+	<div class="col-xs-4"><?= __('country') ?></div>
+	<div class="col-xs-8">
+		<?= $this->companyState ?>
+	</div>
+	<div class="col-xs-4"><?= __('city') ?></div>
+	<div class="col-xs-8">
+		<?= $this->company->city ?>
+	</div>	
+	<div class="col-xs-4"><?= __('street') ?></div>
+	<div class="col-xs-8">
+		<?= $this->company->street ?>
+	</div>		
+	<div class="col-xs-4"><?= __('house_number') ?></div>
+	<div class="col-xs-8">
+		<?= $this->company->housenum ?>
+	</div>	
+	<div class="col-xs-4"><?= __('zip_code') ?></div>
+	<div class="col-xs-8">
+		<?= $this->company->zip ?>
+	</div>
+	<div style="clear: both"></div>		
+		
+<?php if ( !empty($this->deliveryAddress) ) : ?>	
+	<div class="col-md-12 col-xs-12"><h3><?= __('module_users_auth_person_address') ?></h3></div>
+	<div class="col-xs-4"><?= __('country') ?></div>	
+	<div class="col-xs-8">
+		<?= $this->deliveryState ?>
+	</div>	
+	<div class="col-xs-4"><?= __('city') ?></div>
+	<div class="col-xs-8">
+		<?= Helper_Default::getPropertyOrValue($this->deliveryAddress,'city','-') ?>
+	</div>	
+	<div class="clearfix"></div>
+	<div class="col-xs-4"><?= __('street') ?></div>
+	<div class="col-xs-8">
+		<?= Helper_Default::getPropertyOrValue($this->deliveryAddress,'street','-') ?>
+	</div>	
+	<div class="clearfix"></div>
+	<div class="col-xs-4"><?= __('house_number') ?></div>
+	<div class="col-xs-8">
+		<?= Helper_Default::getPropertyOrValue($this->deliveryAddress,'housenum','-') ?>
+	</div>	
+	<div class="clearfix"></div>
+	<div class="col-xs-4"><?= __('zip_code') ?></div>
+	<div class="col-xs-8">
+		<?= Helper_Default::getPropertyOrValue($this->deliveryAddress,'zip','-') ?>
+	</div>
+	
+	<div style="clear: both"></div>	
+<?php endif; ?>		
+	
+<?php if ( !empty($this->lastLogins) ) : ?>	
+	<div class="col-md-12 col-xs-12"><h3><?= __('module_users_last_logins') ?></h3></div>	
+	<?php foreach ($this->lastLogins as $value) /* @var $value  */ : ?>
+	 	<div class="col-md-12 col-xs-12">
+			<?= $value ?>
+		</div>
+	<?php endforeach; ?>
+<?php endif; ?>	
+	
+	</div>
+	
+	<div class="col-md-6 col-xs-6 text-center mt-20 mb-20">
+		<a href="/<?= Art_Router::getLayer() ?>/users/editcompany/<?= $this->data->id_user ?>"
+		   title="<?= __('module_users_edit_company') ?>" class="btn btn-blue w-150p"><?= __('module_users_edit_company') ?></a>
+	</div>
+	
+	<?php if ( $this->isAuthenticated ) : ?>	
+	<div class="col-md-6 col-xs-6 text-center mt-20 mb-20">
+		<a href="/<?= Art_Router::getLayer() ?>/service/add/<?= $this->data->id_user ?>"
+		   title="<?= __('module_users_add_service') ?>" class="btn btn-blue w-150p"><?= __('module_users_add_service') ?></a>
+	</div>
+	<?php endif; ?>	
+	
+	<?php if ( $this->isAuthenticated ) : ?>
+	<div class="col-md-6 col-xs-6 text-center mt-20 mb-20">
+		<a href="/<?= Art_Router::getLayer() ?>/service/activate/<?= $this->data->id_user ?>"
+		   title="<?= __('module_users_activate_service') ?>" class="btn w-150p"><?= __('module_users_activate_service') ?></a>
+	</div>
+	<?php endif; ?>	
+	
+	<div class="col-md-6 col-xs-6 text-center mt-20 mb-20">
+		<a href="/<?= Art_Router::getLayer() ?>/users/changemanager/<?= $this->data->id_user ?>"
+		   title="<?= __('module_users_change_manager') ?>" class="btn btn-orange w-150p"><?= __('module_users_change_manager') ?></a>
+	</div>
+	
+	<?php if ( $this->user->active ) : ?>
+	<div class="col-md-6 col-xs-6 text-center mt-20 mb-20">
+		<button class="btn btn-yellow w-150p" <?= $this->unmember_user_request->getHTML(array('id'=>$this->data->id_user)) ?>
+			title="<?= __('module_users_unmember_user') ?>"><?= __('module_users_unmember_user') ?></button>
+	</div>
+	<?php endif; ?>
+		
+	<div class="col-md-6 col-xs-6 text-center mt-20">
+		<button class="btn btn-red w-150p" <?= $this->delete_user_request->getHTML(array('id'=>$this->data->id_user)) ?>
+				title="<?= __('module_users_delete_company') ?>"><?= __('module_users_delete_company') ?></button>
+	</div>
+		<div class="clearfix"></div>
+</div>

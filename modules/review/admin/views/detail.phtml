@@ -1,0 +1,18 @@
+<?php /* @var $this->review Review */ ?>
+
+<h2><?= __('module_review_detail') ?></h2>
+
+	<div class="col-md-2 col-xs-2"><?= __('fullname') ?></div>	
+	<div class="col-md-10 col-xs-10">
+		<?= $this->review->getUser()->fullname ?>
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('review') ?></div>
+	<div class="col-md-10 col-xs-10">
+		<?= $this->review->note ?>
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('module_review_reply_body') ?></div>
+	<div class="col-md-10 col-xs-10">
+		<?= $this->review->reply ?>
+	</div>

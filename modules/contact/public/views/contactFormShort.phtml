@@ -1,0 +1,19 @@
+<form <?= $this->request->getHTML() ?>>
+	<div class="short-form col-md-8 contact_form">
+		<div class="col-md-6 padd-right-10">
+			<input type="text" name="email" placeholder="<?= __('email') ?>">
+		</div>
+		<div class="col-md-6 padd-left-10">
+			<input type="text" name="fullname" placeholder="<?= 'Jméno a příjmení' ?>">
+		</div>
+		<div class="col-sm-12">
+			<textarea name="message" rows="7" placeholder="<?= __('message') ?>"></textarea>
+		</div>
+		<div class="col-md-8">
+
+		</div>
+		<div class="col-sm-4">
+			<input type="submit" class="send_button" value="<?= __('submit') ?>">
+		</div>
+	</div>
+</form>

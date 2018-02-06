@@ -1,0 +1,26 @@
+<h2><?= __('module_users_request') ?></h2>
+	<?= Art_Filter::cutString($this->userData->fullname,60) ?><br>
+	<?= Art_Filter::cutString($this->userData->email,100) ?><br>
+	<?= Art_Filter::cutString($this->userPhone,14) ?><br>
+	<?= Art_Filter::cutString($this->service->name,25) ?><br>
+
+<h2><?= __('module_users_create_mail') ?></h2>
+<form  <?= $this->sendRequest->getHTML() ?>>
+	<div class="background-white pa-15">
+		<div class="col-md-2 col-xs-2 lh-35 text-right"><?= __('mail-subject') ?></div>	
+		<div class="col-md-6 col-xs-6">
+			<input name="subject" type="text" class="form-control" placeholder="<?= __('mail-subject') ?>">
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-md-2 col-xs-2 mt-15 text-right"><?= __('mail-body') ?></div>
+		<div class="col-md-10 col-xs-10 mt-15">
+			<textarea name="body" class="form-control" rows="8" placeholder="<?= __('mail-body') ?>"></textarea>
+		</div>	
+		<div class="col-xs-9"></div>
+		<div class="col-md-3 col-xs-3 text-center mt-15">
+			<input type="hidden" value="<?= $this->email ?>">
+			<input type="submit" class="btn" value="<?= __('module_users_send') ?>">
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</form>

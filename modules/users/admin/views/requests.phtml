@@ -1,0 +1,52 @@
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_users_requests_header') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+
+	</div>
+</div>
+	<div class="clear"></div>
+	
+	<table class="table-default">
+		<tr>
+			<th><?= __('firstname') ?></th>
+			<th><?= __('surname') ?></th>
+			<th><?= __('email') ?></th>
+			<th><?= __('phone_number') ?></th>
+			<th><?= __('service') ?></th>
+			<th><?= __('price') ?></th>
+			<th><?= __('time_interval') ?></th>
+			<th><?= __('from') ?></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<?php 
+			foreach( $this->userRequests as $value ) : /* @var $value User_X_Request */
+		?>
+			<tr>
+				<td><?= Art_Filter::cutString($value->userData->name,60) ?></td>
+				<td><a href="<?= $value->a_detail ?>"><?= Art_Filter::cutString($value->userData->surname,40) ?></a></td>
+				<td><?= Art_Filter::cutString($value->userData->email,100) ?></td>
+				<td><?= Art_Filter::cutString($value->userPhone,14) ?></td>
+				<td><?= Art_Filter::cutString($value->service->name,25) ?></td>
+				<td><?= Art_Filter::cutString($value->servicePrice->price,25) ?></td>
+				<td><?= Art_Filter::cutString($value->servicePrice->time_interval,25) ?></td>
+				<td><?= nice_date($value->created_date) ?></td>
+				<td class="text-center">
+					<?php if ($value->accepted) : ?>
+						<i title="<?= __('completed') ?>" class="fa fa-check"></i>		
+					<?php else : ?>
+						<a href="<?= '/'.Art_Router::getLayer().'/service/activaterequest/'.$value->id_user.'-'.$value->id_service ?>" title="<?= __('pass') ?>"><i class="fa fa-plus"></i></a>
+					<?php endif; ?>
+				</td>
+				<td class="text-center">
+					<?php if (!$value->accepted) : ?>
+						<a href="<?= $value->a_sendEmail ?>" title="<?= __('module_users_requests_send_email') ?>"><i class="fa fa-key"></i></a>
+					<?php endif; ?>
+				</td>
+				<td class="text-center"><button <?= $this->requestDelete->getHTML(array('id' => $value->id)) ?>><i class="fa fa-trash-o"></i></button></td>
+			</tr>
+		<?php endforeach; ?>
+	</table>

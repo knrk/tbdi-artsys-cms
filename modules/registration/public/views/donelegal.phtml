@@ -1,0 +1,13 @@
+<div class="col-sm-12 confirm-box">
+<?php if ( !empty($this->email)) : ?>
+
+<div class="col-md-12 col-xs-12 text-center">	
+	<h2><?= __('module_registration_done_sended_email') ?></h2>
+	<h3><?= $this->email ?></h3>
+</div>
+
+<div class="col-md-12 col-xs-12 text-center">
+	<p><?= __('module_registration_done_company_message') ?></p>
+</div>
+<?php endif; ?>
+</div>

@@ -1,0 +1,33 @@
+	<h2><?= __('module_service_conditions_header') ?></h2>
+
+	<?php 
+		foreach( $this->scannedDirectory as $value ) : /* @var $value */
+	?>
+			<button <?= $this->delete_single_request->getHTML(array('id'=>$value)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
+			<a href="<?= $this->directory.$value ?>" target="_blank"><?= Art_Filter::cutString($value,100) ?></a><br>
+	<?php endforeach; ?>
+	
+	<h3><?= __('module_service_conditions_new_header') ?></h3>		
+			
+	<form action="/<?= Art_Router::getLayer() ?>/service/conditionscomplete" method="POST" enctype="multipart/form-data">
+		<input type="file" name="conditions" id="conditions" />
+		
+		<input type="text" name="filename" placeholder="<?= __('filename') ?>">
+		
+		<input type="submit" class="btn" id="button-save-upload" value="<?= __('save') ?>">
+	</form>
+	
+	<script>
+		var files = document.getElementById("conditions");
+		$("#button-save-upload").mouseenter(function(){
+			if(files.value.length===0){
+				$("#button-save-upload").attr('disabled','disabled');
+
+			}
+		});
+		$("#conditions").mouseenter(function(){
+			$("#button-save-upload").removeAttr('disabled','disabled');
+
+			
+		});
+	</script>

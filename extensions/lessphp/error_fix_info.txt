@@ -1,0 +1,52 @@
+LESS bug
+
+Compiler is interpreting calc(10% - 5px) as calc(5%), calc(10% + 5px) as calc(15%)
+Regardless the unit (vw, vv, %, px), the result units are as the left side units
+Example:
+    calc(100% - 50px) => calc(50%)
+    calc(100px - 10%) => calc(90px)
+    calc(100% + 50px) => calc(150%)
+    calc(100px + 10%) => calc(110px)
+
+This fix forces LESS to ignore evaluating the values, 
+so the output is the same as input
+
+
+
+
+---------------------------------------------------------------------------
+
+
+Add to lib/Less/Parser.php line 111
+
+/**
+ *  Function that will replace all " - " with " ~'-' ", " + " with " ~'+' "
+ *  Fixing LESS bug when calc(10% - 5px) was compiled to calc(5%)
+ * 
+ *  @static
+ *  @access protected
+ *  @param string $content
+ *  @return void
+ */
+protected static function _calcFix( $content )
+{
+    return preg_replace('/(calc)\s*\(([^\-\+~\)]+)(\-|\+)([^\)]+)\)/', "$1($2 ~'$3' $4)", $content);
+}
+
+
+
+
+-----------------------------------------------------------------------------
+
+Add to lib/Less/Parser.php line 318 - at the beginning of the function parse()
+
+$str = static::_dashFix($str);
+
+
+
+
+-----------------------------------------------------------------------------
+
+Add to lib/Less/Parser.php line 608 - after $this->input = file_get_contents( $file_path );
+
+$this->input = static::_dashFix($this->input);

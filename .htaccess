@@ -1,0 +1,80 @@
+# PHP ini settings
+php_flag display_startup_errors on
+php_flag display_errors on
+
+# - - - - - - - - - - - - - ALLOWED FILES - - - -
+# Disallow reading of these files
+<FilesMatch "\.(?:cfg|ini|log|php|phtml|txt|sql)$">
+    Order allow,deny
+    Deny from all
+    Allow from 127.0.0.1
+</FilesMatch>
+
+# Allow index.php from other servers
+<Files index.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files adminer.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Disable indexing of folders if index.php or index.html not exists
+Options -Indexes
+
+# - - - - - - - - - - - - - MOD_REWRITE - - - -
+RewriteEngine On
+RewriteBase /   
+
+# Unsets trailing slash directive from directories
+DirectorySlash Off
+
+# /foo/bar/    =>      /foo/bar
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# index.php =>         /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php
+RewriteRule ^index\.php$ / [L,R=301]
+
+# www.foo.com =>        foo.com
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+
+# /foo  =>             ?param1=foo
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)$ ?param1=$1 [L,NC,QSA]
+
+# /foo/bar  =>         ?param1=foo&param2=bar
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/([^/]+)$ ?param1=$1&param2=$2 [L,NC,QSA]
+
+# /foo/bar/12  =>      ?param1=foo&param2=bar&param3=12
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)$ ?param1=$1&param2=$2&param3=$3 [L,NC,QSA]
+
+# /foo/bar/12/boom  =>  ?param1=foo&param2=bar&param3=12&param4=boom
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)$ ?param1=$1&param2=$2&param3=$3&param4=$4 [L,NC,QSA]
+
+# /foo/bar/12/color/red  =>  ?param1=foo&param2=bar&param3=12&param4=color&param5=red
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)$ ?param1=$1&param2=$2&param3=$3&param4=$4&param5=$5 [L,NC,QSA]
+
+# - - - - - - - - - - - - - ERROR DOCS - - - -
+ErrorDocument 404 /error404.html
+ErrorDocument 403 /error403.html
+
+# - - - - - - - - - - - - - CACHING - - - -
+ExpiresActive on
+ExpiresByType image/jpg "access 1 month"
+ExpiresByType image/jpeg "access 1 month"
+ExpiresByType image/gif "access 1 month"
+ExpiresByType image/png "access 1 month"
+ExpiresByType text/css "access 1 week"
+ExpiresByType text/html "access 1 month"
+ExpiresByType text/x-javascript "access 1 week"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 month"

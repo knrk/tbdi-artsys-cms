@@ -1,0 +1,77 @@
+	<?php if ( !empty($this->userInvitedByFullname) ) : ?>
+		<font size="4px"><?= __('module_users_inviteted_by') . '</font>: <strong>' . $this->userInvitedByFullname ?></strong>
+	<?php endif; ?>  
+		<div class="mt-20 mb-20"></div><div class="clearfix"></div>
+		
+		
+		<div class="clearfix"></div>
+	<?php if ( !empty($this->joinedUsers) ) : ?>	
+		<div class="col-xs-12">
+	
+		<table class="table-default colored-rows">
+			<tr>
+				<th colspan="2"><?= __('module_users_invite_code_users_joined') . ': ' ?></th>
+			</tr>
+		<?php 
+			foreach ($this->joinedUsers as $joinedUser) :
+		?>
+			<tr><td><?= $joinedUser->fullname . ' </td><td class="text-right"> ' . $joinedUser->invCode ?></td></tr>
+		<?php 
+			endforeach;
+		?>
+			
+		</table>
+		</div>
+	<?php endif; ?>	
+		
+		<div class="col-xs-12 mt-20">
+			<h4>Zde máte možnost, vytvořit si vlastní unikátní pozvánkový kód.</h4>
+		</div>
+		<div class="col-xs-12">
+			<form <?= $this->add_invite_code_request->getHTML() ?>>
+			<div class="col-md-6 col-xs-6 ml-0">
+				<input name="note" type="text" class="form-control" placeholder="<?= __('module_users_inv_code_note') ?>">
+			</div>
+			<div class="col-md-4 col-xs-4 text-center">
+				<input type="submit" class="btn btn-info mb-20" value="<?= __('module_users_generate_new_code') ?>">
+			</div>
+			</form>
+		</div>	
+		<div class="clearfix"></div>
+		<div class="col-xs-12 mt-20">
+			<strong>K jakému účelu kód slouží?</strong>
+			<p class="text-justify">
+				Díky Vašemu pozvánkovému kódu se mohou do klubu zaregistrovat Vaši přátelé či rodina. Jelikož náš klub není úplně veřejným místem, rádi bychom si udrželi přehled o tom, odkud se berou noví členové a proč se k nám registrují. Není to tak, že bychom někomu chtěli bránit stát ses členem, ale nechceme, aby se k nám registrovali lidé například jen tak pro zábavu.
+			</p>
+			<p class="text-justify">
+				Pozvánkový kód můžete poskytnout přímo jako webový odkaz pro registraci, anebo jako samostatný kód, který se při registraci vyplní do příslušného rámečku.
+			</p>
+		</div>
+		
+	<?php if ( !empty($this->codes) ) : ?>	
+		<div class="col-xs-12 mt-20">
+			<h4 style="padding-bottom: 0px;">Vytvořené pozvánkové kódy:</h4>
+			<table class="table-default colored-rows">
+				<tr>
+					<th>Poznámka</th>
+					<th>Kód</th>
+					<th>Odkaz</th>
+				</tr>
+
+			<?php 
+				foreach ($this->codes as $value) :
+			?>
+				<tr>
+					<td><?= $value->note ?></td><td><?= substr($value->URL, 38,13); ?></td><td><?= $value->URL ?></td> 
+				</tr>
+			<?php 
+				endforeach;
+			?>
+
+			</table>
+		</div>
+	<?php endif; ?>
+
+	
+		
+		<div class="clearfix"></div>

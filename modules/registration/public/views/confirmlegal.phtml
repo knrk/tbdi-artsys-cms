@@ -1,0 +1,117 @@
+<div class="col-sm-12 confirm-box">
+	
+<h2><?= __('module_registration_confirm_header') ?></h2>
+<div class="linka-clenem"></div>
+
+<?php if ( !empty($this->data) ) : ?>
+	
+	<div class="clearfix"></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('company_name') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data['company_name'] ?></div>
+	<div class="clearfix"></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('ico') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data['ico'] ?></div>
+	<div class="clearfix"></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('dic') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data['dic'] ?></div>
+	
+	<div class="clearfix"></div>
+	<h3 style="margin-bottom: 15px">Sídlo firmy</h3>
+	<div class="linka-small"></div>
+	<div class="clearfix"></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('country') ?></div>	
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->companyAddressCountry ?></div>	
+	<div class="col-md-6 col-xs-6 text-right"><?= __('city') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Art_Model_Address::COMPANY_PREFIX.'city'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('street') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Art_Model_Address::COMPANY_PREFIX.'street'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('house_number') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Art_Model_Address::COMPANY_PREFIX.'housenum'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('zip_code') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Art_Model_Address::COMPANY_PREFIX.'zip'] ?></div>
+			
+	<h3 style="margin-bottom: 15px">Zástupce firmy</h3>
+	<div class="linka-small"></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('degree') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data['degree'] ?></div>
+	<div class="clearfix"></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('firstname') ?></div>	
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data['name'] ?></div>	
+	<div class="col-md-6 col-xs-6 text-right"><?= __('surname') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data['surname'] ?></div>	
+	<div class="col-md-6 col-xs-6 text-right"><?= __('gender') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->gender ?></div>		
+	<div class="col-md-6 col-xs-6 text-right"><?= __('born_date') ?></div>		
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->born_date ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('person_function') ?></div>		
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data['person-function'] ?></div>
+	<?php if ( !$this->isAuthPerson ) : ?>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('phone_number') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Art_Model_Address::DELIVERY_PREFIX.'area_code'] ?>
+											 <?= $this->data[Art_Model_Address::DELIVERY_PREFIX.'phone'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('email') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data['email'] ?></div>
+	<?php endif; ?>
+
+	<div class="col-md-6 col-xs-6 text-right"><?= __('country') ?></div>	
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->deliveryAddressCountry ?></div>	
+	<div class="col-md-6 col-xs-6 text-right"><?= __('city') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Art_Model_Address::DELIVERY_PREFIX.'city'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('street') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Art_Model_Address::DELIVERY_PREFIX.'street'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('house_number') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Art_Model_Address::DELIVERY_PREFIX.'housenum'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('zip_code') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Art_Model_Address::DELIVERY_PREFIX.'zip'] ?></div>
+	
+	<?php if ( $this->isAuthPerson ) : ?>
+	<h3 style="margin-bottom: 15px">Oprávněna osoba</h3>
+	<div class="linka-small"></div>	
+		<div class="col-md-6 col-xs-6 text-right"><?= __('degree') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Module_Registration::AUTH_PERSON.'degree'] ?></div>
+	<div class="clearfix"></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('firstname') ?></div>	
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Module_Registration::AUTH_PERSON.'name'] ?></div>	
+	<div class="col-md-6 col-xs-6 text-right"><?= __('surname') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Module_Registration::AUTH_PERSON.'surname'] ?></div>	
+	<div class="col-md-6 col-xs-6 text-right"><?= __('gender') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->authPersonGender ?></div>		
+	<div class="col-md-6 col-xs-6 text-right"><?= __('born_date') ?></div>		
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->authPersonBorn_date ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('phone_number') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Art_Model_Address::DELIVERY_PREFIX.'area_code'] ?>
+											 <?= $this->data[Art_Model_Address::DELIVERY_PREFIX.'phone'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('email') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data['email'] ?></div>
+	
+		<div class="col-md-6 col-xs-6 text-right"><?= __('country') ?></div>	
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->authPersonDeliveryAddressCountry ?></div>	
+	<div class="col-md-6 col-xs-6 text-right"><?= __('city') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX.'city'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('street') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX.'street'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('house_number') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX.'housenum'] ?></div>
+	<div class="col-md-6 col-xs-6 text-right"><?= __('zip_code') ?></div>
+	<div class="col-md-6 col-xs-6 text-left"><?= $this->data[Module_Registration::AUTH_PERSON.Art_Model_Address::DELIVERY_PREFIX.'zip'] ?></div>
+	<?php endif; ?>
+	
+	<div style="clear: both"></div>
+	
+	<div class="col-xs-6">	
+		<form name="register" <?= $this->requestBack->getHTML() ?>>	
+			<div class="col-md-12 col-xs-12 text-center">
+				<input type="submit" class="btn back-edit" value="<?= __('module_registration_back_to_edit') ?>">
+			</div>
+		</form>
+	</div>
+	<div class="col-xs-6">
+		<form name="register" <?= $this->requestRegister->getHTML() ?>>	
+			<div class="col-md-12 col-xs-12 text-center">
+				<input type="submit" class="btn" value="<?= __('module_registration_register_company') ?>">
+			</div>
+		</form>
+	</div>
+	
+<?php endif; ?>
+</div>

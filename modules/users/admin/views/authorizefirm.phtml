@@ -1,0 +1,47 @@
+<form <?= $this->request->getHTML() ?>>
+
+	<div class="col-xs-4"><?= __('salutation') ?></div>
+	<div class="col-xs-6">
+		<input name="salutation" type="text" class="form-control" placeholder="<?= __('salutation') ?>">
+	</div>
+	
+	<table class="table-default">
+			<tr>
+				<th class="td-xsmall"><input type="checkbox" onclick="toggleCheck(this,'.module_users_authorizefirm .cb-service-list')"></th>
+				<th><?= __('visible') ?></th>
+				<th><?= __('service') ?></th>
+			</tr>
+			<?php 
+				foreach( $this->groupServices as $value ) : /* @var $value Art_Model_User_Group */ 
+			?>
+				<tr>
+					<td class="td-xsmall text-left"><input type="checkbox" name="service_<?= $value->id ?>" class="cb-service-list"
+					<?= (in_array($value->service->id,$this->servicesToBe)) ? ' checked="checked"' : null ?>></td>
+					<td></td>
+					<td><?= Art_Filter::cutString($value->name,60) ?></td>
+				</tr>
+			<?php endforeach; ?>
+	</table>
+		
+<?php if ( !empty($this->groupsToBe) ) : ?>	
+	<table class="table-default">
+			<tr>
+				<th class="td-xsmall"><input type="checkbox" onclick="toggleCheck(this,'.module_users_authorizefirm .cb-group-list')"></th>
+				<th><?= __('visible') ?></th>
+				<th><?= __('group') ?></th>
+			</tr>
+			<?php 
+				foreach( $this->groups as $value ) : /* @var $value Art_Model_User_Group */ 
+			?>
+				<tr>
+					<td class="td-xsmall text-left"><input type="checkbox" name="group_<?= $value->id ?>" class="cb-group-list"
+					<?= (in_array($value->id,$this->groupsToBe)) ? ' checked="checked"' : null ?>></td>
+					<td></td>
+					<td><?= Art_Filter::cutString($value->name,60) ?></td>
+				</tr>
+			<?php endforeach; ?>
+	</table>
+<?php endif; ?>	
+	
+	<input type="submit" class="btn" value="<?= __('save') ?>">
+</form>

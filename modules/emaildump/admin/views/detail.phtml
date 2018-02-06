@@ -1,0 +1,36 @@
+<h2><?= __('module_emaildump_detail') ?></h2>
+
+<div class="background-white">
+	<div class="col-xs-12 lh-35">
+		<?= __('module_emaildump_to') ?>: <b><?= $this->emaildump->to_address[0][0] ?></b>
+	</div>
+	<div class="clearfix"></div>
+	<?php if ( !empty($this->emaildump->bcc_addresses) ) : $countBcc = count($this->emaildump->bcc_addresses); $i = 0; ?>
+	<div class="col-xs-12 lh-35">
+		<?= __('module_emaildump_bcc') ?>: 
+		<?php foreach ($this->emaildump->bcc_addresses as $value) : ?>
+			<?= $value[0] ?>
+			<?= ($countBcc != ++$i) ? ', ' : null ?>
+		<?php endforeach; ?>
+	</div>
+	<div class="clearfix"></div>
+	<?php endif; ?>
+	<div class="col-xs-12 lh-35">
+		<?= __('module_emaildump_reply_to') ?>: <?= reset($this->emaildump->reply_to_addresses)[0] ?>
+	</div>
+	<div class="clearfix"></div>
+	<div class="col-xs-6 lh-35">
+		<?= __('module_emaildump_subject') ?>: <?= $this->emaildump->subject ?>
+	</div>
+	<div class="col-xs-6 lh-35">
+		<?= __('module_emaildump_date') ?>: <?= nice_datetime($this->emaildump->message_date) ?>
+	</div>
+	<div class="clearfix"></div>
+	<div class="col-xs-12 lh-35">
+		<strong><?= __('module_emaildump_body') ?>:</strong> 
+	</div>
+	<div class="col-xs-12 mt-15 mb-15 pl-40">
+		<?= $this->emaildump->body ?>
+	</div>
+	<div class="clearfix"></div>
+</div>

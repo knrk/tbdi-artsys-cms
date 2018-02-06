@@ -1,0 +1,39 @@
+<h3><?= __('module_filter_header') ?></h3>
+
+<form method="post">
+	<div class="background-white pa-15">
+		<div class="col-md-2 col-xs-2 lh-35 text-right"><?= __('firstname') ?></div>	
+		<div class="col-md-3 col-xs-3">
+			<input name="name" type="text" class="form-control" placeholder="<?= __('firstname') ?>"
+				  value="<?= Helper_Default::getPropertyOrNull($this->data,'name') ?>">
+		</div>
+
+		<div class="col-md-2 col-xs-2 lh-35 text-right"><?= __('surname') ?></div>
+		<div class="col-md-4 col-xs-4">
+			<input name="surname" type="text" class="form-control" placeholder="<?= __('surname') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->data,'surname') ?>">
+		</div>
+		<div class="clearfix"></div>
+	
+	
+	<div class="col-md-2 col-xs-2 mt-15 text-right lh-35"><?= __('service') ?></div>	
+	<div class="col-md-3 col-xs-4 mt-15">
+		<div class="form-group">
+			<select class="form-control" id="service" name="service-type">
+				<option value="0"></option>
+				<?php foreach ($this->services as $service) : /* @var $service Service */ ?>
+				  <option value="<?= $service->id ?>"<?= 
+						Helper_Default::getSelectedOrNull($this->data,'service-type',$service->id) ?>
+						  ><?= $service->name ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
+	</div> 
+
+		<div class="col-xs-3"></div>
+	<div class="col-md-3 col-xs-3 text-right mt-15">
+		<input type="submit" class="btn" value="<?= __('module_filter_do_it') ?>">
+	</div>
+		<div class="clearfix"></div>
+	</div>
+</form>

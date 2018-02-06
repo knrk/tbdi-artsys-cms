@@ -1,0 +1,60 @@
+<h2><?= __('module_investment_new_deposit') ?></h2>
+<div class="background-white pa-15">
+	<form <?= $this->request->getHTML() ?>>
+		<div class="col-xs-12">
+			<div class="col-xs-2"><?= __('module_payments_payer') ?></div>		
+			<div class="col-xs-4">
+				<div class="form-group">
+				  <select class="form-control" name="id_user">
+					<?php foreach ($this->users as $user) : ?>
+					  <option value="<?= $user->id ?>"><?= $user->fullname ?></option>
+					<?php endforeach; ?>
+				  </select>
+				</div>
+			</div>	
+			<div class="col-xs-2"><?= __('module_investment_deposit_value') ?></div>
+			<div class="col-xs-4">
+					<input type="text" name="value" placeholder="<?= __('module_investment_deposit_value') ?>">
+			</div>
+			
+		</div>	
+		<div class="col-xs-12">	
+			
+			<div class="col-xs-2">Datum vkladu</div>
+			<div class="col-xs-4">
+				<input name="date" type="text" class="form-control" placeholder="0000-00-00"
+					   value="<?= $this->currentDate ?>">
+			</div>
+
+			<div class="col-xs-2">Datum expirace</div>
+			<div class="col-xs-4">
+				<input name="expiry_date" type="text" class="form-control" placeholder="0000-00-00"
+					   value="<?= $this->afterYearDate ?>">
+			</div>
+
+		</div>
+		<div class="col-xs-12 mt-15">
+
+			<div class="col-xs-2">Poznámka</div>
+			<div class="col-xs-4">
+				<input name="note" type="text" class="form-control">
+			</div>
+
+			<div class="col-xs-3"></div>
+			<div class="text-center col-xs-3">
+				<input type="submit" value="<?= __('save') ?>" class="btn">
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</form>
+</div>
+
+<script>
+$('.invested,.interest').focusout(
+			function(){
+				var interest = $(this).val();
+				var invested = $(this).parent().parent().find('.invested-td').find('.invested').val();
+				$(this).parent().parent().find('.gain-td').find('.gain').val(interest*invested/100);
+			}
+			);
+	</script>

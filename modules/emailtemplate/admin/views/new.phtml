@@ -1,0 +1,63 @@
+<h2><?= __('module_emailtemplate_add_emailtemplate') ?></h2>
+
+<form <?= $this->request->getHTML() ?>>
+	<div class="background-white pa-15" style="padding-top: 0px">
+		<div class="clearfix"></div>
+<table class="table-default emailtemplates">
+		<tr>
+			<td class="xsmall-td text-right">
+				<?= __('module_emailtemplate_name') ?>
+			</td>
+			<td>
+				<input type="text" name="name" placeholder="<?= __('module_emailtemplate_name') ?>">
+			</td>
+			<td class="xsmall-td text-right">
+				<?= __('module_emailtemplate_subject') ?>
+			</td>
+			<td colspan="2">
+				<input type="text" name="subject" placeholder="<?= __('module_emailtemplate_subject') ?>">
+			</td>
+		</tr>
+		<tr>
+			<td class="xsmall-td text-right">
+				<?= __('module_emailtemplate_from_name') ?>
+			</td>
+			<td>
+				<input type="text" name="from_name" placeholder="<?= __('module_emailtemplate_from_name') ?>" value="<?= $this->from_name ?>">
+			</td>
+			<td class="xsmall-td text-right">
+				<?= __('module_emailtemplate_from_email') ?>
+			</td>
+			<td colspan="2">
+				<input type="text" name="from_email" placeholder="<?= __('module_emailtemplate_from_email') ?>" value="<?= $this->from_mail ?>">
+			</td>
+		</tr>
+		<tr>
+			<td class="xsmall-td text-right">
+				<?= __('module_emailtemplate_reply_to_name') ?>
+			</td>
+			<td>
+				<input type="text" name="reply_to_name" placeholder="<?= __('module_emailtemplate_reply_to_name') ?>" value="<?= $this->reply_to_name ?>">
+			</td>
+			<td class="xsmall-td text-right">
+				<?= __('module_emailtemplate_reply_to_email') ?>
+			</td>
+			<td colspan="2">
+				<input type="text" name="reply_to_email" placeholder="<?= __('module_emailtemplate_reply_to_email') ?>" value="<?= $this->reply_to_mail ?>">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<textarea class="ckeditor" rows="8" name="body" placeholder="<?= __('module_emailtemplate_body') ?>"></textarea>
+			</td>
+		</tr>
+</table>
+<div class="col-xs-9">
+		</div>
+		
+	<div class="text-center col-xs-3 pr-10 mt-10">
+	<input type="submit" value="<?= __('save') ?>" class="btn">
+</div>
+		<div class="clearfix"></div>
+</form>
+</div>

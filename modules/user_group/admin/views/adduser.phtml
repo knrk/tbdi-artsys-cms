@@ -1,0 +1,12 @@
+<h2><?= __('module_user_group_add_user') . ' - ' . $this->userGroup->name ?></h2>
+
+<div><?= Art_Widget::render('filter') ?></div>
+
+<form <?= $this->request->getHTML() ?>>	
+	
+	<?= Art_Widget::render('users','embeddgroup',array('id_group'=>Art_Router::getId())) ?>
+	
+	<div class="col-md-12 col-xs-12 text-center">
+		<input type="submit" class="btn" value="<?= __('save') ?>">
+	</div>
+</form>

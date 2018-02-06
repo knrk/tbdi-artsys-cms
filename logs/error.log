@@ -1,0 +1,564 @@
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php:883) Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+[06-Feb-2018 14:37:32 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:37:32 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:37:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getRights() on null in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php:118
+Stack trace:
+#0 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/log.php(194): Art_User::getRights()
+#1 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php(1084): Art_Log::log('Call to a membe...', 'logs/error.log', '[error critical...', true)
+#2 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(420): Art_Main::error('Call to a membe...', 4, true)
+#3 [internal function]: error_handler(256, 'Call to a membe...', '/Users/lukas.ko...', 454, Array)
+#4 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(454): trigger_error('Call to a membe...', 256)
+#5 [internal function]: exception_handler(Object(Error))
+#6 {main}
+  thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 118
+[06-Feb-2018 14:37:46 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:37:46 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:37:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getRights() on null in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php:118
+Stack trace:
+#0 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/log.php(194): Art_User::getRights()
+#1 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php(1084): Art_Log::log('Call to a membe...', 'logs/error.log', '[error critical...', true)
+#2 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(420): Art_Main::error('Call to a membe...', 4, true)
+#3 [internal function]: error_handler(256, 'Call to a membe...', '/Users/lukas.ko...', 454, Array)
+#4 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(454): trigger_error('Call to a membe...', 256)
+#5 [internal function]: exception_handler(Object(Error))
+#6 {main}
+  thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 118
+[06-Feb-2018 14:38:01 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:38:01 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:38:01 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getRights() on null in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php:118
+Stack trace:
+#0 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/log.php(194): Art_User::getRights()
+#1 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php(1084): Art_Log::log('Call to a membe...', 'logs/error.log', '[error critical...', true)
+#2 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(420): Art_Main::error('Call to a membe...', 4, true)
+#3 [internal function]: error_handler(256, 'Call to a membe...', '/Users/lukas.ko...', 454, Array)
+#4 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(454): trigger_error('Call to a membe...', 256)
+#5 [internal function]: exception_handler(Object(Error))
+#6 {main}
+  thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 118
+[06-Feb-2018 14:45:35 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:35 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getRights() on null in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php:118
+Stack trace:
+#0 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/log.php(194): Art_User::getRights()
+#1 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php(1084): Art_Log::log('Call to a membe...', 'logs/error.log', '[error critical...', true)
+#2 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(420): Art_Main::error('Call to a membe...', 4, true)
+#3 [internal function]: error_handler(256, 'Call to a membe...', '/Users/lukas.ko...', 454, Array)
+#4 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(454): trigger_error('Call to a membe...', 256)
+#5 [internal function]: exception_handler(Object(Error))
+#6 {main}
+  thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 118
+[06-Feb-2018 14:45:37 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:37 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getRights() on null in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php:118
+Stack trace:
+#0 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/log.php(194): Art_User::getRights()
+#1 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php(1084): Art_Log::log('Call to a membe...', 'logs/error.log', '[error critical...', true)
+#2 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(420): Art_Main::error('Call to a membe...', 4, true)
+#3 [internal function]: error_handler(256, 'Call to a membe...', '/Users/lukas.ko...', 454, Array)
+#4 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(454): trigger_error('Call to a membe...', 256)
+#5 [internal function]: exception_handler(Object(Error))
+#6 {main}
+  thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 118
+[06-Feb-2018 14:45:39 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:39 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:39 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getRights() on null in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php:118
+Stack trace:
+#0 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/log.php(194): Art_User::getRights()
+#1 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php(1084): Art_Log::log('Call to a membe...', 'logs/error.log', '[error critical...', true)
+#2 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(420): Art_Main::error('Call to a membe...', 4, true)
+#3 [internal function]: error_handler(256, 'Call to a membe...', '/Users/lukas.ko...', 454, Array)
+#4 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(454): trigger_error('Call to a membe...', 256)
+#5 [internal function]: exception_handler(Object(Error))
+#6 {main}
+  thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 118
+[06-Feb-2018 14:45:41 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:41 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getRights() on null in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php:118
+Stack trace:
+#0 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/log.php(194): Art_User::getRights()
+#1 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php(1084): Art_Log::log('Call to a membe...', 'logs/error.log', '[error critical...', true)
+#2 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(420): Art_Main::error('Call to a membe...', 4, true)
+#3 [internal function]: error_handler(256, 'Call to a membe...', '/Users/lukas.ko...', 454, Array)
+#4 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(454): trigger_error('Call to a membe...', 256)
+#5 [internal function]: exception_handler(Object(Error))
+#6 {main}
+  thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 118
+[06-Feb-2018 14:45:42 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:42 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:42 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getRights() on null in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php:118
+Stack trace:
+#0 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/log.php(194): Art_User::getRights()
+#1 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php(1084): Art_Log::log('Call to a membe...', 'logs/error.log', '[error critical...', true)
+#2 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(420): Art_Main::error('Call to a membe...', 4, true)
+#3 [internal function]: error_handler(256, 'Call to a membe...', '/Users/lukas.ko...', 454, Array)
+#4 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(454): trigger_error('Call to a membe...', 256)
+#5 [internal function]: exception_handler(Object(Error))
+#6 {main}
+  thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 118
+[06-Feb-2018 14:45:43 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:43 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:43 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getRights() on null in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php:118
+Stack trace:
+#0 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/log.php(194): Art_User::getRights()
+#1 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php(1084): Art_Log::log('Call to a membe...', 'logs/error.log', '[error critical...', true)
+#2 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(420): Art_Main::error('Call to a membe...', 4, true)
+#3 [internal function]: error_handler(256, 'Call to a membe...', '/Users/lukas.ko...', 454, Array)
+#4 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(454): trigger_error('Call to a membe...', 256)
+#5 [internal function]: exception_handler(Object(Error))
+#6 {main}
+  thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 118
+[06-Feb-2018 14:45:44 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:44 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 108
+[06-Feb-2018 14:45:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getRights() on null in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php:118
+Stack trace:
+#0 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/log.php(194): Art_User::getRights()
+#1 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/main.php(1084): Art_Log::log('Call to a membe...', 'logs/error.log', '[error critical...', true)
+#2 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(420): Art_Main::error('Call to a membe...', 4, true)
+#3 [internal function]: error_handler(256, 'Call to a membe...', '/Users/lukas.ko...', 454, Array)
+#4 /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php(454): trigger_error('Call to a membe...', 256)
+#5 [internal function]: exception_handler(Object(Error))
+#6 {main}
+  thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 118
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"tariffs"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"tariffs"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"support"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"support"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"review"} 
+---LOG DEBUG: {"layer":"cabinet","section":"review"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users","action":"invcodes"} 
+---LOG DEBUG: {"layer":"admin","section":"users","action":"invcodes"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"newmonth"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"newmonth"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"newinvestment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"newinvestment"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"newinvestment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"newinvestment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"investment","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"new"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"newmonth"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"newmonth"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"newinvestment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"newinvestment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"publishinvestment","id":"48"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"publishinvestment","id":"48"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"editinvestment","id":"48"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"editinvestment","id":"48"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"11-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"10-2017"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"newmonth"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"newmonth"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"newinvestment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"newinvestment"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 4 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 5 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 6 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined index:  at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Trying to get property of non-object at line 7 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Undefined variable: key at line 8 in modules/investment/admin/views/detail.phtml Route dump: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"detail","id":"12-2017"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"publishinvestment","id":"49"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"publishinvestment","id":"49"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users","action":"invcodes"} 
+---LOG DEBUG: {"layer":"admin","section":"users","action":"invcodes"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"investment","action":"editinvestment","id":"49"} 
+---LOG DEBUG: {"layer":"admin","section":"investment","action":"editinvestment","id":"49"}

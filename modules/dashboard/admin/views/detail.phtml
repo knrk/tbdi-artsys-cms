@@ -1,0 +1,18 @@
+
+<h2><?= __('module_dashboard_detail') ?></h2>
+<div class="background-white pa-15">
+	<div class="col-md-2 col-xs-2 np"><?= __('module_dashboard_content_header') ?></div>	
+	<div class="col-md-4 col-xs-4">
+		<?= $this->post->header ?>
+	</div>
+	<div class="col-md-6 col-xs-6 text-right">
+		<?= __('module_dashboard_content_date') ?>: <?= nice_date($this->post->created_date) ?>
+	</div>
+	
+	<div class="col-md-2 col-xs-2 np mt-15"><?= __('module_dashboard_content_body') ?></div>
+	<div class="col-md-10 col-xs-10 mt-15">
+		<?= $this->post->body ?>
+	</div>
+		
+	<div class="clearfix"></div>
+</div>

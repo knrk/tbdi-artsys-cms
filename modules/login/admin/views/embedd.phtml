@@ -1,0 +1,26 @@
+<?php if(Art_User::getRights()==0): ?>
+<form name="login-embedd" <?= $this->login_request->getHTML() ?>>
+	<div class="col-md-12 col-xs-12">
+		<input name="email" type="text" class="form-control email" placeholder="<?= __('email') ?>">
+	</div>
+	<div class="col-md-12 col-xs-12" style="padding-top:5px;">
+		<input name="pass" type="password" class="form-control pass" placeholder="<?= __('password') ?>">
+	</div>
+	<div class="col-md-12 col-xs-12 text-center" style="padding-top:10px;">
+		<input type="submit" class="btn btn-info" value="Přihlásit se"><br>
+		<?php /*<a href="<?= Art_Server::getRelativePath()?>/registrace">Registrovat se</a> */?>
+	</div>
+</form>
+<?php else: ?>
+	<?php if( $this->size == 'small' ): ?>
+		<button <?= $this->logout_request->getHTML() ?> style="background: none;border:none;">
+			Odhlásit<i class="fa fa-sign-out marg-left-5"></i>
+		</button>
+	<?php else: ?>
+		<form name="login-embedd-logout" <?= $this->logout_request->getHTML() ?>>
+			<div class="col-md-12 col-xs-12 text-center  logout-box">
+				<input type="submit" class="btn btn-info logout-button" value="<?= __('log_out') ?>">
+			</div>
+		</form>
+	<?php endif; ?>
+<?php endif; ?>

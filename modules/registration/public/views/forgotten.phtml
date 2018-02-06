@@ -1,0 +1,18 @@
+<div class="col-sm-12 confirm-box">
+<h2><?= __('module_registration_forgotten_header') ?></h2>
+<div class="linka-clenem"></div>
+<div class="clearfix mt-50"></div>
+<form <?= $this->request->getHTML() ?>>
+	<div class="col-xs-1"></div>
+	<div class="col-md-10 col-xs-10">
+		<p><?= __('module_registration_forgotten_email') ?></p>
+		<input name="email" type="email" class="form-control" placeholder="<?= __('email') ?>">
+		
+	</div>
+	
+	<div class="col-md-12 col-xs-12 text-center">
+		<input type="submit" class="btn" value="<?= __('module_registration_forgotten_send') ?>">
+	</div>
+	<div class="mb-30"><a href="/" class="a-green"><?= __('module_registration_back_to_login') ?></a></div>
+</form>
+</div>

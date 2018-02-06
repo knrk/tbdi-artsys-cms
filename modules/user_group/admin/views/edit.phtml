@@ -1,0 +1,32 @@
+<h2><?= __('module_user_group_edit_group') ?></h2>
+
+<form <?= $this->request->getHTML() ?>>
+	<div class="col-md-2 col-xs-2"><?= __('module_user_group_name') ?></div>
+	<div class="col-md-10 col-xs-10">
+		<input name="name" type="text" class="form-control" placeholder="<?= __('module_user_group_name') ?>"
+			   value="<?= $this->userGroup->name ?>">
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('module_user_group_description') ?></div>	
+	<div class="col-md-10 col-xs-10">
+		<input name="description" type="text" class="form-control" placeholder="<?= __('module_user_group_description') ?>"
+			   value="<?= $this->userGroup->description ?>">
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('module_user_group_rights') ?></div>
+	<div class="col-md-10 col-xs-10">
+		<div class="form-group">
+		  <select class="form-control" name="id_rights">
+			<?php foreach ($this->rights as $right) : /* @var $right Art_Model_Rights */ ?>
+			  <option value="<?= $right->id ?>"
+					<?= Helper_Default::getSelectedOrNull($this->userGroup,'id_rights',$right->id) ?>
+						><?= $right->name.' ('.$right->value.')' ?></option>
+			<?php endforeach; ?>
+		  </select>
+		</div>
+	</div>
+
+	<div class="col-md-12 col-xs-12 text-center">
+		<input type="submit" class="btn" value="<?= __('save') ?>">
+	</div>
+</form>

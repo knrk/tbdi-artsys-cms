@@ -1,0 +1,12 @@
+<h2><?= __('module_note_edit_header') ?></h2>
+
+<form <?= $this->request->getHTML() ?>>
+	
+	<div class="col-md-2 col-xs-2"><?= __('module_note_body') ?></div>
+	<div class="col-md-10 col-xs-10">
+		<input name="body" type="text" class="form-control" placeholder="<?= __('module_note_body') ?>"
+			   value="<?= $this->note->body ?>">
+	</div>	
+	
+	<input type="submit" value="<?= __('save') ?>">
+</form>

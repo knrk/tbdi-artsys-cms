@@ -1,0 +1,27 @@
+
+<h2><?= __('module_review_reply_header') ?></h2>
+
+<?= __('module_review_detail') ?>
+
+<div style="clear: both"></div>
+
+	<div class="col-md-2 col-xs-2"><?= __('fullname') ?></div>	
+	<div class="col-md-10 col-xs-10">
+		<?= $this->fullname ?>
+	</div>
+	
+	<div class="col-md-2 col-xs-2"><?= __('review') ?></div>
+	<div class="col-md-10 col-xs-10">
+		<?= Helper_Default::getPropertyOrNull($this->review,'note') ?>
+	</div>
+
+<form <?= $this->request->getHTML() ?>>
+	<div class="col-md-2 col-xs-2"><?= __('module_review_reply_body') ?></div>
+	<div class="col-md-10 col-xs-10">
+		<textarea name="reply" class="form-control" placeholder="<?= __('module_review_reply_body') ?>"><?=
+				$this->review->reply
+			?></textarea>
+	</div>
+	
+	<input type="submit" class="btn" value="<?= __('module_review_reply_do') ?>">
+</form>

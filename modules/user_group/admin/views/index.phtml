@@ -1,0 +1,51 @@
+
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_user_group_header') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+		<div class="action-new">
+			<a href="/<?= Art_Router::getLayer() ?>/user_group/new">
+			<i class="fa fa-plus fa-2x"></i>
+			<?= __('add') ?></a>
+		</div>
+	</div>
+</div>
+<div class="metro_box">
+	<?php foreach ( $this->userGroups as $userGroup ) : /* @var $userGroup Art_Model_User_Group */ ?>
+
+	<div class="col-xs-3 metro_group">
+		<a href="<?= $userGroup->a_detail ?>">
+		<h4><?= Art_Filter::cutString($userGroup->name,60) ?></h4>
+		<p><?= Art_Filter::cutString($userGroup->description,150) ?></p>
+		<p><?= Art_Filter::cutString($this->rights[$userGroup->id_rights]->name,20).' ('.Art_Filter::cutString($this->rights[$userGroup->id_rights]->value,20).')' ?></p>
+		</a>
+		<a href="<?= $userGroup->a_edit ?>"><i class="fa fa-pencil edit"></i></a>
+		<button <?= $this->delete_single_request->getHTML(array('id'=>$userGroup->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
+		<div class="clearfix"></div>
+	</div>
+	<?php endforeach; ?>
+</div>
+
+<script>
+	$(document).ready(
+			function(){
+				var count = $('.metro_group').length;
+				console.log(count);
+				
+			for (var i = 0; i <= count; i++) {
+				var value = Math.random() * 0x7F | 0;
+				value = (value<16) ? value+16 : value;
+				var grayscale = (value << 16) | (value << 8) | value;
+				var color = '#' + grayscale.toString(16);
+				$('.metro_box .metro_group').eq(i).css("background-color",color);
+				
+				    var a = Math.random() * 100 + 54;
+					var b = Math.floor(a / 8) * 8;
+					var c = Math.floor(Math.random() * 15);
+					var d = b+c;
+				//$('.metro_box .metro_group').eq(i).css("background-color","rgb(" + b + "," + b + "," + d + ")");
+			}
+			}); 
+</script>
+

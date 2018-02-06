@@ -1,0 +1,20 @@
+<div class="col-sm-12 confirm-box">
+<h2><?= __('module_registration_change_password_header') ?></h2>
+<div class="linka-clenem"></div>
+<p><?= __('module_registration_new_password_header') ?></p>
+<form <?= $this->request->getHTML() ?>>	
+	<div class="col-xs-1"></div>
+	<div class="col-md-10 col-xs-10">
+		<input name="passwd_new1" type="password" class="form-control" placeholder="<?= __('module_users_change_password_new') ?>">
+	</div>
+	<div class="clearfix"></div>
+	<div class="col-xs-1"></div>
+	<div class="col-md-10 col-xs-10">
+		<input name="passwd_new2" type="password" class="form-control" placeholder="<?= __('module_users_change_password_new_again') ?>">
+	</div>
+	
+	<div class="col-md-12 col-xs-12 text-center">
+		<input type="submit" class="btn btn-info" value="<?= __('module_users_change_password_send') ?>">
+	</div>
+</form>
+</div>

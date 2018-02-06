@@ -1,0 +1,29 @@
+<?php
+	foreach ($this->dashboard as $post) :	/* @var $post Dashboard */
+		$href = '<a href="'.$this->link.'#dashboard-'.$post->id.'">';	
+?>
+
+<div class="dashboard-embed-post<?= ($post->important == 1) ? ' post-important': null ?>">
+	<div class="col-xs-7 text-left">			
+		<?php if ($post->important == 1) : ?>
+			<span style="color: red;"><i class="fa fa-exclamation"></i></span>
+		<?php endif; ?>
+
+		<?php if ( NULL !== $post->header ) : ?>	
+			<h4 style="margin: 0px; padding: 0px;"><?= $href ?><?= $post->header ?></a></h4>	
+		<?php endif; ?>
+	</div>
+	
+	<div class="col-xs-5 text-right">
+		<?= nice_date($post->created_date) ?>
+	</div><div class="clearfix"></div>
+	<?php /**
+	<div class="col-xs-12">
+		<?= $post->body ?>
+	</div>  **/ ?>
+	<div class="clearfix"></div>
+</div>
+
+<?php		
+	endforeach;
+?>

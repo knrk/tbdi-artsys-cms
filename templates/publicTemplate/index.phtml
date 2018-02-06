@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8">
+	<?= Art_Template::renderMeta() ?>
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="icon" href="/favicon.png">
+	<?= Art_Template::loadExtensions(array( 'bootstrap' )) ?>
+	<?= Art_Template::renderCSS(array( 'system.less', 'style.less' )); ?>
+	<?= Art_Template::renderJS(); ?>
+</head>
+<body>
+	<nav id="navigation" class="nav-out noselect">
+		<div class="container">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-10 logo">
+				<img src="/files/img/tblogo.svg" class="img-responsive">
+			</div>
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-2 menu">
+				<ul class="nav noselect">
+					<li><a href="/" <?= Art_Router::getAction() == 'index' ? ' class="menu_active"' : '' ?>>Home</a></li>
+					<li><a href="<?= Art_Router::getRoute('showcase-mainpage-section')->createURL(array('$1'=>'onas')) ?>" <?= Art_Router::getAction() == 'onas' ? ' class="menu_active"' : '' ?>>O nás</a></li>
+					<li><div id="sluzby" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle <?= Art_Router::getAction() == 'sluzby' ? ' active' : '' ?>">Služby <i class="fa fa-angle-down"></i></div>
+					
+						<ul class="dropdown-menu nav-ul-inner" aria-labelledby="Sluzby">
+								<li><a href="<?= Art_Router::getRoute('showcase-mainpage-section-id')->createURL(array('$1'=>'sluzby','$2'=>'reklamni-cinnost')) ?>">Reklamní činnost</a></li>
+								<li><a href="<?= Art_Router::getRoute('showcase-mainpage-section-id')->createURL(array('$1'=>'sluzby','$2'=>'developerska-cinnost')) ?>">Developerská činnost</a></li>
+								<li><a href="<?= Art_Router::getRoute('showcase-mainpage-section-id')->createURL(array('$1'=>'sluzby','$2'=>'vyvoj-webovych-aplikaci')) ?>">Vývoj webových aplikaci</a></li>
+								<li><a href="<?= Art_Router::getRoute('showcase-mainpage-section-id')->createURL(array('$1'=>'sluzby','$2'=>'investicni-zamery')) ?>">Investiční záměry</a></li>
+							</ul>	
+						
+					</li>
+					<li><a href="<?= Art_Router::getRoute('showcase-mainpage-section')->createURL(array('$1'=>'kontakt')) ?>" <?= Art_Router::getAction() == 'kontakt' ? ' class="menu_active"' : '' ?>>Kontakt</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 xs-none club_login">
+				<a href="http://club.tbdevelopment.cz">Spolek přátel při TBDI <i class="fa fa-sign-in"></i></a>
+			</div>
+			<div class="menu_push_button">
+				<i class="fa fa-align-justify fa-2x"></i>
+			</div>
+		</div>
+	</nav>
+	<div class="header">
+		<svg width="100%" height="100px" viewBox="0 0 800 100" preserveAspectRatio="none">
+			<polygon fill=white stroke-width=0 points="0,100 0,0 400,100 800,0 800,100" />
+		</svg>
+	</div>
+	
+	<?= Art_Template::renderContent() ?>
+	
+	<footer>
+		<div class="col-sm-6 text-left social-icons"></div>
+		<div class="col-sm-6 text-right">Copyright &copy; <?= date("Y") ?> TB development & investment</div>
+	</footer>
+	
+</body>
+	<script>
+		function menuOpener( toggle_element_selector, menu_element_selector, timeout ){
+			var menu_timeout;
+			
+			if( typeof timeout === "undefined" )
+			{
+				timeout = 170;
+			}
+			
+			var $dt = $(toggle_element_selector);
+			var $dtp = $dt.parent();
+			var $dm = $(menu_element_selector);		
+
+			$dm.hover(function () {
+				clearTimeout(menu_timeout);
+					$dtp.addClass('open');
+					});
+			$dt.hover(function () {
+				$dtp.addClass('open');
+				clearTimeout(menu_timeout);
+				});
+			$dt.on( "mouseleave", function () {
+					menu_timeout = setTimeout(function(){
+						$dtp.removeClass('open');
+					},timeout);
+
+
+				} );
+			$dm.on( "mouseleave", function () {
+					menu_timeout = setTimeout(function(){
+						$dtp.removeClass('open');
+					},timeout);
+				} );				
+		};
+
+		menuOpener('.dropdown-toggle','.dropdown-menu',170);
+</script>
+</html>

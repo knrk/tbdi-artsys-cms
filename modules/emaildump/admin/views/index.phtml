@@ -1,0 +1,27 @@
+<form>
+<div class="row">
+	<div class="col-sm-6 action-name">
+		<h2><?= __('module_emaildump') ?></h2>
+	</div>
+	<div class="col-sm-6 action-submenu">
+	</div>
+</div>
+<div class="clear"></div>
+<table class="table-default">
+	<tr>
+		<th class="text-center"><?= __('module_emaildump_to') ?></th>
+		<th class="text-center"><?= __('module_emaildump_bcc') ?></th>
+		<th class="text-center"><?= __('module_emaildump_subject') ?></th>
+		<th class="text-center"><?= __('module_emaildump_date') ?></th>
+	</tr>
+	<?php foreach($this->emaildumps AS $emaildumps): ?>
+	<?php $href = '/'.Art_Router::getLayer().'/emaildump/detail/'.$emaildumps->id; ?>
+		<tr>
+			<td class="text-left"><a href="<?= $href ?>"><?= Art_Filter::cutString(substr($emaildumps->to_address,3,-6),30) ?></a></td>
+			<td class="text-left"><a href="<?= $href ?>"><?= $emaildumps->countBcc ?></a></td>
+			<td class="text-left"><a href="<?= $href ?>"><?= Art_Filter::cutString($emaildumps->subject,150) ?></a></td>
+			<td class="text-left"><?= nice_datetime($emaildumps->message_date) ?></td>
+		</tr>
+	<?php endforeach; ?>
+</table>
+</form>

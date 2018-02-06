@@ -1,0 +1,47 @@
+<h3><?= __('module_users_generate_new_code') ?></h3>
+<div class="background-white pa-15" style="padding-bottom: 0px;">
+	<form <?= $this->add_invite_code_request->getHTML() ?>>
+		<div class="col-md-2 col-xs-2 lh-35"><?= __('module_users_inv_code_user') ?></div>	
+		<div class="col-md-3 col-xs-3">
+			<div class="form-group">
+			  <select class="form-control" name="user-id">
+				<?php foreach ($this->usersData as $userData) : ?>
+				  <option value="<?= $userData->id_user ?>"><?= $userData->fullname ?></option>
+				<?php endforeach; ?>
+			  </select>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-4">
+			<input name="note" type="text" class="form-control" placeholder="<?= __('module_users_inv_code_note') ?>">
+		</div>
+		<div class="col-xs-3 text-center">
+			<input type="submit" class="btn" value="<?= __('module_users_inv_code_generate_new') ?>">
+		</div>
+		<div class="clearfix"></div>
+	</form>
+</div>
+
+<h3><?= __('module_users_inv_code_current_codes') ?></h3>
+<table class="table-default">
+	<tr>
+		<th><?= __('module_users_code_owner') ?></th>
+		<th><?= __('code') ?></th>
+		<th><?= __('module_users_created_by') ?></th>
+		<th><?= __('note') ?></th>
+	</tr>
+	
+	<?php 
+		foreach ($this->codes as $value) :
+	?>
+		<tr>
+			<td><?= $value->fullname ?></td>
+			<td><?= $value->URL ?></td>
+			<td><?= $value->gen_by_fullname ?></td>
+			<td><?= $value->note ?></td>
+		</tr>
+	<?php 
+		endforeach;
+	?>
+	
+</table>
+

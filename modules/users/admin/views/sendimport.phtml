@@ -1,0 +1,46 @@
+<form  <?= $this->send_request->getHTML() ?>>	
+<?php if ( !empty($this->usersData) ) : ?>	
+	<table class="table-default">
+		<tr>
+			<th class="td-xsmall text-left"><input type="checkbox" onclick="toggleCheck(this,'.module_users_sendImport .cb-user-list')"></th>
+			<th><?= __('firstname') ?></th>
+			<th><?= __('surname') ?></th>
+			<th><?= __('email') ?></th>
+			<th><?= __('phone_number') ?></th>
+			<th><?= __('module_users_membership_from') ?></th>
+			<th><?= __('module_users_membership_to') ?></th>
+			<th></th>
+			<th></th>
+		</tr>
+		
+		
+		
+		<?php 
+			foreach( $this->usersData as $data ) : /* @var $data Art_Model_User_Data */ 
+		?>
+			<tr>
+				<td class="text-left td-xsmall"><input type="checkbox" name="user_<?= $data->p_userId?>" class="cb-user-list"></td>
+				<td><?= Art_Filter::cutString($data->name,60) ?></td>
+				<td><a href="<?= $data->a_detail ?>"><?= Art_Filter::cutString($data->surname,40) ?></a></td>
+				<td><?= Art_Filter::cutString($data->email,100) ?></td>
+				<td><?= Art_Filter::cutString($data->p_phone,100) ?></td>
+				<td><?= $data->membership_from ?></td>
+				<td><?= $data->membership_to_colored ?></td>
+				<td>
+					<?php foreach( $data->services as $service ) : /* @var $service Service */ ?>
+						<a href="<?= $data->a_service.$service->id ?>" style="display:inline"><i class="fa fa-<?= $service->fa_icon ?> pr-10"
+						<?= $serviceColor = in_array($service->type, $data->actServices) ? ' style="color: green"' : null ?>></i></a>
+					<?php endforeach; ?>
+				</td>
+				<td class="text-center"><a href="<?= $data->a_edit ?>"><i class="fa fa-pencil edit"></i></a></td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="col-xs-9"></div>
+	<div class="col-md-3 col-xs-3 text-center mt-15">
+		<input type="submit" class="btn" value="<?= __('module_users_send') ?>">
+	</div>
+	<div class="clearfix"></div>
+</form>

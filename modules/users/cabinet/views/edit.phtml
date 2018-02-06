@@ -1,0 +1,324 @@
+<h2><?= __('module_users_edit_header') ?></h2>
+
+<?php if ( !$this->isEditedCompany ) : ?>
+
+<form <?= $this->request->getHTML() ?>>	
+	<h3 class="text-center"><?= __('delivery_address') ?></h3>
+	<div class="line-2colors"></div>
+	<table class="table75 horizontal-center background-white">
+		<tr>
+			<td colspan="2" class="pr-10">
+				<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>street" type="text" class="form-control" placeholder="<?= __('street') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'street') ?>">
+			</td>
+			
+			<td class="pl-10">
+						<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>housenum" type="text" class="form-control" placeholder="<?= __('house_number') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'housenum') ?>">
+			</td>
+		</tr>
+		<tr>
+			<td class="pr-10">
+				<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>city" type="text" class="form-control" placeholder="<?= __('city') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'city') ?>">
+			</td>
+			<td class="pl-10 pr-10">
+				<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>zip" type="text" class="form-control" placeholder="<?= __('zip_code') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'zip') ?>">
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="pr-10">
+				<select class="form-control" id="country1" name="<?= Art_Model_Address::DELIVERY_PREFIX ?>country">
+				  <?php foreach ($this->countryList as $country) : ?>
+					<option value="<?= $country->id ?>"<?= 
+						Helper_Default::getSelectedOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'id_country',$country->id) ?>
+							><?= $country->name ?></option>
+				  <?php endforeach; ?>
+				</select>
+			</td>
+			<td>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+	<div class="clearfix"></div>
+	<div class="row-fluid">
+		<div class="col-xs-12 text-center mt-20 mb-10">
+			<input type="checkbox" name="<?= Art_Model_Address::CONTACT_PREFIX ?>active" id="contact-active"
+			   <?= $this->hasContactAddress ? 'checked="checked"' : null ?>>
+			<label for="contact-active"><?= __('module_registration_contact_address_different') ?></label>
+		</div>
+		
+	</div>
+	<div id="address_different" class="mb-25">		
+	
+		<div class="clearfix"></div>
+		<h3 class="text-center"><?= __('contact_address') ?></h3>
+		<div class="line-2colors"></div>
+		<table class="table75 horizontal-center background-white">
+			<tr>
+				<td colspan="2" class="pr-10">
+					<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>street" type="text" class="form-control" placeholder="<?= __('street') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::CONTACT_PREFIX.'street') ?>">
+
+				</td>
+				<td class="pl-10">
+					<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>housenum" type="text" class="form-control" placeholder="<?= __('house_number') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::CONTACT_PREFIX.'housenum') ?>">
+
+				</td>
+			</tr>
+			<tr>
+				<td class="pr-10">
+					<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>city" type="text" class="form-control" placeholder="<?= __('city') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::CONTACT_PREFIX.'city') ?>">
+
+				</td>
+
+				<td class="pr-10 pl-10">
+					<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>zip" type="text" class="form-control" placeholder="<?= __('zip_code') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::CONTACT_PREFIX.'zip') ?>">
+
+				</td>
+				<td class="pr-10"></td>
+			</tr>
+			<tr>
+				<td class="pr-10">
+					<select class="form-control" id="country2" name="<?= Art_Model_Address::CONTACT_PREFIX ?>country">
+				<?php foreach ($this->countryList as $country) : ?>
+				  <option value="<?= $country->id ?>"<?= 
+						Helper_Default::getSelectedOrNull($this->data,Art_Model_Address::CONTACT_PREFIX.'id_country',$country->id) ?>
+							><?= $country->name ?></option>
+				<?php endforeach; ?>
+			  </select>
+				</td>
+
+				<td>
+
+				</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="clearfix"></div>
+	<table class="table75 background-white horizontal-center">
+		<tr>
+			<td class="text-right pr-10">
+				<?= __('phone_number') ?>
+			</td>
+			<td class="pl-10">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>area_code" type="text" class="form-control" placeholder="<?= __('area_number') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'area_code') ?>">
+			</td>
+			<td class="pl-10">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>phone" type="text" class="form-control" placeholder="<?= __('phone_number') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->data,Art_Model_Address::DELIVERY_PREFIX.'phone') ?>">
+			</td>
+		</tr>
+	</table>
+	
+	<div class="col-md-12 col-xs-12 text-center">
+		<input type="submit" class="btn btn-info mt-20 mb-20" value="<?= __('module_users_edit_change') ?>">
+	</div>
+</form>
+
+<?php else : ?>
+
+<form <?= $this->request->getHTML() ?>>	
+	
+	<div class="col-md-11 col-xs-11">
+			<input name="company_name" type="text" class="form-control" placeholder="<?= __('company_name') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->companyAddress,'company_name') ?>" readonly="readonly">
+		</div>
+		<div class="col-md-5 col-xs-5">
+			<input name="ico" type="text" class="form-control" placeholder="<?= __('ico') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->companyAddress,'ico') ?>" readonly="readonly">
+		</div>	
+		<div class="col-md-6 col-xs-6">
+			<input name="dic" type="text" class="form-control" placeholder="<?= __('dic') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->companyAddress,'dic') ?>" readonly="readonly">
+		</div>
+	
+	<div class="clearfix"></div>
+	<h3 class="text-center"><?= __('module_users_company_address') ?></h3>
+	<div class="line-2colors"></div>
+	<table class="table75 horizontal-center background-white">
+		<tr>
+			<td colspan="2" class="pr-10">
+				<input name="<?= Art_Model_Address::COMPANY_PREFIX ?>street" type="text" class="form-control" placeholder="<?= __('street') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->companyAddress,'street') ?>">
+			</td>
+			
+			<td class="pl-10">
+				<input name="<?= Art_Model_Address::COMPANY_PREFIX ?>housenum" type="text" class="form-control" placeholder="<?= __('house_number') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->companyAddress,'housenum') ?>">
+			</td>
+		</tr>
+		<tr>
+			<td class="pr-10">
+				<input name="<?= Art_Model_Address::COMPANY_PREFIX ?>city" type="text" class="form-control" placeholder="<?= __('city') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->companyAddress,'city') ?>">
+			</td>
+			<td class="pl-10 pr-10">
+				<input name="<?= Art_Model_Address::COMPANY_PREFIX ?>zip" type="text" class="form-control" placeholder="<?= __('zip_code') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->companyAddress,'zip') ?>">
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="pr-10">
+				<select class="form-control" id="country1" name="<?= Art_Model_Address::COMPANY_PREFIX ?>country">
+				  <?php foreach ($this->countryList as $country) : ?>
+					<option value="<?= $country->id ?>"<?= 
+						Helper_Default::getSelectedOrNull($this->companyAddress,'id_country',$country->id) ?>
+							><?= $country->name ?></option>
+				  <?php endforeach; ?>
+				</select>
+			</td>
+			<td>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+	<div class="clearfix"></div>
+
+	<div id="" class="mb-25">		
+	
+		<div class="clearfix"></div>
+		<h3 class="text-center"><?= __('module_users_auth_person_address') ?></h3>
+		<div class="line-2colors"></div>
+		<table class="table75 horizontal-center background-white">
+			<tr>
+				<td colspan="2" class="pr-10">
+					<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>street" type="text" class="form-control" placeholder="<?= __('street') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->deliveryAddress,'street') ?>">
+
+				</td>
+				<td class="pl-10">
+					<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>housenum" type="text" class="form-control" placeholder="<?= __('house_number') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->deliveryAddress,'housenum') ?>">
+
+				</td>
+			</tr>
+			<tr>
+				<td class="pr-10">
+					<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>city" type="text" class="form-control" placeholder="<?= __('city') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->deliveryAddress,'city') ?>">
+
+				</td>
+
+				<td class="pr-10 pl-10">
+					<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>zip" type="text" class="form-control" placeholder="<?= __('zip_code') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->deliveryAddress,'zip') ?>">
+
+				</td>
+				<td class="pr-10"></td>
+			</tr>
+			<tr>
+				<td class="pr-10">
+					<select class="form-control" id="country2" name="<?= Art_Model_Address::DELIVERY_PREFIX ?>country">
+				<?php foreach ($this->countryList as $country) : ?>
+				  <option value="<?= $country->id ?>"<?= 
+						Helper_Default::getSelectedOrNull($this->deliveryAddress,'id_country',$country->id) ?>
+							><?= $country->name ?></option>
+				<?php endforeach; ?>
+			  </select>
+				</td>
+
+				<td>
+
+				</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	
+<?php if ( $this->hasRepresentant ) : ?>	
+	
+	<div id="" class="mb-25">		
+	
+		<div class="clearfix"></div>
+		<h3 class="text-center"><?= __('module_registration_representant_adress') ?></h3>
+		<div class="line-2colors"></div>
+		<table class="table75 horizontal-center background-white">
+			<tr>
+				<td colspan="2" class="pr-10">
+					<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>street" type="text" class="form-control" placeholder="<?= __('street') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->representantAddress,'street') ?>">
+
+				</td>
+				<td class="pl-10">
+					<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>housenum" type="text" class="form-control" placeholder="<?= __('house_number') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->representantAddress,'housenum') ?>">
+
+				</td>
+			</tr>
+			<tr>
+				<td class="pr-10">
+					<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>city" type="text" class="form-control" placeholder="<?= __('city') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->representantAddress,'city') ?>">
+
+				</td>
+
+				<td class="pr-10 pl-10">
+					<input name="<?= Art_Model_Address::CONTACT_PREFIX ?>zip" type="text" class="form-control" placeholder="<?= __('zip_code') ?>"
+				   value="<?= Helper_Default::getPropertyOrNull($this->representantAddress,'zip') ?>">
+
+				</td>
+				<td class="pr-10"></td>
+			</tr>
+			<tr>
+				<td class="pr-10">
+					<select class="form-control" id="country2" name="<?= Art_Model_Address::CONTACT_PREFIX ?>country">
+				<?php foreach ($this->countryList as $country) : ?>
+				  <option value="<?= $country->id ?>"<?= 
+						Helper_Default::getSelectedOrNull($this->representantAddress,'id_country',$country->id) ?>
+							><?= $country->name ?></option>
+				<?php endforeach; ?>
+			  </select>
+				</td>
+
+				<td>
+
+				</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	
+<?php endif; ?>
+	
+	<div class="clearfix"></div>
+	<table class="table75 background-white horizontal-center">
+		<tr>
+			<td class="text-right pr-10">
+				<?= __('phone_number') ?>
+			</td>
+			<td class="pl-10">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>area_code" type="text" class="form-control" placeholder="<?= __('area_number') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->deliveryAddress,'area_code') ?>">
+			</td>
+			<td class="pl-10">
+		<input name="<?= Art_Model_Address::DELIVERY_PREFIX ?>phone" type="text" class="form-control" placeholder="<?= __('phone_number') ?>"
+			   value="<?= Helper_Default::getPropertyOrNull($this->deliveryAddress,'phone') ?>">
+			</td>
+		</tr>
+	</table>
+	
+	<div class="col-md-12 col-xs-12 text-center">
+		<input type="submit" class="btn btn-info mt-20 mb-20" value="<?= __('module_users_edit_change') ?>">
+	</div>
+</form>
+<?php endif; ?>
+
+<script>
+	$("#contact-active").click(function(){
+		$("#address_different").toggleClass('address_open');
+	});
+	if($("#contact-active").prop('checked')){
+		$("#address_different").toggleClass('address_open');
+	}
+</script>

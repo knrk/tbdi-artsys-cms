@@ -1,0 +1,23 @@
+<h2><?= __('module_users_change_manager_header') ?></h2>
+<div class="background-white">
+<form <?= $this->request->getHTML() ?>>
+	<div class="col-xs-6">
+		<h3><?= $this->user->fullname ?></h3>
+		<div class="form-group">
+			<label for="manager"><?= __('module_users_managers') ?></label>
+			<select class="form-control" id="manager" name="id_manager">
+			  <?php foreach ($this->managers as $manager) : ?>
+				<option value="<?= $manager->id ?>"<?= 
+					  Helper_Default::getSelectedOrNull($this->userManager,'id_manager',$manager->id) ?>
+						><?= $manager->fullname ?></option>
+			  <?php endforeach; ?>
+			</select>
+		</div>
+	</div>		
+	<div class="col-md-12 col-xs-12 text-center mt-20 mb-20">
+		<input type="submit" class="btn" value="<?= __('save') ?>">
+	</div>
+	<div class="clearfix"></div>
+</form>
+</div>
+
