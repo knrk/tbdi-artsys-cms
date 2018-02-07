@@ -369,33 +369,24 @@ final class Art_Template extends Art_Abstract_Component {
 	 * 
 	 *	@return string
 	 */
-	static function renderMeta()
-	{
+	static function renderMeta() {
 		$output = '';
 		
 		//Pair META
-		foreach(self::$_meta_pair AS $key => $value)
-		{
-			if( !isset(self::$_meta[$value]) && isset(self::$_meta[$key]) )
-			{
+		foreach (self::$_meta_pair AS $key => $value) {
+			if (!isset(self::$_meta[$value]) && isset(self::$_meta[$key])) {
 				self::$_meta[$value] = self::$_meta[$key];
 			}
 		}
 		
 		//For each meta
-		foreach(self::$_meta AS $key => $value)
-		{
-			switch( $key )
-			{
-				case self::META_TITLE:
-				{
+		foreach (self::$_meta AS $key => $value) {
+			switch ($key) {
+				case self::META_TITLE: {
 					//If title was changed (added to base title)
-					if( strlen(self::$_meta_title_added) )
-					{
+					if (strlen(self::$_meta_title_added)) {
 						$output .= '<title>'.self::$_meta_title_added.self::TITLE_SEPARATOR.$value.'</title>';
-					}
-					else
-					{
+					} else {
 						$output .= '<title>'.$value.'</title>';
 					}
 					break;
@@ -406,13 +397,11 @@ final class Art_Template extends Art_Abstract_Component {
 				case self::META_AUTHOR:
 				case self::META_APPLICATION_NAME:
 				case self::META_ROBOTS:
-				case self::META_GOOGLE_SITE_VERIFICATION:
-				{
+				case self::META_GOOGLE_SITE_VERIFICATION: {
 					$output .= '<meta name="'.$key.'" content="'.$value.'" />';
 					break;
 				}
-				default :
-				{
+				default: {
 					$output .= '<meta property="'.$key.'" content="'.$value.'" />';
 				}
 			}
@@ -420,7 +409,7 @@ final class Art_Template extends Art_Abstract_Component {
 			$output .= "\n\t";
 		}
 		
-		return substr($output,0,-1);
+		return substr($output, 0, -1);
 	}
 	
 	

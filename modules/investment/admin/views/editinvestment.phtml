@@ -1,3 +1,5 @@
+<h2>Editace Investicí</h2>
+
 <form <?= $this->request->getHTML() ?>>
 
 	<input type="hidden" name="month" value="<?= $this->month ?>">
@@ -6,10 +8,12 @@
 	
 	<input type="text" name="target" value="<?= $this->target ?>">
 	
-	<table class="table-default">
+	<table class="table-default variable">
 		<caption><?= Helper_Default::getCzechMonthName($this->month) ?> <?= $this->year ?> - <?= $this->target ?></caption>
+		<col class="f30"/>
+		<col class="w20"/>
 		<tr>
-			<th class="text-center"><input type="checkbox" onclick="toggleCheck(this,'.module_investment_editinvestment .cb-investment-list')" class="cb-investment-head"></th>
+			<th><input type="checkbox" onclick="toggleCheck(this,'.module_investment_editinvestment .cb-investment-list')" class="cb-investment-head"></th>
 			<th><?= __('fullname') ?></th>
 			<th><?= __('module_investment_invested') ?></th>
 			<th><?= __('module_investment_interest') ?></th>
@@ -19,45 +23,58 @@
 			<th><?= __('note') ?></th>
 		</tr>
 		<?php 
-			foreach( $this->investmentValues as $value ) : /* @var $value Service_Investment_Value */
+			foreach( $this->investmentValues as $i => $value ) : /* @var $value Service_Investment_Value */
+				$tabindex = ++$i;
 				$user = $value->getUser();
 				$userId = $user->id;
 				$invested = $value->invested;
 				$interest = $value->interest;
 		?>
 			<tr>
-				<td class="xsmall-td text-center"><input type="checkbox" name="investment-<?= $userId ?>" class="cb-investment-list"></td>
-				<td><?= Art_Filter::cutString($user->fullname,40) ?></td>
-				<td class="invested-td"><input type="text" class="invested" name="invested-<?= $userId ?>" placeholder="<?= __('module_investment_invested') ?>" value="<?= $invested ?>"></td>
-				<td class="interest-td"><input type="text" class="interest" name="interest-<?= $userId ?>" placeholder="<?= __('module_investment_interest') ?>" value="<?= $interest ?>"></td>
-				<td class="gain-td"><input type="text" class="gain" name="gain-<?= $userId ?>" placeholder="<?= __('module_investment_gain') ?>" value="<?= $invested * $interest / 100 ?>" readonly="readonly"></td>
-				<td><input type="text" name="commission-<?= $userId ?>" placeholder="<?= __('module_investment_commision') ?>"<?php if ( 0 != $value->commission ) : ?> value="<?= $value->commission ?>"<?php endif; ?>></td>
-				<td><input type="text" name="payment_date-<?= $userId ?>" placeholder="<?= __('module_investment_payment_date') ?>" value="<?= $value->payment_date ?>"></td>
-				<td><input type="text" name="note-<?= $userId ?>" placeholder="<?= __('note') ?>"></td>
+				<td class="xsmall-td">
+					<input type="checkbox" name="investment-<?= $userId ?>" tabindex="-1" class="cb-investment-list">
+				</td>
+				<td><?= Art_Filter::cutString($user->fullname, 40) ?></td>
+				<td class="invested-td">
+					<input type="text" class="invested" name="invested-<?= $userId ?>" tabindex="-1" placeholder="<?= __('module_investment_invested') ?>" value="<?= $invested ?>">
+				</td>
+				<td class="interest-td">
+					<input type="text" class="interest" tabindex="<?= $tabindex; ?>" name="interest-<?= $userId ?>" placeholder="<?= __('module_investment_interest') ?>" value="<?= $interest ?>">
+				</td>
+				<td class="gain-td">
+					<input type="text" class="gain" name="gain-<?= $userId ?>" tabindex="-1" placeholder="<?= __('module_investment_gain') ?>" value="<?= $invested * $interest / 100 ?>" readonly="readonly">
+				</td>
+				<td>
+					<input type="text" name="commission-<?= $userId ?>" tabindex="-1" placeholder="<?= __('module_investment_commision') ?>"<?php if ( 0 != $value->commission ) : ?> value="<?= $value->commission ?>"<?php endif; ?>>
+				</td>
+				<td>
+					<input type="text" name="payment_date-<?= $userId ?>" tabindex="-1" placeholder="<?= __('module_investment_payment_date') ?>" value="<?= $value->payment_date ?>">
+				</td>
+				<td>
+					<input type="text" name="note-<?= $userId ?>" tabindex="-1" placeholder="<?= __('note') ?>">
+				</td>
 			</tr>
 		<?php endforeach; ?>
 	</table>
-	
-	<div class="col-xs-9"></div>
-	<div class="text-center col-xs-3 mt-15">
-		<input type="submit" value="<?= __('save') ?>" class="btn">
+	<div class="col-xs-3 mt-15 save-view-buttons">
+		<input type="submit" tabindex="<?= $tabindex + 1; ?>" value="<?= __('save') ?>" class="btn">
 	</div>
 </form>
 <script>
-$('.interest').focusout(
-			function(){
-				var interest = $(this).val();
-				var invested = $(this).parent().parent().find('.invested-td').find('.invested').val();
-				$(this).parent().parent().find('.gain-td').find('.gain').val(interest*invested/100);
-			}
-			);
-$('.invested').focusout(
-			function(){
-				var invested = $(this).val();
-				var interest = $(this).parent().parent().find('.interest-td').find('.interest').val();
-				$(this).parent().parent().find('.gain-td').find('.gain').val(interest*invested/100);
-			}
-			);
-	
-window.onload = check('.cb-investment-head','.module_investment_editinvestment .cb-investment-list');
-	</script>
+$('.interest').focusout((event) => {	
+	let elm = $(event.target);
+	var interest = elm.val();
+	var invested = elm.parent().parent().find('.invested-td').find('.invested').val();
+	elm.parent().parent().find('.gain-td').find('.gain').val(interest * invested / 100);
+});
+$('.invested').focusout(() => {
+	let elm = $(event.target);
+	var invested = elm.val();
+	var interest = elm.parent().parent().find('.interest-td').find('.interest').val();
+	elm.parent().parent().find('.gain-td').find('.gain').val(interest * invested / 100);
+});
+$(document).ready(() => {
+	$('.table-default input[tabindex=1]')[0].focus();
+	check('.cb-investment-head','.module_investment_editinvestment .cb-investment-list');
+});
+</script>

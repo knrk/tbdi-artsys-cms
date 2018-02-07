@@ -1,8 +1,8 @@
 	
-	<div class="col-xs-3 text-left np h50">
-		<p class="f-l np r r10"><?= $this->user->fullname ?></p>
-		<button class="small-ico f-l"><i class="fa fa-user"></i></button>
+	<div class="user-profile">
+		<span class="small-ico f-l r r10"><i class="fa fa-user"></i></span>
+		<p><?= $this->user->fullname ?></p>
 	</div>
-	<div class="col-xs-4 text-right np h50">
-		<?= Art_Widget::render('login', 'embedd', array('size'=>'small')); ?>
+	<div class="user-action">
+		<?= Art_Widget::render('login', 'embedd', array('size' => 'small')); ?>
 	</div>

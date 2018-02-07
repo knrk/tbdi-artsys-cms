@@ -7,7 +7,7 @@ body, html{
     width: 100%;
     z-index: 10;
     margin: 0px;
-    font-family: open sans;
+    font-family: 'open sans';
     font-weight: 100;
     cursor: default;
 }
@@ -199,23 +199,22 @@ sup{
 }
 
 .module_navigation_embedd ul li a {
-    color: #FFFFFF;
-    width:100%;
-    display:block;
+    color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    display: block;
     font-size: 14px;
     font-weight: 400;
     line-height: 40px;
+}
+.module_navigation_embedd ul li.active a {
+    font-weight: 800;
+    color: white;
 }
 
 .module_navigation_embedd ul{
     margin: 0px;
     padding: 0px;
     width: 100%;
-}
-
-.module_navigation_embedd ul li{
-    background: #2D353C;
-    display: block;
 }
 
 .module_navigation_embedd a:hover{
@@ -371,11 +370,11 @@ button:active{
 
 /*** TABLES ***/
 
-.table-default{
+.table-default {
     width: 100%;
 }
 
-.table-default th{
+.table-default th {
     background: #242A30;
     line-height: 45px;
     color: #fff;
@@ -384,34 +383,32 @@ button:active{
     font-weight: 600;
 }
 
-.table-default tr:hover td{
+.table-default tr:hover td {
     background: #f4f4f4;
 }
 
-
-.table-default th:first-of-type{
-    border-top-left-radius: 6px;
-}
-
-.table-default th:last-of-type{
-    border-top-right-radius: 6px;
-}
-
-.table-default th > a{
+.table-default th > a {
     color: #fff;
 }
 
-.table-default th > a:hover{
+.table-default th > a:hover {
     color: #ddd;
     
 }
 
-.table-default td{
+.table-default td {
     background: #fff;
     padding: 7px 3px 7px 3px;
+
+    &:first-child {
+        padding-left: 8px;
+    }
+    &:last-child {
+        padding-right: 8px;
+    }
 }
 
-.table-default a{
+.table-default a {
     color: #082945;
     display: block;
 }
@@ -982,8 +979,7 @@ label{
     }
 }
 
-
-body{
+body {
     background: #D9E0E7;
     cursor: default;
     min-width: 1150px;
@@ -991,12 +987,15 @@ body{
     overflow-y: hidden;
 }
 
-html{
+html {
     height: 100vh;
     overflow-y: hidden;
 }
 
-.head-bar{
+.head-bar {
+    display: flex;
+    flex-direction: row;
+
     height: 50px;
     background: #fff;
     position: relative;
@@ -1006,20 +1005,51 @@ html{
     left: 0px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.26) !important;
     margin: 0px !important;
-    text-align: center;
     line-height: 50px;
     min-width: 1150px;
+
+    .app-name {
+        flex: 1 0 75%;
+        padding-left: 10px;
+    }
+    .profile {
+        flex: 1 0 25%;
+
+        > div > div {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    .user-profile {
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+        padding-right: 20px;
+        border-right: 1px solid #ccc;
+        
+        p {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 800;
+        }
+    }
+    .user-action {
+        padding: 0 20px;
+    }
 }
 
-.head-bar .small-ico{
+.head-bar .small-ico {
     width: 25px;
     height: 25px;
     border: none;
     padding: 0px;
     margin: 0px auto;
-    display: block;
-    margin-top: 12.5px;
-    line-height: 23px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #222;
     box-sizing: border-box;
     border-radius: 50%;
@@ -1175,12 +1205,12 @@ html{
     padding: 0px;
 }
 
-.nav-ul li{
+.nav-ul li {
     text-align: center;
     min-height: 40px;
     line-height: 40px;
     font-size: 14px;
-    background-color: #1A2229 !important;
+    background-color: #1A2229;
 }
 
 .nav-ul li.active{
@@ -1420,53 +1450,60 @@ i.no-active{
 }
 
 /*** TABLES ***/
+col.f10 {
+    width: 10px;
+}
+col.f30 {
+    width: 30px;
+}
+col.f100 {
+    width: 100px;
+}
+col.f200 {
+    width: 200px;
+}
+col.f300 {
+    width: 300px;
+}
+
+.cols-loop( @base-value: 5; @n; @unit: px; @j: 1; @_s: 0; @step-size: 1 ; @selector: ~"col.w"; @property: width) when not(@n = 0)  {
+
+  @size: @base-value + @_s;
+  @{selector}@{size}{
+    @{property} : ~"@{size}@{unit}";
+  }
+  .cols-loop(@base-value, (@n - 1), @unit, (@j + 1), (@_s + @step-size), @step-size,  @selector, @property);
+}
+.cols-loop(@n: 20, @unit: '%', @j: 1, @step-size: 5);
+
 .table-default {
   width: 100%;
+
+  &.variable {
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
 }
 .table-default th {
   background: #242A30;
-  line-height: 45px;
+  line-height: 35px;
   color: #fff;
   padding: 0px 3px 0px 3px;
-  font-weight: 500;
   font-weight: 600;
 }
 
-.table-default tr th:first-of-type, .table-default tr td:first-of-type{
-    padding-left: 15px;
+.table-default tr th:first-of-type, 
+.table-default tr td:first-of-type {
+    padding-left: 12px;
 }
 
-.dashboard-embed-inner{
-	    overflow-y: scroll;
-	    height: 295px;
-	}
-	
-	.dashboard-embed-post{
-	    background: #eee;
-	    margin-right: 10px;
-	    margin-left: 10px;
-	    margin-top: 10px;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	}
-	
-	.post-important{
-	    background-color: rgba(255,0,0,0.15);
-	}
-	
-	.dashboard-embed-post:last-of-type{
-	    margin-bottom: 10px;
-	}
-
-
-.table-default tr:hover td, .table-default.colored-rows tr:nth-of-type(2n+1):hover td {
+.table-default tr:hover td, 
+.table-default.colored-rows tr:nth-of-type(2n+1):hover td {
   background: #ededed;
-}
-.table-default th:first-of-type {
-  border-top-left-radius: 6px;
-}
-.table-default th:last-of-type {
-  border-top-right-radius: 6px;
+
+  .inline-actions {
+      visibility: visible;
+  }
 }
 .table-default td {
   background: #fff;
@@ -1551,6 +1588,39 @@ i.no-active{
 .table-content {
   overflow: hidden;
   max-height: 0px;
+}
+
+.inline-actions {
+    display: flex;
+    visibility: hidden;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    a, button {
+        display: inline;
+    }
+}
+
+.dashboard-embed-inner{
+    overflow-y: scroll;
+    height: 295px;
+}
+
+.dashboard-embed-post{
+    background: #eee;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.post-important{
+    background-color: rgba(255,0,0,0.15);
+}
+
+.dashboard-embed-post:last-of-type{
+    margin-bottom: 10px;
 }
 
 
@@ -1722,4 +1792,52 @@ i.no-active{
     max-width: 250px;
     border: 1px solid #ddd;
     
+}
+
+
+/// 
+
+
+.page {
+    .save-view-buttons {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        .btn {
+            min-width: 100px;
+            max-width: 300px;
+        }
+    }
+}
+
+.investments-by-month {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: stretch;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+    a {
+        flex: 0 1 auto;
+        align-self: auto;
+        display: inline;
+        border: 2px solid #ccc;
+        padding: 4px 8px;
+        line-height: 22px;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+
+        &:hover {
+            border-color: #333;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }

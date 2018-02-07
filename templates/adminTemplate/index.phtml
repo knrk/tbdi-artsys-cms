@@ -14,45 +14,24 @@
     <div id="alertBox"></div>
     <div class="celar"></div>
 	
-	
 	<div class="head-bar">
-		<div class="col-xs-3 text-left">
+		<div class="app-name">
 			<a href="/<?= Art_Router::getLayer() ?>">
-			TB Development & Investmet
+			TB Development &amp; Investment
 			</a>
 		</div>
-		<div class="col-xs-4">
-		</div>
-		<div class="col-xs-5 np">
-			<div class="col-xs-5 text-left np h50">
-				<div class="calendar-border">
-					<div id="calendar" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle">
-						<button class="small-ico"><i class="fa fa-calendar"></i></button>
-					</div>
-					<div class="dropdown-menu calendar-box" aria-labelledby="calendar">
-						<?php /** <div data-tockify-component="mini" data-tockify-calendar="alexcalendar"></div>
-						<script data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script> **/  ?>
-					</div>
-				</div>
-			</div>
+		<div class="profile">
 			<?= Art_Widget::render('users', 'embedd'); ?>
-			
 		</div>
 	</div>
 	<div class="page-border">
 		<div class="menu">
-			<?= Art_Template::renderModuleContainer('menu') ?>
-			
+			<?= Art_Template::renderModuleContainer('menu') ?>	
 		</div>
 		<div class="page">
 			<?= Art_Template::renderContent() ?>
-			
-			
 			<div class="clear last"></div>
 		</div>
-		
-		
-			</div>
-
+	</div>
 </body>
 </html>

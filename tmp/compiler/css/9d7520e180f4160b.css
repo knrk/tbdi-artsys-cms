@@ -10836,7 +10836,7 @@ html {
   width: 100%;
   z-index: 10;
   margin: 0px;
-  font-family: open sans;
+  font-family: 'open sans';
   font-weight: 100;
   cursor: default;
 }
@@ -10992,21 +10992,21 @@ sup {
   content: "\f085";
 }
 .module_navigation_embedd ul li a {
-  color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.5);
   width: 100%;
   display: block;
   font-size: 14px;
   font-weight: 400;
   line-height: 40px;
 }
+.module_navigation_embedd ul li.active a {
+  font-weight: 800;
+  color: white;
+}
 .module_navigation_embedd ul {
   margin: 0px;
   padding: 0px;
   width: 100%;
-}
-.module_navigation_embedd ul li {
-  background: #2D353C;
-  display: block;
 }
 .module_navigation_embedd a:hover {
   background: #9AD268;
@@ -11144,12 +11144,6 @@ sup {
 .table-default tr:hover td {
   background: #f4f4f4;
 }
-.table-default th:first-of-type {
-  border-top-left-radius: 6px;
-}
-.table-default th:last-of-type {
-  border-top-right-radius: 6px;
-}
 .table-default th > a {
   color: #fff;
 }
@@ -11159,6 +11153,12 @@ sup {
 .table-default td {
   background: #fff;
   padding: 7px 3px 7px 3px;
+}
+.table-default td:first-child {
+  padding-left: 8px;
+}
+.table-default td:last-child {
+  padding-right: 8px;
 }
 .table-default a {
   color: #082945;
@@ -11711,6 +11711,8 @@ html {
   overflow-y: hidden;
 }
 .head-bar {
+  display: flex;
+  flex-direction: row;
   height: 50px;
   background: #fff;
   position: relative;
@@ -11720,9 +11722,35 @@ html {
   left: 0px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.26) !important;
   margin: 0px !important;
-  text-align: center;
   line-height: 50px;
   min-width: 1150px;
+}
+.head-bar .app-name {
+  flex: 1 0 75%;
+  padding-left: 10px;
+}
+.head-bar .profile {
+  flex: 1 0 25%;
+}
+.head-bar .profile > div > div {
+  display: flex;
+  justify-content: flex-end;
+}
+.head-bar .user-profile {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+.head-bar .user-profile p {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 800;
+}
+.head-bar .user-action {
+  padding: 0 20px;
 }
 .head-bar .small-ico {
   width: 25px;
@@ -11730,9 +11758,11 @@ html {
   border: none;
   padding: 0px;
   margin: 0px auto;
-  display: block;
-  margin-top: 12.5px;
-  line-height: 23px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #222;
   box-sizing: border-box;
   border-radius: 50%;
@@ -11870,7 +11900,7 @@ html {
   min-height: 40px;
   line-height: 40px;
   font-size: 14px;
-  background-color: #1A2229 !important;
+  background-color: #1A2229;
 }
 .nav-ul li.active {
   position: relative;
@@ -12075,48 +12105,106 @@ i.no-active {
   background: #fff;
 }
 /*** TABLES ***/
+col.f10 {
+  width: 10px;
+}
+col.f30 {
+  width: 30px;
+}
+col.f100 {
+  width: 100px;
+}
+col.f200 {
+  width: 200px;
+}
+col.f300 {
+  width: 300px;
+}
+col.w5 {
+  width: 5%;
+}
+col.w10 {
+  width: 10%;
+}
+col.w15 {
+  width: 15%;
+}
+col.w20 {
+  width: 20%;
+}
+col.w25 {
+  width: 25%;
+}
+col.w30 {
+  width: 30%;
+}
+col.w35 {
+  width: 35%;
+}
+col.w40 {
+  width: 40%;
+}
+col.w45 {
+  width: 45%;
+}
+col.w50 {
+  width: 50%;
+}
+col.w55 {
+  width: 55%;
+}
+col.w60 {
+  width: 60%;
+}
+col.w65 {
+  width: 65%;
+}
+col.w70 {
+  width: 70%;
+}
+col.w75 {
+  width: 75%;
+}
+col.w80 {
+  width: 80%;
+}
+col.w85 {
+  width: 85%;
+}
+col.w90 {
+  width: 90%;
+}
+col.w95 {
+  width: 95%;
+}
+col.w100 {
+  width: 100%;
+}
 .table-default {
   width: 100%;
 }
+.table-default.variable {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
 .table-default th {
   background: #242A30;
-  line-height: 45px;
+  line-height: 35px;
   color: #fff;
   padding: 0px 3px 0px 3px;
-  font-weight: 500;
   font-weight: 600;
 }
 .table-default tr th:first-of-type,
 .table-default tr td:first-of-type {
-  padding-left: 15px;
-}
-.dashboard-embed-inner {
-  overflow-y: scroll;
-  height: 295px;
-}
-.dashboard-embed-post {
-  background: #eee;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-top: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-.post-important {
-  background-color: rgba(255, 0, 0, 0.15);
-}
-.dashboard-embed-post:last-of-type {
-  margin-bottom: 10px;
+  padding-left: 12px;
 }
 .table-default tr:hover td,
 .table-default.colored-rows tr:nth-of-type(2n+1):hover td {
   background: #ededed;
 }
-.table-default th:first-of-type {
-  border-top-left-radius: 6px;
-}
-.table-default th:last-of-type {
-  border-top-right-radius: 6px;
+.table-default tr:hover td .inline-actions,
+.table-default.colored-rows tr:nth-of-type(2n+1):hover td .inline-actions {
+  visibility: visible;
 }
 .table-default td {
   background: #fff;
@@ -12196,6 +12284,34 @@ i.no-active {
 .table-content {
   overflow: hidden;
   max-height: 0px;
+}
+.inline-actions {
+  display: flex;
+  visibility: hidden;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.inline-actions a,
+.inline-actions button {
+  display: inline;
+}
+.dashboard-embed-inner {
+  overflow-y: scroll;
+  height: 295px;
+}
+.dashboard-embed-post {
+  background: #eee;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.post-important {
+  background-color: rgba(255, 0, 0, 0.15);
+}
+.dashboard-embed-post:last-of-type {
+  margin-bottom: 10px;
 }
 .clear {
   clear: both;
@@ -12326,4 +12442,40 @@ i.no-active {
   width: 100%;
   max-width: 250px;
   border: 1px solid #ddd;
+}
+.page .save-view-buttons {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.page .save-view-buttons .btn {
+  min-width: 100px;
+  max-width: 300px;
+}
+.investments-by-month {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: stretch;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.investments-by-month a {
+  flex: 0 1 auto;
+  align-self: auto;
+  display: inline;
+  border: 2px solid #ccc;
+  padding: 4px 8px;
+  line-height: 22px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.investments-by-month a:hover {
+  border-color: #333;
+}
+.investments-by-month a:last-child {
+  margin-right: 0;
 }

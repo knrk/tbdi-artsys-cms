@@ -12,10 +12,10 @@
 	</div>
 </form>
 <?php else: ?>
-	<?php if( $this->size == 'small' ): ?>
-		<button <?= $this->logout_request->getHTML() ?> style="background: none;border:none;">
+	<?php if ($this->size == 'small') : ?>
+		<a href="javascript:;" <?= $this->logout_request->getHTML() ?>>
 			Odhlásit<i class="fa fa-sign-out marg-left-5"></i>
-		</button>
+		</a>
 	<?php else: ?>
 		<form name="login-embedd-logout" <?= $this->logout_request->getHTML() ?>>
 			<div class="col-md-12 col-xs-12 text-center  logout-box">

@@ -15,7 +15,7 @@ class Module_Bootstrap_Default_Value extends Art_Abstract_Module_Bootstrap {
 	static function labelSetup() 
 	{
 		Art_Label::addLabelSet(array(
-			'module_default_value'						=> 'Systémové hodnoty',
+			'module_default_value'						=> 'Konfigurace',
 			'module_default_value_add'					=> 'Přidat systémovou hodnotu',
 			'module_default_value_name'					=> 'Název',
 			'module_default_value_type'					=> 'Datový typ',
