@@ -10831,7 +10831,7 @@ fieldset[disabled] .btn-danger.active {
 body,
 html {
   height: 100%;
-  background: #D9E0E7;
+  background: #f6f6f6;
   padding: 0px;
   width: 100%;
   z-index: 10;
@@ -11321,7 +11321,7 @@ td.big-td {
   animation-duration: 0.3s;
 }
 .table-default td {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #f6f6f6;
 }
 td.big-td input[type=checkbox] {
   margin-right: 5px !important;
@@ -11440,9 +11440,10 @@ table.managed-in tr:nth-of-type(2n) {
 }
 input[type=text],
 input[type=file],
-select,
+input[type=email],
 input[type=button],
 input[type=submit],
+select,
 textarea {
   border: 1px solid #CCD0D4;
   box-shadow: none;
@@ -11457,17 +11458,15 @@ select.form-control {
   border-radius: 0px;
   height: 35px;
 }
-input[type=text] {
+input[type=text],
+input[type=email] {
   border: 2px solid #CCD0D4;
-  box-shadow: none;
   border-radius: 0px;
   height: 35px;
 }
-input[type=text]:focus {
-  border: 2px solid #bbb;
-  box-shadow: none;
-  border-radius: 0px;
-  height: 35px;
+input[type=text]:focus,
+input[type=email]:focus {
+  border-color: #bbb;
 }
 select:focus,
 select.form-control:focus {
@@ -11700,7 +11699,7 @@ label {
   text-decoration: underline;
 }
 body {
-  background: #D9E0E7;
+  background: #f6f6f6;
   cursor: default;
   min-width: 1150px;
   height: 100vh;
@@ -11773,10 +11772,8 @@ html {
   align-content: center;
   align-items: center;
   justify-content: center;
-  border: 1px solid #222;
-  box-sizing: border-box;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 .calendar-border {
   position: relative;
@@ -11922,7 +11919,7 @@ html {
   height: 0;
   border-style: solid;
   border-width: 20px 20px 20px 0;
-  border-color: transparent #d9e0e7 transparent transparent;
+  border-color: transparent #f6f6f6 transparent transparent;
   top: 0;
   right: 0;
 }
@@ -12207,6 +12204,7 @@ col.w100 {
 .table-default tr th:first-of-type,
 .table-default tr td:first-of-type {
   padding-left: 12px;
+  padding-right: 12px;
 }
 .table-default tr:hover td,
 .table-default.colored-rows tr:nth-of-type(2n+1):hover td {
@@ -12226,6 +12224,14 @@ col.w100 {
 .table-default a {
   color: #082945;
   display: block;
+}
+.table-default th a {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+}
+.table-default th a i {
+  margin-left: 4px;
 }
 .table-default a:hover {
   color: #3b5c9a;
@@ -12294,16 +12300,6 @@ col.w100 {
 .table-content {
   overflow: hidden;
   max-height: 0px;
-}
-.inline-actions {
-  display: flex;
-  visibility: hidden;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-.inline-actions a,
-.inline-actions button {
-  display: inline;
 }
 .dashboard-embed-inner {
   overflow-y: scroll;
@@ -12477,11 +12473,14 @@ col.w100 {
   align-self: auto;
   display: inline;
   border: 2px solid #ccc;
+  color: black;
   padding: 4px 8px;
   line-height: 22px;
   font-size: 12px;
   margin-right: 5px;
   margin-bottom: 5px;
+  min-width: 120px;
+  max-width: 140px;
 }
 .investments-by-month a:hover {
   border-color: #333;
@@ -12492,4 +12491,32 @@ col.w100 {
 .overdue {
   color: red;
   font-weight: 800;
+}
+.inline-actions {
+  display: flex;
+  visibility: hidden;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.inline-actions a,
+.inline-actions button {
+  display: inline;
+}
+.inline-sort {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.list-services .arrow-up,
+.list-services .arrow-down {
+  float: none;
+  margin: 0;
+  padding: 0 2px;
+}
+.list-services .arrow-up:last-child,
+.list-services .arrow-down:last-child {
+  padding: 0;
+}
+.list-services .arrow-down {
+  align-self: flex-end;
 }

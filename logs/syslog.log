@@ -2196,3 +2196,545 @@
 2018-02-07 15:00:01 [Art_Model_Login: update] {"id":"27503"} []
 2018-02-07 15:02:00 [Art_Model_Login: update] {"id":"27503"} []
 2018-02-07 15:02:16 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:11:02 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:11:05 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:11:09 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:11:09 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:25:45 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:25:46 [Art_Model_Register_Value: delete] {"id":"1372","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 14:46:29","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: delete] {"id":"1371","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 14:46:29","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: delete] {"id":"1373","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 14:46:29","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: delete] {"id":"1370","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 14:46:29","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: delete] {"id":"1375","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518011130","created_by":"93","modified_by":"","created_date":"2018-02-07 14:46:29","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: delete] {"id":"1374","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 14:46:29","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: insert] {"id":"1378"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: insert] {"id":"1379"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: insert] {"id":"1380"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: insert] {"id":"1381"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: insert] {"id":"1382"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: insert] {"id":"1383"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: delete] {"id":"1377","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 14:46:29","created_by":"93","modified_by":"","created_date":"2018-02-07 14:46:29","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: delete] {"id":"1376","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/51fd03dba52bb533.css","created_by":"93","modified_by":"","created_date":"2018-02-07 14:46:29","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: insert] {"id":"1384"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Register_Value: insert] {"id":"1385"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:25:46 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:26:30 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:26:31 [Art_Model_Register_Value: delete] {"id":"1380","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:25:46","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: delete] {"id":"1379","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:25:46","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: delete] {"id":"1381","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:25:46","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: delete] {"id":"1378","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:25:46","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: delete] {"id":"1383","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518013543","created_by":"93","modified_by":"","created_date":"2018-02-07 15:25:46","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: delete] {"id":"1382","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:25:46","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: insert] {"id":"1386"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: insert] {"id":"1387"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: insert] {"id":"1388"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: insert] {"id":"1389"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: insert] {"id":"1390"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: insert] {"id":"1391"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: delete] {"id":"1385","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 15:25:46","created_by":"93","modified_by":"","created_date":"2018-02-07 15:25:46","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: delete] {"id":"1384","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/42b3661884716222.css","created_by":"93","modified_by":"","created_date":"2018-02-07 15:25:46","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: insert] {"id":"1392"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Register_Value: insert] {"id":"1393"} {"layer":"admin","section":"users","action":"editcompany","id":"108"}
+2018-02-07 15:26:31 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:29:19 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:29:21 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:29:45 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:29:45 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:29:46 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:30:02 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:30:02 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:34:12 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:34:13 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:34:51 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:35:07 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:41:16 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:41:17 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:41:28 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:41:29 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:44:48 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:44:50 [Art_Model_Register_Value: delete] {"id":"1388","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:26:31","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: delete] {"id":"1387","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:26:31","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: delete] {"id":"1389","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:26:31","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: delete] {"id":"1386","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:26:31","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: delete] {"id":"1391","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518013588","created_by":"93","modified_by":"","created_date":"2018-02-07 15:26:31","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: delete] {"id":"1390","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:26:31","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: insert] {"id":"1394"} {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: insert] {"id":"1395"} {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: insert] {"id":"1396"} {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: insert] {"id":"1397"} {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: insert] {"id":"1398"} {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: insert] {"id":"1399"} {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: delete] {"id":"1393","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 15:26:31","created_by":"93","modified_by":"","created_date":"2018-02-07 15:26:31","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: delete] {"id":"1392","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/1e238414e3004eba.css","created_by":"93","modified_by":"","created_date":"2018-02-07 15:26:31","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: insert] {"id":"1400"} {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Register_Value: insert] {"id":"1401"} {"layer":"admin","section":"investment"}
+2018-02-07 15:44:50 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:44:53 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:44:53 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:44:57 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:44:58 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:45:44 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:45:45 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:45:47 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:45:48 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:45:50 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:45:50 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:46:34 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:46:34 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:47:48 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:47:48 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:48:02 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:48:03 [Art_Model_Register_Value: delete] {"id":"1396","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:44:50","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: delete] {"id":"1395","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:44:50","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: delete] {"id":"1397","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:44:50","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: delete] {"id":"1394","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:44:50","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: delete] {"id":"1399","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518014610","created_by":"93","modified_by":"","created_date":"2018-02-07 15:44:50","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: delete] {"id":"1398","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:44:50","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: insert] {"id":"1402"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: insert] {"id":"1403"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: insert] {"id":"1404"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: insert] {"id":"1405"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: insert] {"id":"1406"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: insert] {"id":"1407"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: delete] {"id":"1401","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 15:44:50","created_by":"93","modified_by":"","created_date":"2018-02-07 15:44:50","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: delete] {"id":"1400","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/0112d8066ada0b47.css","created_by":"93","modified_by":"","created_date":"2018-02-07 15:44:50","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: insert] {"id":"1408"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Register_Value: insert] {"id":"1409"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:03 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:48:18 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:48:19 [Art_Model_Register_Value: delete] {"id":"1404","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: delete] {"id":"1403","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: delete] {"id":"1405","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: delete] {"id":"1402","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: delete] {"id":"1407","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518014878","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: delete] {"id":"1406","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: insert] {"id":"1410"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: insert] {"id":"1411"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: insert] {"id":"1412"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: insert] {"id":"1413"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: insert] {"id":"1414"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: insert] {"id":"1415"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: delete] {"id":"1409","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 15:48:03","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: delete] {"id":"1408","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/8a8e048a8d9fb20b.css","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: insert] {"id":"1416"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Register_Value: insert] {"id":"1417"} {"layer":"admin","section":"investment"}
+2018-02-07 15:48:19 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:48:27 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:48:27 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:48:30 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:48:31 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:48:57 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:48:57 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:17 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:17 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:24 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:24 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:33 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:34 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:36 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:36 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:49 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:49 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:50 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:51 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:56 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:57 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:58 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:51:58 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:52:01 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:52:01 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:52:06 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:52:06 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:52:18 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:52:18 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:53:39 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:53:39 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:54:08 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:54:08 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:55:02 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:55:03 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:56:29 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:56:30 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:57:00 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 15:57:01 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:03:14 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:03:15 [Art_Model_Register_Value: delete] {"id":"1412","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: delete] {"id":"1411","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: delete] {"id":"1413","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: delete] {"id":"1410","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: delete] {"id":"1415","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518014897","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: delete] {"id":"1414","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: insert] {"id":"1418"} {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: insert] {"id":"1419"} {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: insert] {"id":"1420"} {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: insert] {"id":"1421"} {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: insert] {"id":"1422"} {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: insert] {"id":"1423"} {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: delete] {"id":"1417","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 15:48:19","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: delete] {"id":"1416","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/d2f2cddbb4366eac.css","created_by":"93","modified_by":"","created_date":"2018-02-07 15:48:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: insert] {"id":"1424"} {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Register_Value: insert] {"id":"1425"} {"layer":"admin","section":"investment"}
+2018-02-07 16:03:15 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:04:00 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:04:01 [Art_Model_Register_Value: delete] {"id":"1420","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:03:15","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: delete] {"id":"1419","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:03:15","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: delete] {"id":"1421","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:03:15","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: delete] {"id":"1418","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:03:15","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: delete] {"id":"1423","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518015789","created_by":"93","modified_by":"","created_date":"2018-02-07 16:03:15","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: delete] {"id":"1422","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:03:15","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: insert] {"id":"1426"} {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: insert] {"id":"1427"} {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: insert] {"id":"1428"} {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: insert] {"id":"1429"} {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: insert] {"id":"1430"} {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: insert] {"id":"1431"} {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: delete] {"id":"1425","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:03:15","created_by":"93","modified_by":"","created_date":"2018-02-07 16:03:15","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: delete] {"id":"1424","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/e3348f95cb4132fd.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:03:15","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: insert] {"id":"1432"} {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Register_Value: insert] {"id":"1433"} {"layer":"admin","section":"investment"}
+2018-02-07 16:04:01 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:05:47 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:05:48 [Art_Model_Register_Value: delete] {"id":"1428","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:04:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: delete] {"id":"1427","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:04:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: delete] {"id":"1429","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:04:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: delete] {"id":"1426","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:04:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: delete] {"id":"1431","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518015832","created_by":"93","modified_by":"","created_date":"2018-02-07 16:04:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: delete] {"id":"1430","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:04:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: insert] {"id":"1434"} {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: insert] {"id":"1435"} {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: insert] {"id":"1436"} {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: insert] {"id":"1437"} {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: insert] {"id":"1438"} {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: insert] {"id":"1439"} {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: delete] {"id":"1433","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:04:01","created_by":"93","modified_by":"","created_date":"2018-02-07 16:04:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: delete] {"id":"1432","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/6a60673297c03667.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:04:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: insert] {"id":"1440"} {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Register_Value: insert] {"id":"1441"} {"layer":"admin","section":"investment"}
+2018-02-07 16:05:48 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:09:08 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:09:09 [Art_Model_Register_Value: delete] {"id":"1436","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:05:48","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: delete] {"id":"1435","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:05:48","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: delete] {"id":"1437","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:05:48","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: delete] {"id":"1434","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:05:48","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: delete] {"id":"1439","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518015945","created_by":"93","modified_by":"","created_date":"2018-02-07 16:05:48","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: delete] {"id":"1438","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:05:48","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: insert] {"id":"1442"} {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: insert] {"id":"1443"} {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: insert] {"id":"1444"} {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: insert] {"id":"1445"} {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: insert] {"id":"1446"} {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: insert] {"id":"1447"} {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: delete] {"id":"1441","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:05:48","created_by":"93","modified_by":"","created_date":"2018-02-07 16:05:48","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: delete] {"id":"1440","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/703568dd012f3775.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:05:48","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: insert] {"id":"1448"} {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Register_Value: insert] {"id":"1449"} {"layer":"admin","section":"service"}
+2018-02-07 16:09:09 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:12:27 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:12:28 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:12:46 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:12:46 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:12:55 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:12:55 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:18:17 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:18:18 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:18:24 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:18:24 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:18:27 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:18:27 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:18:30 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:18:30 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:22:01 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:22:01 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:22:15 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:22:15 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:23:28 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:23:29 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:23:37 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:23:37 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:23:55 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:23:55 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:02 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:03 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:06 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:06 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:10 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:11 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:12 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:13 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:20 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:20 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:22 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:22 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:56 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:24:57 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:29:22 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:29:23 [Art_Model_Register_Value: delete] {"id":"1444","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:09:09","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: delete] {"id":"1443","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:09:09","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: delete] {"id":"1445","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:09:09","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: delete] {"id":"1442","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:09:09","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: delete] {"id":"1447","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518015998","created_by":"93","modified_by":"","created_date":"2018-02-07 16:09:09","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: delete] {"id":"1446","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:09:09","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: insert] {"id":"1450"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: insert] {"id":"1451"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: insert] {"id":"1452"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: insert] {"id":"1453"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: insert] {"id":"1454"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: insert] {"id":"1455"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: delete] {"id":"1449","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:09:09","created_by":"93","modified_by":"","created_date":"2018-02-07 16:09:09","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: delete] {"id":"1448","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/89e53a5fc15b4e7a.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:09:09","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: insert] {"id":"1456"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:23 [Art_Model_Register_Value: insert] {"id":"1457"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:24 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:29:44 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:29:45 [Art_Model_Register_Value: delete] {"id":"1452","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:23","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: delete] {"id":"1451","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:23","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: delete] {"id":"1453","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:23","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: delete] {"id":"1450","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:23","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: delete] {"id":"1455","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518017361","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:23","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: delete] {"id":"1454","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:23","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: insert] {"id":"1458"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: insert] {"id":"1459"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: insert] {"id":"1460"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: insert] {"id":"1461"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: insert] {"id":"1462"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: insert] {"id":"1463"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: delete] {"id":"1457","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:29:23","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:23","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: delete] {"id":"1456","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/e50bd7f22608c733.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:23","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: insert] {"id":"1464"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Register_Value: insert] {"id":"1465"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:45 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:29:57 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:29:58 [Art_Model_Register_Value: delete] {"id":"1460","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:45","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: delete] {"id":"1459","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:45","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: delete] {"id":"1461","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:45","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: delete] {"id":"1458","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:45","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: delete] {"id":"1463","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518017383","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:45","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: delete] {"id":"1462","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:45","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: insert] {"id":"1466"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: insert] {"id":"1467"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: insert] {"id":"1468"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: insert] {"id":"1469"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: insert] {"id":"1470"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: insert] {"id":"1471"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: delete] {"id":"1465","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:29:45","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:45","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: delete] {"id":"1464","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/064fc512cad14527.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:45","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: insert] {"id":"1472"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:58 [Art_Model_Register_Value: insert] {"id":"1473"} {"layer":"admin","section":"service"}
+2018-02-07 16:29:59 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:31:13 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:31:13 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:31:38 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:31:38 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:33:15 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:33:16 [Art_Model_Register_Value: delete] {"id":"1468","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:58","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: delete] {"id":"1467","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:58","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: delete] {"id":"1469","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:58","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: delete] {"id":"1466","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:58","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: delete] {"id":"1471","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518017394","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:58","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: delete] {"id":"1470","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:58","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: insert] {"id":"1474"} {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: insert] {"id":"1475"} {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: insert] {"id":"1476"} {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: insert] {"id":"1477"} {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: insert] {"id":"1478"} {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: insert] {"id":"1479"} {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: delete] {"id":"1473","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:29:58","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:58","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: delete] {"id":"1472","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/fc447fc2da79e048.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:29:58","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: insert] {"id":"1480"} {"layer":"admin","section":"service"}
+2018-02-07 16:33:16 [Art_Model_Register_Value: insert] {"id":"1481"} {"layer":"admin","section":"service"}
+2018-02-07 16:33:17 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:34:34 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:34:35 [Art_Model_Register_Value: delete] {"id":"1476","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:33:16","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: delete] {"id":"1475","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:33:16","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: delete] {"id":"1477","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:33:16","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: delete] {"id":"1474","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:33:16","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: delete] {"id":"1479","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518017593","created_by":"93","modified_by":"","created_date":"2018-02-07 16:33:16","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: delete] {"id":"1478","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:33:16","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: insert] {"id":"1482"} {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: insert] {"id":"1483"} {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: insert] {"id":"1484"} {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: insert] {"id":"1485"} {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: insert] {"id":"1486"} {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: insert] {"id":"1487"} {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: delete] {"id":"1481","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:33:16","created_by":"93","modified_by":"","created_date":"2018-02-07 16:33:16","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: delete] {"id":"1480","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/b9e198de32f4f3f7.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:33:16","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: insert] {"id":"1488"} {"layer":"admin","section":"service"}
+2018-02-07 16:34:35 [Art_Model_Register_Value: insert] {"id":"1489"} {"layer":"admin","section":"service"}
+2018-02-07 16:34:36 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:35:12 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:35:12 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:35:29 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:35:30 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:36:05 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:36:05 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:38:25 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:38:26 [Art_Model_Register_Value: delete] {"id":"1484","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:34:35","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: delete] {"id":"1483","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:34:35","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: delete] {"id":"1485","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:34:35","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: delete] {"id":"1482","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:34:35","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: delete] {"id":"1487","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518017673","created_by":"93","modified_by":"","created_date":"2018-02-07 16:34:35","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: delete] {"id":"1486","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:34:35","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: insert] {"id":"1490"} {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: insert] {"id":"1491"} {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: insert] {"id":"1492"} {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: insert] {"id":"1493"} {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: insert] {"id":"1494"} {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: insert] {"id":"1495"} {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: delete] {"id":"1489","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:34:35","created_by":"93","modified_by":"","created_date":"2018-02-07 16:34:35","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: delete] {"id":"1488","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/471368ab84b5ea7c.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:34:35","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: insert] {"id":"1496"} {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Register_Value: insert] {"id":"1497"} {"layer":"admin","section":"service"}
+2018-02-07 16:38:26 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:41:18 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:41:18 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:41:34 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:41:35 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:43:27 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:43:27 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:44:13 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:44:13 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:44:27 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:44:27 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:44:37 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:44:37 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:19 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:19 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:22 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:23 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:24 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:24 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:29 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:29 [Service: update] {"id":"3"} {"layer":"admin","section":"service","action":"movedown","id":"3"}
+2018-02-07 16:45:29 [Service: update] {"id":"4"} {"layer":"admin","section":"service","action":"movedown","id":"3"}
+2018-02-07 16:45:31 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:31 [Service: update] {"id":"4"} {"layer":"admin","section":"service","action":"moveup","id":"4"}
+2018-02-07 16:45:31 [Service: update] {"id":"1"} {"layer":"admin","section":"service","action":"moveup","id":"4"}
+2018-02-07 16:45:35 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:35 [Service: update] {"id":"1"} {"layer":"admin","section":"service","action":"moveup","id":"1"}
+2018-02-07 16:45:35 [Service: update] {"id":"4"} {"layer":"admin","section":"service","action":"moveup","id":"1"}
+2018-02-07 16:45:39 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:45:40 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:46:01 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:46:01 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:47:18 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:47:19 [Art_Model_Register_Value: delete] {"id":"1492","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:38:26","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: delete] {"id":"1491","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:38:26","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: delete] {"id":"1493","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:38:26","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: delete] {"id":"1490","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:38:26","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: delete] {"id":"1495","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518017903","created_by":"93","modified_by":"","created_date":"2018-02-07 16:38:26","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: delete] {"id":"1494","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:38:26","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: insert] {"id":"1498"} {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: insert] {"id":"1499"} {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: insert] {"id":"1500"} {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: insert] {"id":"1501"} {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: insert] {"id":"1502"} {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: insert] {"id":"1503"} {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: delete] {"id":"1497","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:38:26","created_by":"93","modified_by":"","created_date":"2018-02-07 16:38:26","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: delete] {"id":"1496","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/f97c4d28af7fb482.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:38:26","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: insert] {"id":"1504"} {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Register_Value: insert] {"id":"1505"} {"layer":"admin","section":"service"}
+2018-02-07 16:47:19 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:47:34 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:47:34 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:48:05 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:48:05 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:48:11 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:48:11 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:48:16 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:48:16 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:49:26 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:49:28 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:49:31 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:49:34 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:49:52 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:49:58 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:52:02 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:52:03 [Art_Model_Register_Value: delete] {"id":"1500","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:47:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: delete] {"id":"1499","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:47:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: delete] {"id":"1501","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:47:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: delete] {"id":"1498","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:47:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: delete] {"id":"1503","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518018435","created_by":"93","modified_by":"","created_date":"2018-02-07 16:47:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: delete] {"id":"1502","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:47:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: insert] {"id":"1506"} {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: insert] {"id":"1507"} {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: insert] {"id":"1508"} {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: insert] {"id":"1509"} {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: insert] {"id":"1510"} {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: insert] {"id":"1511"} {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: delete] {"id":"1505","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:47:19","created_by":"93","modified_by":"","created_date":"2018-02-07 16:47:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: delete] {"id":"1504","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/0cc93bca7debacec.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:47:19","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: insert] {"id":"1512"} {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Register_Value: insert] {"id":"1513"} {"layer":"admin","section":"investment"}
+2018-02-07 16:52:03 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:52:05 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:52:06 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:52:07 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:52:07 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:53:20 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:53:21 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:55:10 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:55:11 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:55:30 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 16:55:30 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:01:36 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:01:37 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:01:41 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:01:42 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:02:39 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:02:39 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:03:03 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:03:04 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:03:43 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:03:44 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:03:45 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:03:46 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:03:47 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:03:48 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:04:33 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:04:34 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:04:35 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:04:36 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:37 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:38 [Art_Model_Register_Value: delete] {"id":"1508","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:52:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: delete] {"id":"1507","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:52:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: delete] {"id":"1509","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:52:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: delete] {"id":"1506","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:52:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: delete] {"id":"1511","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518018720","created_by":"93","modified_by":"","created_date":"2018-02-07 16:52:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: delete] {"id":"1510","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 16:52:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: insert] {"id":"1514"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: insert] {"id":"1515"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: insert] {"id":"1516"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: insert] {"id":"1517"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: insert] {"id":"1518"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: insert] {"id":"1519"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: delete] {"id":"1513","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 16:52:03","created_by":"93","modified_by":"","created_date":"2018-02-07 16:52:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: delete] {"id":"1512","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/ea06a6b7894d5ee4.css","created_by":"93","modified_by":"","created_date":"2018-02-07 16:52:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: insert] {"id":"1520"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:38 [Art_Model_Register_Value: insert] {"id":"1521"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:39 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:41 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:41 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:42 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:42 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:43 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:44 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:44 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:45 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:50 [Art_Model_Login: update] {"id":"27503"} []
+2018-02-07 17:06:51 [Art_Model_Register_Value: delete] {"id":"1516","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 17:06:38","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: delete] {"id":"1515","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 17:06:38","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: delete] {"id":"1517","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 17:06:38","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: delete] {"id":"1514","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 17:06:38","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: delete] {"id":"1519","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518019595","created_by":"93","modified_by":"","created_date":"2018-02-07 17:06:38","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: delete] {"id":"1518","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-07 17:06:38","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: insert] {"id":"1522"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: insert] {"id":"1523"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: insert] {"id":"1524"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: insert] {"id":"1525"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: insert] {"id":"1526"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: insert] {"id":"1527"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: delete] {"id":"1521","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-07 17:06:38","created_by":"93","modified_by":"","created_date":"2018-02-07 17:06:38","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: delete] {"id":"1520","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/c80cb9bbf61174ba.css","created_by":"93","modified_by":"","created_date":"2018-02-07 17:06:38","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: insert] {"id":"1528"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:51 [Art_Model_Register_Value: insert] {"id":"1529"} {"layer":"admin","section":"investment"}
+2018-02-07 17:06:52 [Art_Model_Login: update] {"id":"27503"} []

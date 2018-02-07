@@ -11,17 +11,17 @@
 		</div>
 	</div>
 </div>
-
+<div class="row">
 	<div class="col-md-2 col-xs-2"><?= __('module_service_type') ?></div>
 	<div class="col-md-10 col-xs-10">
 		<?= $this->service->type ?>
 	</div>
-	
+
 	<div class="col-md-2 col-xs-2"><?= __('module_service_name') ?></div>	
 	<div class="col-md-10 col-xs-10">
 		<?= $this->service->name ?>
 	</div>
-	
+
 	<div class="col-md-2 col-xs-2"><?= __('module_service_settings') ?></div>
 	<div class="col-md-10 col-xs-10">
 		<?= __('icon').': <i class="fa fa-'.$this->service->icon.'"></i> '.$this->service->icon.', '.__('article').': '.
@@ -34,26 +34,28 @@
 			<?= $this->service->defaultValue ?>
 		</div>
 	<?php endif; ?>
-	
-	<div class="clear"></div>
+</div>
 
-	<table class="table-default">
+<table class="table-default">
+	<tr>
+		<th><?= __('module_service_price') ?></th>
+		<th><?= __('module_service_time_interval') ?></th>
+		<th><?= __('module_service_is_default') ?></th>
+		<th></th>
+	</tr>
+	<?php 
+		foreach( $this->servicePrices as $servicePrice ) : /* @var $service Service */ 
+	?>
 		<tr>
-			<th><?= __('module_service_price') ?></th>
-			<th><?= __('module_service_time_interval') ?></th>
-			<th><?= __('module_service_is_default') ?></th>
-			<th></th>
-			<th></th>
+			<td><?= Art_Filter::cutString($servicePrice->price,30) ?></td>
+			<td><?= Art_Filter::cutString($servicePrice->time_interval,40) ?></td>
+			<td><?= ($servicePrice->is_default) ? __('yes') : __('no') ?></td>
+			<td>
+				<div class="inline-actions">
+					<a href="<?= $servicePrice->a_edit ?>"><i class="fa fa-pencil edit"></i></a>
+					<button <?= $this->delete_single_request->getHTML(array('id'=>$servicePrice->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
+				</div>
+			</td>
 		</tr>
-		<?php 
-			foreach( $this->servicePrices as $servicePrice ) : /* @var $service Service */ 
-		?>
-			<tr>
-				<td><?= Art_Filter::cutString($servicePrice->price,30) ?></td>
-				<td><?= Art_Filter::cutString($servicePrice->time_interval,40) ?></td>
-				<td><?= ($servicePrice->is_default) ? __('yes') : __('no') ?></td>
-				<td class="text-center"><a href="<?= $servicePrice->a_edit ?>"><i class="fa fa-pencil edit"></i></a></td>
-				<td class="text-center"><button <?= $this->delete_single_request->getHTML(array('id'=>$servicePrice->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button></td>
-			</tr>
-		<?php endforeach; ?>
-	</table>
+	<?php endforeach; ?>
+</table>

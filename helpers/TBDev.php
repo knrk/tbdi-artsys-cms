@@ -288,8 +288,7 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 * 
 	 *	@return array
 	 */
-	static function getGender ( $gender_number )
-	{
+	static function getGender ($gender_number) {
 		return $gender_number ? __('male') : __('female');
 	}
 	

@@ -28,8 +28,11 @@
 <?php endif; ?>
 
 <div class="investments-by-month">
-	<?php foreach (array_reverse($this->links) as $key => $val) : ?>	
-		<a href="/<?= Art_Router::getLayer() ?>/investment/detail/<?= $key ?>"><?= $val ?></a>
+	<?php foreach (array_reverse($this->links) as $key => $val) : ?>
+		<a href="/<?= Art_Router::getLayer() ?>/investment/detail/<?= $key ?>">
+			<i class="fa fa-calendar"></i>
+			<?= $val ?>
+		</a>
 	<?php endforeach; ?>
 </div>
 
@@ -37,27 +40,23 @@
 	<colgroup>
 		<col class="w30">
 		<col class="w10">
-		<col class="w10">
 		<col class="w15">
-		<col class="w25">
+		<col class="w15">
+		<col class="w20">
 		<col class="w10">
 	</colgroup>
 	<tr>
 		<th>
-			<?= Helper_Default::renderSortUpDown($this->sortBy, 'surname') ?>
-			<?= __('fullname') ?>
+			<?= Helper_Default::renderSortUpDown($this->sortBy, 'surname', __('fullname')) ?>
 		</th>
 		<th>
-			<?= Helper_Default::renderSortUpDown($this->sortBy, 'value') ?>
-			<?= __('module_investment_value') ?>
+			<?= Helper_Default::renderSortUpDown($this->sortBy, 'value', __('module_investment_value')) ?>
 		</th>
 		<th>
-			<?= Helper_Default::renderSortUpDown($this->sortBy, 'date') ?>
-			<?= __('module_investment_date') ?>
+			<?= Helper_Default::renderSortUpDown($this->sortBy, 'date',__('module_investment_date')) ?>
 		</th>
 		<th>
-			<?= Helper_Default::renderSortUpDown($this->sortBy, 'expiry_date') ?>
-			<?= __('module_investment_expiry_date') ?>
+			<?= Helper_Default::renderSortUpDown($this->sortBy, 'expiry_date', __('module_investment_expiry_date')) ?>
 		</th>
 		<th>
 			<?= __('module_investment_note') ?>
@@ -72,7 +71,7 @@
 			<td><?= Art_Filter::cutString($value->getUser()->fullname, 40) ?></td>
 			<td><?= $value->value ?></td>
 			<td><?= nice_date($value->date) ?></td>
-			<td<?= ( strtotime($value->expiry_date) < time() ) ? ' style="color: red;"' : null ?>><?= nice_date($value->expiry_date) ?></td>
+			<td<?= (strtotime($value->expiry_date) < time() ) ? ' class="overdue"' : null ?>><?= nice_date($value->expiry_date) ?></td>
 			<td><?= Art_Filter::cutString($value->note, 40) ?></td>
 			<td>
 				<div class="inline-actions">

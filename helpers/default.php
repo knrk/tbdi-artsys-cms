@@ -423,15 +423,15 @@ class Helper_Default extends Art_Abstract_Helper {
 	 *	@param string $variable
 	 *	@return 
 	 */
-	static function renderSortUpDown($sortBy, $variable)
+	static function renderSortUpDown($sortBy, $variable, $insert = '')
 	{
 		$up = static::$_indexSortBy + 1;
 		$down = static::$_indexSortBy;
 		static::$_indexSortBy += 2;
 
-		return $sortBy == $up ? '<a href="?'.$variable.'=0"><i class="fa fa-angle-down"></i>' :
-						($sortBy == $down ? '<a href="?'.$variable.'=1"><i class="fa fa-angle-up"></i>' : 
-												'<a href="?'.$variable.'=0">');
+		return $sortBy == $up ? '<a href="?'.$variable.'=0">' . $insert . '<i class="fa fa-angle-down"></i>' :
+				($sortBy == $down ? '<a href="?'.$variable.'=1">' . $insert . '<i class="fa fa-angle-up"></i>' : 
+				'<a href="?'.$variable.'=0">' . $insert);
 	}
 	
 		

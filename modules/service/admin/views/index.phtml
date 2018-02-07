@@ -17,38 +17,47 @@
 	</div>
 </div>
 
-	<div class="clear"></div>
-
-	<table class="table-default">
+<table class="table-default list-services">
+	<colgroup>
+		<col class="w5">
+	</colgroup>
+	<tr>
+		<th></th>
+		<th><?= __('module_service_name') ?></th>
+		<th><?= __('module_service_type') ?></th>
+		<th><?= __('module_service_settings') ?></th>
+		<th><?= __('article') ?></th>
+		<th><?= __('promo') ?></th>
+		<th><?= __('conditions') ?></th>
+		<th></th>
+	</tr>
+	<?php 
+		foreach ($this->services as $service) : /* @var $service Service */ 
+	?>
 		<tr>
-			<th><?= __('module_service_type') ?></th>
-			<th><?= __('module_service_name') ?></th>
-			<th colspan="4"><?= __('module_service_settings').' - '.__('icon').', '.__('article').', '.__('promo').', '.__('conditions') ?></th>
-			<th></th>
-			<th></th>
-			<th></th>
-		</tr>
-		<?php 
-			foreach( $this->services as $service ) : /* @var $service Service */ 
-		?>
-			<tr>
-				<td><?= Art_Filter::cutString($service->type,60) ?></td>
-				<td><a href="<?= $service->a_detail ?>"><?= Art_Filter::cutString($service->name,40) ?></a></td>
-				<td><?= '<i class="fa fa-'.$service->icon.'"></i> '.$service->icon ?></td>
-				<td><abbr title="<?= $service->article.' ('.$service->perex_article.')' ?>"><?= $service->title_article ?></abbr></td>
-				<td><abbr title="<?= $service->promo.' ('.$service->perex_promo.')' ?>"><?= $service->title_promo ?></abbr></td>
-				<td><?= $service->conditions ?></td>
-				<td class="small-td">
-					<?php if($this->sort_buttons[$service->id][Art_Model::SORT_UP]): ?>
+			<td>
+				<div class="inline-sort">
+					<?php if ($this->sort_buttons[$service->id][Art_Model::SORT_UP]) : ?>
 						<button <?= $this->move_up_request->getHTML(array('id' => $service->id)) ?> class="arrow-up" title="<?= __('move_up') ?>"><i class="fa fa-arrow-up"></i></button>
 					<?php endif; ?>
-					<?php if($this->sort_buttons[$service->id][Art_Model::SORT_DOWN]): ?>
+					<?php if ($this->sort_buttons[$service->id][Art_Model::SORT_DOWN]) : ?>
 						<button <?= $this->move_down_request->getHTML(array('id' => $service->id)) ?> class="arrow-down" title="<?= __('move_down') ?>"><i class="fa fa-arrow-down"></i></button>
 					<?php endif; ?>	
-				</td>
-				<td class="text-center"><a href="<?= $service->a_edit ?>"><i class="fa fa-pencil edit"></i></a></td>
-				<td class="text-center"><button <?= $this->delete_single_request->getHTML(array('id'=>$service->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button></td>
-			</tr>
-		<?php endforeach; ?>
-	</table>
+				</div>
+			</td>
+			<td><a href="<?= $service->a_detail ?>"><?= Art_Filter::cutString($service->name,40) ?></a></td>
+			<td><?= Art_Filter::cutString($service->type,60) ?></td>
+			<td><?= '<i class="fa fa-'.$service->icon.'"></i> '.$service->icon ?></td>
+			<td><span title="<?= $service->article.' ('.$service->perex_article.')' ?>"><?= $service->title_article ?></span></td>
+			<td><span title="<?= $service->promo.' ('.$service->perex_promo.')' ?>"><?= $service->title_promo ?></span></td>
+			<td><?= $service->conditions ?></td>
+			<td>
+				<div class="inline-actions">
+					<a href="<?= $service->a_edit ?>"><i class="fa fa-pencil edit"></i></a>
+					<button <?= $this->delete_single_request->getHTML(array('id'=>$service->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
+				</div>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+</table>
 	

@@ -1,8 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,300italic&subset=latin,latin-ext);
 
+@bg-color: #f6f6f6;
+@table-row-border-color: @bg-color;
+
 body, html{
     height: 100%;
-    background: #D9E0E7;
+    background: @bg-color;
     padding: 0px;
     width: 100%;
     z-index: 10;
@@ -12,15 +15,15 @@ body, html{
     cursor: default;
 }
 
-*{
+* {
     outline: none !important;
 }
 
-.row{
+.row {
     margin: 0px auto;
 }
 
-body{
+body {
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -529,10 +532,8 @@ td.big-td{
     animation-duration: 0.3s;
 }
 
-
-
-.table-default td{
-    border-bottom: 1px solid #ddd;
+.table-default td {
+    border-bottom: 1px solid @table-row-border-color;
 }
 
 td.big-td input[type=checkbox]{
@@ -682,7 +683,13 @@ table.managed-in tr:nth-of-type(2n){
 }
 
 
-input[type=text], input[type=file], select, input[type=button], input[type=submit], textarea{
+input[type=text], 
+input[type=file], 
+input[type=email], 
+input[type=button], 
+input[type=submit],
+select, 
+textarea{
     border: 1px solid #CCD0D4;
     box-shadow: none;
     font-size: 12px;
@@ -697,18 +704,16 @@ select, select.form-control{
     height: 35px; 
 }
 
-input[type=text]{
+input[type=text],
+input[type=email] {
     border: 2px solid #CCD0D4;
-    box-shadow: none;
     border-radius: 0px;
     height: 35px;
 }
 
-input[type=text]:focus{
-    border: 2px solid #bbb;
-    box-shadow: none;
-    border-radius: 0px;
-    height: 35px;
+input[type=text]:focus,
+input[type=email]:focus {
+    border-color: #bbb;
 }
 
 select:focus, select.form-control:focus{
@@ -980,7 +985,7 @@ label{
 }
 
 body {
-    background: #D9E0E7;
+    background: @bg-color;
     cursor: default;
     min-width: 1150px;
     height: 100vh;
@@ -1062,10 +1067,8 @@ html {
     align-content: center;
     align-items: center;
     justify-content: center;
-    border: 1px solid #222;
-    box-sizing: border-box;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .calendar-border{
@@ -1229,17 +1232,16 @@ html {
     position: relative;
 }
 
-.nav-ul li.active:after{
+.nav-ul li.active:after {
     position: absolute;
     content: "";
     width: 0;
-height: 0;
-border-style: solid;
-border-width: 20px 20px 20px 0;
-border-color: transparent #d9e0e7 transparent transparent;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 20px 20px 0;
+    border-color: transparent @bg-color transparent transparent;
     top: 0;
     right: 0;
-
 }
 
 .nav-ul li a{
@@ -1507,6 +1509,7 @@ col.f300 {
 .table-default tr th:first-of-type, 
 .table-default tr td:first-of-type {
     padding-left: 12px;
+    padding-right: 12px;
 }
 
 .table-default tr:hover td, 
@@ -1529,6 +1532,16 @@ col.f300 {
 .table-default a {
   color: #082945;
   display: block;
+}
+
+.table-default th a {
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
+
+    i {
+        margin-left: 4px;
+    }
 }
 .table-default a:hover {
   color: #3b5c9a;
@@ -1602,16 +1615,7 @@ col.f300 {
   max-height: 0px;
 }
 
-.inline-actions {
-    display: flex;
-    visibility: hidden;
-    flex-direction: row;
-    justify-content: flex-end;
 
-    a, button {
-        display: inline;
-    }
-}
 
 .dashboard-embed-inner{
     overflow-y: scroll;
@@ -1838,11 +1842,14 @@ col.f300 {
         align-self: auto;
         display: inline;
         border: 2px solid #ccc;
+        color: black;
         padding: 4px 8px;
         line-height: 22px;
         font-size: 12px;
         margin-right: 5px;
         margin-bottom: 5px;
+        min-width: 120px;
+        max-width: 140px;
 
         &:hover {
             border-color: #333;
@@ -1857,4 +1864,39 @@ col.f300 {
 .overdue {
     color: red;
     font-weight: 800;
+}
+
+.inline-actions {
+    display: flex;
+    visibility: hidden;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    a, button {
+        display: inline;
+    }
+}
+
+.inline-sort {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+// override table definitions
+.list-services {
+    .arrow-up,
+    .arrow-down {
+        float: none;
+        margin: 0;
+        padding: 0 2px;
+
+        &:last-child {
+            padding: 0;
+        }
+    }
+    .arrow-down {
+        align-self: flex-end;
+    }
 }

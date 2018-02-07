@@ -739,3 +739,67 @@ usort() expects parameter 2 to be a valid callback, non-static method Helper_TBD
 ---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
 usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
 ---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"service","action":"movedown","id":"3"} 
+---LOG DEBUG: {"layer":"admin","section":"service","action":"movedown","id":"3"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"service","action":"moveup","id":"4"} 
+---LOG DEBUG: {"layer":"admin","section":"service","action":"moveup","id":"4"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"service","action":"moveup","id":"1"} 
+---LOG DEBUG: {"layer":"admin","section":"service","action":"moveup","id":"1"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_dateR() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_expiry_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_expiry_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_expiry_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_dateR() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_dateR() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_dateR() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_value() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_value() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_value() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_valueR() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_value() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surnameR() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_expiry_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}

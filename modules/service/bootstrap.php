@@ -16,7 +16,7 @@ class Module_Bootstrap_Service extends Art_Abstract_Module_Bootstrap {
 	{
 		Art_Label::addLabelSet(array(
 			'module_service_header'			=> 'Služby',
-			'module_service_detail_header'	=> 'Detail služby',
+			'module_service_detail_header'	=> 'Služby - Detail',
 			'module_service_new_service'	=> 'Nová služba',
 			'module_service_edit_service'	=> 'Úprava služby',
 			'module_service_type'			=> 'Typ',
