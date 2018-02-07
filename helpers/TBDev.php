@@ -301,18 +301,13 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *	@param string	$content
 	 *	@return string
 	 */	
-	static function renderTrueFalseDateTo( $condition , $content )
-	{
-		if ( $condition )
-		{
-			return Helper_Default::elementPaired('span', $content, NULL, NULL, 'color: #f00');
-		}
-		else 
-		{
+	static function renderTrueFalseDateTo($condition , $content) {
+		if ($condition) {
+			return Helper_Default::elementPaired('span', $content, NULL, 'overdue', null);
+		} else {
 			return Helper_Default::elementPaired('span', $content);	
 		}	
 	}
-
 	
 	/**
 	 *	Get membership from date for User

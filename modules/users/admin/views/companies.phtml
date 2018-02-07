@@ -14,14 +14,22 @@
 	</div>
 </div>
 
-	<div class="clear"></div>
-
-	<div><?= Art_Widget::render('filter') ?></div>
+<div><?= Art_Widget::render('filter') ?></div>
 	
-<?php if ( !empty($this->usersData) ) : ?>	
+<?php if (!empty($this->usersData)) : ?>	
 	<table class="table-default">
+		<colgroup>
+			<col class="w5">
+			<col class="w20">
+			<col class="w15">
+			<col class="w15">
+			<col class="w5">
+			<col class="w10">
+			<col class="w10">
+			<col class="w20">
+			<col class="w5">
+		</colgroup>
 		<tr>
-			<th class="td-xsmall"><input type="checkbox" onclick="toggleCheck(this,'.module_users_index .cb-user-list')"></th>
 			<th>
 				<?= Helper_Default::renderSortUpDown($this->sortBy, 'id') ?>
 				ID
@@ -46,13 +54,12 @@
 			<th></th>
 		</tr>
 		<?php 
-			foreach( $this->usersData as $data ) : /* @var $data Art_Model_User_Data */ 
+			foreach ($this->usersData as $data ) : /* @var $data Art_Model_User_Data */ 
 		?>
 			<tr>
-				<td class="td-xsmall text-left"><input type="checkbox" name="user_<?= $data->p_userId?>" class="cb-user-list"></td>
 				<td><?= $data->_user->user_number ?></td>
 				<td><a href="<?= $data->a_detail ?>"><?= Art_Filter::cutString($data->company_name,60) ?></a></td>
-				<td <?= $data->getUser()->active ? null : 'style="color: #FFCCCC"' ?>><?= Art_Filter::cutString($data->fullname,40) ?></td>
+				<td <?= $data->getUser()->active ? null : 'class="overdue"' ?>><?= Art_Filter::cutString($data->fullname,40) ?></td>
 				<td><?= Art_Filter::cutString($data->email,100) ?></td>
 				<td><?= Art_Filter::cutString($data->p_phone,14) ?></td>
 				<td><?= $data->membership_from ?></td>
@@ -70,11 +77,11 @@
 	</table>
 <?php endif; ?>
 		
-	<div>
-		<?php echo __('module_users_count') . ': ' . $this->count ?>
-	</div>
+<div>
+	<?php echo __('module_users_count') . ': ' . $this->count ?>
+</div>
 	
-	<script>
+<script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });

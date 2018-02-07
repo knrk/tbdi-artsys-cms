@@ -2587,7 +2587,7 @@ class Module_Users extends Art_Abstract_Module {
 			}
 			else{
 				$value->membership_to = Helper_TBDev::getMembershipToForUser($user);
-				$value->membership_to_colored = Helper_TBDev::renderTrueFalseDateTo(dateSQL($value->membership_to) < dateSQL(),nice_date($value->membership_to));
+				$value->membership_to_colored = Helper_TBDev::renderTrueFalseDateTo(dateSQL($value->membership_to) < dateSQL(), nice_date($value->membership_to));
 			}
 
 			if ( $onlyCompany && Helper_TBDev::isUserRepresentsCompany($user) )

@@ -968,14 +968,14 @@ label{
     list-style-type: none;
     
     li {
-	cursor: pointer;
-	padding: 5px 10px;
-	border: 1px solid rgba(0,0,0,0.2);
-	display: inline-block;
-	
-	&:hover {
-	    text-decoration: underline;
-	}
+        cursor: pointer;
+        padding: 5px 10px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -997,20 +997,25 @@ html {
     flex-direction: row;
 
     height: 50px;
-    background: #fff;
+    background: #259af8;
     position: relative;
     top: 0;
     z-index: 5;
     width: 100%;
     left: 0px;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.26) !important;
-    margin: 0px !important;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.26);
     line-height: 50px;
     min-width: 1150px;
 
     .app-name {
         flex: 1 0 75%;
         padding-left: 10px;
+        text-transform: uppercase;
+
+        a {
+            color: white;
+            font-weight: 800;
+        }
     }
     .profile {
         flex: 1 0 25%;
@@ -1025,17 +1030,24 @@ html {
         white-space: nowrap;
         align-items: center;
         padding-right: 20px;
-        border-right: 1px solid #ccc;
+        border-right: 1px solid white;
         
         p {
             margin: 0;
             text-transform: uppercase;
             font-size: 11px;
             font-weight: 800;
+            color: white;
         }
     }
     .user-action {
         padding: 0 20px;
+
+        a {
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
     }
 }
 
@@ -1840,4 +1852,9 @@ col.f300 {
             margin-right: 0;
         }
     }
+}
+
+.overdue {
+    color: red;
+    font-weight: 800;
 }

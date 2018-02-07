@@ -68,24 +68,20 @@ class Helper_Default extends Art_Abstract_Helper {
 	 * 	@param string	$style
 	 *	@return string
 	 */
-	static function elementPaired( $name, $content, $id = NULL, $class = NULL, $style = NULL )
-	{
+	static function elementPaired($name, $content, $id = NULL, $class = NULL, $style = NULL) {
 		$other = '';
 		
-		if ( NULL !== $id )
-		{
-			$other .= 'id="'.$id.'"';
+		if (NULL !== $id) {
+			$other .= " id=\"$id\"";
 		}
-		if ( NULL !== $class )
-		{
-			$other .= ' class="'.$class.'"';
+		if (NULL !== $class) {
+			$other .= " class=\"$class\"";
 		}
-		if ( NULL !== $style )
-		{
-			$other .= ' style="'.$style.'"';
+		if (NULL !== $style) {
+			$other .= " style=\"$style\"";
 		}
 
-		return '<'.$name.$other.'>'.$content.'</'.$name.'>';
+		return "<$name$other>$content</$name>";
 	}
 	
 	
