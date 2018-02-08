@@ -2,6 +2,8 @@
 
 @bg-color: #f6f6f6;
 @table-row-border-color: @bg-color;
+@form-input-border-color: #ccd0d4;
+@form-input-bg-disabled-color: rgba(128, 128, 128, 0.1);
 
 body, html{
     height: 100%;
@@ -286,10 +288,6 @@ sup{
     border-bottom: 3px solid #126dc0 !important;
 }
 
-button:active{
-    
-}
-
 /*** SUBMENU ***/
 
 .action-name{
@@ -309,8 +307,9 @@ button:active{
     user-select: none;
 }
 
-.action-submenu div, .action-submenu button{
-    float: right !important;
+.action-submenu div, 
+.action-submenu button{
+    float: right;
     display: inline;
     width: 75px;
     border: none;
@@ -689,16 +688,17 @@ input[type=email],
 input[type=button], 
 input[type=submit],
 select, 
-textarea{
-    border: 1px solid #CCD0D4;
+textarea {
+    border: 1px solid @form-input-border-color;
     box-shadow: none;
     font-size: 12px;
     padding: 7px;
-     width: 100%;
+    width: 100%;
 }
 
-select, select.form-control{
-    border: 2px solid #CCD0D4;
+select, 
+select.form-control {
+    border: 2px solid @form-input-border-color;
     box-shadow: none;
     border-radius: 0px;
     height: 35px; 
@@ -706,17 +706,17 @@ select, select.form-control{
 
 input[type=text],
 input[type=email] {
-    border: 2px solid #CCD0D4;
+    border: 2px solid @form-input-border-color;
     border-radius: 0px;
     height: 35px;
+
+    &:disabled {
+        background-color: @form-input-bg-disabled-color;
+    }
 }
 
-input[type=text]:focus,
-input[type=email]:focus {
-    border-color: #bbb;
-}
-
-select:focus, select.form-control:focus{
+select:focus, 
+select.form-control:focus {
       border: 2px solid #bbb;
     box-shadow: none;
     border-radius: 0px;
@@ -724,7 +724,7 @@ select:focus, select.form-control:focus{
 }
 
 textarea, textarea.form-control{
-    border: 2px solid #CCD0D4;
+    border: 2px solid @form-input-border-color;
     box-shadow: none;
     border-radius: 0px;
 }
@@ -735,10 +735,10 @@ textarea:focus, textarea.form-control:focus{
 }
 
 input:focus, textarea:focus{
-    border: 1px solid #9FA2A5;
+    border: 2px solid rgb(4, 83, 161);
 }
 
-textarea{
+textarea {
     resize: vertical;
 }
 
@@ -1107,7 +1107,7 @@ html {
     overflow-y: hidden;
 }
 
-#nav-tabs{
+#nav-tabs {
     background-color: #2D353C !important;
     width: 70px;
     float: left;
@@ -1116,83 +1116,87 @@ html {
     padding: 0px;
     height: 100%;
     padding-top: 20px;
+
+    li {
+        width: 90%;
+        text-align: center;
+        border-radius: 5px 0px 0px 5px;
+        border: none;
+        margin: 0px;
+        margin-bottom: 5px;
+        padding: 0px;
+        float: right;
+        color: #fff;
+        transition: 0.15s ease-in-out 0s;
+
+        &:hover {
+            a {
+                background-color: #1A2229;
+                color: #fff;
+                opacity: 1;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.active {
+            a {
+                background-color: #1A2229;
+                color: #fff;
+                opacity: 1;
+            }
+        }
+
+        a {
+            padding: 0px;
+            margin: 0px;
+            height: 60px;
+            line-height: 60px;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px 0px 0px 5px;
+            border: none;
+            float: right;
+            color: #fff;
+            opacity: 0.3;
+            transition: 0.15s ease-in-out 0s;
+
+            &:focus {
+                background: none;
+            }
+
+            i {
+                height: 60px;
+                line-height: 60px;
+            }
+        }
+    }
 }
 
-#nav-tabs li a:focus{
-    background: none;
-}
 
-#nav-tabs li{
-    width: 90%;
-    padding: 0px;
-    margin: 0px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    border-radius: 5px 0px 0px 5px;
-    border: none;
-    display: block;
-    margin: 0px;
-    padding: 0px;
-    float: right;
-    margin-bottom: 5px;
-    color: #fff;
-    transition: 0.15s ease-in-out 0s;
-}
+// .nav-tabs > li.active > a{
+//     float: right;
+//     background: #9AD268;
+//     padding: 0px;
+//     margin: 0px;
+//     height: 60px;
+//     line-height: 60px;
+//     width: 100%;
+//     text-align: center;
+//     border-radius: 5px 0px 0px 5px;
+//     border: none;
+//     background-color: #1A2229;
+// }
 
-#nav-tabs li a{
-    padding: 0px;
-    margin: 0px;
-    height: 60px;
-    line-height: 60px;
-    width: 100%;
-    text-align: center;
-    border-radius: 5px 0px 0px 5px;
-    border: none;
-    float: right;
-    color: #fff;
-    opacity: 0.3;
-    transition: 0.15s ease-in-out 0s;
-}
+// .nav-tabs > li.active > a:hover{
+//     background: #1A2229 !important;
+// }
 
-#nav-tabs li a i{
-    height: 60px;
-    line-height: 60px;
-}
-
-#nav-tabs li:hover a{
-    background-color: #1A2229;
-    color: #fff;
-    opacity: 1;
-}
-
-#nav-tabs li.active a{
-    background-color: #1A2229;
-    color: #fff;
-    opacity: 1;
-}
-
-.nav-tabs > li.active > a{
-    float: right;
-    background: #9AD268;
-    padding: 0px;
-    margin: 0px;
-    height: 60px;
-    line-height: 60px;
-    width: 100%;
-    text-align: center;
-    border-radius: 5px 0px 0px 5px;
-    border: none;
-    background-color: #1A2229;
-}
-
-.nav-tabs > li.active > a:hover{
-    background: #1A2229 !important;
-}
-
-.nav-tabs > li:hover{
-    background-color: #1A2229;
-}
+// .nav-tabs > li:hover{
+//     background-color: #1A2229;
+// }
 
 .tab-content{
     background-color: #1A2229;
@@ -1830,11 +1834,10 @@ col.f300 {
 }
 
 .investments-by-month {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-content: stretch;
-    flex-wrap: wrap;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+
     margin-top: 20px;
 
     a {
@@ -1846,8 +1849,6 @@ col.f300 {
         padding: 4px 8px;
         line-height: 22px;
         font-size: 12px;
-        margin-right: 5px;
-        margin-bottom: 5px;
         min-width: 120px;
         max-width: 140px;
 
@@ -1864,6 +1865,34 @@ col.f300 {
 .overdue {
     color: red;
     font-weight: 800;
+}
+
+.page-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .tile {
+        float: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 120px;
+        max-width: 200px;
+        
+        a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 20px;
+            text-align: left;
+            line-height: 14px;
+
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
 }
 
 .inline-actions {

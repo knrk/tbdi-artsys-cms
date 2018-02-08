@@ -803,3 +803,11 @@ usort() expects parameter 2 to be a valid callback, non-static method Helper_TBD
 ---LOG DEBUG: {"layer":"admin","section":"investment"}
 usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_expiry_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
 ---LOG DEBUG: {"layer":"admin","section":"investment"}
+password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
+---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_expiry_date() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surnameR() should not be called statically Route dump: {"layer":"admin","section":"investment"} 
+---LOG DEBUG: {"layer":"admin","section":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users","action":"invcodes"} 
+---LOG DEBUG: {"layer":"admin","section":"users","action":"invcodes"}

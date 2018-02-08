@@ -2,6 +2,10 @@
 
 <form <?= $this->request->getHTML() ?>>
 	<table class="table-default">
+		<colgroup>
+			<col class="w20">
+			<col>
+		</colgroup>
 		<tr>
 			<td class="xsmall-td text-right">
 				<?= __('module_default_value_name') ?>
@@ -19,19 +23,19 @@
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td class="text-right">
 				<?= __('module_default_value_value') ?>
 			</td>
 			<td>
 				<?php if( $this->item->type === Art_Model_Default_Value::TYPE_HTML): ?>
 					<textarea class="ckeditor" rows="8" name="value" placeholder="<?= __('module_default_value_value') ?>"><?= $this->item->value ?></textarea>
 				<?php else: ?>
-					<input type="text" name="value" placeholder="<?= __('module_default_value_value') ?>" value="<?= $this->item->value ?>">
+					<input type="text" name="value" placeholder="<?= __('module_default_value_value') ?>" autofocus="true" value="<?= $this->item->value ?>">
 				<?php endif; ?>
 			</td>
 		</tr>
 	</table>
-	<div class="text-center">
-		<input type="submit" value="<?= __('save') ?>" class="button-save">
+	<div class="save-view-buttons mt-15">
+		<input type="submit" value="<?= __('save') ?>" class="btn">
 	</div>
 </form>

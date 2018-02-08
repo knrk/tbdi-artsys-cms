@@ -3,20 +3,20 @@
 	<div class="col-sm-6 action-name">
 		<h2><?= __('module_investment_header') ?></h2>
 	</div>
-	<div class="col-sm-6 action-submenu">
-		<div class="action-new">
+	<div class="col-sm-6 action-submenu page-actions">
+		<div class="action-new tile">
 			<a href="/<?= Art_Router::getLayer() ?>/investment/new">
 			<i class="fa fa-plus fa-2x"></i>
-			<?= __('add') ?></a>
+			<?= __('investment-add') ?></a>
 		</div>
-		<div class="action-new">
+		<div class="action-new tile">
 			<a href="/<?= Art_Router::getLayer() ?>/investment/newmonth">
-				<i class="fa fa-times fa-2x"></i>
-				<?= __('create') ?></a>
+				<i class="fa fa-calendar-plus-o fa-2x"></i>
+				<?= __('investment-create') ?></a>
 		</div>
-		<div class="action-new">
+		<div class="action-new tile">
 			<a href="/<?= Art_Router::getLayer() ?>/investment/terminated">
-				<i class="fa fa-file fa-2x"></i>
+				<i class="fa fa-file-excel-o fa-2x"></i>
 				<?= __('terminated') ?></a>
 		</div>
 	</div>

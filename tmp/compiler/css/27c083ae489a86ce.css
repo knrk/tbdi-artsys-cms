@@ -11080,7 +11080,7 @@ sup {
 }
 .action-submenu div,
 .action-submenu button {
-  float: right !important;
+  float: right;
   display: inline;
   width: 75px;
   border: none;
@@ -11445,7 +11445,7 @@ input[type=button],
 input[type=submit],
 select,
 textarea {
-  border: 1px solid #CCD0D4;
+  border: 1px solid #ccd0d4;
   box-shadow: none;
   font-size: 12px;
   padding: 7px;
@@ -11453,20 +11453,20 @@ textarea {
 }
 select,
 select.form-control {
-  border: 2px solid #CCD0D4;
+  border: 2px solid #ccd0d4;
   box-shadow: none;
   border-radius: 0px;
   height: 35px;
 }
 input[type=text],
 input[type=email] {
-  border: 2px solid #CCD0D4;
+  border: 2px solid #ccd0d4;
   border-radius: 0px;
   height: 35px;
 }
-input[type=text]:focus,
-input[type=email]:focus {
-  border-color: #bbb;
+input[type=text]:disabled,
+input[type=email]:disabled {
+  background-color: rgba(128, 128, 128, 0.1);
 }
 select:focus,
 select.form-control:focus {
@@ -11477,7 +11477,7 @@ select.form-control:focus {
 }
 textarea,
 textarea.form-control {
-  border: 2px solid #CCD0D4;
+  border: 2px solid #ccd0d4;
   box-shadow: none;
   border-radius: 0px;
 }
@@ -11489,7 +11489,7 @@ textarea.form-control:focus {
 }
 input:focus,
 textarea:focus {
-  border: 1px solid #9FA2A5;
+  border: 2px solid #0453a1;
 }
 textarea {
   resize: vertical;
@@ -11814,23 +11814,30 @@ html {
   height: 100%;
   padding-top: 20px;
 }
-#nav-tabs li a:focus {
-  background: none;
-}
 #nav-tabs li {
   width: 90%;
-  height: 60px;
-  line-height: 60px;
   text-align: center;
   border-radius: 5px 0px 0px 5px;
   border: none;
-  display: block;
   margin: 0px;
+  margin-bottom: 5px;
   padding: 0px;
   float: right;
-  margin-bottom: 5px;
   color: #fff;
   transition: 0.15s ease-in-out 0s;
+}
+#nav-tabs li:hover a {
+  background-color: #1A2229;
+  color: #fff;
+  opacity: 1;
+}
+#nav-tabs li:last-child {
+  margin-bottom: 0;
+}
+#nav-tabs li.active a {
+  background-color: #1A2229;
+  color: #fff;
+  opacity: 1;
 }
 #nav-tabs li a {
   padding: 0px;
@@ -11846,38 +11853,12 @@ html {
   opacity: 0.3;
   transition: 0.15s ease-in-out 0s;
 }
+#nav-tabs li a:focus {
+  background: none;
+}
 #nav-tabs li a i {
   height: 60px;
   line-height: 60px;
-}
-#nav-tabs li:hover a {
-  background-color: #1A2229;
-  color: #fff;
-  opacity: 1;
-}
-#nav-tabs li.active a {
-  background-color: #1A2229;
-  color: #fff;
-  opacity: 1;
-}
-.nav-tabs > li.active > a {
-  float: right;
-  background: #9AD268;
-  padding: 0px;
-  margin: 0px;
-  height: 60px;
-  line-height: 60px;
-  width: 100%;
-  text-align: center;
-  border-radius: 5px 0px 0px 5px;
-  border: none;
-  background-color: #1A2229;
-}
-.nav-tabs > li.active > a:hover {
-  background: #1A2229 !important;
-}
-.nav-tabs > li:hover {
-  background-color: #1A2229;
 }
 .tab-content {
   background-color: #1A2229;
@@ -12461,11 +12442,9 @@ col.w100 {
   max-width: 300px;
 }
 .investments-by-month {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-content: stretch;
-  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   margin-top: 20px;
 }
 .investments-by-month a {
@@ -12477,8 +12456,6 @@ col.w100 {
   padding: 4px 8px;
   line-height: 22px;
   font-size: 12px;
-  margin-right: 5px;
-  margin-bottom: 5px;
   min-width: 120px;
   max-width: 140px;
 }
@@ -12491,6 +12468,30 @@ col.w100 {
 .overdue {
   color: red;
   font-weight: 800;
+}
+.page-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.page-actions .tile {
+  float: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  max-width: 200px;
+}
+.page-actions .tile a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 20px;
+  text-align: left;
+  line-height: 14px;
+}
+.page-actions .tile a i {
+  margin-right: 10px;
 }
 .inline-actions {
   display: flex;
