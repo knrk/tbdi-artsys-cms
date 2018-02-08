@@ -1,32 +1,47 @@
 
-	<?= __('services-active') ?>:
-		<br>
-<?php 
-	foreach( $this->activatedServices as $activatedService ) : /* @var $activatedService Service */ 
-?>
-
-		<?= $activatedService->name . ' - ' . __('active-until') . ': ' . $activatedService->active_to ?><br />
-
-<?php endforeach; ?>
-
-<br><br>
-<div style="clear:both;"></div>
-
-<?php if ( !empty($this->payments) ) : ?>
-	<div class="col-md-12 col-xs-12"><h3><?= __('module_users_payments') ?></h3></div>
-	
-	<?php foreach ( $this->payments as $payment ): /* @var $payment Service_Payment */ ?>
-	
-		<div class="col-md-3 col-xs-3"><?= $payment->service->name ?></div>
-		<div class="col-md-3 col-xs-3"><?= $payment->paid_by_fullname ?></div>
-		<div class="col-md-3 col-xs-3"><?= $payment->value ?></div>
-		<div class="col-md-3 col-xs-3"><?= nice_date($payment->date) ?></div>
-	
+<h3><?= __('services-active') ?></h3>
+<table class="table-default">
+	<tr>
+		<th>Služba</th>
+		<th><?= __('active-until') ?></th>
+	</tr>
+	<?php foreach( $this->activatedServices as $activatedService ) : /* @var $activatedService Service */ ?>
+	<tr>
+		<td><?= $activatedService->name ?></td>
+		<td><?= $activatedService->active_to ?></td>
+	</tr>
 	<?php endforeach; ?>
+</table>
+
+<hr class="line-2colors">
+
+<?php if (!empty($this->payments)) : ?>
+
+	<h3><?= __('module_users_payments') ?></h3>
+	<table class="table-default">
+		<tr>
+			<th>Platba za</th>
+			<th>Provedl</th>
+			<th>Částka</th>
+			<th>Datum Platby</th>			
+		</tr>
+		<?php foreach ($this->payments as $payment) : ?>
+		<tr>
+			<td><?= $payment->service->name ?></td>
+			<td><?= $payment->paid_by_fullname ?></td>
+			<td><?= $payment->value ?></td>
+			<td><?= nice_date($payment->date) ?></td>
+		</tr>
+		<?php endforeach; ?>
+	</table>
+
+	<hr class="line-2colors">
 <?php endif; ?>
 
 <?php if ( $this->hasApplication ) : ?>
 	<a href="<?= $this->application ?>" target="_blank"><?= __('module_service_pdf_application') ?></a><br><br>
 <?php endif; ?>
-	
-	<?= Art_Widget::render('article', 'embedd', array('url_name'=>$this->url_name)); ?>
+
+<div class="background-white introduction-text">
+	<?= Art_Widget::render('article', 'embedd', array('url_name' => $this->url_name)); ?>
+</div>

@@ -94,6 +94,7 @@ class Module_Bootstrap_Service extends Art_Abstract_Module_Bootstrap {
 			'module_service_delete_single_confirm'	=> 'Opravdu chcete smazat tuto službu?',
 			'module_service_price_is_default'		=> 'Výchozí cena',
 			'module_service_wrong_icon'				=> 'Vybraná ikona není platná',
+			'module_service_investment'				=> 'Vklad'
 			));
 	}
 }

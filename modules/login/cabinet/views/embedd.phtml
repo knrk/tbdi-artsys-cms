@@ -1,5 +1,7 @@
-<?php if(Art_User::getRights()!=0) : ?>
+<?php if (0 != Art_User::getRights()) : ?>
 <form name="login-embedd-logout" <?= $this->logout_request->getHTML() ?>>
-		<input type="submit" class="btn btn-info logout-button" value="<?= __('log_out') ?>">
+	<a href="javascript:;" <?= $this->logout_request->getHTML() ?>>
+		<?= __('log_out') ?>
+	</a>
 </form>
 <?php endif; ?>

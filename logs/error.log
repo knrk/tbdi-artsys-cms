@@ -811,3 +811,601 @@ usort() expects parameter 2 to be a valid callback, non-static method Helper_TBD
 ---LOG DEBUG: {"layer":"admin","section":"investment"}
 usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users","action":"invcodes"} 
 ---LOG DEBUG: {"layer":"admin","section":"users","action":"invcodes"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"dashboard"} 
+---LOG DEBUG: {"layer":"cabinet","section":"dashboard"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"dashboard"} 
+---LOG DEBUG: {"layer":"cabinet","section":"dashboard"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting end of file Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"edit"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"edit"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"changepassword"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"changepassword"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"dashboard"} 
+---LOG DEBUG: {"layer":"cabinet","section":"dashboard"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"review"} 
+---LOG DEBUG: {"layer":"cabinet","section":"review"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"invcodes"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"invcodes"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"bank_account"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"bank_account"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"article","action":"edit","id":"31"} 
+---LOG DEBUG: {"layer":"admin","section":"article","action":"edit","id":"31"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"article","action":"edit","id":"31"} 
+---LOG DEBUG: {"layer":"admin","section":"article","action":"edit","id":"31"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"article","action":"edit","id":"31"} 
+---LOG DEBUG: {"layer":"admin","section":"article","action":"edit","id":"31"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"article","action":"edit","id":"31"} 
+---LOG DEBUG: {"layer":"admin","section":"article","action":"edit","id":"31"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"invcodes"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"invcodes"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"dashboard"} 
+---LOG DEBUG: {"layer":"cabinet","section":"dashboard"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"dashboard"} 
+---LOG DEBUG: {"layer":"cabinet","section":"dashboard"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"dashboard"} 
+---LOG DEBUG: {"layer":"cabinet","section":"dashboard"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"tariffs"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"tariffs"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"tariffs"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"tariffs"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"tariffs"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"tariffs"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/modules/meta/admin/meta.php:1) Route dump: {"layer":"admin","section":"article","action":"edit","id":"31"} 
+---LOG DEBUG: {"layer":"admin","section":"article","action":"edit","id":"31"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"investment"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"investment"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"fuel"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"fuel"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"poradenstv\u00ed"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"poradenstv\u00ed"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"energy"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"energy"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"services-member"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"services-member"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"services-member"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"services-member"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"services-member"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"services-member"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"promo","id":"support"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"promo","id":"support"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"service","action":"article","id":"support"} 
+---LOG DEBUG: {"layer":"cabinet","section":"service","action":"article","id":"support"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"review"} 
+---LOG DEBUG: {"layer":"cabinet","section":"review"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"users","action":"invcodes"} 
+---LOG DEBUG: {"layer":"cabinet","section":"users","action":"invcodes"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"dashboard"} 
+---LOG DEBUG: {"layer":"cabinet","section":"dashboard"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_sort() should not be called statically Route dump: {"layer":"cabinet","section":"cabinet"} 
+---LOG DEBUG: {"layer":"cabinet","section":"cabinet"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"payments","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"payments","action":"new"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"payments","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"payments","action":"new"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"payments","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"payments","action":"new"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"payments","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"payments","action":"new"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"payments","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"payments","action":"new"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"payments","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"payments","action":"new"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"payments","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"payments","action":"new"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"payments","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"payments","action":"new"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users","action":"invcodes"} 
+---LOG DEBUG: {"layer":"admin","section":"users","action":"invcodes"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users","action":"invcodes"} 
+---LOG DEBUG: {"layer":"admin","section":"users","action":"invcodes"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users","action":"invcodes"} 
+---LOG DEBUG: {"layer":"admin","section":"users","action":"invcodes"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"payments","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"payments","action":"new"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"payments","action":"new"} 
+---LOG DEBUG: {"layer":"admin","section":"payments","action":"new"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users","action":"invcodes"} 
+---LOG DEBUG: {"layer":"admin","section":"users","action":"invcodes"}

@@ -21,7 +21,6 @@
 <?php if ( !empty($this->usersData) ) : ?>	
 	<table class="table-default">
 		<tr>
-			<th class="td-xsmall"><input type="checkbox" onclick="toggleCheck(this,'.module_users_index .cb-user-list')"></th>
 			<th>
 				<?= Helper_Default::renderSortUpDown($this->sortBy, 'id') ?>
 				ID
@@ -57,7 +56,6 @@
 			foreach( $this->usersData as $data ) : /* @var $data Art_Model_User_Data */ 
 		?>
 			<tr>
-				<td class="td-xsmall text-left"><input type="checkbox" name="user_<?= $data->p_userId?>" class="cb-user-list"></td>
 				<td><?= $data->_user->user_number ?></td>
 				<td><?= ($data->gender) ? '<i class="fa fa-mars" aria-hidden="true"></i>' : '<i class="fa fa-venus" aria-hidden="true"></i>' ?></td>
 				<td><?= Art_Filter::cutString($data->name,60) ?></td>
