@@ -148,7 +148,6 @@ a:focus{
     height: 36px;
     width: calc(100% - 40px);
     font-size: 16px;
-    cursor: crosshair;
     line-height: 36px;
     border-radius: none !important;
     background: #fff;
@@ -194,7 +193,7 @@ input[type=submit]:hover, input[type=submit]:focus, input[type=submit]:active{
 }
 
 
-.login-box.clenem{
+.login-box.clenem {
     height: auto;
     width: 100%;
     background: rgba(255,255,255,0.94);
@@ -221,7 +220,7 @@ input[type=submit]:hover, input[type=submit]:focus, input[type=submit]:active{
     left: -20px;
 }
 
-.login-box.clenem input[type=text]{
+.login-box.clenem input[type=text] {
     width: 100%;
     margin: 0px;
     border: 2px solid #ddd;
@@ -230,8 +229,13 @@ input[type=submit]:hover, input[type=submit]:focus, input[type=submit]:active{
     margin-bottom: 5px;
     padding: 3px 6px;
     line-height: 30px;
-    cursor: crosshair;
+    cursor: pointer;
     transition: 0.1s ease-in-out 0s;
+}
+
+.login-box.clenem label {
+    margin-bottom: 0;
+    cursor: pointer;
 }
 
 .login-box.clenem input[type=text]:hover{
@@ -256,9 +260,10 @@ input[type=submit]:hover, input[type=submit]:focus, input[type=submit]:active{
 }
 
 
-.form div{
+.form div {
     padding: 0px 10px;
-    line-height: 40px;}
+    line-height: 40px;
+}
 
 input[type=checkbox]{
     float:  left;
@@ -273,8 +278,9 @@ input[type=checkbox]{
     text-decoration: underline;
 }
 
-label{
+.form label {
     font-weight: 400;
+    margin-bottom: 0;
 }
 
 .podminky-text{

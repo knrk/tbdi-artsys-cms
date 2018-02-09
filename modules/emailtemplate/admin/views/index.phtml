@@ -22,9 +22,18 @@
 	<?php foreach($this->emailtemplates AS $emailtemplate): ?>
 	<?php $href = '/'.Art_Router::getLayer().'/emailtemplate/edit/'.$emailtemplate->id; ?>
 		<tr>
-			<td class="text-left"><a href="<?= $href ?>"><?= Art_Filter::cutString($emailtemplate->name,30) ?></a></td>
-			<td class="text-left"><a href="<?= $href ?>"><?= Art_Filter::cutString($emailtemplate->subject,150) ?></a></td>
-			<td class="text-center"><button <?= $this->delete_single_request->getHTML(array('id'=>$emailtemplate->id,'name'=>$emailtemplate->guid)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button></td>
+			<td class="text-left">
+				<a href="<?= $href ?>"><?= Art_Filter::cutString($emailtemplate->name,30) ?></a>
+			</td>
+			<td class="text-left">
+				<a href="<?= $href ?>"><?= Art_Filter::cutString($emailtemplate->subject,150) ?></a>
+			</td>
+			<td class="text-center">
+				<div class="inline-actions">
+					<a href="<?= $href ?>"><i class="fa fa-pencil edit"></i></a>
+					<button <?= $this->delete_single_request->getHTML(array('id'=>$emailtemplate->id,'name'=>$emailtemplate->guid)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
+				</div>
+			</td>
 		</tr>
 	<?php endforeach; ?>
 </table>

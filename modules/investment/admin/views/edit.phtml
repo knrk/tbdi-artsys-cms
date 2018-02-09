@@ -1,55 +1,50 @@
 <h2><?= __('module_investment_edit_deposit') ?></h2>
-<div class="background-white pa-15">
-	<form <?= $this->request->getHTML() ?>>
-		<div class="col-xs-12">
-			<div class="col-xs-2"><?= __('module_payments_payer') ?></div>		
-			<div class="col-xs-4">
-				<?= $this->deposit->getUser()->fullname ?>
-			</div>	
-			<div class="col-xs-2"><?= __('module_investment_deposit_value') ?></div>
-			<div class="col-xs-4">
-				<?= $this->deposit->value ?>
-			</div>
-			
-		</div>	
-		<div class="col-xs-12 mt-15">
-			
-			<div class="col-xs-2 lh-35">Datum vkladu</div>
-			<div class="col-xs-4 lh-35">
-				<?= nice_date($this->deposit->date) ?>
-			</div>
 
-			<div class="col-xs-2 lh-35">Datum expirace</div>
-			<div class="col-xs-4">
-				<input name="expiry_date" type="text" class="form-control" placeholder="00.00.0000"
-					   value="<?= nice_date($this->deposit->expiry_date) ?>">
-			</div>
-
-		</div>
-		<div class="col-xs-12 mt-15">
-
-			<div class="col-xs-2 lh-35">Poznámka</div>
-			<div class="col-xs-4">
-				<input name="note" type="text" class="form-control"
-					   value="<?= $this->deposit->note ?>">
-			</div>
-
-			<div class="col-xs-3"></div>
-			<div class="text-center col-xs-3">
-				<input type="submit" value="<?= __('save') ?>" class="btn">
-			</div>
-
-		</div>
-		<div class="clearfix"></div>
-	</form>
+<div class="list mb-30">
+	<div class="cell invested-amount">
+		<em><?= $this->deposit->value ?> Kč</em>
+		<label><?= __('module_investment_deposit_value') ?></label>
+	</div>
+	<div class="cell investor-name">
+		<em><?= $this->deposit->getUser()->fullname ?></em>
+		<label><?= __('module_payments_payer') ?></label>
+	</div>
+	<div class="cell invested-on">
+		<em><?= nice_date($this->deposit->date) ?></em>
+		<label>Datum vkladu</label>
+	</div>
 </div>
 
-<script>
-$('.invested,.interest').focusout(
-			function(){
-				var interest = $(this).val();
-				var invested = $(this).parent().parent().find('.invested-td').find('.invested').val();
-				$(this).parent().parent().find('.gain-td').find('.gain').val(interest*invested/100);
-			}
-			);
-	</script>
+<form <?= $this->request->getHTML() ?>>
+	<div class="investment-edit">
+		<div class="row pt-10">
+
+			<label 	for="edit-expiration-date">Datum expirace</label>
+			<input 	id="edit-expiration-date" name="expiry_date" type="text" autofocus class="form-control js-date-picker"
+					value="<?= $this->deposit->expiry_date ?>">
+
+		</div>
+		<div class="row pt-15 pb-15">
+
+			<label for="edit-note">Poznámka</label>
+			<input id="edit-note" name="note" type="text" class="form-control"
+					value="<?= $this->deposit->note ?>">
+
+		</div>
+	</div>
+	<div class="save-view-buttons mt-15">
+		<input type="submit" value="<?= __('save') ?>" class="button">
+	</div>
+</form>
+
+<script type="text/javascript">
+$(document).ready(() => {
+
+	$('.js-date-picker').click(() => {
+		$('.js-date-picker').pickadate({
+			format: 'yyyy-mm-dd'
+		});
+	});
+});
+
+</script>

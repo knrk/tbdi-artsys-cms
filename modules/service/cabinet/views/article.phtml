@@ -5,9 +5,9 @@
 	<div class="terms"><a href="<?= $this->conditions ?>" target="_blank"><?= __('module_service_pdf_conditions') ?></a></div>
 <?php endif; ?>
 
-<hr class="line-2colors">
-
 <?php if ($this->isInvestment) : ?>
+	<hr class="line-2colors">
+
 	<?php if (!empty($this->deposits)) : ?>
 		<h3><?= __('module_users_deposits') ?></h3>
 		<table class="table-default">

@@ -1,27 +1,28 @@
 
 <h2><?= __('module_dashboard_new_header') ?></h2>
-<div class="background-white pa-15">
-	<form <?= $this->request->getHTML() ?>>
-		<div class="col-md-2 col-xs-2 text-right lh-35"><?= __('module_dashboard_content_header') ?></div>
-		<div class="col-md-5 col-xs-5">
-			<input name="header" type="text" class="form-control" placeholder="<?= __('module_dashboard_content_header') ?>">
+<form <?= $this->request->getHTML() ?>>
+	<div class="background-white pa-15">
+		<div class="row">
+			<div class="col-md-2 col-xs-2 text-right lh-35"><?= __('module_dashboard_content_header') ?></div>
+			<div class="col-md-5 col-xs-5">
+				<input name="header" type="text" class="form-control" placeholder="<?= __('module_dashboard_content_header') ?>">
+			</div>
+			<div class="col-md-1 col-xs-1 text-right lh-35">
+				<input id="is-important" type="checkbox" name="important" autofocus>
+			</div>
+			<div class="col-md-4 col-xs-4 text-left lh-35">
+				<label for="is-important"><?= __('module_dashboard_important') ?></label>
+			</div>
 		</div>
-		<div class="col-md-1 col-xs-1 text-right lh-35">
-			<input type="checkbox" name="important">
+		<div class="row">
+			<div class="col-md-2 col-xs-2 text-right lh-35 mt-15"><?= __('module_dashboard_content_body') ?></div>
+			<div class="col-md-10 col-xs-10 mt-15 mb-15">
+				<textarea name="body" rows="8" class="ckeditor" placeholder="<?= __('module_dashboard_content_body') ?>"></textarea>
+			</div>
 		</div>
-		<div class="col-md-4 col-xs-4 text-left lh-35"><?= __('module_dashboard_important') ?></div>
-		
-		<div class="clearfix"></div>
-		<div class="col-md-2 col-xs-2 text-right lh-35 mt-15"><?= __('module_dashboard_content_body') ?></div>
-		<div class="col-md-10 col-xs-10 mt-15">
-			<textarea name="body" rows="8" class="ckeditor" placeholder="<?= __('module_dashboard_content_body') ?>"></textarea>
-		</div>
-
-		<div class="col-xs-9"></div>
-		<div class="col-xs-3 mt-15">
-			<input type="submit" class="btn" value="<?= __('save') ?>">
-		</div>
-		<div class="clearfix"></div>
-	</form>
-</div>
+	</div>
+	<div class="save-view-buttons mt-15">
+		<input type="submit" class="btn" value="<?= __('save') ?>">
+	</div>
+</form>
 	

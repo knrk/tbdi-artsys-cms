@@ -1,9 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,300italic&subset=latin,latin-ext);
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,300italic&subset=latin,latin-ext);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Poppins:300,400,500,600,700,800');
 
 @bg-color: #f6f6f6;
 @table-row-border-color: @bg-color;
 @form-input-border-color: #ccd0d4;
 @form-input-bg-disabled-color: rgba(128, 128, 128, 0.1);
+
+@page-layout-header-height: 50px;
+
+@form-noneditable-border-color: #e8e8e8;
 
 body, html{
     height: 100%;
@@ -686,7 +691,6 @@ input[type=text],
 input[type=file], 
 input[type=email], 
 input[type=button], 
-input[type=submit],
 select, 
 textarea {
     border: 1px solid @form-input-border-color;
@@ -1001,7 +1005,7 @@ html {
     display: flex;
     flex-direction: row;
 
-    height: 50px;
+    height: @page-layout-header-height;
     background: #259af8;
     position: relative;
     top: 0;
@@ -1009,7 +1013,7 @@ html {
     width: 100%;
     left: 0px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.26);
-    line-height: 50px;
+    line-height: @page-layout-header-height;
     min-width: 1150px;
 
     .app-name {
@@ -1046,12 +1050,18 @@ html {
         }
     }
     .user-action {
-        padding: 0 20px;
-
         a {
+            display: block;
             color: white;
-            font-size: 12px;
+            padding: 0 15px;
             font-weight: 600;
+            font-size: 13px;
+            line-height: @page-layout-header-height;
+            
+            &:hover {
+                text-decoration: none;
+                background-color: rgba(255, 255, 255, 0.2);
+            }
         }
     }
 }
@@ -1342,12 +1352,17 @@ html {
 }
 
 /*** CONTENT START ***/
-.page{
+.page {
     width: calc(100% - 225px);
     height: calc(100vh - 50px);
     float: left;
     overflow-y: scroll;
     padding: 20px 20px;
+
+    h1, h2, h3 {
+        font-family: 'Poppins';
+        font-weight: 300;
+    }
 }
 
 .dash-nav{
@@ -1579,6 +1594,22 @@ col.f300 {
 .table-default .fa-check {
   color: #00ACAC;
 }
+
+
+.email-templates {
+    margin-top: 0;
+
+    tr:hover td {
+        background-color: transparent;
+    }
+
+    label {
+        font-weight: 600;
+    }
+}
+
+
+
 .td-small {
   width: 10% !important;
 }
@@ -1605,9 +1636,7 @@ col.f300 {
 .tr-collored:hover td {
   background: #1A2229 !important;
 }
-.table-default {
-  margin-top: 20px;
-}
+
 .module-containter .table-default:first-of-type {
   margin-top: 0px;
 }
@@ -1733,37 +1762,38 @@ col.f300 {
     line-height: 35px;
 }
 
-.btn{
-    border: 1px solid #78b046 !important;
-    border-bottom: 2px solid #78b046 !important;
+.btn {
+    border: 1px solid #78b046;
+    border-bottom: 2px solid #78b046;
     background-color: #9AD268;
     color: #fff;
+
+    &:hover{
+        background-color: #88c056;
+        color: #fff;
+    }
 }
 
-.btn:hover{
-    background-color: #88c056;
-    color: #fff;
-}
 
-.btn-yellow{
+.btn-yellow {
     background-color: #F6A633;
-    border-color: #d68613 !important;   
+    border-color: #d68613 !important;  
+
+    &:hover{
+        background-color: #e69623;
+    }
 }
 
-.btn-yellow:hover{
-    background-color: #e69623;
-}
-
-.btn-blue{
+.btn-blue {
     background-color: #2a72b5;
     border-color: #1961a4 !important;   
+
+    &:hover{
+        background-color: #1961a4;
+    }
 }
 
-.btn-blue:hover{
-    background-color: #1961a4;
-}
-
-.btn-red{
+.btn-red {
     background-color: #EA0404;
     border-color: #d90202 !important;   
 }
@@ -1815,21 +1845,55 @@ col.f300 {
 }
 
 
-/// 
+/// KNRK EDITS ///
 
 
 .page {
+    padding: 20px 40px;
+    overflow-y: auto;
+
+    label {
+        font-weight: 400;
+    }
+
     .save-view-buttons {
         padding: 0;
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: flex-start;
 
         .btn {
             min-width: 100px;
             max-width: 300px;
         }
+    }
+}
+
+@button-text-color: #fff;
+@button-bg-color: #4394e7;
+@button-text-hover-color: #fefefe;
+@button-bg-hover-color: #2f82d4;
+
+.input[type=submit].button,
+.button {
+    line-height: 18px;
+    font-size: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: @button-text-color;
+    background-color: @button-bg-color;
+    border: 2px solid transparent;
+    box-shadow: none;
+    padding: 4px 8px;
+    min-width: 120px;
+    max-width: 300px;
+
+    &:hover {
+        background-color: @button-bg-hover-color;
+        color: @button-text-hover-color;
+        text-decoration: none;
     }
 }
 
@@ -1860,6 +1924,40 @@ col.f300 {
             margin-right: 0;
         }
     }
+}
+
+.investment-edit  {
+    width: 50%;
+
+    .picker {
+        width: 300px;
+    }
+    .row.noneditable {
+        border-bottom: 1px solid @form-noneditable-border-color;
+
+        div {
+            padding: 30px;
+            border-right: 1px solid @form-noneditable-border-color;
+            
+            &:last-child {
+                border-right: none;
+            }
+        }
+
+        label {
+            font-weight: 200;
+            display: block;
+            margin-bottom: 0;
+            color: #afafaf;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+        label + b {
+            font-size: 18px;
+        }
+    }
+
+    
 }
 
 .overdue {
@@ -1927,5 +2025,53 @@ col.f300 {
     }
     .arrow-down {
         align-self: flex-end;
+    }
+}
+
+
+@list-bg-color: #fff;
+@list-border-color: #f2f2f2;
+@list-text-color: #363636;
+@list-border-radius: 10px;
+@list-minor-text: #7e7e7e;
+
+.list {
+    background-color: @list-bg-color;
+    border: 1px solid @list-border-color;
+    border-radius: @list-border-radius;
+    color: @list-text-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    font-family: 'Poppins';
+
+    .cell {
+        padding: 20px;
+        border-right: 1px solid @list-border-color;
+        text-align: left;
+        flex: 1 0 auto;
+
+        &:last-child {
+            border-right: 0;
+        }
+
+        em {
+            font-size: 20px;
+            font-weight: 500;
+            display: block;
+            font-style: normal;
+            letter-spacing: 0.5px;
+            line-height: 14px;
+        }
+        label {
+            font-weight: 400;
+            text-transform: uppercase;
+            color: @list-minor-text;
+            font-size: 10px;
+            margin-bottom: 0;
+            cursor: inherit;
+        }
     }
 }

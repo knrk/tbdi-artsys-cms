@@ -1,13 +1,15 @@
+<div class="background-white introduction-text">
+	<?= Art_Widget::render('article', 'embedd', array('url_name' => $this->url_name)); ?>
+</div>
 
-	<?= Art_Widget::render('article', 'embedd', array('url_name'=>$this->url_name)); ?>
-	
-<?php if ( NULL !== $this->conditions ) : ?>
-<a href="<?= $this->conditions ?>" target="_blank"><?= __('module_service_pdf_conditions') ?></a><br><br>
+<?php if (NULL !== $this->conditions) : ?>
+	<div class="terms"><a href="<?= $this->conditions ?>" target="_blank"><?= __('module_service_pdf_conditions') ?></a></div>
+<?php endif; ?>
+
+<?php if (!$this->isActivated && !$this->isRequested ) : ?>
+	<button <?= $this->requestInterestedToJoin->getHTML() ?> title="<?= __('module_service_interested_to_join') ?>"><i class="fa fa-plus"></i> <?= __('module_service_interested_to_join') ?></button>
 <?php endif; ?>
 	
-	<?php if ( !$this->isActivated && !$this->isRequested ) : ?>
-		<button <?= $this->requestInterestedToJoin->getHTML() ?> title="<?= __('module_service_interested_to_join') ?>"><i class="fa fa-plus"></i> <?= __('module_service_interested_to_join') ?></button>
-	<?php endif; ?>
-	<?php if ( $this->isRequested ) :?>
-		<?= __('module_service_manager_will_contact') ?>
-	<?php endif; ?>
+<?php if ($this->isRequested) :?>
+	<?= __('module_service_manager_will_contact') ?>
+<?php endif; ?>

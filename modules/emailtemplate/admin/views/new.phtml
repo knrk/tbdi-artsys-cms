@@ -1,63 +1,45 @@
 <h2><?= __('module_emailtemplate_add_emailtemplate') ?></h2>
 
 <form <?= $this->request->getHTML() ?>>
-	<div class="background-white pa-15" style="padding-top: 0px">
-		<div class="clearfix"></div>
-<table class="table-default emailtemplates">
-		<tr>
-			<td class="xsmall-td text-right">
-				<?= __('module_emailtemplate_name') ?>
-			</td>
-			<td>
-				<input type="text" name="name" placeholder="<?= __('module_emailtemplate_name') ?>">
-			</td>
-			<td class="xsmall-td text-right">
-				<?= __('module_emailtemplate_subject') ?>
-			</td>
-			<td colspan="2">
-				<input type="text" name="subject" placeholder="<?= __('module_emailtemplate_subject') ?>">
-			</td>
-		</tr>
-		<tr>
-			<td class="xsmall-td text-right">
-				<?= __('module_emailtemplate_from_name') ?>
-			</td>
-			<td>
-				<input type="text" name="from_name" placeholder="<?= __('module_emailtemplate_from_name') ?>" value="<?= $this->from_name ?>">
-			</td>
-			<td class="xsmall-td text-right">
-				<?= __('module_emailtemplate_from_email') ?>
-			</td>
-			<td colspan="2">
-				<input type="text" name="from_email" placeholder="<?= __('module_emailtemplate_from_email') ?>" value="<?= $this->from_mail ?>">
-			</td>
-		</tr>
-		<tr>
-			<td class="xsmall-td text-right">
-				<?= __('module_emailtemplate_reply_to_name') ?>
-			</td>
-			<td>
-				<input type="text" name="reply_to_name" placeholder="<?= __('module_emailtemplate_reply_to_name') ?>" value="<?= $this->reply_to_name ?>">
-			</td>
-			<td class="xsmall-td text-right">
-				<?= __('module_emailtemplate_reply_to_email') ?>
-			</td>
-			<td colspan="2">
-				<input type="text" name="reply_to_email" placeholder="<?= __('module_emailtemplate_reply_to_email') ?>" value="<?= $this->reply_to_mail ?>">
-			</td>
-		</tr>
-		<tr>
-			<td colspan="6">
-				<textarea class="ckeditor" rows="8" name="body" placeholder="<?= __('module_emailtemplate_body') ?>"></textarea>
-			</td>
-		</tr>
-</table>
-<div class="col-xs-9">
+	<div class="background-white pa-15">
+		<table class="table-default email-templates">
+			<tr>
+				<td>
+					<label><?= __('module_emailtemplate_name') ?></label>
+					<input type="text" name="name" autofocus placeholder="<?= __('module_emailtemplate_name') ?>">
+				</td>
+				<td>
+					<label for="email-subject"><?= __('module_emailtemplate_subject') ?></label>
+					<input id="email-subject" type="text" name="subject" placeholder="<?= __('module_emailtemplate_subject') ?>">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="email-from"><?= __('module_emailtemplate_from_name') ?></label>
+					<input id="email-from" type="text" name="from_name" placeholder="<?= __('module_emailtemplate_from_name') ?>" value="<?= $this->from_name ?>">
+				</td>
+				<td>
+					<label for="email-from"><?= __('module_emailtemplate_from_email') ?></label>
+					<input i="email-from" type="text" name="from_email" placeholder="<?= __('module_emailtemplate_from_email') ?>" value="<?= $this->from_mail ?>">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="email-to"><?= __('module_emailtemplate_reply_to_name') ?></label>
+					<input id="email-to" type="text" name="reply_to_name" placeholder="<?= __('module_emailtemplate_reply_to_name') ?>" value="<?= $this->reply_to_name ?>">
+				</td>
+				<td>
+					<label for="email-reply-to"><?= __('module_emailtemplate_reply_to_email') ?></label>
+					<input id="email-reply-to" type="text" name="reply_to_email" placeholder="<?= __('module_emailtemplate_reply_to_email') ?>" value="<?= $this->reply_to_mail ?>">
+				</td>
+			</tr>
+		</table>
+		<div class="ml-15 mt-15 mr-10 mb-15">
+			<label for="email-body"><?= __('module_emailtemplate_body') ?></label>
+			<textarea id="email-body" class="ckeditor" rows="8" name="body" placeholder="<?= __('module_emailtemplate_body') ?>"></textarea>
 		</div>
-		
-	<div class="text-center col-xs-3 pr-10 mt-10">
-	<input type="submit" value="<?= __('save') ?>" class="btn">
-</div>
-		<div class="clearfix"></div>
+	</div>
+	<div class="save-view-buttons mt-15">	
+		<input type="submit" value="<?= __('save') ?>" class="btn">
+	</div>
 </form>
-</div>

@@ -797,6 +797,18 @@ final class Art_Template extends Art_Abstract_Component {
 						Art_Main::prependJS('extensions/ckeditor/external/ckeditor.js');
 					}
 					break;
+				case 'date-picker':
+					if (!in_array('date-picker', static::$_loaded_extensions)) {
+						static::$_loaded_extensions[] = 'date-picker';
+
+						// http://amsul.ca/pickadate.js/date/
+						Art_Main::appendJS('extensions/date-picker/external/picker.js');
+						Art_Main::appendJS('extensions/date-picker/external/picker.date.js');
+						Art_Main::appendJS('extensions/date-picker/external/cs_CZ.js');
+						Art_Main::appendCSS('extensions/date-picker/external/classic.css', true, array('uri_root' => Art_Server::getRelativePath().'/extensions/date-picker/external'));
+						Art_Main::appendCSS('extensions/date-picker/external/classic.date.css', true, array('uri_root' => Art_Server::getRelativePath().'/extensions/date-picker/external'));
+					}
+					break;
 				case 'fancybox':
 				case 'fancy_box':
 				case 'fancy-box':

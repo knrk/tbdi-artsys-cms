@@ -3,7 +3,7 @@
 <h2 class="text-center"><?= __('module_users_edit_bank_account') ?></h2>
 <div class="line-2colors"></div>
 
-<div class="background-white pt-20 pb-20 pl-20 pr-20">	
+<div class="background-white pt-20 pb-20 pl-20 pr-20 horizontal-center table75">	
 	<?php 
 		foreach ($this->bankAccounts as $value) :
 			$prefix = Helper_Default::getPropertyOrNull($value, 'prefix');
@@ -33,7 +33,7 @@
 
 
 <form <?= $this->request->getHTML() ?>>
-	<div class="background-white pt-20 pb-20 pl-20 pr-20">
+	<div class="background-white pt-20 pb-20 pl-20 pr-20 horizontal-center table75">
 		<div class="row">
 			<div class="col-md-2">
 				<input name="prefix" type="text" class="form-control" placeholder="<?= __('bank_account_prefix') ?>">
