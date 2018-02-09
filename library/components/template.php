@@ -809,6 +809,16 @@ final class Art_Template extends Art_Abstract_Component {
 						Art_Main::appendCSS('extensions/date-picker/external/classic.date.css', true, array('uri_root' => Art_Server::getRelativePath().'/extensions/date-picker/external'));
 					}
 					break;
+
+				case 'chosen':
+					if (!in_array('chosen', static::$_loaded_extensions)) {
+						static::$_loaded_extensions[] = 'chosen';
+
+						// https://harvesthq.github.io/chosen/
+						Art_Main::appendJS('extensions/chosen/external/chosen.min.js');
+						Art_Main::appendCSS('extensions/chosen/external/chosen.min.css', true, array('uri_root' => Art_Server::getRelativePath().'/extensions/chosen/external'));
+					}
+					break;
 				case 'fancybox':
 				case 'fancy_box':
 				case 'fancy-box':

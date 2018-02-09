@@ -22,11 +22,6 @@
 	</div>
 </div>
 
-<?= __('module_investment_default_interest') ?>: <b><?= $this->defaultInterest ?>%</b>
-<?php if ( NULL !== $this->defaultInterestId ) : ?>
-	(<a href="/<?= Art_Router::getLayer() ?>/default_value/edit/<?= $this->defaultInterestId ?>">upravit</a>)
-<?php endif; ?>
-
 <div class="investments-by-month">
 	<?php foreach (array_reverse($this->links) as $key => $val) : ?>
 		<a href="/<?= Art_Router::getLayer() ?>/investment/detail/<?= $key ?>">
@@ -36,8 +31,16 @@
 	<?php endforeach; ?>
 </div>
 
+<hr class="separator">
+
 <h3>Vklady</h3>
 <table class="table-default">
+	<caption>
+		<?= __('module_investment_default_interest') ?>: <b><?= $this->defaultInterest ?>%</b>
+		<?php if ( NULL !== $this->defaultInterestId ) : ?>
+			<button><a href="/<?= Art_Router::getLayer() ?>/default_value/edit/<?= $this->defaultInterestId ?>"><i class="fa fa-pencil"></i></a></button>
+		</caption>
+	<?php endif; ?>
 	<colgroup>
 		<col class="w30">
 		<col class="w10">
@@ -76,7 +79,7 @@
 			<td><?= Art_Filter::cutString($value->note, 40) ?></td>
 			<td>
 				<div class="inline-actions">
-					<a href="<?= $this->deposit_edit.$value->id ?>"><button><i class="fa fa-pencil edit"></i></button></a>
+					<a href="<?= $this->deposit_edit.$value->id ?>"><button><i class="fa fa-pencil"></i></button></a>
 					<button <?= $this->delete_single_request->getHTML(array('id'=>$value->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
 					<?php if ( $value->terminable ) : ?>
 						<button <?= $this->terminate_single_request->getHTML(array('id'=>$value->id)) ?> title="<?= __('terminate') ?>"><i class="fa fa-ban"></i></button>

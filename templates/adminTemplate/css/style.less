@@ -4,11 +4,23 @@
 @bg-color: #f6f6f6;
 @table-row-border-color: @bg-color;
 @form-input-border-color: #ccd0d4;
+
+@form-input-bg-color: #fff;
 @form-input-bg-disabled-color: rgba(128, 128, 128, 0.1);
 
+@button-text-color: #fff;
+@button-bg-color: #4394e7;
+@button-text-hover-color: #fefefe;
+@button-bg-hover-color: #2f82d4;
+
+@page-layout-header-bg-color: #259af8;
 @page-layout-header-height: 50px;
+@page-layout-emphasized-text-color: #259af8;
 
 @form-noneditable-border-color: #e8e8e8;
+
+@separator-major-color: #56B331;
+@separator-minor-color: #D5D5D5;
 
 body, html{
     height: 100%;
@@ -1006,7 +1018,7 @@ html {
     flex-direction: row;
 
     height: @page-layout-header-height;
-    background: #259af8;
+    background: @page-layout-header-bg-color;
     position: relative;
     top: 0;
     z-index: 5;
@@ -1870,10 +1882,19 @@ col.f300 {
     }
 }
 
-@button-text-color: #fff;
-@button-bg-color: #4394e7;
-@button-text-hover-color: #fefefe;
-@button-bg-hover-color: #2f82d4;
+.table-default {
+    caption {
+        line-height: 22px;
+        a {
+            display: inline-flex;
+            font-size: 12px;
+        }
+
+        b {
+            color: @page-layout-emphasized-text-color;
+        }
+    }
+}
 
 .input[type=submit].button,
 .button {
@@ -1894,6 +1915,90 @@ col.f300 {
         background-color: @button-bg-hover-color;
         color: @button-text-hover-color;
         text-decoration: none;
+    }
+}
+
+button a {
+    &:hover
+    &:focus,
+    &:visited {
+        text-decoration: none;
+    }
+}
+
+.separator {
+    box-sizing: border-box;
+    width: 120px;
+    height: 5px;
+    margin: 0px auto;
+    background-color: @separator-minor-color;
+    border-right: 60px solid @separator-major-color;
+    border-top: 0;
+    margin-bottom: 20px;
+}
+hr.separator {
+    margin-top: 40px;
+}
+
+.form {
+    width: 50%;
+
+    .picker {
+        width: 300px;
+    }
+
+    .chosen-container-single,
+    .chosen-container-single.chosen-container-active {
+        .chosen-single {
+            border-radius: 0;
+            border: 2px solid @form-input-border-color;
+            box-shadow: none;
+            background: @form-input-bg-color;
+            height: 35px;
+
+            span {
+                line-height: 32px;
+                vertical-align: middle;
+                font-size: 12px;
+            }
+
+            div b {
+                background-position-y: 8px;
+            }
+        }
+        
+        .chosen-drop {
+            border: 2px solid @form-input-border-color;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .chosen-results {
+            margin-right: 0;
+            margin-left: 0;
+            padding-left: 0;
+
+            li {
+                font-size: 12px;
+
+                &.highlighted {
+                    background-color: #ccc;
+                    background-image: none;
+                }
+            }
+        }
+    }
+    .chosen-container-active,
+    .chosen-container-active.chosen-with-drop {
+        .chosen-single {
+            border: 2px solid @form-input-border-color;
+            box-shadow: none;
+            background: @form-input-bg-color;
+
+            div b {
+                background-position: -16px 8px;
+            }
+        }
     }
 }
 
@@ -1927,11 +2032,6 @@ col.f300 {
 }
 
 .investment-edit  {
-    width: 50%;
-
-    .picker {
-        width: 300px;
-    }
     .row.noneditable {
         border-bottom: 1px solid @form-noneditable-border-color;
 
@@ -1956,8 +2056,6 @@ col.f300 {
             font-size: 18px;
         }
     }
-
-    
 }
 
 .overdue {
@@ -1985,6 +2083,11 @@ col.f300 {
             padding: 0 20px;
             text-align: left;
             line-height: 14px;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
 
             i {
                 margin-right: 10px;

@@ -9,7 +9,7 @@
 	<input type="text" name="target" value="<?= $this->target ?>">
 	
 	<table class="table-default variable">
-		<caption><?= Helper_Default::getCzechMonthName($this->month) ?> <?= $this->year ?> - <?= $this->target ?></caption>
+		<caption><b><?= Helper_Default::getCzechMonthName($this->month) ?> <?= $this->year ?> - <?= $this->target ?></b></caption>
 		<col class="f30"/>
 		<col class="w20"/>
 		<tr>
@@ -57,7 +57,7 @@
 		<?php endforeach; ?>
 	</table>
 	<div class="col-xs-3 mt-15 save-view-buttons">
-		<input type="submit" tabindex="<?= $tabindex + 1; ?>" value="<?= __('save') ?>" class="btn">
+		<input type="submit" tabindex="<?= $tabindex + 1; ?>" value="<?= __('save') ?>" class="button">
 	</div>
 </form>
 <script>
