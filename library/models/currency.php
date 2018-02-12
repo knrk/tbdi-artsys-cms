@@ -21,5 +21,5 @@ class Art_Model_Currency extends Art_Abstract_Model_DB {
 									'created_by'	=>	array('select','insert'),
 									'modified_by'	=>	array('select','update'),
 									'created_date'	=>	array('select'),
-									'modified_date'	=>	array('select'));
+                                    'modified_date'	=>	array('select'));
 }

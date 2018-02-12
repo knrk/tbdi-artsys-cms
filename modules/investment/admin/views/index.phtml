@@ -1,4 +1,3 @@
-
 <div class="row">
 	<div class="col-sm-6 action-name">
 		<h2><?= __('module_investment_header') ?></h2>
@@ -70,10 +69,11 @@
 	<?php
 	foreach ($this->deposit as $value) : /* @var $value Service_Investment_Deposit */
 		if (!$value->terminated) :
+			$currency = ' ' . $value->getUser()->getCurrency()->abbr;
 	?>
 		<tr>
 			<td><?= Art_Filter::cutString($value->getUser()->fullname, 40) ?></td>
-			<td><?= $value->value ?></td>
+			<td><?= $value->value . $currency ?></td>
 			<td><?= nice_date($value->date) ?></td>
 			<td<?= (strtotime($value->expiry_date) < time() ) ? ' class="overdue"' : null ?>><?= nice_date($value->expiry_date) ?></td>
 			<td><?= Art_Filter::cutString($value->note, 40) ?></td>

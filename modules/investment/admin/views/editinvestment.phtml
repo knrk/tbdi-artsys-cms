@@ -10,8 +10,16 @@
 	
 	<table class="table-default variable">
 		<caption><b><?= Helper_Default::getCzechMonthName($this->month) ?> <?= $this->year ?> - <?= $this->target ?></b></caption>
-		<col class="f30"/>
-		<col class="w20"/>
+		<colgroup>
+			<col class="f30"/>
+			<col class="w20"/>
+			<col class="w10"/>
+			<col class="f75"/>
+			<col>
+			<col>
+			<col>
+			<col class="w20"/>
+		</colgroup>
 		<tr>
 			<th><input type="checkbox" onclick="toggleCheck(this,'.module_investment_editinvestment .cb-investment-list')" class="cb-investment-head"></th>
 			<th><?= __('fullname') ?></th>

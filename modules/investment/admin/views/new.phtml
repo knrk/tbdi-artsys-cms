@@ -12,18 +12,18 @@
 		</div>	
 		<div class="row pt-10">
 			<label><?= __('module_investment_deposit_value') ?></label>
-			<input type="text" name="value" placeholder="<?= __('module_investment_deposit_value') ?>">
+			<input type="text" name="value">
 		</div>
 			
 		<div class="row pt-10">
 			<label>Datum vkladu</label>
-			<input name="date" type="text" class="form-control" placeholder="0000-00-00"
+			<input name="date" type="text" class="js-date-picker" 
 					value="<?= $this->currentDate ?>">
 		</div>	
 
 		<div class="row pt-10">
 			<label>Datum expirace</label>
-			<input name="expiry_date" type="text" class="form-control" placeholder="0000-00-00"
+			<input name="expiry_date" type="text" class="js-date-picker" 
 					value="<?= $this->afterYearDate ?>">
 		</div>
 
@@ -44,5 +44,11 @@ $(document).ready(() => {
 		max_selected_options: -1
 	});
 	$('.chosen-container').removeClass('chosen-disabled');
+
+	$('.js-date-picker').click(() => {
+		$('.js-date-picker').pickadate({
+			format: 'yyyy-mm-dd'
+		});
+	});
 });
 </script>

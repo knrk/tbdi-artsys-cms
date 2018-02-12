@@ -1,8 +1,12 @@
+<?php 
+$currency = ' ' . $this->deposit->getUser()->getCurrency()->abbr;
+?>
+
 <h2><?= __('module_investment_edit_deposit') ?></h2>
 
 <div class="list mb-30">
 	<div class="cell invested-amount">
-		<em><?= $this->deposit->value ?> Kč</em>
+		<em><?= $this->deposit->value . $currency ?> </em>
 		<label><?= __('module_investment_deposit_value') ?></label>
 	</div>
 	<div class="cell investor-name">
@@ -39,7 +43,6 @@
 
 <script type="text/javascript">
 $(document).ready(() => {
-
 	$('.js-date-picker').click(() => {
 		$('.js-date-picker').pickadate({
 			format: 'yyyy-mm-dd'

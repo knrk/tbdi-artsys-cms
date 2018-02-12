@@ -56,7 +56,7 @@ class Art_Model_User extends Art_Abstract_Model_DB {
 	 */
 	function __get($name) {
 		switch($name) {
-			case 'fullname': 
+			case 'fullname' :
 				return static::getFullname($this);
 			default:
 				return $this->{$name};
@@ -255,5 +255,5 @@ class Art_Model_User extends Art_Abstract_Model_DB {
 		}
 		
 		return $fullname;
-    }
+	}
 }

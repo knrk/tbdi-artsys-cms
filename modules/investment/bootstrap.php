@@ -49,7 +49,7 @@ class Module_Bootstrap_Investment extends Art_Abstract_Module_Bootstrap {
 			'module_investment_edit_month_success'	=> 'Úprava investice byla úspěšná',
 			'module_investment_new_month_success'	=> 'Nová investice byla úspěšně přidána',
 			'module_investment_publish_not_found'	=> 'Investice nebyla nalezena',
-			'module_investment_publish_success'		=> 'Publikování investice bylo úspěšné',
+			'module_investment_publish_success'		=> 'Změna publikování investicí byla úspěšná',
 			'module_investment_v_date_not_string'	=> 'Datum není v požadovaném tvaru',
 			'module_investment_v_month_not_integer'	=> 'Měsíc musí být číslo',
 			'module_investment_v_target_not_string'	=> 'Název musí být řetězec',

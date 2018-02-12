@@ -1,15 +1,29 @@
+<h2>Investice v měsíci</h2>
+
 <form <?= $this->request->getHTML() ?>>
-	<input type="text" name="target" placeholder="<?= __('module_investment_target') ?>">
-	
-	<div class="form-group">
-		<select class="form-control" name="month">
-		  <?php foreach ($this->months as $key => $val) : ?>
-			<option value="<?= $key ?>"><?= $val ?></option>
-		  <?php endforeach; ?>
-		</select>
+	<div class="investments-new">
+		<div class="grid">
+			<div class="pt-15">
+				<label for="new-investments-by-month-name">Název</label>
+				<input id="new-investments-by-month-name" type="text" name="target" autofocus placeholder="<?= __('module_investment_target') ?>">
+			</div>
+			
+			<div class="pt-15">
+				<label for="new-investments-by-month">Měsíc / Rok</label>
+				<input id="new-investments-by-month" type="text" name="month-year" class="js-date-picker">
+			</div>
+		</div>
 	</div>
-	
-	<input type="text" name="year" placeholder="<?= __('year') ?>">
-				
-	<input type="submit" value="<?= __('next') ?>" class="btn">
+	<div class="save-view-buttons mt-15">
+		<input type="submit" value="<?= __('next') ?>" class="button">
+	</div>
 </form>
+<script type="text/javascript">
+$(document).ready(() => {
+	$('.js-date-picker').click(() => {
+		$('.js-date-picker').pickadate({
+			format: 'm-yyyy'
+		});
+	});
+});
+</script>

@@ -39,7 +39,7 @@ class Art_Model_User_Data extends Art_Abstract_Model_DB {
 	
 	protected static $_dependencies = array('user');
 	
-	protected static $_link = array('user' => 'Art_Model_User');
+	protected static $_link = array('user' => 'Art_Model_User', 'currency' => 'Art_Model_Currency');
 
     protected static $_cols = array('id'					=>	array('select','insert'),
 									'id_user'				=>	array('select','insert'),
@@ -66,7 +66,7 @@ class Art_Model_User_Data extends Art_Abstract_Model_DB {
 									'modified_by'			=>	array('select','update'),
 									'created_date'			=>	array('select'),
 									'modified_date'			=>	array('select'));
-		
+	
 	/**
 	 *	Override get method 
 	 * 
@@ -154,5 +154,5 @@ class Art_Model_User_Data extends Art_Abstract_Model_DB {
 		}
 		
 		return $born;
-    }
+	}
 }

@@ -38,7 +38,7 @@
 		<td><?= nice_date($post->created_date) ?></td>
 		<td>
 			<div class="inline-actions">
-				<a href="<?= $post->a_edit ?>"><i class="fa fa-pencil edit"></i></a>
+				<a href="<?= $post->a_edit ?>"><i class="fa fa-pencil"></i></a>
 				<button <?= $this->delete_single_request->getHTML(array('id'=>$post->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
 			</div>
 		</td>

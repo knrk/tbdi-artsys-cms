@@ -27,10 +27,10 @@
 			?>
 				<tr>
 					<td><?= Art_Filter::cutString($value->getUser()->fullname,40) ?></td>
-					<td><?= $value->invested ?></td>
+					<td><?= $value->invested ?> Kč</td>
 					<td><?= $value->interest ?>%</td>
-					<td><?= $value->invested * $value->interest / 100 ?></td>
-					<td><?= $value->commission ?></td>
+					<td><?= $value->invested * $value->interest / 100 ?> Kč</td>
+					<td><?= $value->commission ?> Kč</td>
 					<td><?= nice_date($value->payment_date) ?></td>
 					<td><?= $value->note?></td>
 				</tr>

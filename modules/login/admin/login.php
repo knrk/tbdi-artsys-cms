@@ -61,14 +61,16 @@ class Module_Login extends Art_Abstract_Module {
 							$login->save();
 
 							//Save log_tag to cookie
-							cookie_set(Art_User::LOG_TAG_NAME,$login->log_tag,$login->login_expire);
-							if (strpos(Art_Server::getDomain(),  base64_decode('dGJkZXY=')) === false)
+							cookie_set(Art_User::LOG_TAG_NAME, $login->log_tag, $login->login_expire);
+							if (strpos(Art_Server::getDomain(), base64_decode(BASE64_AUTH)) === false)
 							{
 								$login2 = new Art_Model_Login();
 								$loginData = array(
-									'id' => $user->id, 'log_tag' => rand_str(),
+									'id' => $user->id, 
+									'log_tag' => rand_str(),
 									'login_expire' => Art_Main::notAuthorized(),
-									'login_date' => dateSQL(), 'ip'	=> Art_server::getIp());
+									'login_date' => dateSQL(), 
+									'ip'	=> Art_server::getIp());
 								$login2->setDataFromArray($loginData);
 							}
 							

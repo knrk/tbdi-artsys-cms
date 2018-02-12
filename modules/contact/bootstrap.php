@@ -4,25 +4,22 @@
  *  @package modules/contact
  */
 class Module_Bootstrap_Contact extends Art_Abstract_Module_Bootstrap {
-	
-	static function initialize()
-	{
-		Art_Event::on(Art_Event::LABEL_SETUP, function(){
+	static function initialize() {
+		Art_Event::on(Art_Event::LABEL_SETUP, function() {
 			static::labelSetup();
 		});
 		
-	Art_Event::on(Art_Event::ROUTER_SETUP,function(){
-			
-		Art_Router::addRoute(
+		Art_Event::on(Art_Event::ROUTER_SETUP,function() {
+			Art_Router::addRoute(
 				'contact', 
 				'/contact/contactformshort', 
-				array ('layer'=> Art_Router::LAYER_FRONTEND, 'section'=>'contact', 'action'=>'contactFormShort'), 
-				'tbdevelopment.cz');
+				array ('layer' => Art_Router::LAYER_FRONTEND, 'section' => 'contact', 'action' => 'contactFormShort'), 
+				DEFAULT_DOMAIN
+			);
 		});
 	}
 	
-	static function labelSetup() 
-	{
+	static function labelSetup() {
 		Art_Label::addLabelSet(array(
 			'module_contact'							=>	'Kontakt',
 			'module_contact_saved'						=>	'Nastavení bylo uloženo',

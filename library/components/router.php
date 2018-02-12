@@ -503,55 +503,47 @@ final class Art_Router extends Art_Abstract_Component {
 	 *	@static
 	 *	@return void
 	 */
-	static function doFirewall()
-	{
+	static function doFirewall() {
 		$access = false;
 		
 		//Get current layer rights - if not set, layer has no access
 		$rights = Art_Register::in('layer_rights')->get(self::getLayer(), Art_User::NO_ACCESS);
 		
-		if( Art_User::hasPrivileges( $rights ) )
-		{
+		if (Art_User::hasPrivileges($rights)) {
 			$access = true;
 		}
 		
 		//Check for token validity if AJAX
-		if( Art_Server::isAjax() )
-		{
-			if( Art_Session::getToken() === Art_Main::getPost(Art_Session::TOKEN_NAME, NULL) )
-			{
+		if (Art_Server::isAjax()) {
+			if (Art_Session::getToken() === Art_Main::getPost(Art_Session::TOKEN_NAME, NULL)) {
 				$access = true;
-			}
-			else
-			{
+			} else {
 				$access = false;
 			}
 		}
 		
 		//No access if active
-		if( !Art_User::getCurrentUser()->isActive() )
-		{
+		if (!Art_User::getCurrentUser()->isActive()) {
 			$access = false;
 		}
+
 		//245
-		if( !(Art_Server::getIp() === '81.200.53.245' || Art_Server::getIp() === '81.19.13.54') && 
-				Art_Server::getDomain() == 'club.tbdevelopment.cz' && !(Art_Router::getSection() == 'registration' || Art_Router::getSection() == 'cabinet') )
-		{
-			//self::setNotFound(true);
-			//$access = false;
-		}
+		// if (!(Art_Server::getIp() === '81.200.53.245' || Art_Server::getIp() === '81.19.13.54') && 
+		// 	Art_Server::getDomain() == APP_DOMAIN && 
+		// 	!(Art_Router::getSection() == 'registration' || Art_Router::getSection() == 'cabinet')) {
+		// 	//self::setNotFound(true);
+		// 	//$access = false;
+		// }
 		
 		$userData = Art_User::getCurrentUser()->getData();
 		
 		//If pass changed before year of 2010
-		if( Art_User::isRegistered() && !Art_Server::isAjax() && 
-				( strtotime($userData->pass_changed_date) < 1262300400 || NULL == $userData->gender ) )
-		{
+		if (Art_User::isRegistered() && !Art_Server::isAjax() && 
+			(strtotime($userData->pass_changed_date) < 1262300400 || NULL == $userData->gender)) {
 			$access = false;
 		}
 		
-		if( !$access )
-		{
+		if (!$access) {
 			self::setNoAccess(true);
 		}
 	}

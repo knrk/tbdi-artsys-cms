@@ -10,25 +10,28 @@
 		</div>
 	</div>
 </div>
-	<div class="clear"></div>
-
-
 	
 <table class="table-default">
 	<tr>
-		<th class="text-center"><?= __('module_default_value_name') ?></th>
-		<th class="text-center"><?= __('note') ?></th>
-		<th class="text-center"><?= __('module_default_value_type') ?></th>
+		<th><?= __('module_default_value_name') ?></th>
+		<th><?= __('note') ?></th>
+		<th><?= __('module_default_value_type') ?></th>
 		<th><?= __('module_default_value_value') ?></th>
 		<th></th>
 	</tr>
-	<?php foreach($this->items AS $item): ?>
+	<?php foreach($this->items as $item): ?>
 		<tr>
-			<td class="text-center"><?= Art_Filter::cutString($item->name,40) ?></td>
+			<td>
+				<a href="<?= '/'.Art_Router::getLayer().'/default_value/edit/'.$item->id ?>"><?= Art_Filter::cutString($item->name,40) ?></a>
+			</td>
 			<td><?= $item->note ?></td>
-			<td class="text-center"><?= $this->types[$item->type] ?></td>
+			<td><?= $this->types[$item->type] ?></td>
 			<td><?= Art_Filter::cutString($item->value, 100) ?></td>
-			<td class="text-center"><a href="<?= '/'.Art_Router::getLayer().'/default_value/edit/'.$item->id ?>"><i class="fa fa-pencil edit"></i></a></td>
+			<td>
+				<div class="inline-actions">
+					<a href="<?= '/'.Art_Router::getLayer().'/default_value/edit/'.$item->id ?>"><i class="fa fa-pencil"></i></a>
+				</div>
+			</td>
 		</tr>
 	<?php endforeach; ?>
 </table>

@@ -1501,6 +1501,12 @@ col.f10 {
 col.f30 {
     width: 30px;
 }
+col.f50 {
+    width: 50px;
+}
+col.f75 {
+    width: 75px;
+}
 col.f100 {
     width: 100px;
 }
@@ -1894,6 +1900,36 @@ col.f300 {
             color: @page-layout-emphasized-text-color;
         }
     }
+
+    &.table-list {
+        border-collapse: separate;
+        table-layout: fixed;
+        border-spacing: 0 5px;
+
+        td:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        td:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding-right: 20px;
+        }
+
+        .company-name {
+            font-weight: 800;
+        }
+        .services {
+            a {
+                margin-right: 6px;
+                display: inline-flex;
+                color: #ccc;
+                &.active {
+                    color: black;
+                }
+            }
+        }
+    }
 }
 
 .input[type=submit].button,
@@ -1940,9 +1976,23 @@ hr.separator {
     margin-top: 40px;
 }
 
-.form {
-    width: 50%;
+.filter-container {
+    background-color: #fff;
+    padding: 15px;
+}
+.filter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    grid-gap: 10px;
 
+    .submit {
+        align-self: end;
+        justify-self: end;
+        height: 34px;
+    }
+}
+
+.form {
     .picker {
         width: 300px;
     }
@@ -2028,6 +2078,19 @@ hr.separator {
         &:last-child {
             margin-right: 0;
         }
+    }
+}
+
+.investments-new {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        align-items: start;
+    }
+
+    table td label {
+        margin-bottom: 0;
     }
 }
 

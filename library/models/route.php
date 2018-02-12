@@ -69,16 +69,13 @@ class Art_Model_Route {
 		$this->_output_mask = $output_mask;
 		
 		//If is integer
-		if( $domain === (int)$domain )
+		if ($domain === (int) $domain)
 		{
-			$domains = Art_Register::in('domain')->get('domains');
-			$domain = (int)$domain;
-			if( isset($domains[$domain]) )
-			{
+			$domains = Art_Main::getDomains();
+			$domain = (int) $domain;
+			if (isset($domains[$domain])) {
 				$domain = $domains[$domain];
-			}
-			else
-			{
+			} else {
 				$domain = NULL;
 			}
 		}

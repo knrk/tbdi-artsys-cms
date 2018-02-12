@@ -239,18 +239,13 @@ function ftest($path)
  *  @param int expiration time
  *  @example cookie_set('name','value',1500000) Sets cookie name=value with time expiration till 15000000
  */
-function cookie_set($name, $value, $time, $domain = NULL)
-{
-	if( NULL === $domain )
-	{
-		foreach( Art_Register::in('domain')->get('domains') AS $domain )
-		{
-			setcookie($name, $value, $time, "/".Art_Server::getRelativePath(), $domain, false, true);
+function cookie_set($name, $value, $time, $domain = NULL) {
+	if (NULL === $domain) {
+		foreach(Art_Main::getDomains() AS $domain ) {
+			setcookie($name, $value, $time, "/" . Art_Server::getRelativePath(), $domain, false, true);
 		}
-	}
-	else
-	{
-		setcookie($name, $value, $time, "/".Art_Server::getRelativePath(), $domain, false, true);
+	} else {
+		setcookie($name, $value, $time, "/" . Art_Server::getRelativePath(), $domain, false, true);
 	}
 	
 	$_COOKIE[$name] = $value;
@@ -262,18 +257,13 @@ function cookie_set($name, $value, $time, $domain = NULL)
  *  @param string $name variable name
  *  @example cookie_unset('foo') Unsets cookie foo
  */
-function cookie_unset($name, $domain = NULL)
-{
-	if( NULL === $domain )
-	{
-		foreach( Art_Register::in('domain')->get('domains') AS $domain )
-		{
-			setcookie($name, '', 0, "/".Art_Server::getRelativePath(), $domain, false, true);
+function cookie_unset($name, $domain = NULL) {
+	if (NULL === $domain) {
+		foreach (Art_Main::getDomains() AS $domain ) {
+			setcookie($name, '', 0, "/" . Art_Server::getRelativePath(), $domain, false, true);
 		}
-	}
-	else
-	{
-		setcookie($name, '', 0, "/".Art_Server::getRelativePath(), $domain, false, true);
+	} else {
+		setcookie($name, '', 0, "/" . Art_Server::getRelativePath(), $domain, false, true);
 	}	
 	
 	unset($_COOKIE[$name]);

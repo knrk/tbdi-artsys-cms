@@ -73,8 +73,9 @@ class Module_Users extends Art_Abstract_Module {
 		$this->view->count = count($allUsers);
 	}
 	
-	function companiesAction() 
-	{	//Art_Template::setTemplate("index","ajax");
+	function companiesAction() {	
+		
+		//Art_Template::setTemplate("index","ajax");
 		$sortById = Art_Router::getFromURI('id');
 		$sortByCompanyName = Art_Router::getFromURI('company_name');
 		$sortByMembershipFrom = Art_Router::getFromURI('membership_from');
@@ -82,28 +83,23 @@ class Module_Users extends Art_Abstract_Module {
 		
 		$this->view->sortBy = $sortBy = Helper_TBDev::getSortBy($sortById, $sortByCompanyName, $sortByMembershipFrom, $sortByMembershipTo);
 		
-		$authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy,true);
+		// $authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy, true);
+		$allUsers = $this->_getAllAuthenticatedUserDataForTable($sortBy, true);
 		
-		$activeUsers = array();
+		// $activeUsers = array();
+		// $nonactiveUsers = array();
 		
-		$nonactiveUsers = array();
+		// foreach ($authenticatedUsersData as $value) /* @var $value Art_Model_User_Data */ {		
+		// 	if ($value->getUser()->active) {
+		// 		$activeUsers[] = $value;
+		// 	} else {
+		// 		$nonactiveUsers[] = $value;
+		// 	}
+		// }
 		
-		foreach ( $authenticatedUsersData as $value ) /* @var $value Art_Model_User_Data */
-		{		
-			if ( $value->getUser()->active )
-			{
-				$activeUsers[] = $value;
-			}
-			else
-			{
-				$nonactiveUsers[] = $value;
-			}
-		}
-		
-		$allUsers = array_merge($activeUsers,$nonactiveUsers);
+		// $allUsers = array_merge($activeUsers, $nonactiveUsers);
 		
 		$this->view->usersData = $allUsers;
-		
 		$this->view->count = count($allUsers);
 	}
 	
@@ -2505,8 +2501,7 @@ class Module_Users extends Art_Abstract_Module {
 	 *  @access protected
 	 *	@return Art_Model_User_Data[]
 	 */	
-	protected function _getAllAuthenticatedUserDataForTable( $sortBy, $onlyCompany = false )
-	{
+	protected function _getAllAuthenticatedUserDataForTable($sortBy, $onlyCompany = false) {
 		//Filter Users by Name, Surname and Service
 		$where = $this->_filterUsers();
 	
@@ -2514,8 +2509,7 @@ class Module_Users extends Art_Abstract_Module {
 		
 		$data = Art_Main::getPost();
 		
-		if ( !empty($data) && isset($data['service-type']) && $data['service-type'] != 0 )
-		{
+		if (!empty($data) && isset($data['service-type']) && $data['service-type'] != 0) {
 			$serviceFilterSet = true;
 			$usersIdWithService = Helper_TBDev::getPropertyFromObjectsInArray(Helper_TBDev::getAllUsersForActivatedService(new Service($data['service-type'])),'id');
 		}
@@ -2527,37 +2521,30 @@ class Module_Users extends Art_Abstract_Module {
 		$authenticatedUsers = array();	
 
 		//For every User add properties and filter out not authenticated users
-		foreach ( $usersData as $value ) /* @var $value Art_Model_User_Data */
-		{
+		foreach ($usersData as $value) /* @var $value Art_Model_User_Data */ {
 			$user = $value->getUser();
 
-			if ( !Helper_TBDev::isUserAuthenticated($user) )
-			{
+			if (!Helper_TBDev::isUserAuthenticated($user)) {
 				continue;
 			}
 
-			if ( (Helper_TBDev::isUserRepresentsCompany($user) && !$onlyCompany) ||
-					(!Helper_TBDev::isUserRepresentsCompany($user) && $onlyCompany) )
-			{
+			if ((Helper_TBDev::isUserRepresentsCompany($user) && !$onlyCompany) ||
+				(!Helper_TBDev::isUserRepresentsCompany($user) && $onlyCompany) ) {
 				continue;
 			}
 			
 			//Filter by Service
-			if ( $serviceFilterSet && !in_array($user->id, $usersIdWithService) )
-			{
+			if ($serviceFilterSet && !in_array($user->id, $usersIdWithService)) {
 				continue;
 			}
 
 			$value->p_userId = $user->id;
-			
 			$value->user_number = $user->user_number;
 			
 			$value->p_phone = Helper_TBDev::getTelephoneForUser($user);
-			
 			$services = Helper_TBDev::getAllServicesForUser($user);
 
-			foreach ( $services as $service ) 
-			{
+			foreach ($services as $service)  {
 				$settings = json_decode($service->settings, true);
 
 				$service->fa_icon = $settings["icon"];
@@ -2569,35 +2556,28 @@ class Module_Users extends Art_Abstract_Module {
 
 			$actServices = array();
 
-			foreach ( $activatedServices as $service ) 
-			{
+			foreach ($activatedServices as $service) {
 				$actServices[] = $service->type;
 			}
 
 			$value->actServices = $actServices;
 
-			$value->a_service = '/'.Art_Router::getLayer().'/users/service/'.$user->id.'-';
-
+			$value->a_service = '/' . Art_Router::getLayer() . '/users/service/' . $user->id . '-';
 			$value->membership_from = nice_date(Helper_TBDev::getMembershipFromForUser($user));
-			if ( '30.11.-0001' == $value->membership_from ) 
-			{
-				$value->membership_from=null; 
-				$value->membership_to=null;
-				$value->membership_to_colored=null;
-			}
-			else{
+			if ('30.11.-0001' == $value->membership_from) {
+				$value->membership_from = null; 
+				$value->membership_to = null;
+				$value->membership_to_colored = null;
+			} else {
 				$value->membership_to = Helper_TBDev::getMembershipToForUser($user);
 				$value->membership_to_colored = Helper_TBDev::renderTrueFalseDateTo(dateSQL($value->membership_to) < dateSQL(), nice_date($value->membership_to));
 			}
 
-			if ( $onlyCompany && Helper_TBDev::isUserRepresentsCompany($user) )
-			{
+			if ($onlyCompany && Helper_TBDev::isUserRepresentsCompany($user)) {
 				$value->company_name = Helper_TBDev::getCompanyAddress($user)->company_name;
 				$value->a_edit = '/'.Art_Router::getLayer().'/users/editcompany/'.$user->id;
 				$value->a_detail = '/'.Art_Router::getLayer().'/users/detailcompany/'.$user->id;
-			}
-			else 
-			{
+			} else {
 				$value->a_edit = '/'.Art_Router::getLayer().'/users/edit/'.$user->id;
 				$value->a_detail = '/'.Art_Router::getLayer().'/users/detail/'.$user->id;
 			}				
@@ -2605,10 +2585,8 @@ class Module_Users extends Art_Abstract_Module {
 			$authenticatedUsers[] = $value;
 		}
 
-		if ( -1 !== $sortBy )
-		{
-			switch ( $sortBy )
-			{
+		if (-1 !== $sortBy) {
+			switch ($sortBy) {
 				case 0: $param = 'id'; break;
 				case 1:	$param = 'idR'; break;
 				case 2: $param = 'firstname'; break;

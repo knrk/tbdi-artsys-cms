@@ -469,14 +469,10 @@ final class Art_Main {
 	 *	@param int $index
 	 *	@return string
 	 */
-	static function getDomain( $index )
-	{
-		if( isset(static::$_domains[$index]) )
-		{
+	static function getDomain($index) {
+		if (isset(static::$_domains[$index])) {
 			return static::$_domains[$index];
-		}
-		else
-		{
+		} else {
 			return NULL;
 		}
 	}
@@ -488,8 +484,7 @@ final class Art_Main {
 	 *	@static
 	 *	@return array
 	 */
-	static function getDomains()
-	{
+	static function getDomains() {
 		return static::$_domains;
 	}
 	
@@ -586,8 +581,10 @@ final class Art_Main {
 			static::$_default_locale = Art_Register::in('locale')->get('default_locale');
 			static::$_current_locale = static::$_default_locale;
 			static::$_locales = Art_Register::in('locale')->get('locales');
-			static::$_domains = Art_Register::in('domain')->get('domains');
-			static::$_default_domain = Art_Register::in('domain')->get('default_domain');
+			static::$_domains = DOMAINS;
+			static::$_default_domain = DEFAULT_DOMAIN;
+			// static::$_domains = Art_Register::in('domain')->get('domains');
+			// static::$_default_domain = Art_Register::in('domain')->get('default_domain');
 			
 			//Load registers from DB
 			Art_Register::loadFromDb();

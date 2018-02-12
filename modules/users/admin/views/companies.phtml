@@ -1,46 +1,44 @@
+<h2><?= __('module_users_companies_header') ?></h2>
 
-<div class="row">
-	<div class="col-sm-6 action-name">
-		<h2><?= __('module_users_companies_header') ?></h2>
-	</div>
+<!-- <div class="row">
 	<div class="col-sm-6 action-submenu">
-	<!--	
+		
 		<div class="action-new">
 			<a href="/<?= ''//Art_Router::getLayer() ?>/users/new">
 			<i class="fa fa-plus fa-2x"></i>
 			<?= ''//__('add') ?></a>
 		</div>
-	-->
+	
 	</div>
-</div>
+</div> -->
 
-<div><?= Art_Widget::render('filter') ?></div>
+<div class="filter-container">
+	<?= Art_Widget::render('filter') ?>
+</div>
 	
 <?php if (!empty($this->usersData)) : ?>	
-	<table class="table-default">
+	<table class="table-default table-list">
 		<colgroup>
-			<col class="w5">
-			<col class="w20">
-			<col class="w15">
-			<col class="w15">
-			<col class="w5">
+			<!-- <col class="w5"> -->
+			<col class="w30">
+			<!-- <col class="w15"> -->
+			<col class="w25">
+			<!-- <col class="w10"> -->
 			<col class="w10">
 			<col class="w10">
-			<col class="w20">
+			<col class="w5">
 			<col class="w5">
 		</colgroup>
 		<tr>
-			<th>
+			<!-- <th>
 				<?= Helper_Default::renderSortUpDown($this->sortBy, 'id') ?>
 				ID
-			</th>
+			</th> -->
 			<th>
 				<?= Helper_Default::renderSortUpDown($this->sortBy, 'company_name') ?>
 				<?= __('company_name') ?>
 			</th>
-			<th><?= __('fullname') ?></th>
 			<th><?= __('email') ?></th>
-			<th><?= __('phone_number') ?></th>
 			<th>
 				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_from') ?>
 				<?= __('module_users_membership_from') ?>
@@ -49,30 +47,47 @@
 				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_to') ?>
 				<?= __('module_users_membership_to') ?>
 			</th>
-			<th><?= __('services') ?></th>
 			<th><?= __('note') ?></th>
 			<th></th>
 		</tr>
-		<?php 
-			foreach ($this->usersData as $data ) : /* @var $data Art_Model_User_Data */ 
-		?>
-			<tr>
-				<td><?= $data->_user->user_number ?></td>
-				<td><a href="<?= $data->a_detail ?>"><?= Art_Filter::cutString($data->company_name,60) ?></a></td>
-				<td <?= $data->getUser()->active ? null : 'class="overdue"' ?>><?= Art_Filter::cutString($data->fullname,40) ?></td>
-				<td><?= Art_Filter::cutString($data->email,100) ?></td>
-				<td><?= Art_Filter::cutString($data->p_phone,14) ?></td>
-				<td><?= $data->membership_from ?></td>
-				<td><?= $data->membership_to_colored ?></td>
-				<td>
+		
+		<?php foreach ($this->usersData as $data) : /* @var $data Art_Model_User_Data */ ?>
+		<tr>
+			<!-- <td>
+				<?= $data->_user->user_number ?>
+			</td> -->
+			<td>
+				<a href="<?= $data->a_detail ?>" class="company-name"><?= Art_Filter::cutString($data->company_name,60) ?></a>
+				<div <?= $data->getUser()->active ? 'class="company-contact-person"' : 'class="company-contact-person overdue"' ?>>
+					<?= Art_Filter::cutString($data->fullname,40) ?>
+				</div>
+				<div class="services">
 					<?php foreach( $data->services as $service ) : /* @var $service Service */ ?>
-						<a href="<?= $data->a_service.$service->id ?>" style="display:inline"><i class="fa fa-<?= $service->fa_icon ?> pr-10"
-							 <?= $serviceColor = in_array($service->type, $data->actServices) ? ' style="color: green"' : null ?>></i></a>
+						<a href="<?= $data->a_service.$service->id ?>"<?= $serviceColor = in_array($service->type, $data->actServices) ? ' class="active"' : null ?>>
+							<i class="fa fa-<?= $service->fa_icon ?>"></i>
+						</a>
 					<?php endforeach; ?>
-				</td>
-				<td><?= Art_Widget::render('note','embedd',array('id_user'=>$data->p_userId)) ?></td>
-				<td class="text-center"><a href="<?= $data->a_edit ?>"><i class="fa fa-pencil edit"></i></a></td>
-			</tr>
+				</div>
+			</td>
+			<td>
+				<div><?= Art_Filter::cutString($data->email,100) ?></div>
+				<div><?= Art_Filter::cutString($data->p_phone,14) ?></div>
+			</td>
+			<td>
+				<?= $data->membership_from ?>
+			</td>
+			<td>
+				<?= $data->membership_to_colored ?>
+			</td>
+			<td>
+				<?= Art_Widget::render('note','embedd',array('id_user'=>$data->p_userId)) ?>
+			</td>
+			<td>
+				<div class="inline-actions">
+					<a href="<?= $data->a_edit ?>"><i class="fa fa-pencil"></i></a>
+				</div>
+			</td>
+		</tr>
 		<?php endforeach; ?>
 	</table>
 <?php endif; ?>
@@ -82,7 +97,12 @@
 </div>
 	
 <script>
-$(document).ready(function(){
+$(document).ready(() => {
+	$('.chosen-select').chosen({
+		max_selected_options: -1
+	});
+	$('.chosen-container').removeClass('chosen-disabled');
+
     $('[data-toggle="tooltip"]').tooltip();
 });
 </script>

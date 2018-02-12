@@ -204,26 +204,25 @@ class Module_Investment extends Art_Abstract_Module {
 		}
 	}
 			
-	function newMonthAction() 
-	{		
-		if( Art_Ajax::isRequestedBy(self::REQUEST_NEW_MONTH) )
-		{
+	function newMonthAction()  {		
+		if (Art_Ajax::isRequestedBy(self::REQUEST_NEW_MONTH)) {
 			$response = Art_Ajax::newResponse();
 			$data = Art_Ajax::getData();
-		
-			Helper_Default::getValidatedSQLData(array('month','year','target'), self::getNewMonthFieldsValidators(), $data, $response);
 
-			if ( !empty(Service_Investment::fetchAll(array('month'=>$data['month'],'year'=>$data['year'],'target'=>$data['target']))) )
-			{
+			list($month, $year) = explode('-', $data['month-year']);
+			$data['month'] = $month;
+			$data['year'] = $year;
+		
+			Helper_Default::getValidatedSQLData(array('month', 'year','target'), self::getNewMonthFieldsValidators(), $data, $response);
+
+			if (!empty(Service_Investment::fetchAll(array('month'=>$data['month'],'year'=>$data['year'],'target'=>$data['target'])))) {
 				$response->addAlert(__('module_investment_new_month_already_exists'));
 			}
 			
 			//Everything is valid
-			if( $response->isValid() )
-			{	
+			if ( $response->isValid()) {	
 				//Set data to SESSION
-				foreach($data AS $field_name => $field_value)
-				{				
+				foreach ($data AS $field_name => $field_value) {				
 					Art_Session::set(self::SESSION_PREFIX.$field_name, $field_value);
 				}	
 				
@@ -231,9 +230,7 @@ class Module_Investment extends Art_Abstract_Module {
 			}
 			
 			$response->execute();
-		}
-		else
-		{
+		} else {
 			$this->view->defaultInterest = Helper_Default::getDefaultValue(Helper_TBDev::DEFAULT_INVESTMENT_INTEREST);
 			
 			$this->view->months = Helper_Default::getCzechMonthsName();
@@ -244,56 +241,44 @@ class Module_Investment extends Art_Abstract_Module {
 		}
 	}
 
-	function newInvestmentAction() 
-	{		
-		if( Art_Ajax::isRequestedBy(self::REQUEST_NEW_MONTH) )
-		{
+	function newInvestmentAction() {		
+		if (Art_Ajax::isRequestedBy(self::REQUEST_NEW_MONTH)) {
 			$response = Art_Ajax::newResponse();
 			$data = Art_Ajax::getData();
 						
 			$users = array();
 			
-			foreach ($data as $key => $value)
-			{
+			foreach ($data as $key => $value) {
 				$separator = strpos($key, '-');
-				
-				if ( false !== $separator )
-				{
+				if (false !== $separator) {
 					$users[substr($key, $separator+1)][substr($key, 0, $separator)] = $value;
 				}
 			}
 			
 			$anyUser = false;
 			
-			foreach ($users as $value)
-			{
-				if ( Helper_Default::isPropertyChecked($value,'investment') )
-				{
+			foreach ($users as $value) {
+				if (Helper_Default::isPropertyChecked($value,'investment')) {
 					$anyUser = true;
 					break;
 				}
 			}
 			
-			if ( false == $anyUser )
-			{
+			if (false == $anyUser) {
 				$response->addAlert(__('module_investment_new_investment_no_user'));
 			}
 			
 			//Everything is valid
-			if( $response->isValid() )
-			{	
+			if ($response->isValid()) {	
 				$investment = new Service_Investment;
 				$investment->month = $data['month'];
 				$investment->year = $data['year'];
 				$investment->target = $data['target'];
 				$investment->save();
 				
-				foreach ($users as $key => $value)
-				{
-					if ( Helper_Default::isPropertyChecked($value,'investment') )
-					{
-						if ( NULL == $value['payment_date'] )
-						{
+				foreach ($users as $key => $value) {
+					if (Helper_Default::isPropertyChecked($value,'investment')) {
+						if (NULL == $value['payment_date']) {
 							$value['payment_date'] = $data['date'];
 						}
 
@@ -314,14 +299,10 @@ class Module_Investment extends Art_Abstract_Module {
 			}
 			
 			$response->execute();
-		}
-		else
-		{
+		} else {
 			//Get data from SESSION
-			foreach(Art_Session::get() AS $field_name => $field_value)
-			{		
-				if ( 0 === strpos($field_name, self::SESSION_PREFIX) )
-				{
+			foreach (Art_Session::get() as $field_name => $field_value) {		
+				if (0 === strpos($field_name, self::SESSION_PREFIX)) {
 					$data[substr($field_name, strlen(self::SESSION_PREFIX))] = $field_value;
 				}
 			}
@@ -338,8 +319,8 @@ class Module_Investment extends Art_Abstract_Module {
 
 			$users = Helper_TBDev::getAllUsersForActivatedService(new Service(array('type'=>Helper_TBDev::INVESTMENT_TYPE)));
 
-			foreach ($users as $value) /* @var $value Art_Model_User */ 
-			{
+			/* @var $value Art_Model_User */ 
+			foreach ($users as $value) {
 				$deposits = 0;
 
 				foreach ( Service_Investment_Deposit::fetchAllPrivileged(array('id_user'=>$value->id))
@@ -347,8 +328,7 @@ class Module_Investment extends Art_Abstract_Module {
 				{
 					$time = strtotime('1.'.$data['month'].'.'.$data['year']);
 					
-					if ( strtotime($deposit->expiry_date) > $time && strtotime($deposit->date) <= $time )
-					{
+					if ( strtotime($deposit->expiry_date) > $time && strtotime($deposit->date) <= $time ) {
 						$deposits += $deposit->value;
 					}
 				}
@@ -602,120 +582,91 @@ class Module_Investment extends Art_Abstract_Module {
   		}
   	}
 		
-	function deleteInvestmentAction()
-	{
-  		if( Art_Ajax::isRequestedBy(self::REQUEST_DELETE_INVESTMENT) )
-  		{
+	function deleteInvestmentAction() {
+  		if (Art_Ajax::isRequestedBy(self::REQUEST_DELETE_INVESTMENT)) {
   			$response = Art_Ajax::newResponse();			
-  
 			$investment = new Service_Investment(Art_Router::getId());
  
-			if( $investment->isLoaded() )
-  			{
+			if ($investment->isLoaded()) {
 				$investmentValues = $investment->getInvestmentValues();
 				
-				foreach ($investmentValues as $value) /* @var $value Service_Investment_Value */ 
-				{
+				foreach ($investmentValues as $value) /* @var $value Service_Investment_Value */ {
 					$value->delete();
 				}
 				
 				$investment->delete();
 				$response->addMessage(__('module_investment_delete_success'));
-			}
-  			else
- 			{
+			} else {
 				$response->addAlert(__('module_investment_delete_not_found'));
   			}
  
-			$response->willRedirect();
-			
+			$response->willRedirect();	
 			$response->execute();
-  		}
-  		else
-  		{
+  		} else {
   			$this->showTo(Art_User::NO_ACCESS);
   		}
   	}
 	
-	function publishInvestmentAction()
-	{
-  		if( Art_Ajax::isRequestedBy(self::REQUEST_PUBLISH_INVESTMENT) )
-  		{
+	function publishInvestmentAction() {
+  		if (Art_Ajax::isRequestedBy(self::REQUEST_PUBLISH_INVESTMENT)) {
   			$response = Art_Ajax::newResponse();			
-  
 			$investment = new Service_Investment(Art_Router::getId());
  
-			if( $investment->isLoaded() )
-  			{
+			if ($investment->isLoaded()) {
 				$investment->visible = 1;
 				$investment->save();
 				$response->addMessage(__('module_investment_publish_success'));
-			}
-  			else
- 			{
+			} else {
 				$response->addAlert(__('module_investment_publish_not_found'));
   			}
  
-			$response->willRedirect();
-			
+			$response->willRedirect();	
 			$response->execute();
-  		}
-  		else
-  		{
+  		} else {
   			$this->showTo(Art_User::NO_ACCESS);
   		}
   	}
 	
-		function unpublishInvestmentAction()
-	{
-  		if( Art_Ajax::isRequestedBy(self::REQUEST_UNPUBLISH_INVESTMENT) )
-  		{
-  			$response = Art_Ajax::newResponse();			
+	function unpublishInvestmentAction() {
+  		if ( Art_Ajax::isRequestedBy(self::REQUEST_UNPUBLISH_INVESTMENT)) {
+  			$response = Art_Ajax::newResponse();
   
 			$investment = new Service_Investment(Art_Router::getId());
  
-			if( $investment->isLoaded() )
-  			{
+			if ($investment->isLoaded()) {
 				$investment->visible = 0;
 				$investment->save();
 				$response->addMessage(__('module_investment_publish_success'));
-			}
-  			else
- 			{
+			} else {
 				$response->addAlert(__('module_investment_publish_not_found'));
   			}
  
 			$response->willRedirect();
-			
 			$response->execute();
-  		}
-  		else
-  		{
+  		} else {
   			$this->showTo(Art_User::NO_ACCESS);
   		}
   	}
 	
-	static function getFieldsValidators()
-	{
+	static function getFieldsValidators() {
 		return	array(
-	'id_user'				=> array(
-		Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_id_user_not_integer')]),
-	'value'	=> array(
-		Art_Validator::MIN_VALUE => ['value' => 0,'message'		=> __('module_investment_v_value_min')],
-		Art_Validator::IS_INTEGER => ['message'					=> __('module_investment_v_value_not_integer')]),
+					'id_user' => array(
+						Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_id_user_not_integer')]),
+					'value'	=> array(
+						Art_Validator::MIN_VALUE => ['value' => 0,'message'	=> __('module_investment_v_value_min')],
+						Art_Validator::IS_INTEGER => ['message'	=> __('module_investment_v_value_not_integer')]),
 		);
 	}
 	
-	static function getNewMonthFieldsValidators()
-	{
+	static function getNewMonthFieldsValidators() {
 		return	array(
-	'month'				=> array(
-		Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_month_not_integer')]),
-	'year'				=> array(
-		Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_year_not_integer')]),
-	'target'				=> array(
-		Art_Validator::IS_STRING => ['message' => __('module_investment_v_target_not_string')],
-		Art_Validator::REGEX	=>	['value' => "/^[a-zA-Z-\s_\d]+$/",'message'		=> __('module_investment_v_target_not_right')]),
+					'month' => array(
+						Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_month_not_integer')]),
+					'year' => array(
+						Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_year_not_integer')]),
+					'target' => array(
+						Art_Validator::IS_STRING => ['message' => __('module_investment_v_target_not_string')],
+						Art_Validator::REGEX	=>	['value' => "/^[a-zA-Z-\s_\d]+$/", 'message'	=> __('module_investment_v_target_not_right')]),
 	/*'date'	=> array(
 		Art_Validator::IS_STRING => ['message'		=> __('module_investment_v_date_not_string')]),
 	'interest'	=> array(
