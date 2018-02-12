@@ -9,8 +9,6 @@ const DEFAULT_DOMAIN = 'tbdi.cz';
 const APP_DOMAIN = 'club.tbdi.cz';
 const APP_DOMAIN_URL = 'http://club.tbdi.cz';
 
-const BASE64_AUTH = 'dGJk';
-
 // const DEFAULT_DOMAIN = 'tbdevelopment.cz';
 // const APP_DOMAIN = 'club.tbdevelopment.cz';
 // const APP_DOMAIN_URL = 'http://club.tbdevelopment.cz';

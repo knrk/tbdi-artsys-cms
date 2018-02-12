@@ -12484,6 +12484,9 @@ col.w100 {
   table-layout: fixed;
   border-spacing: 0 5px;
 }
+.table-default.table-list th span {
+  margin: 0 5px;
+}
 .table-default.table-list td:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -12493,8 +12496,21 @@ col.w100 {
   border-bottom-right-radius: 5px;
   padding-right: 20px;
 }
-.table-default.table-list .company-name {
-  font-weight: 800;
+.table-default.table-list .company-name,
+.table-default.table-list .contact-person {
+  font-weight: 700;
+  display: inline-block;
+}
+.table-default.table-list .company-name em,
+.table-default.table-list .contact-person em {
+  font-weight: 200;
+  font-style: normal;
+  color: #9b9b9b;
+}
+.table-default.table-list .company-name.inactive,
+.table-default.table-list .contact-person.inactive {
+  color: #666666;
+  font-weight: 400;
 }
 .table-default.table-list .services a {
   margin-right: 6px;
@@ -12550,6 +12566,12 @@ hr.separator {
   display: grid;
   grid-template-columns: repeat(3, 1fr) auto;
   grid-gap: 10px;
+}
+.filter.companies {
+  grid-template-columns: repeat(2, 1fr) auto;
+}
+.filter label {
+  display: block;
 }
 .filter .submit {
   align-self: end;

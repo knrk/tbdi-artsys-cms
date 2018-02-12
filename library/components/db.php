@@ -36,41 +36,18 @@ final class Art_DB extends Art_Abstract_Component {
      *  @static
      *  @return void
      */
-    static function init()
-    {
-        if(parent::init())
-        {
-			//Get register
-			$register = Art_Register::in('database');
-			
-			//Open register for reading
-			$register->unlock();
-            
-			//Get all required variables from configuration file
-            $host = $register->get('host');
-            $login = $register->get('login');
-            $password = $register->get('password');
-            $database = $register->get('name');
-			
-			//Close register
-			$register->lock();
-			
-            //Connect to DB and save handler
-            try 
-            {
-                self::$_handler = new Art_PDO('mysql:host='.$host.';dbname='.$database.';charset=utf8', $login, $password);
+    static function init() {
+        if (parent::init()) {
+            try {
+                self::$_handler = new Art_PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
                 self::$_handler->exec('set names utf8');
                 self::$_handler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 				self::$_handler->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            } 
-            catch(PDOException $e) 
-            {
+            }  catch(PDOException $e) {
                 trigger_error('Connection to database couldn\'t be established: '.$e->getMessage(),E_USER_ERROR);
             }
         }
     }
-    
-
 }
 
 

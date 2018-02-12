@@ -87,3 +87,364 @@
 2018-02-12 13:01:44 [Art_Model_Login: update] {"id":"27684"} []
 2018-02-12 13:01:53 [Art_Model_Login: update] {"id":"27684"} []
 2018-02-12 13:01:55 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 13:53:17 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 13:53:20 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:13:50 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:13:52 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:14:12 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:14:15 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:14:50 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:15:05 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:16:51 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:17:22 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:17:23 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:17:23 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:18:13 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:18:32 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:18:55 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:19:07 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:19:36 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:19:57 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:24:28 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:25:04 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:25:47 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:26:18 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:32:37 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:32:39 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:37:13 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:37:15 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:37:39 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:37:41 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:43:13 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:43:15 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:43:24 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:43:26 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:45:08 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:45:11 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:46:30 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:46:41 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:46:44 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:47:04 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:57:02 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:57:13 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:57:49 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 14:57:51 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:02:15 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:02:17 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:04:53 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:04:55 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:06:27 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:06:29 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:06:40 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:06:40 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:06:49 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:06:51 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:09:00 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3599","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3598","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3600","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3605","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/chosen\/external\/chosen.min.css","value":"1516617594","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3603","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3604","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.date.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3597","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3602","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518425377","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3601","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3616"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3617"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3618"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3619"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3620"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3621"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3622"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3623"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3624"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3607","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-12 10:00:06","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: delete] {"id":"3606","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/6762bb7b8d2215cc.css","created_by":"93","modified_by":"","created_date":"2018-02-12 10:00:06","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3625"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Register_Value: insert] {"id":"3626"} {"layer":"admin","section":"users"}
+2018-02-12 15:09:03 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:10:52 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:10:54 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:15:51 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3618","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3617","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3619","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3624","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/chosen\/external\/chosen.min.css","value":"1516617594","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3622","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3623","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.date.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3616","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3621","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518444537","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3620","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3627"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3628"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3629"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3630"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3631"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3632"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3633"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3634"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3635"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3626","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-12 15:09:03","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: delete] {"id":"3625","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/55cb69742beed005.css","created_by":"93","modified_by":"","created_date":"2018-02-12 15:09:03","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3636"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Register_Value: insert] {"id":"3637"} {"layer":"admin","section":"users","action":"edit","id":"13"}
+2018-02-12 15:15:53 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:16:02 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:16:04 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:16:43 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:16:48 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:17:13 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:17:15 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:17:56 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:17:58 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:18:51 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3629","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3628","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3630","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3635","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/chosen\/external\/chosen.min.css","value":"1516617594","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3633","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3634","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.date.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3627","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3632","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518444912","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3631","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3638"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3639"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3640"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3641"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3642"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3643"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3644"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3645"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3646"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3637","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-12 15:15:53","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: delete] {"id":"3636","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/16e4084ae742d468.css","created_by":"93","modified_by":"","created_date":"2018-02-12 15:15:53","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3647"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Register_Value: insert] {"id":"3648"} {"layer":"admin","section":"users"}
+2018-02-12 15:18:54 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:19:01 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:19:03 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:19:09 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:19:11 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:19:16 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:19:18 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:19:40 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:19:42 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:20:38 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:20:40 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:22:45 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:22:47 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:22:48 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:22:50 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:28:30 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:28:32 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:29:17 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:29:19 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:30:13 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:30:15 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:30:51 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:30:53 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:31:17 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:31:19 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:31:47 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:31:49 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:33:30 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:33:32 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:36:18 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:36:21 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:36:37 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:36:39 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:39:07 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:39:09 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:39:25 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:39:27 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:39:38 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:39:40 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:39:53 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:39:55 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:40:28 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:40:30 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:40:46 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:40:48 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:42:41 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:42:43 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:45:07 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:45:09 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:45:26 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:45:27 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:46:02 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:46:04 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:46:27 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:46:29 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:48:09 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:48:11 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:48:23 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:48:25 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:49:12 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:49:14 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:51:44 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:51:46 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:51:59 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:52:01 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:52:56 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:52:58 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:54:23 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:54:25 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:55:02 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:55:04 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:55:42 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:55:44 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:57:49 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 15:57:51 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:00:11 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:00:13 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:00:34 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:00:36 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:00:43 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:00:45 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:03:20 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:03:22 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:04:09 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:04:11 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:05:55 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:05:57 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:06:06 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:06:08 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:06:23 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:06:25 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:07:34 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:07:36 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:10:06 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:10:06 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:10:08 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:10:10 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:14:50 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:14:52 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:15:21 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:15:23 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:20:50 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:20:50 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:20:55 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:20:57 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:22:28 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3640","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3639","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3641","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3646","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/chosen\/external\/chosen.min.css","value":"1516617594","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3644","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3645","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.date.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3638","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3643","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518445128","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3642","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3649"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3650"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3651"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3652"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3653"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3654"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3655"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3656"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3657"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3648","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-12 15:18:54","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: delete] {"id":"3647","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/9d5c82849619d1d4.css","created_by":"93","modified_by":"","created_date":"2018-02-12 15:18:54","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3658"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:30 [Art_Model_Register_Value: insert] {"id":"3659"} {"layer":"admin","section":"users"}
+2018-02-12 16:22:31 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:23:51 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:23:53 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:24:27 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3651","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3650","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3652","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3657","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/chosen\/external\/chosen.min.css","value":"1516617594","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3655","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3656","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.date.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3649","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3654","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518448916","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3653","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3660"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3661"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3662"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3663"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3664"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3665"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3666"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3667"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3668"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3659","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-12 16:22:30","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: delete] {"id":"3658","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/26ef4df38541cda8.css","created_by":"93","modified_by":"","created_date":"2018-02-12 16:22:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3669"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Register_Value: insert] {"id":"3670"} {"layer":"admin","section":"users"}
+2018-02-12 16:24:30 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:25:40 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:26:59 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3662","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3661","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3663","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3668","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/chosen\/external\/chosen.min.css","value":"1516617594","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3666","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3667","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.date.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3660","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3665","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518449065","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3664","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3671"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3672"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3673"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3674"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3675"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3676"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3677"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3678"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3679"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3670","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-12 16:24:30","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: delete] {"id":"3669","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/71094ef39cb3c27e.css","created_by":"93","modified_by":"","created_date":"2018-02-12 16:24:30","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3680"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:01 [Art_Model_Register_Value: insert] {"id":"3681"} {"layer":"admin","section":"users"}
+2018-02-12 16:27:02 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:27:42 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:27:44 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:27:50 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:27:50 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:28:02 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:28:04 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:29:00 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:29:02 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:29:46 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:30:18 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:40:01 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:40:04 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:40:10 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:40:40 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:40:42 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:40:43 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:43:29 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3673","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap-theme.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3672","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/external\/css\/bootstrap.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3674","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/bootstrap\/system.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3679","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/chosen\/external\/chosen.min.css","value":"1516617594","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3677","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3678","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/date-picker\/external\/classic.date.css","value":"1494883584","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3671","namespace":"compiler_css_admin_adminTemplate_index_files","name":"extensions\/font-awesome\/external\/css\/font-awesome.css","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3676","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/style.less","value":"1518449217","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3675","namespace":"compiler_css_admin_adminTemplate_index_files","name":"templates\/adminTemplate\/css\/system.less","value":"1469311200","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3682"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3683"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3684"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3685"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3686"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3687"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3688"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3689"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3690"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3681","namespace":"compiler_css_admin_adminTemplate_index","name":"cached_time","value":"2018-02-12 16:27:01","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: delete] {"id":"3680","namespace":"compiler_css_admin_adminTemplate_index","name":"file_path","value":"tmp\/compiler\/css\/976a4137b27b3cf7.css","created_by":"93","modified_by":"","created_date":"2018-02-12 16:27:01","modified_date":""} [127.0.0.1 - 93 - 50] {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3691"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Register_Value: insert] {"id":"3692"} {"layer":"admin","section":"users","action":"companies"}
+2018-02-12 16:43:32 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:44:45 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:44:48 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:45:19 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:45:22 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:46:36 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:46:39 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:47:10 [Art_Model_Login: update] {"id":"27684"} []
+2018-02-12 16:47:12 [Art_Model_Login: update] {"id":"27684"} []

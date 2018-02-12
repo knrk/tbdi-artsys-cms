@@ -90,3 +90,294 @@ Stack trace:
   thrown in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/user.php on line 119
 password_hash(): Use of the 'salt' option to password_hash is deprecated Route dump: {"section":"login","action":"login","layer":"public"} 
 ---LOG DEBUG: {"section":"login","action":"login","layer":"public"}
+Undefined variable: userData at line 2520 in modules/users/admin/users.php Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+Undefined variable: userData at line 2520 in modules/users/admin/users.php Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+Undefined variable: userData at line 2520 in modules/users/admin/users.php Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+Undefined variable: userData at line 2520 in modules/users/admin/users.php Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+Undefined variable: userData at line 2520 in modules/users/admin/users.php Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+Undefined variable: userData at line 2520 in modules/users/admin/users.php Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+Undefined variable: userData at line 2521 in modules/users/admin/users.php Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+[12-Feb-2018 14:24:28 Europe/Berlin] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/session.php on line 94
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+[12-Feb-2018 14:25:04 Europe/Berlin] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/session.php on line 94
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+[12-Feb-2018 14:37:39 Europe/Berlin] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/session.php on line 94
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+[12-Feb-2018 14:37:41 Europe/Berlin] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/session.php on line 94
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+[12-Feb-2018 14:43:24 Europe/Berlin] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/session.php on line 94
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+[12-Feb-2018 14:43:26 Europe/Berlin] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/components/session.php on line 94
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+Cannot modify header information - headers already sent by (output started at /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/functions.php:51) Route dump: [] 
+---LOG DEBUG: []
+[12-Feb-2018 14:46:30 Europe/Berlin] PHP Fatal error:  Fatal error: Call to undefined method Art_Model_User->getGroups in /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/library/abstract/model_db.php on line 151
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_to() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_to() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_to() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_to() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_to() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_to() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_firstname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_firstname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_surname() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+variable @page-layout-minor-color is undefined in file /Users/lukas.konarik/Dropbox/Dev/tbdevelopment.cz/club/templates/adminTemplate/css/style.less in style.less on line 1934, column 49
+1932|                 font-weight: 200;
+1933|                 font-style: normal;
+1934|                 color: @page-layout-minor-color;
+1935|             }
+1936| 
+1937|             &.inactive { Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+usort() expects parameter 2 to be a valid callback, non-static method Helper_TBDev::_membership_from() should not be called statically Route dump: {"layer":"admin","section":"users"} 
+---LOG DEBUG: {"layer":"admin","section":"users"}
+Action embeddCompanyAction in Module_Filter does not exists Route dump: {"layer":"admin","section":"users","action":"companies"} 
+---LOG DEBUG: {"layer":"admin","section":"users","action":"companies"}

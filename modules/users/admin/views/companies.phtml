@@ -13,7 +13,7 @@
 </div> -->
 
 <div class="filter-container">
-	<?= Art_Widget::render('filter') ?>
+	<?= Art_Widget::render('filter', 'embeddCompany') ?>
 </div>
 	
 <?php if (!empty($this->usersData)) : ?>	
@@ -53,13 +53,10 @@
 		
 		<?php foreach ($this->usersData as $data) : /* @var $data Art_Model_User_Data */ ?>
 		<tr>
-			<!-- <td>
-				<?= $data->_user->user_number ?>
-			</td> -->
 			<td>
-				<a href="<?= $data->a_detail ?>" class="company-name"><?= Art_Filter::cutString($data->company_name,60) ?></a>
+				<a href="<?= $data->a_detail ?>" class="company-name" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $data->_user->user_number ?>"><?= $data->company_name ?></a>
 				<div <?= $data->getUser()->active ? 'class="company-contact-person"' : 'class="company-contact-person overdue"' ?>>
-					<?= Art_Filter::cutString($data->fullname,40) ?>
+					<?= $data->fullname ?>
 				</div>
 				<div class="services">
 					<?php foreach( $data->services as $service ) : /* @var $service Service */ ?>
@@ -70,8 +67,8 @@
 				</div>
 			</td>
 			<td>
-				<div><?= Art_Filter::cutString($data->email,100) ?></div>
-				<div><?= Art_Filter::cutString($data->p_phone,14) ?></div>
+				<div><?= $data->email ?></div>
+				<div><?= $data->p_phone ?></div>
 			</td>
 			<td>
 				<?= $data->membership_from ?>
@@ -80,7 +77,7 @@
 				<?= $data->membership_to_colored ?>
 			</td>
 			<td>
-				<?= Art_Widget::render('note','embedd',array('id_user'=>$data->p_userId)) ?>
+				<?= Art_Widget::render('note', 'embedd', array('id_user' => $data->p_userId)) ?>
 			</td>
 			<td>
 				<div class="inline-actions">
@@ -102,6 +99,24 @@ $(document).ready(() => {
 		max_selected_options: -1
 	});
 	$('.chosen-container').removeClass('chosen-disabled');
+
+	function filterRows (cellSelector) {
+		let value = event.currentTarget.value;
+
+		let tr = $("table.table-list").find("tr");
+
+		tr.each((i, row) => $(row).removeClass('hide'));
+		tr.each((index, row) => {
+			if (index === 0) return;
+			let name = $(row).find(`td:first-child a.${cellSelector}`).text();
+			if (name.toLowerCase().indexOf(value) === -1)
+				$(row).addClass('hide');
+		});
+	}
+
+	$("#company-name").keyup((event) => {
+		filterRows('company-name');
+	});
 
     $('[data-toggle="tooltip"]').tooltip();
 });

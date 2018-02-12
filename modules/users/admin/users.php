@@ -38,8 +38,7 @@ class Module_Users extends Art_Abstract_Module {
 	
 	const AUTH_PERSON	= 'auth-person-';
 	
-	function indexAction() 
-	{	//Art_Template::setTemplate("index","ajax");
+	function indexAction() {	//Art_Template::setTemplate("index","ajax");
 		$sortById = Art_Router::getFromURI('id');
 		$sortByFirstname = Art_Router::getFromURI('firstname');
 		$sortBySurname = Art_Router::getFromURI('surname');
@@ -48,28 +47,28 @@ class Module_Users extends Art_Abstract_Module {
 		
 		$this->view->sortBy = $sortBy = Helper_TBDev::getSortBy($sortById, $sortByFirstname, $sortBySurname, $sortByMembershipFrom, $sortByMembershipTo);
 		
+		$allUsers = $this->_getAllAuthenticatedUserDataForTable($sortBy);
 		$authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy);
 		
-		$activeUsers = array();
+		// $activeUsers = array();
 		
-		$nonactiveUsers = array();
+		// $nonactiveUsers = array();
 		
-		foreach ( $authenticatedUsersData as $value ) /* @var $value Art_Model_User_Data */
-		{		
-			if ( $value->getUser()->active )
-			{
-				$activeUsers[] = $value;
-			}
-			else
-			{
-				$nonactiveUsers[] = $value;
-			}
-		}
+		// foreach ( $authenticatedUsersData as $value ) /* @var $value Art_Model_User_Data */
+		// {		
+		// 	if ( $value->getUser()->active )
+		// 	{
+		// 		$activeUsers[] = $value;
+		// 	}
+		// 	else
+		// 	{
+		// 		$nonactiveUsers[] = $value;
+		// 	}
+		// }
 		
-		$allUsers = array_merge($activeUsers,$nonactiveUsers);
+		// $allUsers = array_merge($activeUsers,$nonactiveUsers);
 		
 		$this->view->usersData = $allUsers;
-		
 		$this->view->count = count($allUsers);
 	}
 	

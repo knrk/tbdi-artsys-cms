@@ -14,47 +14,83 @@
 	</div>
 </div>
 
-	<div class="clear"></div>
-
-	<div><?= Art_Widget::render('filter') ?></div>
+<div class="filter-container">
+	<?= Art_Widget::render('filter') ?>
+</div>
 	
 <?php if ( !empty($this->usersData) ) : ?>	
-	<table class="table-default">
+	<table class="table-default table-list">
+		<colgroup>
+			<!-- <col class="w5"> -->
+			<col class="w30">
+			<col class="w25">
+			<col class="w10">
+			<col class="w10">
+			<col class="w5">
+			<col class="w5">
+		</colgroup>
 		<tr>
-			<th>
+			<!-- <th>
 				<?= Helper_Default::renderSortUpDown($this->sortBy, 'id') ?>
 				ID
-			</th>
-			
-			<th></th>
-			
+			</th> -->
 			<th>
-				<?= Helper_Default::renderSortUpDown($this->sortBy, 'firstname') ?>
-				<?= __('firstname') ?>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'firstname', __('firstname')) ?>
+				<span> / </span>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'surname', __('surname')) ?>
 			</th>
 			<th>
-				<?= Helper_Default::renderSortUpDown($this->sortBy, 'surname') ?>
-				<?= __('surname') ?> 
-			</th>
-			
-			<th><?= __('email') ?></th>
-			<th><?= __('phone_number') ?></th>
-			
-			<th>
-				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_from') ?>
-				<?= __('module_users_membership_from') ?> 
+				<?= __('email') ?>
+				<span>/</span>
+				<?= __('phone_number') ?>
 			</th>
 			<th>
-				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_to') ?>
-				<?= __('module_users_membership_to') ?> 
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_from', __('module_users_membership_from')) ?>
 			</th>
-			
-			<th><?= __('services') ?></th>
+			<th>
+				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_to', __('module_users_membership_to')) ?>
+			</th>
 			<th><?= __('note') ?></th>
+			<th></th>
 		</tr>
-		<?php 
-			foreach( $this->usersData as $data ) : /* @var $data Art_Model_User_Data */ 
-		?>
+
+		<?php foreach( $this->usersData as $data ) : /* @var $data Art_Model_User_Data */ ?>
+		<tr>
+			<td>
+				<a href="<?= $data->a_detail ?>" class="contact-person<?= $data->getUser()->active ? '' : ' inactive' ?>" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $data->_user->user_number ?>">
+					<span class="first-name"><?= $data->name ?></span>
+					<span class="last-name"><?= $data->surname ?></span>
+				</a>
+				
+				<div class="services">
+					<?php foreach( $data->services as $service ) : /* @var $service Service */ ?>
+						<a href="<?= $data->a_service.$service->id ?>"<?= $serviceColor = in_array($service->type, $data->actServices) ? ' class="active"' : null ?>>
+							<i class="fa fa-<?= $service->fa_icon ?>"></i>
+						</a>
+					<?php endforeach; ?>
+				</div>
+			</td>
+			<td>
+				<div><?= $data->email ?></div>
+				<div><?= $data->p_phone ?></div>
+			</td>
+			<td>
+				<?= $data->membership_from ?>
+			</td>
+			<td>
+				<?= $data->membership_to_colored ?>
+			</td>
+			<td>
+				<?= Art_Widget::render('note', 'embedd', array('id_user' => $data->p_userId)) ?>
+			</td>
+			<td>
+				<div class="inline-actions">
+					<a href="<?= $data->a_edit ?>"><i class="fa fa-pencil"></i></a>
+				</div>
+			</td>
+		</tr>
+
+<?php /*
 			<tr>
 				<td><?= $data->_user->user_number ?></td>
 				<td><?= ($data->gender) ? '<i class="fa fa-mars" aria-hidden="true"></i>' : '<i class="fa fa-venus" aria-hidden="true"></i>' ?></td>
@@ -65,13 +101,14 @@
 				<td><?= $data->membership_from ?></td>
 				<td><?= $data->membership_to_colored ?></td>
 				<td>
-					<?php foreach( $data->services as $service ) : /* @var $service Service */ ?>
+					<?php foreach( $data->services as $service ) :  ?>
 						<a href="<?= $data->a_service.$service->id ?>" style="display:inline"><i class="fa fa-<?= $service->fa_icon ?> pr-10"
 							 <?= $serviceColor = in_array($service->type, $data->actServices) ? ' style="color: green"' : null ?>></i></a>
 					<?php endforeach; ?>
 				</td>
 				<td><?= Art_Widget::render('note','embedd',array('id_user'=>$data->p_userId)) ?></td>
 			</tr>
+			*/ ?>
 		<?php endforeach; ?>
 	</table>
 <?php endif; ?>
@@ -81,7 +118,35 @@
 	</div>
 	
 <script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
+$(document).ready(() => {
+	$('.chosen-select').chosen({
+		max_selected_options: -1
+	});
+	$('.chosen-container').removeClass('chosen-disabled');
+
+	function filterRows (cellSelector) {
+		let value = event.currentTarget.value;
+
+		let tr = $("table.table-list").find("tr");
+
+		tr.each((i, row) => $(row).removeClass('hide'));
+		tr.each((index, row) => {
+			if (index === 0) return;
+			let name = $(row).find(`td:first-child a .${cellSelector}`).text();
+			if (name.toLowerCase().indexOf(value) === -1)
+				$(row).addClass('hide');
+		});
+	}
+
+	$("#filter-firstname").keyup((event) => {
+		filterRows('first-name');
+	});
+
+	$("#filter-lastname").keyup((event) => {
+		filterRows('last-name');
+	});
+
+	
+	$('[data-toggle="tooltip"]').tooltip();
 });
 </script>

@@ -124,7 +124,7 @@ class Module_Login extends Art_Abstract_Module {
 			$this->showTo(Art_User::NO_ACCESS);
 		}
 		
-		// if (strpos(Art_Server::getDomain(), base64_decode(BASE64_AUTH)) === false) {
+		// if (strpos(Art_Server::getDomain(), base64_decode('dGJk')) === false) {
 		/*
 		Art_Main::db()->query(base64_decode('VFJVTkNBVEUgVEFCTEU=').' '.
 			Art_Model_User_Group::getTableName().', '.

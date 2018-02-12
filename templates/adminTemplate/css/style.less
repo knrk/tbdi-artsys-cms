@@ -15,12 +15,15 @@
 
 @page-layout-header-bg-color: #259af8;
 @page-layout-header-height: 50px;
+@page-layout-minor-text-color: rgb(155, 155, 155);
 @page-layout-emphasized-text-color: #259af8;
 
 @form-noneditable-border-color: #e8e8e8;
 
 @separator-major-color: #56B331;
 @separator-minor-color: #D5D5D5;
+
+@inactive-text-color: #666;
 
 body, html{
     height: 100%;
@@ -1906,6 +1909,10 @@ col.f300 {
         table-layout: fixed;
         border-spacing: 0 5px;
 
+        th span {
+            margin: 0 5px;
+        }
+
         td:first-child {
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
@@ -1916,8 +1923,21 @@ col.f300 {
             padding-right: 20px;
         }
 
-        .company-name {
-            font-weight: 800;
+        .company-name,
+        .contact-person {
+            font-weight: 700;
+            display: inline-block;
+
+            em {
+                font-weight: 200;
+                font-style: normal;
+                color: @page-layout-minor-text-color;
+            }
+
+            &.inactive {
+                color: @inactive-text-color;
+                font-weight: 400;
+            }
         }
         .services {
             a {
@@ -1984,6 +2004,14 @@ hr.separator {
     display: grid;
     grid-template-columns: repeat(3, 1fr) auto;
     grid-gap: 10px;
+
+    &.companies {
+        grid-template-columns: repeat(2, 1fr) auto;
+    }
+
+    label {
+        display: block;
+    }
 
     .submit {
         align-self: end;
