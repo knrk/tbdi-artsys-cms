@@ -1,0 +1,48 @@
+<?php 
+$currency = ' ' . $this->deposit->getUser()->getCurrency()->abbr;
+?>
+
+<h2><?= __('module_investment_terminate_deposit') ?></h2>
+
+<div class="list mb-30">
+	<div class="cell invested-amount">
+		<em><?= $this->deposit->value . $currency ?> </em>
+		<label><?= __('module_investment_deposit_value') ?></label>
+	</div>
+	<div class="cell investor-name">
+		<em><?= $this->deposit->getUser()->fullname ?></em>
+		<label><?= __('module_payments_payer') ?></label>
+	</div>
+	<div class="cell invested-on">
+		<em><?= nice_date($this->deposit->date) ?></em>
+		<label>Datum vkladu</label>
+	</div>
+</div>
+
+<form <?= $this->request->getHTML() ?> class="form">
+	<div class="investment-edit">
+		<div class="row pt-10">
+			<label 	for="edit-expiration-date"><?= __('module_investment_termination_date') ?></label>
+			<input 	id="edit-expiration-date" name="expiry_date" type="text" autofocus class="js-date-picker"
+					value="<?= $this->deposit->expiry_date ?>">
+		</div>
+		<div class="row pt-15 pb-15">
+			<label for="edit-note"><?= __('note') ?></label>
+			<input id="edit-note" name="note" type="text" class="form-control"
+					value="<?= $this->deposit->note ?>">
+		</div>
+	</div>
+	<div class="save-view-buttons mt-15">
+		<input type="submit" value="<?= __('terminate') ?>" class="button">
+	</div>
+</form>
+
+<script type="text/javascript">
+$(document).ready(() => {
+	$('.js-date-picker').click(() => {
+		$('.js-date-picker').pickadate({
+			format: 'yyyy-mm-dd'
+		});
+	});
+});
+</script>

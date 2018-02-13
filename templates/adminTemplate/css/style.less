@@ -1865,7 +1865,6 @@ col.f300 {
     
 }
 
-
 /// KNRK EDITS ///
 
 
@@ -1891,7 +1890,11 @@ col.f300 {
     }
 }
 
-.table-default {
+.table-default {    
+    border-collapse: separate;
+    table-layout: fixed;
+    border-spacing: 0 5px;
+    
     caption {
         line-height: 22px;
         a {
@@ -1903,50 +1906,50 @@ col.f300 {
             color: @page-layout-emphasized-text-color;
         }
     }
+    th span {
+        margin: 0 5px;
+    }
 
-    &.table-list {
-        border-collapse: separate;
-        table-layout: fixed;
-        border-spacing: 0 5px;
+    tr.inactive td {
+        background-color: rgba(255, 255, 255, 0.5);
+        a {
+            font-weight: 400;
+        }
+    }
 
-        th span {
-            margin: 0 5px;
+    td:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    td:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding-right: 20px;
+    }
+
+    .company-name,
+    .contact-person {
+        font-weight: 700;
+        display: inline-block;
+
+        em {
+            font-weight: 200;
+            font-style: normal;
+            color: @page-layout-minor-text-color;
         }
 
-        td:first-child {
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
+        .inactive {
+            color: @inactive-text-color;
+            font-weight: 400;
         }
-        td:last-child {
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-            padding-right: 20px;
-        }
-
-        .company-name,
-        .contact-person {
-            font-weight: 700;
-            display: inline-block;
-
-            em {
-                font-weight: 200;
-                font-style: normal;
-                color: @page-layout-minor-text-color;
-            }
-
-            &.inactive {
-                color: @inactive-text-color;
-                font-weight: 400;
-            }
-        }
-        .services {
-            a {
-                margin-right: 6px;
-                display: inline-flex;
-                color: #ccc;
-                &.active {
-                    color: black;
-                }
+    }
+    .services {
+        a {
+            margin-right: 6px;
+            display: inline-flex;
+            color: #ccc;
+            &.active {
+                color: black;
             }
         }
     }

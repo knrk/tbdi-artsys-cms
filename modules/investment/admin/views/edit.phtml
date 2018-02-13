@@ -22,18 +22,14 @@ $currency = ' ' . $this->deposit->getUser()->getCurrency()->abbr;
 <form <?= $this->request->getHTML() ?> class="form">
 	<div class="investment-edit">
 		<div class="row pt-10">
-
 			<label 	for="edit-expiration-date">Datum expirace</label>
-			<input 	id="edit-expiration-date" name="expiry_date" type="text" autofocus class="form-control js-date-picker"
+			<input 	id="edit-expiration-date" name="expiry_date" type="text" autofocus class="js-date-picker"
 					value="<?= $this->deposit->expiry_date ?>">
-
 		</div>
 		<div class="row pt-15 pb-15">
-
 			<label for="edit-note">Poznámka</label>
 			<input id="edit-note" name="note" type="text" class="form-control"
 					value="<?= $this->deposit->note ?>">
-
 		</div>
 	</div>
 	<div class="save-view-buttons mt-15">

@@ -32,7 +32,7 @@
 
 <hr class="separator">
 
-<h3>Vklady</h3>
+<h3><?= __('module_investment_contracts_header') ?></h3>
 <table class="table-default">
 	<caption>
 		<?= __('module_investment_default_interest') ?>: <b><?= $this->defaultInterest ?>%</b>
@@ -81,8 +81,11 @@
 				<div class="inline-actions">
 					<a href="<?= $this->deposit_edit.$value->id ?>"><button><i class="fa fa-pencil"></i></button></a>
 					<button <?= $this->delete_single_request->getHTML(array('id'=>$value->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
-					<?php if ( $value->terminable ) : ?>
-						<button <?= $this->terminate_single_request->getHTML(array('id'=>$value->id)) ?> title="<?= __('terminate') ?>"><i class="fa fa-ban"></i></button>
+					<?php if ($value->terminable) : ?>
+						<button <?= $this->terminate_single_request->getHTML(array('id' => $value->id)) ?> title="<?= __('terminate') ?>"><i class="fa fa-ban"></i></button>
+					<?php endif; ?>
+					<?php if ($value->premature_terminable) : ?>
+						<a href="<?= $this->premature_terminate_edit.$value->id ?>"><button title="<?= __('premature_terminate') ?>"><i class="fa fa-ban red"></i></button></a>
 					<?php endif; ?>
 				</div>
 			</td>

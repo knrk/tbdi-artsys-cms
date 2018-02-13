@@ -7,7 +7,8 @@ class Module_Investment extends Art_Abstract_Module {
 	
 	const REQUEST_ADD			= 'fE5gI1apB1';
 	const REQUEST_DELETE_SINGLE	= 'g4Kn2mXd4r';
-    const REQUEST_TERMINATE_SINGLE = 'f2cEh4arD6';
+	const REQUEST_TERMINATE_SINGLE = 'f2cEh4arD6';
+	const REQUEST_PREMATURE_TERMINATION = 'f2cEh2arD5';
 	const REQUEST_EDIT			= 'f1rE2cGSew';
 	const REQUEST_NEW_MONTH		= 'R4vjW8s6bA';
 	const REQUEST_DELETE_INVESTMENT	= 'g4Ev1hSwr2g';
@@ -17,8 +18,8 @@ class Module_Investment extends Art_Abstract_Module {
 	
 	const SESSION_PREFIX	= 'invest-';
 	
-	function indexAction() 
-	{	
+	function indexAction() {
+
 		$this->view->investment = $investment = Service_Investment::fetchAllPrivileged(NULL,array('year','month'));
 		$this->view->investmentValue = Service_Investment_Value::fetchAllPrivileged();
 		$deposit = Service_Investment_Deposit::fetchAllPrivileged(NULL,new Art_Model_Db_Order(array('name' => 'expiry_date', 'type' => 'ASC')));
@@ -32,40 +33,31 @@ class Module_Investment extends Art_Abstract_Module {
 		$this->view->sortBy = $sortBy = Helper_TBDev::getSortBy($sortBySurname, $sortByValue, $sortByDate, $sortByExpiryDate);
 		
 		$dataset = array();
-		
-		foreach ($investment as $value)
-		{
+		foreach ($investment as $value) {
 			$dataset[$value->year][$value->month] = true;
 		}
 		
 		$links = array();
-		
-		foreach ($dataset as $keyYear => $year)
-		{
-			foreach ($year as $keyMonth => $month)
-			{
+		foreach ($dataset as $keyYear => $year) {
+			foreach ($year as $keyMonth => $month) {
 				$links[$keyMonth.'-'.$keyYear] = Helper_Default::getCzechMonthName($keyMonth).' '.$keyYear;
 			}
 		}
-
 		$this->view->links = $links;
 		
 		$defaultInterest = new Art_Model_Default_Value(array('name'=>Helper_TBDev::DEFAULT_INVESTMENT_INTEREST));
-		
 		$this->view->defaultInterestId = $defaultInterest->isLoaded() ? $defaultInterest->id : null;
 		
-		$this->view->deposit_edit = '/'.Art_Router::getLayer().'/investment/edit/';
+		$this->view->deposit_edit = '/' . Art_Router::getLayer() . '/investment/edit/';
 		
-		foreach ($deposit as $value) /* @var $value Service_Investment_Deposit */ 
-		{
+		foreach ($deposit as $value) /* @var $value Service_Investment_Deposit */ {
 			$value->surname = $value->getUser()->getData()->surname;				//HACK to confuse sorting by surname!!!
-            $value->terminable = (strtotime($value->expiry_date) <= strtotime("now")) ? true : false;
+			$value->terminable = (strtotime($value->expiry_date) <= strtotime("now")) ? true : false;
+			$value->premature_terminable = (strtotime($value->expiry_date) >= strtotime("now")) ? true : false;
 		}
 		
-		if ( -1 !== $sortBy )
-		{
-			switch ( $sortBy )
-			{
+		if (-1 !== $sortBy) {
+			switch ( $sortBy ) {
 				case 0: $param = 'surname'; break;
 				case 1:	$param = 'surnameR'; break;
 				case 2: $param = 'value'; break;
@@ -94,6 +86,14 @@ class Module_Investment extends Art_Abstract_Module {
         $terminate_single_request->addUpdate('content','.module_investment_index');
         $terminate_single_request->setConfirmWindow(__('module_investment_terminate_single_confirm'));
         $this->view->terminate_single_request = $terminate_single_request;
+		
+		//Premature Terminate item by button
+        // $premature_terminate_single_request = Art_Ajax::newRequest(self::REQUEST_PREMATURE_TERMINATION);
+        // $premature_terminate_single_request->setAction('/' . Art_Router::getLayer().'/investment/prematuretermination/$id');
+        // $premature_terminate_single_request->addUpdate('content','.module_investment_index');
+        // $premature_terminate_single_request->setConfirmWindow(__('module_investment_terminate_single_confirm'));
+        // $this->view->premature_terminate_single_request = $premature_terminate_single_request;
+        $this->view->premature_terminate_edit = '/' . Art_Router::getLayer() . '/investment/prematuretermination/';
 	}
 
     function terminatedAction()
@@ -392,6 +392,48 @@ class Module_Investment extends Art_Abstract_Module {
 			$request = Art_Ajax::newRequest(self::REQUEST_ADD);
 			$request->setRedirect('/'.Art_Router::getLayer().'/investment');
 			$this->view->request = $request; 
+		}
+	}
+
+	function prematureTerminationAction() {
+		// saving 
+		if (Art_Ajax::isRequestedBy(self::REQUEST_PREMATURE_TERMINATION)) {
+			
+			$response = Art_Ajax::newResponse();
+			$data = Art_Ajax::getData();
+			
+			$id = Art_Router::getId();
+			
+			Helper_Default::getValidatedSQLData(array('expiry_date'), self::getFieldsValidators(), $data, $response);
+			
+			$investmentDeposit = new Service_Investment_Deposit($id);
+
+			if (!$investmentDeposit->isLoaded()) {
+				$response->addAlert(__('module_investment_deposit_edit_not_found'));
+			}
+
+			if ($response->isValid()) {
+				$investmentDeposit->expiry_date = dateSQL($data['expiry_date']);
+				$investmentDeposit->terminated = true;
+                $investmentDeposit->note = $data['note'];
+				$investmentDeposit->save();
+
+				$response->addMessage(__('module_investment_edit_success'));
+				$response->willRedirect();
+			}
+			
+			$response->execute();
+
+		} else {			
+			// loading view
+			$id = Art_Router::getId();
+			
+			$this->view->deposit = $deposit = new Service_Investment_Deposit($id);
+			
+			$request = Art_Ajax::newRequest(self::REQUEST_PREMATURE_TERMINATION);
+			$request->setRedirect('/' . Art_Router::getLayer() . '/investment');
+			$this->view->request = $request; 
+
 		}
 	}
 	

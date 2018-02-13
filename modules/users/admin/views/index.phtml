@@ -55,9 +55,9 @@
 		</tr>
 
 		<?php foreach( $this->usersData as $data ) : /* @var $data Art_Model_User_Data */ ?>
-		<tr>
+		<tr<?= $data->getUser()->active ? '' : ' class="inactive"' ?>>
 			<td>
-				<a href="<?= $data->a_detail ?>" class="contact-person<?= $data->getUser()->active ? '' : ' inactive' ?>" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $data->_user->user_number ?>">
+				<a href="<?= $data->a_detail ?>" class="contact-person" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $data->_user->user_number ?>">
 					<span class="first-name"><?= $data->name ?></span>
 					<span class="last-name"><?= $data->surname ?></span>
 				</a>
