@@ -96,9 +96,11 @@ class Module_Investment extends Art_Abstract_Module {
         $this->view->premature_terminate_edit = '/' . Art_Router::getLayer() . '/investment/prematuretermination/';
 	}
 
-    function terminatedAction()
-    {
-        $deposit = Service_Investment_Deposit::fetchAllPrivileged(NULL,new Art_Model_Db_Order(array('name' => 'expiry_date', 'type' => 'ASC')));
+    function terminatedAction() {
+        $deposit = 	Service_Investment_Deposit::fetchAllPrivileged(
+						NULL, 
+						new Art_Model_Db_Order(array('name' => 'expiry_date', 'type' => 'ASC'))
+					);
 
         $sortBySurname = Art_Router::getFromURI('surname');
         $sortByValue = Art_Router::getFromURI('value');
@@ -109,15 +111,12 @@ class Module_Investment extends Art_Abstract_Module {
 
         $this->view->deposit_edit = '/'.Art_Router::getLayer().'/investment/edit/';
 
-        foreach ($deposit as $value) /* @var $value Service_Investment_Deposit */
-        {
+        foreach ($deposit as $value) /* @var $value Service_Investment_Deposit */ {
             $value->surname = $value->getUser()->getData()->surname;				//HACK to confuse sorting by surname!!!
         }
 
-        if ( -1 !== $sortBy )
-        {
-            switch ( $sortBy )
-            {
+        if (-1 !== $sortBy) {
+            switch ($sortBy) {
                 case 0: $param = 'surname'; break;
                 case 1:	$param = 'surnameR'; break;
                 case 2: $param = 'value'; break;
@@ -401,10 +400,10 @@ class Module_Investment extends Art_Abstract_Module {
 			
 			$response = Art_Ajax::newResponse();
 			$data = Art_Ajax::getData();
-			
 			$id = Art_Router::getId();
 			
 			Helper_Default::getValidatedSQLData(array('expiry_date'), self::getFieldsValidators(), $data, $response);
+			Helper_Default::getValidatedSQLData(array('formal_expiry_date'), self::getFieldsValidators(), $data, $response);
 			
 			$investmentDeposit = new Service_Investment_Deposit($id);
 
@@ -414,6 +413,7 @@ class Module_Investment extends Art_Abstract_Module {
 
 			if ($response->isValid()) {
 				$investmentDeposit->expiry_date = dateSQL($data['expiry_date']);
+				$investmentDeposit->formal_expiry_date = dateSQL($data['formal_expiry_date']);
 				$investmentDeposit->terminated = true;
                 $investmentDeposit->note = $data['note'];
 				$investmentDeposit->save();

@@ -20,13 +20,20 @@ $currency = ' ' . $this->deposit->getUser()->getCurrency()->abbr;
 </div>
 
 <form <?= $this->request->getHTML() ?> class="form">
-	<div class="investment-edit">
-		<div class="row pt-10">
-			<label 	for="edit-expiration-date"><?= __('module_investment_termination_date') ?></label>
-			<input 	id="edit-expiration-date" name="expiry_date" type="text" autofocus class="js-date-picker"
-					value="<?= $this->deposit->expiry_date ?>">
+	<div class="investment-termination-edit">
+		<div class="dates pt-10">
+			<div class="cell">
+				<label 	for="edit-expiration-date"><?= __('module_investment_termination_date') ?></label>
+				<input 	id="edit-expiration-date" name="expiry_date" type="text" autofocus class="js-date-picker"
+						value="<?= $this->deposit->expiry_date ?>">
+			</div>
+			<div class="cell">
+				<label 	for="edit-formal-expiration-date"><?= __('module_investment_formal_termination_date') ?></label>
+				<input 	id="edit-formal-expiration-date" name="formal_expiry_date" type="text" class="js-date-picker"
+						value="">
+			</div>
 		</div>
-		<div class="row pt-15 pb-15">
+		<div class="pt-15 pb-15">
 			<label for="edit-note"><?= __('note') ?></label>
 			<input id="edit-note" name="note" type="text" class="form-control"
 					value="<?= $this->deposit->note ?>">

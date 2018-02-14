@@ -26,6 +26,7 @@ class Module_Bootstrap_Investment extends Art_Abstract_Module_Bootstrap {
 			'module_investment_date'						=> 'Datum vložení',
 			'module_investment_expiry_date'					=> 'Datum expirace',
 			'module_investment_termination_date'			=> 'Datum ukončení',
+			'module_investment_formal_termination_date'		=> 'Formální datum ukončení',
 			'module_investment_deposit_value'				=> 'Částka',
 			'module_investment_gain'						=> 'Zisk',
 			'module_investment_invested'					=> 'Investováno',
