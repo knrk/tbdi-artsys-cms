@@ -13,26 +13,48 @@
 					<button <?= $this->unpublish_request->getHTML(array('id'=>$key)) ?> title="<?= __('unpublish') ?>"><i class="fa fa-eye-slash"></i></button>
 				<?php endif; ?>
 			</caption>
+			<colgroup>
+				<col class="w30">
+				<col class="w15">
+				<col class="w10">
+				<col class="w15">
+				<col class="w15">
+				<col class="w15">
+				<col class="f30">
+			</colgroup>
 			<tr>
 				<th><?= __('fullname') ?></th>
-				<th><?= __('module_investment_invested') ?></th>
+				<th class="text-right"><?= __('module_investment_invested') ?></th>
 				<th><?= __('module_investment_interest') ?></th>
 				<th><?= __('module_investment_gain') ?></th>
 				<th><?= __('module_investment_commision') ?></th>
 				<th><?= __('module_investment_payment_date') ?></th>
-				<th><?= __('note') ?></th>
+				<th></th>
 			</tr>
 			<?php 
 				foreach ($investment as $value) : /* @var $value Service_Investment_Value */ 
 			?>
 				<tr>
-					<td><?= Art_Filter::cutString($value->getUser()->fullname,40) ?></td>
-					<td><?= $value->invested ?> Kč</td>
-					<td><?= $value->interest ?>%</td>
-					<td><?= $value->invested * $value->interest / 100 ?> Kč</td>
-					<td><?= $value->commission ?> Kč</td>
-					<td><?= nice_date($value->payment_date) ?></td>
-					<td><?= $value->note?></td>
+					<td>
+						<?= $value->getUser()->fullname ?>
+					</td>
+					<td class="text-right">
+						<?= money_format('%n', $value->invested) ?>
+					</td>
+					<td>
+						<?= $value->interest ?>%
+					</td>
+					<td>
+						<?= money_format('%n', ($value->invested * $value->interest / 100)) ?></td>
+					<td>
+						<?= money_format('%n', $value->commission) ?>
+					</td>
+					<td>
+						<?= nice_date($value->payment_date) ?>
+					</td>
+					<td>
+						<a href="javascript:;" data-toggle="tooltip" title="<?= $value->note ?>"><i class="fa <?= !empty($value->note) ? 'fa-comment' : 'fa-comment-o' ?> edit"></i></a>
+					</td>
 				</tr>
 			<?php endforeach; ?>
 		</table>
@@ -40,3 +62,8 @@
 <?php else: ?>
 <h4>No investments defined yet.</h4>
 <?php endif; ?>
+<script>
+$(document).ready(() => {	
+	$('[data-toggle="tooltip"]').tooltip();
+});
+</script>

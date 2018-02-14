@@ -12,22 +12,31 @@
 </div>
 	
 <table class="table-default">
+	<colgroup>
+		<col class="w25">
+		<col class="w15">
+		<col class="w30">
+		<col class="w30">
+	</colgroup>
 	<tr>
 		<th><?= __('module_default_value_name') ?></th>
-		<th><?= __('note') ?></th>
 		<th><?= __('module_default_value_type') ?></th>
+		<th><?= __('note') ?></th>
 		<th><?= __('module_default_value_value') ?></th>
-		<th></th>
 	</tr>
 	<?php foreach($this->items as $item): ?>
 		<tr>
 			<td>
-				<a href="<?= '/'.Art_Router::getLayer().'/default_value/edit/'.$item->id ?>"><?= Art_Filter::cutString($item->name,40) ?></a>
+				<a href="<?= '/'.Art_Router::getLayer().'/default_value/edit/'.$item->id ?>"><?= $item->name ?></a>
 			</td>
-			<td><?= $item->note ?></td>
-			<td><?= $this->types[$item->type] ?></td>
-			<td><?= Art_Filter::cutString($item->value, 100) ?></td>
 			<td>
+				<?= $this->types[$item->type] ?>
+			</td>
+			<td>
+				<?= $item->note ?>
+			</td>
+			<td>
+				<?= $item->value ?>
 				<div class="inline-actions">
 					<a href="<?= '/'.Art_Router::getLayer().'/default_value/edit/'.$item->id ?>"><i class="fa fa-pencil"></i></a>
 				</div>

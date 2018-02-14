@@ -19,7 +19,7 @@
 
 <table class="table-default list-services">
 	<colgroup>
-		<col class="w5">
+		<col class="f60">
 	</colgroup>
 	<tr>
 		<th></th>
@@ -29,7 +29,6 @@
 		<th><?= __('article') ?></th>
 		<th><?= __('promo') ?></th>
 		<th><?= __('conditions') ?></th>
-		<th></th>
 	</tr>
 	<?php 
 		foreach ($this->services as $service) : /* @var $service Service */ 
@@ -45,13 +44,21 @@
 					<?php endif; ?>	
 				</div>
 			</td>
-			<td><a href="<?= $service->a_detail ?>"><?= Art_Filter::cutString($service->name,40) ?></a></td>
-			<td><?= Art_Filter::cutString($service->type,60) ?></td>
-			<td><?= '<i class="fa fa-'.$service->icon.'"></i> '.$service->icon ?></td>
-			<td><span title="<?= $service->article.' ('.$service->perex_article.')' ?>"><?= $service->title_article ?></span></td>
-			<td><span title="<?= $service->promo.' ('.$service->perex_promo.')' ?>"><?= $service->title_promo ?></span></td>
-			<td><?= $service->conditions ?></td>
 			<td>
+				<a href="<?= $service->a_detail ?>"><?= $service->name ?></a>
+			</td>
+			<td><?= $service->type ?></td>
+			<td>
+				<?= '<i class="fa fa-'.$service->icon.'"></i> '.$service->icon ?>
+			</td>
+			<td>
+				<span title="<?= $service->article.' ('.$service->perex_article.')' ?>"><?= $service->title_article ?></span>
+			</td>
+			<td>
+				<span title="<?= $service->promo.' ('.$service->perex_promo.')' ?>"><?= $service->title_promo ?></span>
+			</td>
+			<td>
+				<?= $service->conditions ?>
 				<div class="inline-actions">
 					<a href="<?= $service->a_edit ?>"><i class="fa fa-pencil"></i></a>
 					<button <?= $this->delete_single_request->getHTML(array('id'=>$service->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>

@@ -19,15 +19,11 @@
 <?php if (!empty($this->usersData)) : ?>	
 	<table class="table-default table-list">
 		<colgroup>
-			<!-- <col class="w5"> -->
-			<col class="w30">
-			<!-- <col class="w15"> -->
 			<col class="w25">
-			<!-- <col class="w10"> -->
+			<col class="w25">
+			<col class="f25">
 			<col class="w10">
-			<col class="w10">
-			<col class="w5">
-			<col class="w5">
+			<col class="w15">
 		</colgroup>
 		<tr>
 			<!-- <th>
@@ -39,6 +35,7 @@
 				<?= __('company_name') ?>
 			</th>
 			<th><?= __('email') ?></th>
+			<th></th>
 			<th>
 				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_from') ?>
 				<?= __('module_users_membership_from') ?>
@@ -47,8 +44,6 @@
 				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_to') ?>
 				<?= __('module_users_membership_to') ?>
 			</th>
-			<th><?= __('note') ?></th>
-			<th></th>
 		</tr>
 		
 		<?php foreach ($this->usersData as $data) : /* @var $data Art_Model_User_Data */ ?>
@@ -70,16 +65,14 @@
 				<div><?= $data->email ?></div>
 				<div><?= $data->p_phone ?></div>
 			</td>
+			<td class="text-center">
+				<?=  Art_Widget::render('note', 'embedd', array('id_user' => $data->p_userId))  ?>
+			</td>
 			<td>
 				<?= $data->membership_from ?>
 			</td>
 			<td>
 				<?= $data->membership_to_colored ?>
-			</td>
-			<td>
-				<?= Art_Widget::render('note', 'embedd', array('id_user' => $data->p_userId)) ?>
-			</td>
-			<td>
 				<div class="inline-actions">
 					<a href="<?= $data->a_edit ?>"><i class="fa fa-pencil"></i></a>
 				</div>

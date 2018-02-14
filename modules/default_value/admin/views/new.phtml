@@ -1,29 +1,33 @@
 <h2><?= __('module_default_value_add') ?></h2>
 
-<form <?= $this->request->getHTML() ?>>
-	<table class="table-default">
+<form <?= $this->request->getHTML() ?> class="form">
+	<table class="table-default key-value-list">
+		<colgroup>
+			<col class="w20">
+			<col>
+		</colgroup>
 		<tr>
-			<td class="xsmall-td text-right">
-				<?= __('module_default_value_name') ?>
+			<td class="text-right">
+				<label for="name"><?= __('module_default_value_name') ?></label>
 			</td>
 			<td>
-				<input type="text" name="name" placeholder="<?= __('module_default_value_name') ?>">
+				<input id="name" type="text" name="name" autofocus placeholder="<?= __('module_default_value_name') ?>">
 			</td>
 		</tr>
 		<tr>
-			<td class="xsmall-td text-right">
-				<?= __('note') ?>
+			<td class="text-right">
+				<label for="note"><?= __('note') ?></label>
 			</td>
 			<td>
-				<input type="text" name="note" placeholder="<?= __('note') ?>">
+				<input id="note" type="text" name="note" placeholder="<?= __('note') ?>">
 			</td>
 		</tr>
 		<tr>
-			<td class="xsmall-td text-right">
-				<?= __('module_default_value_type') ?>
+			<td class="text-right">
+				<label for="data-type"><?= __('module_default_value_type') ?></label>
 			</td>
 			<td>
-				<select name="type" id="module_default_value_type_selector">
+				<select id="data-type" name="type" id="module_default_value_type_selector" class="chosen-select">
 					<?php foreach($this->types AS $key => $type) :?>
 					<option value="<?= $key ?>"><?= $type ?></option>
 					<?php endforeach; ?>
@@ -31,41 +35,43 @@
 			</td>
 		</tr>
 		<tr>
-			<td>
-				<?= __('module_default_value_value') ?>
+			<td class="text-right">
+				<label for="value"><?= __('module_default_value_value') ?></label>
 			</td>
 			<td>
-				<input type="text" name="value_text" id="module_default_value_value_input" placeholder="<?= __('module_default_value_value') ?>">
-				<span id="module_default_value_value_textarea">
+				<input id="value" type="text" name="value_text" id="module_default_value_value_input" placeholder="<?= __('module_default_value_value') ?>">
+				<span id="module_default_value_value_textarea" class="no-display">
 					<textarea class="ckeditor" rows="8" name="value_html" placeholder="<?= __('module_default_value_value') ?>"></textarea>
 				</span>
 			</td>
 		</tr>
 	</table>
-	<div class="text-center">
-		<input type="submit" value="<?= __('save') ?>" class="button-save">
+	<div class="save-view-buttons mt-15">
+		<input type="submit" value="<?= __('save') ?>" class="button">
 	</div>
 </form>
 
 <script type="text/javascript">
-$(function(){
-	var $typeSelector = $("#module_default_value_type_selector");
-	var $input = $("#module_default_value_value_input");
-	var $textarea = $("#module_default_value_value_textarea");
+$(document).ready(() => {
+
+	$('.chosen-select').chosen({
+		max_selected_options: -1,
+		disable_search_threshold: 10
+	});
+	$('.chosen-container').removeClass('chosen-disabled');
+
+	let typeSelector = $("#module_default_value_type_selector");
+	let input = $("#module_default_value_value_input");
+	let textarea = $("#module_default_value_value_textarea");
 		
-	$typeSelector.change(function(){		
-		if($typeSelector.val() === 'html')
-		{
-			$input.hide();
-			$textarea.show();
-		}
-		else
-		{
-			$input.show();
-			$textarea.hide();
+	typeSelector.change(() => {		
+		if (typeSelector.val() === 'html') {
+			input.addClass('no-display');
+			textarea.removeClass('no-display');
+		} else {
+			input.removeClass('no-display');
+			textarea.addClass('no-display');
 		}
 	});
-	
-	$textarea.hide();
 });
 </script>

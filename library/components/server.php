@@ -250,7 +250,7 @@ final class Art_Server extends Art_Abstract_Component {
 	protected static function _loadRequestHeaders()
 	{
 		//This function may return false on failure
-		static::$_request_headers = apache_request_headers();
+		// static::$_request_headers = apache_request_headers();
 		if( false === static::$_request_headers )
 		{
 			static::$_request_headers = array();

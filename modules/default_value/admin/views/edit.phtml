@@ -7,7 +7,7 @@
 			<col>
 		</colgroup>
 		<tr>
-			<td class="xsmall-td text-right">
+			<td class="text-right">
 				<?= __('module_default_value_name') ?>
 			</td>
 			<td>
@@ -15,7 +15,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="xsmall-td text-right">
+			<td class="text-right">
 				<?= __('module_default_value_type') ?>
 			</td>
 			<td>
@@ -24,13 +24,13 @@
 		</tr>
 		<tr>
 			<td class="text-right">
-				<?= __('module_default_value_value') ?>
+				<label for="default-value"><?= __('module_default_value_value') ?></label>
 			</td>
 			<td>
 				<?php if( $this->item->type === Art_Model_Default_Value::TYPE_HTML): ?>
 					<textarea class="ckeditor" rows="8" name="value" placeholder="<?= __('module_default_value_value') ?>"><?= $this->item->value ?></textarea>
 				<?php else: ?>
-					<input type="text" name="value" placeholder="<?= __('module_default_value_value') ?>" autofocus="true" value="<?= $this->item->value ?>">
+					<input id="default-value" type="text" name="value" autofocus placeholder="<?= __('module_default_value_value') ?>" autofocus="true" value="<?= $this->item->value ?>">
 				<?php endif; ?>
 			</td>
 		</tr>

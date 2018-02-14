@@ -605,13 +605,11 @@ function rand_str( $length = 32 )
  */
 function nice_date($date)
 {
-	if( is_int($date) )
-	{
+	if (is_int($date)) {
 		return date('j.n.Y', $date);
-	}
-	else
-	{
-		return date('j.n.Y', strtotime($date));
+	} else {
+		// return date('j.n.Y', strtotime($date));
+		return strftime("%d. %B %Y", strtotime($date));
 	}
 }
 

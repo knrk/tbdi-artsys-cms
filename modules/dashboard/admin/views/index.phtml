@@ -16,15 +16,13 @@
 		<col class="w5">
 		<col class="w25">
 		<col class="w50">
-		<col class="w10">
-		<col class="w10">
+		<col class="w20">
 	</colgroup>
 	<tr>
 		<th class="text-center">!</th>
 		<th><?= __('module_dashboard_content_header') ?></th>
 		<th><?= __('module_dashboard_content_body') ?></th>
 		<th><?= __('module_dashboard_content_date') ?></th>
-		<th></th>
 	</tr>
 	<?php foreach (array_reverse($this->dashboard) as $post) : /* @var $post Dashboard */ ?>
 	<tr>
@@ -33,10 +31,12 @@
 				<i title="<?= __('module_dashboard_important') ?>" class="fa fa-exclamation"></i>
 			<?php endif; ?>
 		</td>
-		<td><?= Art_Filter::cutString($post->header,50) ?></td>
-		<td><a href="<?= $post->a_detail ?>"><?= Art_Filter::cutString($post->body,200) ?></a></td>
-		<td><?= nice_date($post->created_date) ?></td>
+		<td><?= $post->header ?></td>
 		<td>
+			<a href="<?= $post->a_detail ?>"><?= Art_Filter::cutString($post->body,200) ?></a>
+		</td>
+		<td>
+			<?= nice_date($post->created_date) ?>
 			<div class="inline-actions">
 				<a href="<?= $post->a_edit ?>"><i class="fa fa-pencil"></i></a>
 				<button <?= $this->delete_single_request->getHTML(array('id'=>$post->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
