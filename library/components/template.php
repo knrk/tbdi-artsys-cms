@@ -338,14 +338,12 @@ final class Art_Template extends Art_Abstract_Component {
 	 * 
 	 *	@return void
 	 */
-	static function loadMeta()
-	{
+	static function loadMeta() {
 		//Load defaults
-		self::$_meta = Art_Model_Meta::getDefaults();
+		// self::$_meta = Art_Model_Meta::getDefaults();
 
 		$metas = Art_Model_Meta::fetchAllCurrLayer();
-		foreach($metas AS $meta)
-		{
+		foreach($metas as $meta) {
 			self::$_meta[$meta->key] = $meta->getContent();
 		}
 	}

@@ -22,8 +22,10 @@
  *	@method this		setUserGroupXServicePrice(User_Group_X_Service_Price $user_group_x_service_price)
  */
 class Service_Payment extends Art_Abstract_Model_DB {
+
+	protected static $_caching = false;
     
-    protected static $_table = 'service_payment';
+	protected static $_table = 'service_payment';
 	    
 	protected static $_foreign = array('id_user','id_user_paid_by','id_user_group_x_service_price');
 	

@@ -215,43 +215,33 @@ final class Art_Log extends Art_Abstract_Component {
 	 *	@static
 	 *	@return void
 	 */
-	static function rotate()
-	{		
+	static function rotate() {		
 		//Max file size in bytes
-		$threshold = 1000 * Art_Register::in('log')->get('max_file_size', 1024);	
-
+		$threshold = 1000 * LOG_SIZE;	
 		$directories = array(self::ROOT);
 		
-		for( $i = 0; $i < count($directories); $i++ )
-		{
+		for ($i = 0; $i < count($directories); $i++) {
 			$dir = $directories[$i].'/';
 			
-			foreach( new DirectoryIterator($dir) as $file )
-			{
-				if ( $file->isDot() ) 
-				{
+			foreach (new DirectoryIterator($dir) as $file) {
+				if ($file->isDot()) {
 					continue;
 				}
-				else if ( !$file->isFile() )	//directory
-				{
+				else if (!$file->isFile()) {
 					$directories[] = $dir.$file->getFilename();
 				}
 
 				$name = $file->getFilename();		
 				
 				//find only files which are *.log
-				if ( 'log' == $file->getExtension() ) 
-				{
-					if( filesize($dir.$file) >= $threshold ) 
-					{
+				if ('log' == $file->getExtension()) {
+					if (filesize($dir.$file) >= $threshold) {
 						$num_map = array();
 						$num_map[-1] = $name;	//save *.log file
 
 						//again iterate through whole directory to find similar files
-						foreach( new DirectoryIterator($dir) as $log ) 
-						{
-							if ( $log->isDot() || !$log->isFile() ) 
-							{
+						foreach (new DirectoryIterator($dir) as $log) {
+							if ($log->isDot() || !$log->isFile()) {
 								continue;
 							}
 
@@ -259,8 +249,7 @@ final class Art_Log extends Art_Abstract_Component {
 							$matches = array();
 							
 							//find any file *-[0-9].gz that has same name *.log file
-							if ( preg_match('/^'.$name.'-?([0-9]){1}\.gz$/', $log->getFilename(), $matches) ) 
-							{
+							if (preg_match('/^'.$name.'-?([0-9]){1}\.gz$/', $log->getFilename(), $matches)) {
 								$num = $matches[1];	//save number of file
 								$file2move = $log->getFilename();
 								$num_map[$num] = $file2move;
@@ -270,13 +259,11 @@ final class Art_Log extends Art_Abstract_Component {
 						krsort($num_map);	//sort by key desc
 
 						//shift from back 8=>9; 7=>8 etc. and *.log=>*-0.gz
-						foreach( $num_map as $num => $file2move ) 
-						{
+						foreach ($num_map as $num => $file2move) {
 							$targetN = $num+1;
 
 							//*.log file to .gz
-							if ( $targetN === 0 )
-							{
+							if ($targetN === 0) {
 								$gz = gzopen($dir.$name.'-0.gz','w9');
 								$str = file_get_contents($dir.$file);
 								fclose(fopen($dir.$file, "w"));	//empty *.log file
@@ -284,13 +271,11 @@ final class Art_Log extends Art_Abstract_Component {
 								gzclose($gz);
 							}
 							//delete last file (*-9.gz)
-							else if ( $targetN === 10 )
-							{
+							else if ( $targetN === 10 ) {
 								unlink($dir.$file2move);
 							}
 							//other shift
-							else
-							{
+							else {
 								rename($dir.$file2move, $dir.$name.'-'.$targetN.'.gz');
 							}
 						}

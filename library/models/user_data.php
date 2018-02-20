@@ -33,6 +33,8 @@
  */
 class Art_Model_User_Data extends Art_Abstract_Model_DB {
 	
+	protected static $_caching = false;
+
     protected static $_table = 'user_data';
 	
 	protected static $_foreign = array('id_user');
@@ -74,17 +76,23 @@ class Art_Model_User_Data extends Art_Abstract_Model_DB {
 	 *	@return string
 	 */
 	function __get($name) {
+		// d($name);
 		switch($name) {
 			case 'fullname': 
 				return static::getFullname($this);
+				break;
 			case 'fullnameWithDegree': 
 				return static::getFullnameWithDegree($this);
+				break;
 			case 'born': 
 				return static::getBorn($this);
+				break;
 			case 'degreeSA': 
 				return $this->degree ? $this->degree : '-';
+				break;
 			default:
-				return $this->{$name};
+				// return $this->{$name};
+				break;
 		}
 	}
 	

@@ -603,8 +603,7 @@ function rand_str( $length = 32 )
  *	@param string|int $date
  *	@return string
  */
-function nice_date($date)
-{
+function nice_date($date) {
 	if (is_int($date)) {
 		return date('j.n.Y', $date);
 	} else {
@@ -641,19 +640,14 @@ function nice_datetime($date, $seconds = false)
  *	@param string|int $time [optional]
  *	@return string
  */
-function dateSQL( $time = NULL )
-{
-	if( NULL === $time )
-	{
+function dateSQL($time = NULL) {
+	if (NULL === $time) {
 		$time = time();
 	}
 	
-	if( $time === (int)$time )
-	{
+	if ($time === (int) $time) {
 		return date('Y-m-d H:i:s', $time);
-	}
-	else
-	{
+	} else {
 		return date('Y-m-d H:i:s', strtotime($time));
 	}
 }
@@ -667,8 +661,7 @@ function dateSQL( $time = NULL )
  *	@see Art_Label
  *	@return string
  */
-function __($key, $default = NULL)
-{
+function __($key, $default = NULL) {
 	return Art_Label::get($key, $default);
 }
 

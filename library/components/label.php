@@ -1,6 +1,5 @@
 <?php
 /**
- *  @author Robin Zoň <zon@itart.cz>
  *  @package library/components
  *	@final
  */
@@ -41,47 +40,32 @@ final class Art_Label extends Art_Abstract_Component {
      *  @static
      *  @return void
      */
-	static function init()
-	{
-		if(parent::init())
-		{
+	static function init() {
+		if (parent::init()) {
 			//Load current locale
 			static::$_current_locale = Art_Main::getLocale();
 			
-			//Load default locale
-			static::$_default_locale = Art_Main::getDefaultLocale();
-			
-			//Load all locales
-			static::$_locales = Art_Main::getLocales();
-			
-			//Prepare label locale container
-			foreach( static::$_locales AS $locale )
-			{
-				static::$_labels[$locale] = array();
-				
-				if( !Art_Model_Label::hasCol($locale) )
-				{
-					trigger_error('Lang "'.$locale.'" not found in database', E_USER_ERROR);
-				}
-			}
-			
-			//Get all labels from DB and save to this component
-			$labels = Art_Model_Label::fetchAll();
-			foreach( $labels AS $label ) /* @var $label Art_Model_Label */
-			{
-				foreach( static::$_locales AS $locale )
-				{
-					static::$_labels[$locale][$label->key] = $label->{$locale};
-				}
+			$labels = self::readLocalization(static::$_current_locale);
+			foreach ($labels as $k => $v) {
+				static::$_labels[static::$_current_locale][$k] = $v;
 			}
 			
 			//Bind event
-			Art_Event::on(Art_Event::LOCALE_CHANGED, function(){
+			Art_Event::on(Art_Event::LOCALE_CHANGED, function() {
 				static::_localeChanged();
 			});
 		}
 	}
-	
+
+	protected static function readLocalization($locale) {		
+		$strings = file_get_contents(sprintf("localization/%s.json", $locale));
+		if (!$strings) {
+			trigger_error(sprintf("Localization file %s.json not found, labels will not be translated.", $locale), E_USER_ERROR);
+		}
+		$json = json_decode($strings, true);
+
+		return $json['data'];
+	}
 	
 	/**
 	 *	Function called on locale_changed event
@@ -90,54 +74,37 @@ final class Art_Label extends Art_Abstract_Component {
 	 *	@static
 	 *	@return void
 	 */
-	protected static function _localeChanged()
-	{
+	protected static function _localeChanged() {
 		static::$_current_locale = Art_Main::getLocale();
 	}
-	
 	
 	/**
 	 *	Get label by key
 	 * 
 	 *	@static
 	 *	@param string $key
-	 *	@param string [optional] $default
+	 *	@param string [optional] $category
 	 *	@param string [optional] $locale
 	 *	@return string
 	 */
-	static function get($key, $default = NULL, $locale = NULL )
-	{
+	static function get($key, $category = null, $locale = 'cs') {
 		//Use current locale if no is supplied
-		if( NULL === $locale )
-		{
+		if (NULL === $locale) {
 			$locale = static::$_current_locale;
 		}
-		
+
 		//If locale is not found
-		if( !isset(static::$_labels[$locale]) )
-		{
-			trigger_error('Locale '.$locale.' not found, label can\'t be returned', E_USER_ERROR);
+		if (!isset(static::$_labels[$locale])) {
+			trigger_error(sprintf("Locale %s not found, label can't be returned", $locale), E_USER_ERROR);
 		}
 		
 		//If translation is found
-		if( isset(static::$_labels[$locale][$key]) )
-		{
+		if (isset(static::$_labels[$locale][$key])) {
 			return static::$_labels[$locale][$key];
-		}
-		else
-		{
-			//If default is set
-			if( NULL !== $default )
-			{
-				return $default;
-			}
-			else
-			{
-				return $key;
-			}
+		} else {
+			return $key;
 		}
 	}
-	
 	
 	/**
 	 *	Add array of labels to this component
@@ -147,22 +114,17 @@ final class Art_Label extends Art_Abstract_Component {
 	 *	@param string [optional] $locale
 	 *	@return void
 	 */
-	static function addLabelSet( array $array, $locale = NULL )
-	{
+	static function addLabelSet(array $array, $locale = 'cs') {
 		//Use current locale if no is supplied
-		if( NULL === $locale )
-		{
+		if (NULL === $locale) {
 			$locale = static::$_default_locale;
 		}
 		
 		//If locale is found
-		if( isset(static::$_labels[$locale]) )
-		{
-			self::$_labels[$locale] = array_merge( self::$_labels[$locale], $array );
-		}
-		else
-		{
-			trigger_error('Locale '.$locale.' not found, label can\'t be added', E_USER_ERROR);
+		if (isset(static::$_labels[$locale])) {
+			self::$_labels[$locale] = array_merge(self::$_labels[$locale], $array);
+		} else {
+			trigger_error(sprintf("Locale %d not found, label can't be added", $locale), E_USER_ERROR);
 		}		
 	}
 	
@@ -176,21 +138,16 @@ final class Art_Label extends Art_Abstract_Component {
 	 *	@param string [optional] $locale
 	 *	@return void
 	 */
-	static function addLabel( $key, $value, $locale = NULL )
-	{
+	static function addLabel($key, $value, $locale = NULL) {
 		//Use current locale if no is supplied
-		if( NULL === $locale )
-		{
+		if (NULL === $locale) {
 			$locale = static::$_default_locale;
 		}
 		
 		//If locale is found
-		if( isset(static::$_labels[$locale]) )
-		{
+		if (isset(static::$_labels[$locale])) {
 			self::$_labels[$locale][$key] = $value;
-		}
-		else
-		{
+		} else {
 			trigger_error('Locale '.$locale.' not found, label can\'t be added', E_USER_ERROR);
 		}
 	}

@@ -14,7 +14,11 @@ class Module_Bootstrap_Resource extends Art_Abstract_Module_Bootstrap {
 	
 	static function routerSetup() 
 	{
-		Art_Router::addRoute('module_resource_initial' ,'/resource/$1', array ('layer'=> Art_Router::LAYER_FRONTEND, 'section'=>'resource', 'action'=>'index', 'id'=>'$1'));
+		Art_Router::addRoute('module_resource_initial' ,'/resource/$1', array (
+			'layer' => Art_Router::LAYER_FRONTEND, 
+			'section' => 'resource', 
+			'action' => 'index', 
+			'id' => '$1'
+		));
 	}
-	
 }

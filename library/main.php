@@ -432,8 +432,7 @@ final class Art_Main {
 	 * 	@static
 	 *	@return array
 	 */
-	static function getLocales()
-	{
+	static function getLocales() {
 		return static::$_locales;
 	}
 	
@@ -444,8 +443,7 @@ final class Art_Main {
 	 * 	@static
 	 *	@return string
 	 */
-	static function getDefaultLocale()
-	{
+	static function getDefaultLocale() {
 		return static::$_default_locale;
 	}
 	
@@ -456,8 +454,7 @@ final class Art_Main {
 	 * 	@static
 	 *	@return string
 	 */
-	static function getLocale()
-	{
+	static function getLocale() {
 		return static::$_current_locale;
 	}
 	
@@ -578,19 +575,17 @@ final class Art_Main {
 			Art_Component::initialize(array('register','config','db'));
 
 			//Load locales and domains
-			static::$_default_locale = Art_Register::in('locale')->get('default_locale');
+			static::$_default_locale = APP_LANG_TAG;
 			static::$_current_locale = static::$_default_locale;
-			static::$_locales = Art_Register::in('locale')->get('locales');
+			static::$_locales = APP_LOCALES;
 			static::$_domains = DOMAINS;
 			static::$_default_domain = DEFAULT_DOMAIN;
-			// static::$_domains = Art_Register::in('domain')->get('domains');
-			// static::$_default_domain = Art_Register::in('domain')->get('default_domain');
 			
 			//Load registers from DB
 			Art_Register::loadFromDb();
 
 			//Set locale for string operations
-			setlocale(LC_ALL, Art_Register::in('locale')->get('locale_php'));
+			setlocale(LC_ALL, APP_LOCALE);
 			
 			//Load system components
 			Art_Component::initialize(array('session','server','router','ajax'));
@@ -603,7 +598,7 @@ final class Art_Main {
 			set_exception_handler('exception_handler');
             
             //Load other components
-			Art_Component::initialize(array('model','filter','validator','label','log','user','label_text'));
+			Art_Component::initialize(array('model', 'filter', 'validator', 'label', 'log', 'user'));
 
 			//Load all modules settings
 			Art_Module::loadModuleSettings();
@@ -859,25 +854,18 @@ final class Art_Main {
 			self::$_isError = true;
 		}
 
-		$show_err = Art_Register::in('error')->get('show_message') || Art_Register::in('error')->get('show_source') || Art_Register::in('error')->get('show_backtrace');
+		$show_err = DEBUG || DEBUG_SOURCE || DEBUG_STACKTRACE;
 		
-		if( $show_err )
-		{
+		if ($show_err) {
 			//If not ajax - put nice error table
-			if( !Art_Server::isAjax() )
-			{
+			if (!Art_Server::isAjax()) {
 				echo '<div class="error_backtrace" style="width:98%;margin:auto;border:1px solid #ff4444;background:#FFCCCC;border-radius:5px;text-align:center;margin-top:20px;padding-bottom:15px;margin-bottom:20px;">';
-				if( Art_Register::in('error')->get('show_message') )		
-				{
+				if (DEBUG) {
 					echo '<div class="error_backtrace_message" style="font-size:16px;margin-bottom:10px;background:#ff4444;width:100%;color:#fff;font-weight:700;line-height:40px;"><i class="fa fa-exclamation-triangle"></i> '.$message.'</div>';
 				}
-			}
-			//If ajax - put console compatible output
-			else
-			{
+			} else {
 				echo "\n".'----------ERROR-----------------------------'."\n";
-				if( Art_Register::in('error')->get('show_message') )		
-				{
+				if (DEBUG) {
 					echo $message."\n";
 				}
 			}	
@@ -905,8 +893,7 @@ final class Art_Main {
 		}
 
 		//If source is to be shown
-		if( $showSource && Art_Register::in('error')->get('show_source') )
-		{       
+		if ($showSource && DEBUG_SOURCE) {    
 			//For each trace - search for trace with $trace['file'] set
 			foreach($backtrace AS $trace)
 			{
@@ -970,15 +957,11 @@ final class Art_Main {
 			}
 		}
 
-		if( Art_Register::in('error')->get('show_backtrace') )
-		{
+		if (DEBUG_STACKTRACE) {
 			//Echo trace table
-			if( !Art_Server::isAjax() )
-			{
+			if (!Art_Server::isAjax()) {
 				echo '<table class="error_backtrace_trace" style="margin:auto;margin-top:15px;width:80%;">';
-			}
-			else
-			{
+			} else {
 				echo "\n".'----------BACKTRACE--------------------------'."\n";
 			}
 
@@ -1053,11 +1036,9 @@ final class Art_Main {
 		}
 		
 		//Log error
-        if( Art_Register::in('error')->get('log') )
-        {
+        if (LOG) {
 			//Log with component if exists
-			if( class_exists('Art_Log') )
-			{
+			if (class_exists('Art_Log')) {
 				$func = reset($backtrace);
 				if( array_key_exists($type, self::STATUS_CODE_VERBOSE) )
 				{	
@@ -1085,8 +1066,7 @@ final class Art_Main {
         }
 
 		//Echo universal sorry message - only for non-ajax
-        if( $type >= self::ERROR && Art_Register::in('error')->get('show_sorry') && !Art_Server::isAjax() )
-        {
+        if ($type >= self::ERROR && ERR_FRIENDLY && !Art_Server::isAjax()) {
             self::$_errorMessage = ('
             <div class="art-error-sorry">
                     <h2>Nastala chyba!</h2>

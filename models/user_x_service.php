@@ -20,6 +20,8 @@
  *	@method this			setService(Service $service)
  */
 class User_X_Service extends Art_Abstract_Model_DB {
+
+	protected static $_caching = false;
     
     protected static $_table = 'user_x_service';
 	

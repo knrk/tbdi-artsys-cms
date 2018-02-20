@@ -5,6 +5,7 @@
 		<li role="presentation"<?= in_array($parentNode->id, $this->active_nodes_ids) || $active_first ? ' class="active"':''?>>
 			<a class="navigation-<?= $parentNode->getType()->type ?>" href="#<?= $parentNode->getType()->type ?>" aria-controls="<?= $parentNode->getType()->type ?>" role="tab" data-toggle="tab">
 				<i></i>
+				<span><?= $parentNode->name ?></span>
 			</a>
 		</li>
 	<?php $active_first = false; ?>
@@ -13,12 +14,11 @@
 
 
 <!-- Tab panes -->
-<div class="tab-content">
+<div class="nav-tab-content">
 	<?php $active_first = empty($this->active_nodes_ids); ?>
 	<?php foreach ( $this->nodes as $parentNode ) : /* @var $parentNode Art_Model_Node */ ?>
 	<div role="tabpanel" class="tab-pane<?= in_array($parentNode->id, $this->active_nodes_ids) || $active_first ? ' fade in active"':''?>" id="<?= $parentNode->getType()->type ?>">
-		<h3><?= $parentNode->name ?></h3>
-		<ul class="nav-ul">
+		<ul>
 			<?php foreach ( $parentNode->childs as $childNode ) : /* @var $childNode Art_Model_Node */ ?>
 			<li<?= in_array($childNode->id, $this->active_nodes_ids) ? ' class="active"':''?>>
 				<a href="<?= $childNode->url ?>">

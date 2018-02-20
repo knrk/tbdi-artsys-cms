@@ -48,7 +48,7 @@ class Module_Users extends Art_Abstract_Module {
 		$this->view->sortBy = $sortBy = Helper_TBDev::getSortBy($sortById, $sortByFirstname, $sortBySurname, $sortByMembershipFrom, $sortByMembershipTo);
 		
 		$allUsers = $this->_getAllAuthenticatedUserDataForTable($sortBy);
-		$authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy);
+		// $authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy);
 		
 		// $activeUsers = array();
 		
@@ -97,7 +97,9 @@ class Module_Users extends Art_Abstract_Module {
 		// }
 		
 		// $allUsers = array_merge($activeUsers, $nonactiveUsers);
-		
+
+		// p($allUsers);
+
 		$this->view->usersData = $allUsers;
 		$this->view->count = count($allUsers);
 	}
@@ -2129,7 +2131,10 @@ class Module_Users extends Art_Abstract_Module {
 
 	function requestsAction ()
 	{	//TODO
-		$userRequests = User_X_Request::fetchAllPrivileged();//NULL,array('name'=>'activated')
+		$userRequests = User_X_Request::fetchAllPrivileged(null, array(
+			'name' => 'created_date',
+			'type' => Art_Model_Db_Order::TYPE_DESC)
+		);
 
 		foreach ($userRequests as $value) /* @var $value User_X_Request */ 
 		{
@@ -2503,9 +2508,7 @@ class Module_Users extends Art_Abstract_Module {
 	protected function _getAllAuthenticatedUserDataForTable($sortBy, $onlyCompany = false) {
 		//Filter Users by Name, Surname and Service
 		$where = $this->_filterUsers();
-	
 		$serviceFilterSet = false;
-		
 		$data = Art_Main::getPost();
 		
 		if (!empty($data) && isset($data['service-type']) && $data['service-type'] != 0) {
@@ -2552,25 +2555,28 @@ class Module_Users extends Art_Abstract_Module {
 			$value->services = $services;
 
 			$activatedServices = Helper_TBDev::getAllActivatedServicesForUser($user);
-
 			$actServices = array();
-
 			foreach ($activatedServices as $service) {
 				$actServices[] = $service->type;
 			}
 
 			$value->actServices = $actServices;
-
 			$value->a_service = '/' . Art_Router::getLayer() . '/users/service/' . $user->id . '-';
-			$value->membership_from = nice_date(Helper_TBDev::getMembershipFromForUser($user));
-			if ('30.11.-0001' == $value->membership_from) {
+			$membership_from = Helper_TBDev::getMembershipFromForUser($user);
+			$value->membership_from = !is_null($membership_from) ? nice_date($membership_from) : '';
+
+			if (NULL === $value->membership_from) {
 				$value->membership_from = null; 
 				$value->membership_to = null;
 				$value->membership_to_colored = null;
-			} else {
+			} else {	
 				$value->membership_to = Helper_TBDev::getMembershipToForUser($user);
-				$value->membership_to_colored = Helper_TBDev::renderTrueFalseDateTo(dateSQL($value->membership_to) < dateSQL(), nice_date($value->membership_to));
+				// p($value->membership_to);
+				if ($value->membership_to) {
+					$value->membership_to_colored = Helper_TBDev::renderTrueFalseDateTo(dateSQL($value->membership_to) < dateSQL(), nice_date($value->membership_to));
+				}
 			}
+			// p($value->membership_to);
 
 			if ($onlyCompany && Helper_TBDev::isUserRepresentsCompany($user)) {
 				$value->company_name = Helper_TBDev::getCompanyAddress($user)->company_name;

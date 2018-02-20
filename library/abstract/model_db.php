@@ -75,7 +75,10 @@ abstract class Art_Abstract_Model_DB implements JsonSerializable {
      *  @var array Columns list
      *  @example array('id_product'=>array('select'),'name'=>array('select','insert','update'))
      */
-    protected static $_cols = array();
+	protected static $_cols = array();
+	
+	private static $_cache = array();
+	protected static $_caching = true;
 	
 	/**
 	 *	@access protected
@@ -694,79 +697,188 @@ abstract class Art_Abstract_Model_DB implements JsonSerializable {
      *  @return this[] Instances of this class
      *  @example fetchAll(array('where_col_name'=>'value'))
      */
-    static function fetchAll($where = NULL, $order = NULL, $limit = NULL, $privileged = NULL, $active_only = false)
+    static function fetchAll($where = NULL, $order = NULL, $limit = NULL, $privileged = NULL, $active_only = false) {
+
+		$returned_instances = array();
+
+		if (static::$_caching === false || empty(self::$_cache[static::$_table])) {
+			//Add where
+			if (NULL !== $where) {
+				//Convert where to statement
+				$where_stmt = static::_prepareWhere( $where );
+			} else {
+				$where_stmt = new Art_Model_Db_Where;
+			}
+			
+			//Add order
+			if (NULL !== $order) {
+				$order_stmt = static::_prepareOrder( $order );
+			} else {
+				$order_stmt = new Art_Model_Db_Order;
+			}
+			
+			//Add limit
+			if (NULL !== $limit) {
+				$limit_stmt = static::_prepareLimit( $limit );
+			} else {
+				$limit_stmt = new Art_Model_Db_Limit;
+			}
+			
+			//Add privileged
+			if (NULL !== $privileged) {
+				//Get rights of privileged user
+				$privilegedRights = static::_getPrivilegedRights($privileged);
+				
+				//Add col to WHERE
+				if (static::hasCol('rights')) {
+					$where_stmt->add(array('name' => 'rights', 'value' => $privilegedRights, 'relation' => '<='));
+				}
+				elseif (($col_name = in_array('Art_Model_Rights', static::$_link) ) !== false) {
+					$bond_col = static::getBondCol('Art_Model_Rights');
+					if (!empty($bond_col)) {
+						$bond_col = key($bond_col);
+						$ids = Art_Model_Rights::fetchAllIdsNotHigher( $privilegedRights );
+						$where_stmt->add( array('name' => $bond_col, 'value' => $ids, 'relation' => Art_Model_Db_Where::REL_IN) );
+					} else {
+						trigger_error('No bond col found between '.__CLASS__.' and Art_Model_Rights');
+					}
+				}
+			} else {
+				$privilegedRights = 0;
+			}
+			
+			//Add active
+			if ($active_only && static::hasCol('active')) {
+				$where_stmt->add(array('name' => 'active', 'value' => 1));
+			}
+			
+			
+			//Add selected cols 
+			$select_stmt = new Art_Model_Db_Select(static::$_table, static::getCols('select'));
+			
+			//Build up query and execute
+			$request = Art_Main::db()->select($select_stmt, $where_stmt, $order_stmt, $limit_stmt);
+			$request->execute($where_stmt->getValues());
+
+			//For each found instance
+			while ($data = $request->fetch(PDO::FETCH_ASSOC)) {
+				//Create instance
+				$instance = new static();
+				$instance->_is_loaded = true;
+				
+				//Bind all fetched values to instance variables
+				foreach ($data AS $name => $value) {
+					$instance->$name = $value;	
+				}
+
+				//Look for dependend tables
+				foreach ($instance::$_dependencies AS $dependend_var) {
+					//Get instance
+					$dep_instance = $instance->getLinkedInstance($dependend_var);
+
+					//Clean $this if instance was not loaded
+					if (!$dep_instance->isLoaded() ||
+						( $active_only && $dep_instance->isActive() ) ||
+						( NULL !== $privileged && $dep_instance->getRights() > $privilegedRights ) )
+					{
+						$instance = NULL;
+						break;
+					}
+				}
+				
+				//If not null - add to output
+				if (NULL !== $instance) {
+					$returned_instances[] = $instance;
+				}
+			}
+
+			if (static::$_caching === true) {
+				self::$_cache[static::$_table] = $returned_instances;
+			}
+		} else {
+			$returned_instances = self::$_cache[static::$_table];
+		}
+
+		// if (static::$_table === 'service_payment') {
+		// 	p(static::$_caching);
+		// 	d(self::$_cache[static::$_table]);
+		// }
+		
+		return $returned_instances;
+	}
+
+	/**
+     *  Fetches instances of this class
+     *
+     *  @static
+     *  @param array|object|Art_Model_Db_Where $where Where SQL statement or abstractModel instance
+	 *	@param string|array|Art_Model_Db_Order $order Order by
+	 *	@param int|string|Art_Model_Db_Limit $limit
+	 *	@param bool|User $privileged
+	 *	@param bool $active_only
+     *  @return this[] Instances of this class
+     *  @example fetchAll(array('where_col_name'=>'value'))
+     */
+    static function fetchSelected($cols = null, $where = NULL, $order = NULL, $limit = NULL, $privileged = NULL, $active_only = false)
     {
 		//Add where
-		if( NULL !== $where )
-		{
+		if (NULL !== $where) {
 			//Convert where to statement
-			$where_stmt = static::_prepareWhere( $where );
-		}
-		else
-		{
+			$where_stmt = static::_prepareWhere($where);
+		} else {
 			$where_stmt = new Art_Model_Db_Where;
 		}
 		
 		//Add order
-		if( NULL !== $order )
-		{
+		if (NULL !== $order) {
 			$order_stmt = static::_prepareOrder( $order );
-		}
-		else
-		{
+		} else {
 			$order_stmt = new Art_Model_Db_Order;
 		}
 		
 		//Add limit
-		if( NULL !== $limit )
-		{
+		if (NULL !== $limit) {
 			$limit_stmt = static::_prepareLimit( $limit );
-		}
-		else
-		{
+		} else {
 			$limit_stmt = new Art_Model_Db_Limit;
 		}
 		
 		//Add privileged
-		if( NULL !== $privileged )
-		{
+		if (NULL !== $privileged) {
 			//Get rights of privileged user
 			$privilegedRights = static::_getPrivilegedRights($privileged);
 			
 			//Add col to WHERE
-			if( static::hasCol('rights') )
-			{
+			if (static::hasCol('rights')) {
 				$where_stmt->add(array('name' => 'rights', 'value' => $privilegedRights, 'relation' => '<='));
 			}
-			elseif( ( $col_name = in_array('Art_Model_Rights', static::$_link) ) !== false )
-			{
+			elseif (($col_name = in_array('Art_Model_Rights', static::$_link)) !== false) {
 				$bond_col = static::getBondCol('Art_Model_Rights');
-				if( !empty($bond_col) )
-				{
+				if (!empty($bond_col)) {
 					$bond_col = key($bond_col);
 					$ids = Art_Model_Rights::fetchAllIdsNotHigher( $privilegedRights );
 					$where_stmt->add( array('name' => $bond_col, 'value' => $ids, 'relation' => Art_Model_Db_Where::REL_IN) );
-				}
-				else
-				{
+				} else {
 					trigger_error('No bond col found between '.__CLASS__.' and Art_Model_Rights');
 				}
 			}
-		}
-		else
-		{
+		} else {
 			$privilegedRights = 0;
 		}
 		
 		//Add active
-		if( $active_only && static::hasCol('active') )
-		{
+		if ($active_only && static::hasCol('active')) {
 			$where_stmt->add(array('name' => 'active', 'value' => 1));
 		}
+
+		if (NULL === $select) {
+			$cols = static::getCols('select');
+		}
+
+		// $select_stmt = new Art_Model_Db_Select(static::$_table, static::getCols('select'));
+		$select_stmt = new Art_Model_Db_Select(static::$_table, $cols);
+		// printr($select_stmt);
 		
-		
-		//Add selected cols 
-		$select_stmt = new Art_Model_Db_Select(static::$_table, static::getCols('select'));
 		
 		//Build up query and execute
 		$request = Art_Main::db()->select($select_stmt,$where_stmt,$order_stmt,$limit_stmt);
@@ -774,21 +886,18 @@ abstract class Art_Abstract_Model_DB implements JsonSerializable {
 
 		//For each found instance
 		$returned_instances = array();
-		while($data = $request->fetch(PDO::FETCH_ASSOC))
-		{
-			//Create instance
+		while ($data = $request->fetch(PDO::FETCH_ASSOC)) {
+		//Create instance
 			$instance = new static();
-            $instance->_is_loaded = true;
-			
+			$instance->_is_loaded = true;
+
             //Bind all fetched values to instance variables
-            foreach($data AS $name => $value)
-            {
+            foreach ($data as $name => $value) {
                 $instance->$name = $value;	
             }
 
 			//Look for dependend tables
-			foreach($instance::$_dependencies AS $dependend_var)
-			{
+			foreach ($instance::$_dependencies as $dependend_var) {
 				//Get instance
 				$dep_instance = $instance->getLinkedInstance($dependend_var);
 
@@ -803,8 +912,7 @@ abstract class Art_Abstract_Model_DB implements JsonSerializable {
 			}
 			
 			//If not null - add to output
-			if( NULL !== $instance )
-			{
+			if (NULL !== $instance) {
 				$returned_instances[] = $instance;
 			}
 		}

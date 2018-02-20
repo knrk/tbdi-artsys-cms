@@ -87,17 +87,17 @@ class Art_Model_Meta extends Art_Abstract_Model_DB {
 	static function getDefaults()
 	{
 		return	array(
-					'title'				=> Art_Register::in('meta')->get('title'),
-					'description'		=> Art_Register::in('meta')->get('description'),
-					'keywords'			=> Art_Register::in('meta')->get('keywords'),
-					'copyright'			=> Art_Register::in('meta')->get('copyright'),
-					'application-name'	=> Art_Register::in('meta')->get('application_name'),
-					'robots'			=> Art_Register::in('meta')->get('robots'),
-					'author'			=> Art_Register::in('meta')->get('author'),
-					'og:type'			=> Art_Register::in('meta')->get('og_type'),
-					'og:image'			=> Art_Server::getHost().'/'.Art_Register::in('meta')->get('og_image'),
-					'og:site_name'		=> Art_Register::in('meta')->get('og_site_name'),
-					'og:url'			=> Art_Server::getHost()
+					// 'title'				=> Art_Register::in('meta')->get('title'),
+					// 'description'		=> Art_Register::in('meta')->get('description'),
+					// 'keywords'			=> Art_Register::in('meta')->get('keywords'),
+					// 'copyright'			=> Art_Register::in('meta')->get('copyright'),
+					// 'application-name'	=> Art_Register::in('meta')->get('application_name'),
+					// 'robots'			=> Art_Register::in('meta')->get('robots'),
+					// 'author'			=> Art_Register::in('meta')->get('author'),
+					// 'og:type'			=> Art_Register::in('meta')->get('og_type'),
+					// 'og:image'			=> Art_Server::getHost().'/'.Art_Register::in('meta')->get('og_image'),
+					// 'og:site_name'		=> Art_Register::in('meta')->get('og_site_name'),
+					// 'og:url'			=> Art_Server::getHost()
 					);		
 	}
 }

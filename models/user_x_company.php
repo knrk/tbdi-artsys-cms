@@ -12,6 +12,8 @@
  *	@method	this					setUser( Art_Model_User $user )
  */
 class User_X_Company extends Art_Abstract_Model_DB {
+
+	protected static $_caching = false;
 	
     protected static $_table = 'user_x_company';
     

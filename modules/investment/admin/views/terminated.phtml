@@ -54,7 +54,9 @@
             <?= $value->formal_expiry_date ? nice_date($value->formal_expiry_date) : '' ?>
         </td>
         <td>
-            <a href="javascript:;" data-toggle="tooltip" title="<?= $value->note ?>"><i class="fa <?= !empty($value->note) ? 'fa-comment' : 'fa-comment-o' ?> edit"></i></a>
+            <?php if (!empty($value->note)) : ?>
+                <a href="javascript:;" data-toggle="tooltip" data-placement="left" title="<?= $value->note ?>"><i class="fa fa-comment edit"></i></a>
+            <?php endif; ?>
         </td>
     </tr>
     <?php 

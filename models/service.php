@@ -15,6 +15,8 @@
  *	@property string	$modified_date
  */
 class Service extends Art_Abstract_Model_DB {
+
+	protected static $_caching = false;
     
     protected static $_table = 'service';
     

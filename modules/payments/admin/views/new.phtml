@@ -1,57 +1,68 @@
 <h2><?= __('module_payments_new_membership_header') ?></h2>
 
-<form <?= $this->request->getHTML() ?>>
-	<div class="background-white pa-15">
-	<div class="col-xs-2 lh-35"><?= __('module_payments_user') ?></div>		
-	<div class="col-xs-4">
-		<div class="form-group">
-		  <select class="form-control" id="user" name="id_user">
-			<?php foreach ($this->usersWithActService as $user) : ?>
-			  <option value="<?= $user->id ?>"><?= $user->user_number ?> | <?= $user->fullname ?></option>
-			<?php endforeach; ?>
+<form <?= $this->request->getHTML() ?> class="form">
+	<div class="investment-new">
+		<div class="row">
+			<label for="user"><?= __('module_payments_user') ?></label>
+			<select class="chosen-select" id="user" name="id_user">
+				<?php foreach ($this->usersWithActService as $user) : ?>
+					<option value="<?= $user->id ?>"><?= $user->user_number ?> | <?= $user->fullname ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>	
+		
+		<div class="row pt-10">
+			<label for="user_paid_by"><?= __('module_payments_payer') ?></label>
+			<select class="chosen-select" id="user_paid_by" name="id_user_paid_by">
+				<?php foreach ($this->users as $user) : ?>
+					<option value="<?= $user->id ?>"><?= $user->user_number ?> | <?= $user->fullname ?></option>
+				<?php endforeach; ?>
 		  </select>
 		</div>
-	</div>
-	
-	<div class="col-xs-2 lh-35"><?= __('module_payments_payer') ?></div>		
-	<div class="col-xs-4">
-		<div class="form-group">
-		  <select class="form-control" id="user_paid_by" name="id_user_paid_by">
-			<?php foreach ($this->users as $user) : ?>
-			  <option value="<?= $user->id ?>"><?= $user->user_number ?> | <?= $user->fullname ?></option>
-			<?php endforeach; ?>
-		  </select>
-		</div>
-	</div>
-	
-	<div class="col-xs-2 lh-35"><?= __('module_payments_price_per_time_interval') ?></div>
-	<div class="col-xs-4">
-		<div class="form-group">
-			  <select class="form-control" id="user_group_x_service_price" name="id_user_group_x_service_price">
+
+		<div class="row pt-10">
+			<label for="user_group_x_service_price"><?= __('module_payments_price_per_time_interval') ?></label>
+			<select class="chosen-select" id="user_group_x_service_price" name="id_user_group_x_service_price">
 				<?php if ( !empty($this->usersWithActService) ) : ?>
 					<?php foreach ($this->usersWithActService[0]->servicePrices as $servicePrice) : /* @var $servicePrice Service_Price */ ?>
 						<option value="<?= $servicePrice->id_user_group_x_service_price ?>"><?=  $servicePrice->price.' '.__('czk').' / '.$servicePrice->time_interval ?></option>
 					<?php endforeach; ?>
 				<?php endif; ?>
 			  </select>
-			</div>
-	</div>	
+		</div>	
 
-	<div class="col-xs-2 lh-35"><?= __('module_payments_value') ?></div>
+		<div class="row pt-10">
+			<label for="payment-value"><?= __('module_payments_value') ?></label>
+			<input id="payment-value" name="value" type="text" placeholder="<?= __('module_payments_value') ?>">
+		</div>
 
-	<div class="col-xs-4">
-		<input name="value" type="text" class="form-control" placeholder="<?= __('module_payments_value') ?>">
-	</div>	
-		<div class="clearfix"></div>
-		<div class="col-xs-2">Datum platby</div><div class="col-xs-4"><input name="received_date" type="text" class="form-control" placeholder="00.00.0000"
-				 value="<?= nice_date($this->currentDate) ?>"></div>
-		<div class="col-xs-3"></div>
-	<div class="col-xs-3 text-center">
-		<input type="submit" class="btn" value="<?= __('save') ?>">
+		<div class="row pt-10">
+			<label><?= __('module_payments_payment_date') ?></label>
+			<input name="received_date" type="text" class="js-date-picker"
+				 value="<?= nice_date($this->currentDate) ?>">
+		</div>
+	</div>
+
+	<div class="save-view-buttons mt-15">
+		<input type="submit" value="<?= __('save') ?>" class="button">
 	</div>
 </form>
-<div class="clearfix"></div>
-</div>
+<script type="text/javascript">
+$(document).ready(() => {
+	$('.chosen-select').chosen({
+		max_selected_options: -1,
+		disable_search_threshold: 10
+	});
+	$('.chosen-container').removeClass('chosen-disabled');
+
+	$('.js-date-picker').click(() => {
+		$('.js-date-picker').pickadate({
+			format: 'yyyy-mm-dd'
+		});
+	});
+});
+</script>
+
 <script>
 	var servicesPerUser = jQuery.parseJSON('<?= $this->servicesPerUser ?>');
 	var currency = '<?=__('czk') ?>';
@@ -66,12 +77,12 @@
 			var html = '';
 			var service;
 			
-			for ( service of servicesPerUser[value] )
-			{
+			for (service of servicesPerUser[value]) {
 				html += '<option value="' + service.id_user_group_x_service_price + '">' + service.price + ' ' + currency + ' / ' + service.time_interval + '</option>';
 			}
 			
 			$("#user_group_x_service_price").html(html);
+
 		});
 	});
 </script>

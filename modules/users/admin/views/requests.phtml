@@ -6,47 +6,57 @@
 
 	</div>
 </div>
-	<div class="clear"></div>
 	
-	<table class="table-default">
-		<tr>
-			<th><?= __('firstname') ?></th>
-			<th><?= __('surname') ?></th>
-			<th><?= __('email') ?></th>
-			<th><?= __('phone_number') ?></th>
-			<th><?= __('service') ?></th>
-			<th><?= __('price') ?></th>
-			<th><?= __('time_interval') ?></th>
-			<th><?= __('from') ?></th>
-			<th></th>
-			<th></th>
-			<th></th>
-		</tr>
-		<?php 
-			foreach( $this->userRequests as $value ) : /* @var $value User_X_Request */
-		?>
-			<tr>
-				<td><?= Art_Filter::cutString($value->userData->name,60) ?></td>
-				<td><a href="<?= $value->a_detail ?>"><?= Art_Filter::cutString($value->userData->surname,40) ?></a></td>
-				<td><?= Art_Filter::cutString($value->userData->email,100) ?></td>
-				<td><?= Art_Filter::cutString($value->userPhone,14) ?></td>
-				<td><?= Art_Filter::cutString($value->service->name,25) ?></td>
-				<td><?= Art_Filter::cutString($value->servicePrice->price,25) ?></td>
-				<td><?= Art_Filter::cutString($value->servicePrice->time_interval,25) ?></td>
-				<td><?= nice_date($value->created_date) ?></td>
-				<td class="text-center">
-					<?php if ($value->accepted) : ?>
-						<i title="<?= __('completed') ?>" class="fa fa-check"></i>		
-					<?php else : ?>
-						<a href="<?= '/'.Art_Router::getLayer().'/service/activaterequest/'.$value->id_user.'-'.$value->id_service ?>" title="<?= __('pass') ?>"><i class="fa fa-plus"></i></a>
-					<?php endif; ?>
-				</td>
-				<td class="text-center">
+<table class="table-default">
+	<colgroup>
+		<col class="w20">
+		<col class="w25">
+		<col class="w15">
+		<col class="w10">
+		<col class="w10">
+		<col class="w15">
+	</colgroup>
+	<tr>
+		<th>
+			<?= __('firstname') ?>
+			<span> / </span>
+			<?= __('surname') ?>
+		</th>
+		<th>
+			<?= __('email') ?>
+			<span>/</span>
+			<?= __('phone_number') ?>
+		</th>
+		<th><?= __('service') ?></th>
+		<th><?= __('price') ?></th>
+		<th><?= __('interval') ?></th>
+		<th><?= __('from') ?></th>
+	</tr>
+	<?php foreach ($this->userRequests as $value) : /* @var $value User_X_Request */ ?>
+		<tr<?= $value->accepted ? ' class="accepted"' : '' ?>>
+			<td>
+				<a href="<?= $value->a_detail ?>" class="contact-person" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $value->_user->user_number ?>">
+					<span class="first-name"><?= $value->userData->name ?></span>
+					<span class="last-name"><?= $value->userData->surname ?></span>
+				</a>
+			</td>
+			<td>
+				<div><?= $value->userData->email ?></div>
+				<div><?= $value->userPhone ?></div>
+			</td>
+			<td><?= $value->service->name ?></td>
+			<td><?= $value->servicePrice->price ?></td>
+			<td><?= $value->servicePrice->time_interval ?></td>
+			<td>
+				<?= nice_date($value->created_date) ?>
+				<div class="inline-actions">
 					<?php if (!$value->accepted) : ?>
-						<a href="<?= $value->a_sendEmail ?>" title="<?= __('module_users_requests_send_email') ?>"><i class="fa fa-key"></i></a>
+						<a href="<?= '/'.Art_Router::getLayer().'/service/activaterequest/'.$value->id_user.'-'.$value->id_service ?>" title="<?= __('pass') ?>"><i class="fa fa-check"></i></a>
+						<a href="<?= $value->a_sendEmail ?>" title="<?= __('module_users_requests_send_email') ?>"><i class="fa fa-envelope"></i></a>
 					<?php endif; ?>
-				</td>
-				<td class="text-center"><button <?= $this->requestDelete->getHTML(array('id' => $value->id)) ?>><i class="fa fa-trash-o"></i></button></td>
-			</tr>
-		<?php endforeach; ?>
-	</table>
+					<button <?= $this->requestDelete->getHTML(array('id' => $value->id)) ?>><i class="fa fa-trash-o"></i></button>
+				</div>		
+			</td>
+		</tr>
+	<?php endforeach; ?>
+</table>

@@ -314,14 +314,14 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *  @param Art_Model_User	$user
 	 *	@return date
 	 */	
-	static function getMembershipFromForUser( $user )
-	{
-		if ( !$user->isLoaded() )
-		{
+	static function getMembershipFromForUser($user) {
+		if (!$user->isLoaded()) {
 			return 0;
 		}
 		
-		$service = new Service(array('type'=>self::MEMBERSHIP_TYPE));
+		$service = new Service(array(
+			'type' => self::MEMBERSHIP_TYPE
+		));
 
 		return static::getServiceFromForUser($user, $service);	
 	}
@@ -334,25 +334,24 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *	@param Service		$service
 	 *	@return date
 	 */	
-	static function getServiceFromForUser( $user, $service )
-	{
-		if ( !$user->isLoaded() || NULL === $service )
-		{
+	static function getServiceFromForUser($user, $service) {
+		if (!$user->isLoaded() || NULL === $service) {
 			return 0;
 		}
 		
-		$userService = new User_X_Service(array('id_user'=>$user->id,'id_service'=>$service->id,'activated'=>'1'));
+		$userService = new User_X_Service(array(
+			'id_user' => $user->id,
+			'id_service' => $service->id,
+			'activated' => '1'
+		));
 
-		if ( !$userService->isLoaded() )
-		{
-			$from = '0000-00-00 00:00:00';
-		}
-		else
-		{
-		$from = $userService->activated_date;
+		if (!$userService->isLoaded()) {
+			$from = null;
+		} else {
+			$from = strpos($userService->activated_date, '0000-00-00') === false ? $userService->activated_date : NULL;
 		}
 		
-		return $from ? date('Y-m-d', strtotime($from)) : 0;
+		return !is_null($from) ? date('Y-m-d', strtotime($from)) : $from;
 	}
 	
 	
@@ -362,16 +361,43 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *  @param Art_Model_User	$user
 	 *	@return date
 	 */	
-	static function getMembershipToForUser( $user )
-	{
-		if ( !$user->isLoaded() )
-		{
+	static function getMembershipToForUser($user) {
+		if (!$user->isLoaded()) {
 			return 0;
 		}
 		
-		$service = new Service(array('type'=>self::MEMBERSHIP_TYPE));
+		$service = new Service(array(
+			'type' => self::MEMBERSHIP_TYPE
+		));
 		
 		return static::getServiceToForUser($user, $service);	
+	}
+
+		/**
+	 *	Get service to date for User
+	 * 
+	 *  @param Art_Model_User	$user
+	 *	@param Service		$service
+	 *	@return date
+	 */	
+	static function getServiceToForUser($user, $service) {
+		if (!$user->isLoaded() || NULL === $service ) {
+			return 0;
+		}
+		
+		$userService = new User_X_Service(array(
+			'id_user' => $user->id,
+			'id_service' => $service->id,
+			'activated' => '1'
+		));
+
+		if (empty($userService) || 0 == $userService->activated) {
+			return 0;
+		}
+
+		$from = strpos($userService->activated_date, '0000-00-00') === false ? $userService->activated_date : NULL;
+		
+		return static::_getServiceToForUser($user, $service, $from);
 	}
 
 	
@@ -417,59 +443,26 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *	Get service to date for User
 	 * 
 	 *  @param Art_Model_User	$user
-	 *	@param Service		$service
-	 *	@return date
-	 */	
-	static function getServiceToForUser( $user, $service )
-	{
-		if ( !$user->isLoaded() || NULL === $service )
-		{
-			return 0;
-		}
-		
-		$userService = new User_X_Service(array('id_user'=>$user->id,'id_service'=>$service->id,'activated'=>'1'));
-
-		if ( empty($userService) || 0 == $userService->activated )
-		{
-			return 0;
-		}
-
-		$from = $userService->activated_date;
-		
-		return static::_getServiceToForUser($user, $service, $from);
-	}
-	
-	
-	/**
-	 *	Get service to date for User
-	 * 
-	 *  @param Art_Model_User	$user
 	 *	@param Service		$service	
 	 *	@param datetime		$from
 	 *	@return date
 	 */	
-	static private function _getServiceToForUser( $user, $service, $from )
-	{
-		if ( !$user->isLoaded() || NULL === $service || NULL === $from )
-		{
+	static private function _getServiceToForUser($user, $service, $from) {
+		if (!$user->isLoaded() || NULL === $service || NULL === $from) {
 			return 0;
 		}
 		
 		$payments = static::getServicePaymentsForUser($user, $service);
-		
 		$minServicePrice = static::getMinimalServicePriceForServiceForUser($user, $service);
 
-		if( NULL !== $minServicePrice && $minServicePrice->price == 0 )
-		{
+		if ( NULL !== $minServicePrice && $minServicePrice->price == 0) {
 			return static::getMembershipToForUser($user);
 		}
 		
 		$y = $m = $d = 0;
 		
-		foreach ( $payments as $payment ) 
-		{
+		foreach ($payments as $payment) {
 			$type = substr($payment->servicePrice->time_interval,-1);
-			
 			$value = substr($payment->servicePrice->time_interval, 0, strlen($payment->servicePrice->time_interval)-1);
 			
 			if( $payment->servicePrice->price == 0 )
@@ -507,7 +500,7 @@ class Helper_TBDev extends Art_Abstract_Helper {
 			$d += 30*$mf;
 		}
 		
-		//p($y.'y '.$m.'m '.$d.'d');
+		// p($y.'y '.$m.'m '.$d.'d');
 		//p(date('Y-m-d',  strtotime("+".floor($y)." years ".floor($m)." months ".floor($d)." days", strtotime($from))));
 		//p($from);
 		
@@ -568,17 +561,14 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *  @param Art_Model_User	$user
 	 *	@return Service[]
 	 */	
-	static function getAllActivatedServicesForUser( $user )
-	{
+	static function getAllActivatedServicesForUser($user) {
 		$services = array();
 		
-		if ( $user->isLoaded() )
-		{	
-			foreach ( User_X_Service::fetchAllPrivilegedActive(array('id_user'=>$user->id)) as $userService )
+		if ($user->isLoaded()) {		
+			foreach (User_X_Service::fetchAllPrivilegedActive(array('id_user'=>$user->id)) as $userService)
 				/* @var $userService User_X_Service */
 			{
-				if ( $userService->activated )
-				{
+				if ($userService->activated) {
 					$services[] = $userService->getService();
 				}
 			}
@@ -833,28 +823,23 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *	@param Service			$service
 	 *	@return Service_Price[]
 	 */		
-	static function getServicePricesForServiceForUser ( $user, $service )
-	{		
+	static function getServicePricesForServiceForUser ($user, $service) {		
 		$servicePrices = array();
 
-		if ( $user->isLoaded() && NULL !== $service )
-		{	
+		if ($user->isLoaded() && NULL !== $service) {	
 			//Fetch all User Groups of which the User belongs
-			foreach ( Art_Model_User_X_User_Group::fetchAllPrivileged(array('id_user'=>$user->id)) as $userUserGroup )
+			foreach (Art_Model_User_X_User_Group::fetchAllPrivileged(array('id_user' => $user->id)) as $userUserGroup )
 				/* @var $userUserGroup Art_Model_User_X_User_Group */
-			{
+				{
 				//Fetch all Service Prices of which the User Group belongs
-				foreach ( User_Group_X_Service_Price::fetchAllPrivileged(array('id_user_group'=>$userUserGroup->id_user_group)) as $userGroupServicePrice ) 
+				foreach (User_Group_X_Service_Price::fetchAllPrivileged(array('id_user_group'=>$userUserGroup->id_user_group)) as $userGroupServicePrice)
 					/* @var $userGroupServicePrice User_Group_X_Service_Price */
 				{
 					$servicePrice = $userGroupServicePrice->getServicePrice();
-					
-					if( $servicePrice->id_service == $service->id )
-					{
+					// p($servicePrice);
+					if ($servicePrice->id_service == $service->id) {
 						$servicePrice->id_user_group_x_service_price = $userGroupServicePrice->id;
-
-						if ( !in_array($servicePrice, $servicePrices) )
-						{
+						if (!in_array($servicePrice, $servicePrices)) {
 							$servicePrices[] = $servicePrice;
 						}
 					}
@@ -902,17 +887,14 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *	@param Service			$service
 	 *	@return Service_Price
 	 */		
-	static function getMinimalServicePriceForServiceForUser ( $user, $service )
-	{	
+	static function getMinimalServicePriceForServiceForUser ($user, $service){	
 		$servicePrice = null;
 
 		foreach (static::getServicePricesForServiceForUser($user, $service) as $value ) 
 			/* @var $servicePrice Service_Price */
 		{
-			if ( NULL !== $servicePrice )
-			{
-				if ( $servicePrice->price <= $value->price )
-				{
+			if (NULL !== $servicePrice) {
+				if ($servicePrice->price <= $value->price) {
 					continue;
 				}
 			}
@@ -1400,28 +1382,25 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *  @param Art_Model_User	$user
 	 *	@return Art_Model_Address
 	 */
-	static function getCompanyAddress ( $user )
-	{
-		if ( NULL == $user || !$user->isLoaded() )
-		{
+	static function getCompanyAddress ($user) {
+		if (NULL == $user || !$user->isLoaded()) {
 			return null;
 		}
 		
 		$user = static::getCompanyRepresentant($user);
 		
-		if ( NULL == $user || !$user->isLoaded() )
-		{
+		if (NULL == $user || !$user->isLoaded()) {
 			return null;
 		}
 		
-		$address = Art_Model_Address::fetchAll(array('id_user'=>$user->id,'id_address_type'=>Art_Model_Address_Type::getCompanyId()));
+		$address = Art_Model_Address::fetchAll(array(
+			'id_user' => $user->id,
+			'id_address_type' => Art_Model_Address_Type::getCompanyId()
+		));
 
-		if ( !empty($address) )
-		{
+		if (!empty($address)) {
 			$address = $address[0];
-		}
-		else 
-		{
+		} else {
 			$address = null;	
 		}
 		
@@ -1633,12 +1612,11 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *	@param array of Service $services
 	 *	@return boolean
 	 */
-	static function sortServices( &$services )
-	{	
-		usort($services,'static::_sort');
+	static function sortServices(&$services) {
+		usort($services, 'static::_sort');
 	}
 	
-	function _sort($a, $b) { return $b->sort < $a->sort; }
+	static function _sort($a, $b) { return $b->sort < $a->sort; }
 	
 	/**
 	 *	Is service investment service

@@ -646,12 +646,13 @@ class Module_Service extends Art_Abstract_Module {
   		}
   	}
 	
-	function activateAction()
-	{
-		if( Art_Ajax::isRequestedBy(self::REQUEST_ACTIVATE_SERVICE_FOR_USER) )
-  		{
-  			$response = Art_Ajax::newResponse();			
+	function activateAction() {
+		if (Art_Ajax::isRequestedBy(self::REQUEST_ACTIVATE_SERVICE_FOR_USER)) {
+			  
+			$response = Art_Ajax::newResponse();
 			$data = Art_Ajax::getData();
+
+			// list($data['from_year'], $data['from_month'], $data['from_day']) = explode("-", $data['date_from']);
 
 			$user = new Art_Model_User(Art_Router::getId());
 			$service = new Service($data['id_service']);
@@ -663,24 +664,21 @@ class Module_Service extends Art_Abstract_Module {
 			$userService->activated_date = dateSQL(Helper_TBDev::getDate($data['from_day'], $data['from_month'], $data['from_year']));
 			$userService->save();
 			
-			if ( Helper_TBDev::INVESTMENT_TYPE == $service->type )
-			{
+			if (Helper_TBDev::INVESTMENT_TYPE == $service->type) {
 				$serviceInvestment = new Service_Investment_Value();
 				$serviceInvestment->setUser($user);
 				$serviceInvestment->interest = Helper_Default::getDefaultValue(Helper_TBDev::DEFAULT_INVESTMENT_INTEREST);
 				$serviceInvestment->month = $data['from_month'];
 				$serviceInvestment->year = $data['from_year'];
 				
-				if ( !(new Service_Investment_Value(array('id_user'=>$user->id,'month'=>$data['from_month'],'year'=>$data['from_year'])))->isLoaded() )
-				{
+				if (!(new Service_Investment_Value(array('id_user'=>$user->id,'month'=>$data['from_month'],'year'=>$data['from_year'])))->isLoaded()) {
 					$serviceInvestment->save();
 				}
 				
 				$nextMonth = $data['from_month'] + 1;
 				$nextYear = $data['from_year'];
 				
-				if ( $nextMonth > 12 ) 
-				{
+				if ($nextMonth > 12) {
 					$nextMonth = 1;
 					$nextYear += 1;
 				}
@@ -691,8 +689,7 @@ class Module_Service extends Art_Abstract_Module {
 				$serviceInvestment->month = $nextMonth;
 				$serviceInvestment->year = $nextYear;
 				
-				if ( !(new Service_Investment_Value(array('id_user'=>$user->id,'month'=>$nextMonth,'year'=>$nextYear)))->isLoaded() )
-				{
+				if (!(new Service_Investment_Value(array('id_user'=>$user->id,'month'=>$nextMonth,'year'=>$nextYear)))->isLoaded()) {
 					$serviceInvestment->save();
 				}
 			}
@@ -700,9 +697,9 @@ class Module_Service extends Art_Abstract_Module {
 			$response->addMessage(__('module_service_activate_success'));
 			$response->willRedirect();		
 			$response->execute();
-  		}
-  		else
-  		{
+
+  		} else {
+
 			$this->view->days = Helper_TBDev::getDayRange();
 			$this->view->months = Helper_TBDev::getMonthRange();
 			$this->view->years = Helper_TBDev::getServiceYearRange();
@@ -771,31 +768,34 @@ class Module_Service extends Art_Abstract_Module {
 		}
 	}
 	
-	function activaterequestAction()
-	{
-		if( Art_Ajax::isRequestedBy(self::REQUEST_ACTIVATE_REQUEST_FOR_USER) )
-  		{
-  			$response = Art_Ajax::newResponse();			
+	function activaterequestAction() {
+
+		if (Art_Ajax::isRequestedBy(self::REQUEST_ACTIVATE_REQUEST_FOR_USER)) 
+		{
+  			$response = Art_Ajax::newResponse();
 			$data = Art_Ajax::getData();
 
 			$separator = strpos(Art_Router::getId(), '-');	
 			
-			if ( false === $separator )
-			{
+			if (false === $separator) {
 				$this->showTo(Art_User::NO_ACCESS);
 			}
 			
-			$user = new Art_Model_User(substr(Art_Router::getId(),0,$separator+1));
-			$service = new Service(substr(Art_Router::getId(),$separator+1));
+			$user = new Art_Model_User(substr(Art_Router::getId(), 0, $separator + 1));
+			$service = new Service(substr(Art_Router::getId(), $separator + 1));
 			
-			$userRequest = new User_X_Request(array('id_user'=>$user->id,'id_service'=>$service->id,'accepted'=>'0'));
+			$userRequest = new User_X_Request(array(
+				'id_user' => $user->id,
+				'id_service' => $service->id,
+				'accepted' => '0')
+			);
 			
-			if( $userRequest->isLoaded() )
-  			{
-  				if( !$userRequest->isPrivileged() )
-  				{
+			if ($userRequest->isLoaded()) {
+  				if (!$userRequest->isPrivileged()) {
   					$this->allowTo(Art_User::NO_ACCESS);
-  				}
+				}
+				  
+				list($data['from_year'], $data['from_month'], $data['from_day']) = explode("-", $data['from_date']);
 				
 				$userService = new User_X_Service();
 				$userService->setUser($user);
@@ -805,27 +805,28 @@ class Module_Service extends Art_Abstract_Module {
 				$userService->save();
 				
 				$userRequest->accepted = 1;
-				$userRequest->accepted_date = dateSQL();
+				$userRequest->accepted_date = Helper_TBDev::getDate($data['from_day'], $data['from_month'], $data['from_year']);
 				$userRequest->save();
 				
-				if ( Helper_TBDev::INVESTMENT_TYPE == $service->type )
-				{
+				if (Helper_TBDev::INVESTMENT_TYPE == $service->type) {
 					$serviceInvestment = new Service_Investment_Value();
 					$serviceInvestment->setUser($user);
 					$serviceInvestment->interest = Helper_Default::getDefaultValue(Helper_TBDev::DEFAULT_INVESTMENT_INTEREST);
 					$serviceInvestment->month = $data['from_month'];
 					$serviceInvestment->year = $data['from_year'];
 
-					if ( !(new Service_Investment_Value(array('id_user'=>$user->id,'month'=>$data['from_month'],'year'=>$data['from_year'])))->isLoaded() )
-					{
+					if (!(new Service_Investment_Value(array(
+						'id_user' => $user->id,
+						'month' => $data['from_month'],
+						'year' => $data['from_year'])))->isLoaded()
+					) {
 						$serviceInvestment->save();
 					}
 
 					$nextMonth = $data['from_month'] + 1;
 					$nextYear = $data['from_year'];
 
-					if ( $nextMonth > 12 ) 
-					{
+					if ($nextMonth > 12) {
 						$nextMonth = 1;
 						$nextYear += 1;
 					}
@@ -836,41 +837,42 @@ class Module_Service extends Art_Abstract_Module {
 					$serviceInvestment->month = $nextMonth;
 					$serviceInvestment->year = $nextYear;
 
-					if ( !(new Service_Investment_Value(array('id_user'=>$user->id,'month'=>$nextMonth,'year'=>$nextYear)))->isLoaded() )
-					{
+					if (!(new Service_Investment_Value(array(
+						'id_user' => $user->id,
+						'month' => $nextMonth,
+						'year' => $nextYear)))->isLoaded()
+					) {
 						$serviceInvestment->save();
 					}
 				}
 				
 				$response->addMessage(__('module_service_request_complete_success'));
 				$response->willRedirect();	
-			}
-  			else
- 			{
+
+			} else {
 				$response->addAlert(__('module_service_request_complete_not_found'));
   			}
 			
 			$response->execute();
-  		}
-  		else
-  		{
-			$this->view->days = Helper_TBDev::getDayRange();
-			$this->view->months = Helper_TBDev::getMonthRange();
-			$this->view->years = Helper_TBDev::getServiceYearRange();
+
+  		} else {
+
+			// $this->view->days = Helper_TBDev::getDayRange();
+			// $this->view->months = Helper_TBDev::getMonthRange();
+			// $this->view->years = Helper_TBDev::getServiceYearRange();
 			
-			$this->view->currentDay = Helper_TBDev::getCurrentDay();
-			$this->view->currentMonth = Helper_TBDev::getCurrentMonth();
-			$this->view->currentYear = Helper_TBDev::getCurrentYear();
+			// $this->view->currentDay = Helper_TBDev::getCurrentDay();
+			// $this->view->currentMonth = Helper_TBDev::getCurrentMonth();
+			// $this->view->currentYear = Helper_TBDev::getCurrentYear();
 			
 			$separator = strpos(Art_Router::getId(), '-');
 
-			if ( false === $separator )
-			{
+			if (false === $separator) {
 				$this->showTo(Art_User::NO_ACCESS);
 			}
 			
-			$user = new Art_Model_User(substr(Art_Router::getId(),0,$separator+1));
-			$service = new Service(substr(Art_Router::getId(),$separator+1));
+			$user = new Art_Model_User(substr(Art_Router::getId(), 0, $separator + 1));
+			$service = new Service(substr(Art_Router::getId(), $separator + 1));
 			
 			$this->view->user = $user;
 			$this->view->service = $service;

@@ -31,7 +31,9 @@
  */
 class Art_Model_User extends Art_Abstract_Model_DB {
 	
-    protected static $_table = 'user';
+	protected static $_table = 'user';
+	
+	protected static $_caching = false;
     
 	protected static $_foreign = array('id_currency');
 	

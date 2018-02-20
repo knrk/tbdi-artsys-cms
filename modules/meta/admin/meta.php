@@ -61,12 +61,11 @@ class Module_Meta extends Art_Abstract_Module {
 		else
 		{
 			$metas = Art_Model_Meta::fetchAllPrivileged();
-			$default = Art_Model_Meta::getDefaults();
-
-			foreach( $metas as $item )
-			{
-				if( $item->layer == Art_Router::LAYER_FRONTEND )
-				{
+			// $default = Art_Model_Meta::getDefaults();
+			$default = array();
+			
+			foreach ($metas as $item) {
+				if ($item->layer == Art_Router::LAYER_FRONTEND) {
 					unset($default[$item->key]);
 				}
 			}
@@ -179,14 +178,11 @@ class Module_Meta extends Art_Abstract_Module {
 			
 			$this->view->meta = $meta;
 			
-			$defaults = Art_Model_Meta::getDefaults();
-			
-			if( isset($defaults[$meta->key]) )
-			{
+			// $defaults = Art_Model_Meta::getDefaults();
+			$defaults = array();
+			if (isset($defaults[$meta->key])) {
 				$this->view->default = $defaults[$meta->key];
-			}
-			else
-			{
+			} else {
 				$this->view->default = null;
 			}
 			

@@ -30,6 +30,8 @@
  *	@method		\Art_Model_Address	setUser( Art_Model_User $user )
  */
 class Art_Model_Address extends Art_Abstract_Model_DB {
+
+	protected static $_caching = false;
 	
     protected static $_table = 'address';
     

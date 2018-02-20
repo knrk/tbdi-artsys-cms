@@ -17,6 +17,8 @@
  *	@method this		setService(Service $service)
  */
 class Service_Price extends Art_Abstract_Model_DB {
+
+	// protected static $_caching = false;
     
     protected static $_table = 'service_price';
         

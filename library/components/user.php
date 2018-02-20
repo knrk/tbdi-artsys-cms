@@ -287,7 +287,7 @@ final class Art_User extends Art_Abstract_Component {
     protected static function _refreshLogTag()
     {
         //Refresh log_tag
-        $login_expire = time() + Art_Register::in('user')->get('login_expire');
+        $login_expire = time() + AUTH_EXPIRE;
 		self::$_login->login_expire = $login_expire;
 		self::$_login->save();
 
@@ -322,7 +322,7 @@ final class Art_User extends Art_Abstract_Component {
 		
 		//Generate log_tag
 		$log_tag = self::generateLogTag();
-		$login_expire = time() + Art_Register::in('user')->get('login_expire');
+		$login_expire = time() + AUTH_EXPIRE;
 		
 		//Create login
 		$login = new Art_Model_Login();
@@ -372,9 +372,8 @@ final class Art_User extends Art_Abstract_Component {
      *  @static
      *  @return int user_number
      */
-    static function generateUserNumber($id_user)
-    {
-		return Art_Register::in('user')->get('user_number_start') + ($id_user)*2;
+    static function generateUserNumber($id_user) {
+		return AUTH_USER + ($id_user) * 2;
     }
 	
     

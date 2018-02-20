@@ -77,13 +77,13 @@
 			<td>
 				<?= $value->note ?>
 				<div class="inline-actions">
-					<a href="<?= $this->deposit_edit.$value->id ?>"><button><i class="fa fa-pencil"></i></button></a>
+					<a href="<?= $this->deposit_edit.$value->id ?>"><i class="fa fa-pencil"></i></a>
 					<button <?= $this->delete_single_request->getHTML(array('id'=>$value->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
 					<?php if ($value->terminable) : ?>
 						<button <?= $this->terminate_single_request->getHTML(array('id' => $value->id)) ?> title="<?= __('terminate') ?>"><i class="fa fa-ban"></i></button>
 					<?php endif; ?>
 					<?php if ($value->premature_terminable) : ?>
-						<a href="<?= $this->premature_terminate_edit.$value->id ?>"><button title="<?= __('premature_terminate') ?>"><i class="fa fa-ban red"></i></button></a>
+						<a href="<?= $this->premature_terminate_edit.$value->id ?>" title="<?= __('premature_terminate') ?>"><i class="fa fa-ban red"></i></a>
 					<?php endif; ?>
 				</div>
 			</td>

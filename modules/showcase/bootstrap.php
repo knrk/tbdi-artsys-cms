@@ -1,6 +1,5 @@
 <?php
 /**
- *  @author Jakub Pastuszek <pastuszek@itart.cz>
  *  @package modules/service
  */
 class Module_Bootstrap_Showcase extends Art_Abstract_Module_Bootstrap {

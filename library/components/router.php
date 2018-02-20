@@ -337,17 +337,39 @@ final class Art_Router extends Art_Abstract_Component {
 	 *	@static
 	 *	@return void
 	 */
-	static protected function _addDefaultRoutes()
-	{
-		// Default routes - - - - 
-		self::addRoute('default_route_section_action_id', '/$1/$2/$3', ['section'=>'$1','action'=>'$2','id'=>'$3']);
-		self::addRoute('default_route_section_action', '/$1/$2', ['section'=>'$1','action'=>'$2']);
-		self::addRoute('default_route_section', '/$1', ['section'=>'$1']);
-		self::addRoute('default_route', '/', ['section'=>Art_Register::in('module')->get('module_default'), 'action'=>Art_Register::in('module')->get('action_default')]);
-		self::addRoute('default_route_backend_section_action_id', '/'.self::LAYER_BACKEND.'/$1/$2/$3', ['layer'=>self::LAYER_BACKEND,'section'=>'$1','action'=>'$2','id'=>'$3']);
-		self::addRoute('default_route_backend_section_action', '/'.self::LAYER_BACKEND.'/$1/$2', ['layer'=>self::LAYER_BACKEND,'section'=>'$1','action'=>'$2']);
-		self::addRoute('default_route_backend-section', '/'.self::LAYER_BACKEND.'/$1', ['layer'=>self::LAYER_BACKEND,'section'=>'$1']);
-		self::addRoute('default_route_backend', '/'.self::LAYER_BACKEND, ['layer'=>self::LAYER_BACKEND,'section'=>'admin']);
+	static protected function _addDefaultRoutes() {
+		self::addRoute('default_route_section_action_id', '/$1/$2/$3', [
+			'section' => '$1', 'action' => '$2', 'id' => '$3'
+		]);
+		self::addRoute('default_route_section_action', '/$1/$2', [
+			'section' => '$1', 'action'=>'$2'
+		]);
+		self::addRoute('default_route_section', '/$1', [
+			'section' => '$1'
+		]);
+		self::addRoute('default_route', '/', [
+			'section' => DEFAULT_MODULE, 
+			'action' => DEFAULT_ACTION
+		]);
+		self::addRoute('default_route_backend_section_action_id', '/'.self::LAYER_BACKEND.'/$1/$2/$3', [
+			'layer' => self::LAYER_BACKEND,
+			'section' => '$1',
+			'action' => '$2',
+			'id' => '$3'
+		]);
+		self::addRoute('default_route_backend_section_action', '/'.self::LAYER_BACKEND.'/$1/$2', [
+			'layer' => self::LAYER_BACKEND,
+			'section' => '$1',
+			'action' => '$2'
+		]);
+		self::addRoute('default_route_backend-section', '/'.self::LAYER_BACKEND.'/$1', [
+			'layer' => self::LAYER_BACKEND,
+			'section' => '$1'
+		]);
+		self::addRoute('default_route_backend', '/'.self::LAYER_BACKEND, [
+			'layer' => self::LAYER_BACKEND,
+			'section' => 'admin'
+		]);
 		
 		self::$_defaultRoutesAdded = true;
 	}
@@ -495,6 +517,23 @@ final class Art_Router extends Art_Abstract_Component {
 	{
 		self::$_routes[$name] = new Art_Model_Route($name, $url_mask, $output_mask, $domain);
 	}
+
+	static function getLayerAccess($access) {
+		switch ($access) {
+			case 'admin':
+				return 50;
+				break;
+			case 'cabinet':
+				return 2;
+				break;
+			case 'public':
+				return 0;
+				break;
+			default:
+				return Art_User::NO_ACCESS;
+				break;
+		}
+	}
 	
 	
 	/**
@@ -507,7 +546,8 @@ final class Art_Router extends Art_Abstract_Component {
 		$access = false;
 		
 		//Get current layer rights - if not set, layer has no access
-		$rights = Art_Register::in('layer_rights')->get(self::getLayer(), Art_User::NO_ACCESS);
+		// $rights = Art_Register::in('layer_rights')->get(self::getLayer(), Art_User::NO_ACCESS);
+		$rights = self::getLayerAccess(self::getLayer());
 		
 		if (Art_User::hasPrivileges($rights)) {
 			$access = true;

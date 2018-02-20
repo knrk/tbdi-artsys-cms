@@ -263,7 +263,7 @@ class Module_Service extends Art_Abstract_Module {
 			Helper_Email::sendManServiceInterestedMail($user,$service);
 			
 			$response = Art_Ajax::newResponse();
-			$response->addMessage(__('module_service_promo_interested_to_join_successful_send'));
+			$response->addMessage(__('module_service_promo_interested_to_join_success'));
 			
 			$response->addVariable('content', Art_Module::createAndRenderModule('service','promo'));
 			
