@@ -17,6 +17,8 @@
  *	@method this					setModuleType( Art_Model_Module_Type $module_type )
  */
 class Art_Model_User_Group_X_Module_Type extends Art_Abstract_Model_DB {
+
+    // protected static $_caching = false;
 	
     protected static $_table = 'user_group_x_module_type';
     

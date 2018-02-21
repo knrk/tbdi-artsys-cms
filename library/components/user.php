@@ -113,9 +113,7 @@ final class Art_User extends Art_Abstract_Component {
      *  @static
      *  @return int Rights of user (0 - 100)
      */
-    static function getRights()
-    {
-		// print_r(self::$_instance);
+    static function getRights() {
         return self::$_instance->getRights();
     }
 	

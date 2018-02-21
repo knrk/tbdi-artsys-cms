@@ -79,8 +79,7 @@ final class Art_Mail extends Art_Abstract_Component {
 	 *	@param string $mail_type [optional]
      *  @return Art_PHPMAILER Mail instance
      */
-    static function newMail($mail_type = '')
-    {
+    static function newMail($mail_type = '') {
 		//Lazy init
 		static::init();
 		
@@ -90,15 +89,13 @@ final class Art_Mail extends Art_Abstract_Component {
         $mail->isSMTP();
         
         //Set logins from configuration file
-		if( Art_Register::hasNamespace('mail') )
-		{
-			$register = Art_Register::in('mail');
-			$mail->Host = $register->get('host');
-			$mail->Username = $register->get('username');
-			$mail->Password = $register->get('password');
-			$mail->SMTPAuth = $register->get('smtp_auth') == 1;
-			$mail->SMTPSecure = $register->get('smtp_secure');
-			$mail->Port = $register->get('smtp_port');
+		if (MAIL) {
+			$mail->Host = MAIL_HOSTNAME;
+			$mail->Username = MAIL_USER;
+			$mail->Password = MAIL_PASS;
+			$mail->SMTPAuth = MAIL_SMTP_AUTH;
+			$mail->SMTPSecure = MAIL_SMTPS;
+			$mail->Port = MAIL_SMTP_PORT;
 			$mail->SMTPDebug = $register->get('debug');
 			$mail->SMTPOptions = array(
 				'ssl' => array(
@@ -114,14 +111,12 @@ final class Art_Mail extends Art_Abstract_Component {
 		}
 		
         //If global FROM sender is set, use it
-        if(self::$_fromMail || self::$_fromName)
-        {
-            $mail->setFrom(self::$_fromMail,self::$_fromName);    
+        if (self::$_fromMail || self::$_fromName) {
+            $mail->setFrom(self::$_fromMail, self::$_fromName);    
         }
         //Else use FROM sender from configuration file
-        elseif( Art_Register::hasNamespace('mail') )
-        {
-            $mail->setFrom(Art_Register::in('mail')->get('from_mail'), Art_Register::in('mail')->get('from_name'));
+        else {
+            $mail->setFrom(MAIL_FROM, MAIL_FROM_NAME);
         }
         
         $mail->Debugoutput = '';

@@ -85,17 +85,12 @@ class Module_Emailtemplate extends Art_Abstract_Module {
 			$this->view->request = $request;
 			
 			
-			if( Art_Register::hasNamespace('mail') )
-			{
-				$register = Art_Register::in('mail');
-				
-				$this->view->from_name = $register->get('from_name');
-				$this->view->from_mail = $register->get('from_mail');
-				$this->view->reply_to_name = $register->get('reply_to_name');
-				$this->view->reply_to_mail = $register->get('reply_to_mail');
-			}
-			else
-			{
+			if (!empty(MAIL_FROM) || !empty(MAIL_FROM_NAME) || !empty(REPLY_TO) || !empty(REPLY_TO_NAME)) {
+				$this->view->from_name = MAIL_FROM_NAME;
+				$this->view->from_mail = MAIL_FROM;
+				$this->view->reply_to_name = MAIL_REPLY_NAME;
+				$this->view->reply_to_mail = MAIL_REPLY_TO;
+			} else {
 				$this->view->from_name = '';
 				$this->view->from_mail = '';
 				$this->view->reply_to_name = '';

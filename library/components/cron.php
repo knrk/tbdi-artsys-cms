@@ -81,32 +81,25 @@ final class Art_Cron extends Art_Abstract_Component {
 					}
 				});
 				
-				//Get all cron names from config
-				$crons = Art_Register::in('cron')->get();
 				$is_cron = false;
 				//For each cron
-				foreach( $crons AS $name => $guid )
-				{
-					if( $uri_guid == $guid )
-					{
-						$cron_data = array('guid' => $guid, 'name' => $name);
-								
+				foreach (CRON_TASKS as $name => $guid) {
+					if ($uri_guid == $guid) {
+						$cron_data = array('guid' => $guid, 'name' => $name);								
 						$is_cron = true;
+
 						Art_Main::startExecTime('cron_'.$name);
 						Art_Event::trigger(Art_Event::CRON, $cron_data);
 						Art_Event::trigger('cron_'.$name, $cron_data);
+
 						echo('Cron '.$name.' successfully run: '.Art_Main::getExecTime('cron_'.$name,2).'ms'."\n");
 					}
 				}
 				
 				//If cron was triggered
-				if( $is_cron )
-				{
+				if ($is_cron) {
 					exit();
-				}
-				//If no cron job was found
-				else
-				{
+				} else {
 					http_response_code(400);
 					exit('Unknown cron id');
 				}

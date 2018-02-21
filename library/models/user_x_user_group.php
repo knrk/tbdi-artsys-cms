@@ -1,6 +1,5 @@
 <?php
 /**
- *  @author Robin Zoň <zon@itart.cz>
  *  @package library/models
  * 
  *	@property int		$id
@@ -13,6 +12,8 @@
  *	@method this						setGroup( Art_Model_User_Group $user_group )
  */
 class Art_Model_User_X_User_Group extends Art_Abstract_Model_DB {
+
+	// protected static $_caching = false;
 	
     protected static $_table = 'user_x_user_group';
     
@@ -22,7 +23,7 @@ class Art_Model_User_X_User_Group extends Art_Abstract_Model_DB {
 	
 	protected static $_dependencies = array('user', 'group');
 	
-    protected static $_cols = array('id'				=>	array('select','insert'),
+    protected static $_cols = array('id'			=>	array('select','insert'),
                                     'id_user'		=>	array('select','insert'),
                                     'id_user_group'	=>	array('select','insert'),
 									'created_by'	=>	array('select','insert'),

@@ -31,9 +31,9 @@
  */
 class Art_Model_User extends Art_Abstract_Model_DB {
 	
-	protected static $_table = 'user';
+	// protected static $_caching = false;
 	
-	protected static $_caching = false;
+	protected static $_table = 'user';
     
 	protected static $_foreign = array('id_currency');
 	
@@ -86,20 +86,13 @@ class Art_Model_User extends Art_Abstract_Model_DB {
      *  @return bool True if user has privileges
      *  @example User::hasPrivileges({testModule})
      */
-    function hasPrivileges($object)
-    {
-        if( is_numeric($object) )
-        {
+    function hasPrivileges($object) {
+        if (is_numeric($object)) {
             return $this->getRights() >= $object;
-        }
-        else
-        {
-            if( method_exists($object,'getRights') )
-            {
+		} else {
+            if (method_exists($object, 'getRights')) {
                 return $this->getRights() >= $object->getRights();
-            }
-            else
-            {
+            } else {
                 trigger_error('Object '.var_dump_str($object).' has no ->getRights() method',E_USER_ERROR);
                 return false;
             }
@@ -162,7 +155,7 @@ class Art_Model_User extends Art_Abstract_Model_DB {
 		
 		//Get user groups
 		$user_groups = $this->getGroups();
-		
+				
 		//For each group
 		foreach($user_groups AS $user_group)
 		{			

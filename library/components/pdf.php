@@ -64,8 +64,8 @@ final class Art_PDF extends Art_Abstract_Component {
         $pdf = new Art_TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
         
         //Set author and creator from configuration file
-        $pdf->SetCreator(Art_Register::in('pdf')->get('creator'));
-        $pdf->SetAuthor(Art_Register::in('pdf')->get('author'));
+        $pdf->SetCreator(PDF_META_CREATOR);
+        $pdf->SetAuthor(PDF_META_AUTHOR);
         
         //Set default monospaced font
         $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);

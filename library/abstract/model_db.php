@@ -1,6 +1,5 @@
 <?php
 /**
- *  @author Robin Zoň <zon@itart.cz>
  *  @package library/abstract
  *	@abstract
  */
@@ -362,34 +361,28 @@ abstract class Art_Abstract_Model_DB implements JsonSerializable {
 	 *	@final
 	 *	@return int
 	 */
-	final function getRights()
-	{
-		if( isset($this->rights) )
-		{
+	final function getRights() {
+
+		if (isset($this->rights)) {
 			return $this->rights;
 		}
-		elseif( isset(static::$_link['rights']) )
-		{
+		elseif (isset(static::$_link['rights'])) {
 			return $this->getLinkedInstance('rights')->value;
 		}
-		elseif( isset(static::$_fetch['rights']) )
-		{
+		elseif (isset(static::$_fetch['rights'])) {
 			return $this->getFetchedInstances('rights');
 		}
-		elseif( $this instanceof Art_Model_User )
-		{
-			if( NULL === $this->_rights_cache )
-			{
+		elseif ($this instanceof Art_Model_User) {
+			if (NULL === $this->_rights_cache) {
 				$groups = $this->getGroups();
 
 				$max_rights = Art_User::NONREGISTERED;
-				foreach( $groups AS $group ) /* @var $group Art_Model_User_X_User_Group */
-				{
+				// p($max_rights);
+				foreach ($groups as $group) /* @var $group Art_Model_User_X_User_Group */ {
 					$gr = $group->getGroup();
 					$rights = $gr->getRights(); /* @var $rights Art_Model_Rights */
 					
-					if( $rights > $max_rights )
-					{
+					if ($rights > $max_rights) {
 						$max_rights = $rights;
 					}
 				}
@@ -398,9 +391,7 @@ abstract class Art_Abstract_Model_DB implements JsonSerializable {
 			}
 			
 			return $this->_rights_cache;
-		}
-		else
-		{
+		} else {
 			return Art_User::NONREGISTERED;
 		}
 	}

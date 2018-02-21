@@ -546,7 +546,6 @@ final class Art_Router extends Art_Abstract_Component {
 		$access = false;
 		
 		//Get current layer rights - if not set, layer has no access
-		// $rights = Art_Register::in('layer_rights')->get(self::getLayer(), Art_User::NO_ACCESS);
 		$rights = self::getLayerAccess(self::getLayer());
 		
 		if (Art_User::hasPrivileges($rights)) {

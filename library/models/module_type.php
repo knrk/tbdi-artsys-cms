@@ -8,6 +8,8 @@
  *	@property stdClass	$settings		Object stored as JSON
  */
 class Art_Model_Module_Type extends Art_Abstract_Model_DB {
+
+	// protected static $_caching = false;
 	    
     protected static $_table = 'module_type';
 	

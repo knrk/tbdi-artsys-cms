@@ -196,7 +196,7 @@ class Module_Contact extends Art_Abstract_Module {
 		}
 		else
 		{
-			$mail->addAddress(Art_Register::in('mail')->get('contact'));	
+			$mail->addAddress(MAIL_CONTACT_DEFAULT);	
 		}
 
 		$mail->send();

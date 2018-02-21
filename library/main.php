@@ -177,11 +177,6 @@ final class Art_Main {
 											'exceptions.js', 'library-old.js', 'includes_last.js');
 	
 	/**
-	 *	Browser incompatible script path
-	 */
-	const BROWSER_INCOMPATIBLE_SCRIPT_PATH = 'scripts/browser_incompatible.js';
-	
-	/**
 	 *	Minimal IE version required to run this site
 	 */
 	const MINIMAL_IE_VERSION = 9;

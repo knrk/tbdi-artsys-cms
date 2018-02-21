@@ -1705,22 +1705,16 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *	@return int	Most right win - 1, null, 0 => 4
 	 *							   - 1, null, null => 1
 	 */
-	static function getSortBy ( )
-	{
+	static function getSortBy () {
 		$i = 0;
 		$sort = -1;
 		
-		foreach (func_get_args() as $value)
-		{
-			if ( NULL !== $value )
-			{
-				if ( 0 == $value )
-				{
+		foreach (func_get_args() as $value) {
+			if (NULL !== $value) {
+				if (0 == $value) {
 					$sort = $i;
-				}
-				else
-				{
-					$sort = $i+1;
+				} else {
+					$sort = $i + 1;
 				}
 			}
 			

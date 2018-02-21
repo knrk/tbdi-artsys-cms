@@ -11,10 +11,11 @@
 	
 	</div>
 </div> -->
-
+<?php if ($this->count > 10) : ?>
 <div class="filter-container">
 	<?= Art_Widget::render('filter', 'embeddCompany') ?>
 </div>
+<?php endif; ?>
 	
 <?php if (!empty($this->usersData)) : ?>	
 	<table class="table-default table-list">

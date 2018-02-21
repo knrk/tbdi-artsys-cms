@@ -9,6 +9,8 @@
  *	@property int		$system	If 1, this record should not be edited
  */
 class Art_Model_Rights extends Art_Abstract_Model_DB {
+
+	// protected static $_caching = false;
     
 	/**
 	 *	Fetch all not higher cache

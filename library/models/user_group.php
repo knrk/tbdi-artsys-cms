@@ -1,6 +1,5 @@
 <?php
 /**
- *  @author Robin Zoň <zon@itart.cz>
  *  @package library/models
  * 
  *	@property int		$id
@@ -16,6 +15,8 @@
  *	@method this					removeFromGroupUser(Art_Model_User_X_User_Group $user_x_user_group)
  */
 class Art_Model_User_Group extends Art_Abstract_Model_DB {
+
+	// protected static $_caching = false;
 	
     protected static $_table = 'user_group';
     

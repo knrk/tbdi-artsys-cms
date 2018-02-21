@@ -53,7 +53,7 @@ class Module_Login extends Art_Abstract_Module {
 							$login = new Art_Model_Login();
 							$login->id_user = $user->id;
 							$login->log_tag = Art_User::generateLogTag();
-							$login->login_expire = time() + Art_Register::in('user')->get("login_expire");
+							$login->login_expire = time() + AUTH_EXPIRE;
 							$login->login_date = dateSQL();
 							$login->ip = Art_Server::getIp();
 

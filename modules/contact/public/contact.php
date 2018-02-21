@@ -190,13 +190,10 @@ class Module_Contact extends Art_Abstract_Module {
 		$mail->Subject = $subject;
 		$mail->Body = $body;
 		$mail->addReplyTo($from_email);
-		if( !empty($this->getSettings()->mail_to) )
-		{
+		if (!empty($this->getSettings()->mail_to)) {
 			$mail->addAddress($this->getSettings()->mail_to);	
-		}
-		else
-		{
-			$mail->addAddress(Art_Register::in('mail')->get('contact'));	
+		} else {
+			$mail->addAddress(MAIL_CONTACT_DEFAULT);	
 		}
 
 		$mail->send();

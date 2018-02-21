@@ -295,8 +295,7 @@ final class Art_Template extends Art_Abstract_Component {
 		{
 			trigger_error('Invalid value supplied for Main::setTemplate()',E_USER_ERROR);
 		}
-	}
-	
+	}	
 	
     /**
      *  Initialize the component
@@ -304,26 +303,18 @@ final class Art_Template extends Art_Abstract_Component {
      *  @static
      *  @return void
      */
-    static function init()
-    {   
-        if(parent::init())
-        {
+    static function init() {
+        if (parent::init()) {
 			//If is AJAX - render raw template only
-			if(Art_Server::isAjax())
-			{
-				self::setTemplate(Art_Register::in('appearance')->get('ajax_template_name'), Art_Register::in('appearance')->get('ajax_template_folder'));
-			}
-			else
-			{				
+			if (Art_Server::isAjax()) {
+				self::setTemplate(TEMPLATE_NAME_AJAX, TEMPLATE_DIR_AJAX);
+			} else {				
 				//Load template from config
 				$layer = Art_Router::getLayer();
-				if( Art_Register::in('appearance')->has($layer.'_template_name') && Art_Register::in('appearance')->has($layer.'_template_folder') )
-				{
-					self::setTemplate(Art_Register::in('appearance')->get($layer.'_template_name'), Art_Register::in('appearance')->get($layer.'_template_folder'));
-				}
-				else
-				{
-					trigger_error('Can\'t load template: missing '.$layer.'_template_name and/or '.$layer.'_template_folder in config file', E_USER_ERROR);
+				if (constant('TEMPLATE_NAME_' . $layer) && constant('TEMPLATE_DIR_' . $layer)) {
+					self::setTemplate(constant('TEMPLATE_NAME_' . $layer), constant('TEMPLATE_DIR_' . $layer));
+				} else {
+					trigger_error(sprintf("Can't load template: missing %s_template_name and/or %s_template_folder in config file", $layer), E_USER_ERROR);
 				}
 				
 				//Get meta from DB
@@ -624,9 +615,6 @@ final class Art_Template extends Art_Abstract_Component {
 	static function renderJS( $files = NULL )
 	{
 		$output = "\n";		
-
-		//Render browser_incompatible first
-		$output .= "\n\t".'<!--[if lt IE '.Art_Main::MINIMAL_IE_VERSION.']><script type="text/javascript" src="/'.Art_Main::BROWSER_INCOMPATIBLE_SCRIPT_PATH.'"></script><![endif]-->'."\n";
 		
 		//Include files if set
 		if( NULL !== $files )
