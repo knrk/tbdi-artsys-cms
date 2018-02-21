@@ -12,8 +12,8 @@
 		<col class="w20">
 		<col class="w25">
 		<col class="w15">
-		<col class="w10">
-		<col class="w10">
+		<!-- <col class="w10">
+		<col class="w10"> -->
 		<col class="w15">
 	</colgroup>
 	<tr>
@@ -28,8 +28,8 @@
 			<?= __('phone_number') ?>
 		</th>
 		<th><?= __('service') ?></th>
-		<th><?= __('price') ?></th>
-		<th><?= __('interval') ?></th>
+		<!-- <th><?= __('price') ?></th>
+		<th><?= __('interval') ?></th> -->
 		<th><?= __('from') ?></th>
 	</tr>
 	<?php foreach ($this->userRequests as $value) : /* @var $value User_X_Request */ ?>
@@ -45,8 +45,8 @@
 				<div><?= $value->userPhone ?></div>
 			</td>
 			<td><?= $value->service->name ?></td>
-			<td><?= $value->servicePrice->price ?></td>
-			<td><?= $value->servicePrice->time_interval ?></td>
+			<!-- <td><?= $value->servicePrice->price ?></td>
+			<td><?= $value->servicePrice->time_interval ?></td> -->
 			<td>
 				<?= nice_date($value->created_date) ?>
 				<div class="inline-actions">

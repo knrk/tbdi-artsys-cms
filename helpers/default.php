@@ -423,8 +423,8 @@ class Helper_Default extends Art_Abstract_Helper {
 	 *	@param string $variable
 	 *	@return 
 	 */
-	static function renderSortUpDown($sortBy, $variable, $insert = '')
-	{
+	static function renderSortUpDown($sortBy, $variable, $insert = '') {
+		// p($sortBy);
 		$up = static::$_indexSortBy + 1;
 		$down = static::$_indexSortBy;
 		static::$_indexSortBy += 2;

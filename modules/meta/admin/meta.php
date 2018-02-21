@@ -13,8 +13,7 @@ class Module_Meta extends Art_Abstract_Module {
 	
 	const EDITABLE_META_LAYER = 'public';
 	
-	function indexAction() 
-	{		
+	function indexAction() {		
 		$this->view->metas = Art_Model_Meta::fetchAll(array('layer' => self::EDITABLE_META_LAYER));
 
 		$delete_request = Art_Ajax::newRequest(self::REQUEST_DELETE);
@@ -133,28 +132,28 @@ class Module_Meta extends Art_Abstract_Module {
 	}
 	
 	
-	function editAction()
-	{
-		if(Art_Ajax::isRequestedBy(self::REQUEST_EDIT))
-		{
+	function editAction() {
+		if (Art_Ajax::isRequestedBy(self::REQUEST_EDIT)) {
+			
 			$response = Art_Ajax::newResponse();
 			$data = Art_Ajax::getData();
 			
 			$meta = new Art_Model_Meta(Art_Router::getId());
 			
-			if ( !$meta->isLoaded() )
-			{
+			if (!$meta->isLoaded()) {
 				$response->addAlert(__('alert_deleted_when_edit'));
 			}
 			
 			$fields = Art_Model_Meta::getCols('update');
 			
 			$sql_data = Helper_Default::getValidatedSQLData($fields, self::getFieldsValidators(), $data, $response);
+
+			p($sql_data);
 			
 			//Everything is valid
-			if( $response->isValid() )
-			{
+			if ($response->isValid()) {
 				$meta->setDataFromArray($sql_data);
+				p($response);
 				$meta->save();
 				
 				$response->addMessage(__('module_meta_edit_succ'));
@@ -162,29 +161,27 @@ class Module_Meta extends Art_Abstract_Module {
 			}
 			
 			$response->execute();
-		}
-		else
-		{
+
+		} else {
+			
 			$meta = new Art_Model_Meta(Art_Router::getId());
 			
-			if( !$meta->isLoaded() )
-			{
+			if (!$meta->isLoaded()) {
 				$this->showTo(Art_User::NO_ACCESS);
 			}
-			else if( !$meta->isPrivileged() )
-			{
+			elseif (!$meta->isPrivileged()) {
 				$this->allowTo(Art_User::NO_ACCESS);
 			}
 			
 			$this->view->meta = $meta;
 			
 			// $defaults = Art_Model_Meta::getDefaults();
-			$defaults = array();
-			if (isset($defaults[$meta->key])) {
-				$this->view->default = $defaults[$meta->key];
-			} else {
-				$this->view->default = null;
-			}
+			// $defaults = array();
+			// if (isset($defaults[$meta->key])) {
+			// 	$this->view->default = $defaults[$meta->key];
+			// } else {
+			// 	$this->view->default = null;
+			// }
 			
 			$request = Art_Ajax::newRequest(self::REQUEST_EDIT);
 			$request->setRedirect('/'.Art_Router::getLayer().'/meta');

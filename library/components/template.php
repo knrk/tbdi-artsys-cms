@@ -310,7 +310,7 @@ final class Art_Template extends Art_Abstract_Component {
 				self::setTemplate(TEMPLATE_NAME_AJAX, TEMPLATE_DIR_AJAX);
 			} else {				
 				//Load template from config
-				$layer = Art_Router::getLayer();
+				$layer = strtoupper(Art_Router::getLayer());
 				if (constant('TEMPLATE_NAME_' . $layer) && constant('TEMPLATE_DIR_' . $layer)) {
 					self::setTemplate(constant('TEMPLATE_NAME_' . $layer), constant('TEMPLATE_DIR_' . $layer));
 				} else {

@@ -828,15 +828,12 @@ class Helper_TBDev extends Art_Abstract_Helper {
 
 		if ($user->isLoaded() && NULL !== $service) {	
 			//Fetch all User Groups of which the User belongs
-			foreach (Art_Model_User_X_User_Group::fetchAllPrivileged(array('id_user' => $user->id)) as $userUserGroup )
-				/* @var $userUserGroup Art_Model_User_X_User_Group */
-				{
+			foreach (Art_Model_User_X_User_Group::fetchAllPrivileged(array('id_user' => $user->id)) as $userUserGroup ) /* @var $userUserGroup Art_Model_User_X_User_Group */ {
 				//Fetch all Service Prices of which the User Group belongs
 				foreach (User_Group_X_Service_Price::fetchAllPrivileged(array('id_user_group'=>$userUserGroup->id_user_group)) as $userGroupServicePrice)
 					/* @var $userGroupServicePrice User_Group_X_Service_Price */
 				{
 					$servicePrice = $userGroupServicePrice->getServicePrice();
-					// p($servicePrice);
 					if ($servicePrice->id_service == $service->id) {
 						$servicePrice->id_user_group_x_service_price = $userGroupServicePrice->id;
 						if (!in_array($servicePrice, $servicePrices)) {
@@ -887,7 +884,7 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *	@param Service			$service
 	 *	@return Service_Price
 	 */		
-	static function getMinimalServicePriceForServiceForUser ($user, $service){	
+	static function getMinimalServicePriceForServiceForUser ($user, $service) {	
 		$servicePrice = null;
 
 		foreach (static::getServicePricesForServiceForUser($user, $service) as $value ) 
@@ -1709,7 +1706,7 @@ class Helper_TBDev extends Art_Abstract_Helper {
 		$i = 0;
 		$sort = -1;
 		
-		foreach (func_get_args() as $value) {
+		foreach (func_get_args() as $k => $value) {
 			if (NULL !== $value) {
 				if (0 == $value) {
 					$sort = $i;
@@ -1719,6 +1716,8 @@ class Helper_TBDev extends Art_Abstract_Helper {
 			}
 			
 			$i += 2;
+
+			// p($i);
 		}
 
 		return $sort;
@@ -1739,25 +1738,25 @@ class Helper_TBDev extends Art_Abstract_Helper {
 		return $array;
 	}
 
-	function _id($a, $b) { return $a->user_number > $b->user_number; }
-	function _idR($a, $b) { return $b->user_number > $a->user_number; }
-	function _firstname($a, $b) { return strcasecmp($a->name, $b->name); }
-	function _firstnameR($a, $b) { return strcasecmp($b->name, $a->name); }
-	function _surname($a, $b) { return strcasecmp($a->surname, $b->surname); }
-	function _surnameR($a, $b) { return strcasecmp($b->surname, $a->surname); }
-	function _company_name($a, $b) { return strcasecmp($a->company_name, $b->company_name); }
-	function _company_nameR($a, $b) { return strcasecmp($b->company_name, $a->company_name); }
-	function _membership_from($a, $b) { return strtotime($a->membership_from) > strtotime($b->membership_from); }
-	function _membership_fromR($a, $b) { return strtotime($b->membership_from) > strtotime($a->membership_from); }
-	function _membership_to($a, $b) { return strtotime($a->membership_to) > strtotime($b->membership_to); }
-	function _membership_toR($a, $b) { return strtotime($b->membership_to) > strtotime($a->membership_to); }
+	static function _id($a, $b) { return $a->user_number > $b->user_number; }
+	static function _idR($a, $b) { return $b->user_number > $a->user_number; }
+	static function _firstname($a, $b) { return strcasecmp($a->name, $b->name); }
+	static function _firstnameR($a, $b) { return strcasecmp($b->name, $a->name); }
+	static function _surname($a, $b) { return strcasecmp($a->surname, $b->surname); }
+	static function _surnameR($a, $b) { return strcasecmp($b->surname, $a->surname); }
+	static function _company_name($a, $b) { return strcasecmp($a->company_name, $b->company_name); }
+	static function _company_nameR($a, $b) { return strcasecmp($b->company_name, $a->company_name); }
+	static function _membership_from($a, $b) { return strtotime($a->membership_from) > strtotime($b->membership_from); }
+	static function _membership_fromR($a, $b) { return strtotime($b->membership_from) > strtotime($a->membership_from); }
+	static function _membership_to($a, $b) { return strtotime($a->membership_to) > strtotime($b->membership_to); }
+	static function _membership_toR($a, $b) { return strtotime($b->membership_to) > strtotime($a->membership_to); }
 	
-	function _value($a, $b) { return $a->value > $b->value; }
-	function _valueR($a, $b) { return $a->value < $b->value; }	
-	function _date($a, $b) { return strtotime($a->date) > strtotime($b->date); }
-	function _dateR($a, $b) { return strtotime($b->date) > strtotime($a->date); }	
-	function _expiry_date($a, $b) { return strtotime($a->expiry_date) > strtotime($b->expiry_date); }
-	function _expiry_dateR($a, $b) { return strtotime($b->expiry_date) > strtotime($a->expiry_date); }
+	static function _value($a, $b) { return $a->value > $b->value; }
+	static function _valueR($a, $b) { return $a->value < $b->value; }	
+	static function _date($a, $b) { return strtotime($a->date) > strtotime($b->date); }
+	static function _dateR($a, $b) { return strtotime($b->date) > strtotime($a->date); }	
+	static function _expiry_date($a, $b) { return strtotime($a->expiry_date) > strtotime($b->expiry_date); }
+	static function _expiry_dateR($a, $b) { return strtotime($b->expiry_date) > strtotime($a->expiry_date); }
 	
 	/**
 	 *	Generate invite code

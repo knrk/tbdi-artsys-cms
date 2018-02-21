@@ -1,38 +1,53 @@
 <form>
-<div class="row">
-	<div class="col-sm-6 action-name">
-		<h2><?= __('module_meta_metas') ?></h2>
-	</div>
-	<div class="col-sm-6 action-submenu">
-		<button class="action-delete" <?= $this->delete_request->getHTML() ?>>
-			<i class="fa fa-trash-o fa-2x"></i>
-			<?= __('delete') ?>
-		</button>
-		<div class="action-new">
-			<a href="/<?= Art_Router::getLayer() ?>/meta/new">
-			<i class="fa fa-plus fa-2x"></i>
-			<?= __('add') ?></a>
+	<div class="row">
+		<div class="col-sm-6 action-name">
+			<h2><?= __('module_meta_metas') ?></h2>
+		</div>
+		<div class="col-sm-6 action-submenu">
+			<button class="action-delete" <?= $this->delete_request->getHTML() ?>>
+				<i class="fa fa-trash-o fa-2x"></i>
+				<?= __('delete') ?>
+			</button>
+			<div class="action-new">
+				<a href="/<?= Art_Router::getLayer() ?>/meta/new">
+				<i class="fa fa-plus fa-2x"></i>
+				<?= __('add') ?></a>
+			</div>
 		</div>
 	</div>
-</div>
-	<div class="clear"></div>
-
-
-	
-<table class="table-default">
-	<tr>
-		<th class="text-center"><input type="checkbox" onclick="toggleCheck(this,'.module_meta_index .cb-meta-list')"></th>
-		<th class="text-center"><?= __('module_meta_key') ?></th>
-		<th><?= __('module_meta_content_cs') ?></th>
-		<th></th>
-	</tr>
-	<?php foreach($this->metas AS $meta): ?>
+		
+	<table class="table-default">
+		<colgroup>
+			<col class="f35">
+			<col class="w30">
+			<col class="w60">
+		</colgroup>
 		<tr>
-			<td class="text-center"><input type="checkbox" name="meta_<?= $meta->id ?>" class="cb-meta-list"></td>
-			<td class="text-center"><?= Art_Filter::cutString($meta->key,40) ?></td>
-			<td><?= Art_Filter::cutString($meta->content_cs,100) ?></td>
-			<td class="text-center"><a href="<?= '/'.Art_Router::getLayer().'/meta/edit/'.$meta->id ?>"><i class="fa fa-pencil edit"></i></a></td>
+			<th class="text-center">
+				<input type="checkbox" onclick="toggleCheck(this,'.module_meta_index .cb-meta-list')">
+			</th>
+			<th>
+				<?= __('module_meta_key') ?>
+			</th>
+			<th>
+				<?= __('module_meta_content_cs') ?>
+			</th>
 		</tr>
-	<?php endforeach; ?>
-</table>
+		<?php foreach($this->metas as $meta) : ?>
+			<tr>
+				<td class="text-center">
+					<input type="checkbox" name="meta_<?= $meta->id ?>" class="cb-meta-list">
+				</td>
+				<td>
+					<a href="<?= '/'.Art_Router::getLayer().'/meta/edit/'.$meta->id ?>"><?= $meta->key ?></a>
+				</td>
+				<td>
+					<?= $meta->content_cs ?>
+					<div class="inline-actions">
+						<a href="<?= '/'.Art_Router::getLayer().'/meta/edit/'.$meta->id ?>"><i class="fa fa-pencil"></i></a>
+					</div>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
 </form>	

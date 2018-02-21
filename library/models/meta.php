@@ -9,6 +9,8 @@
  *	@property string	$content_cs	Value of meta (in czech locale)
  */
 class Art_Model_Meta extends Art_Abstract_Model_DB {
+
+	protected static $_caching = false;
 	    
     protected static $_table = 'meta';
 	

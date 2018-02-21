@@ -121,7 +121,7 @@
     "float": "desetinné číslo",
     "integer": "celé číslo",
     "boolean": "logická hodnota",
-    "value": "hodnota",
+    "value": "Hodnota",
     "take_away": "odebrat",
     "pending": "čekající",
     "next": "dále",
@@ -361,7 +361,7 @@
     "module_login_need_confirmation": "Nejprve je nutné aby vás manažer autentizoval",
     "module_login_need_money":  "Přihlášení se nezdařilo!",
 
-    "module_meta_metas": "META popisky",
+    "module_meta_metas": "META popisky veřejné verze",
     "module_meta_layer": "Vrstva",
     "module_meta_key": "Klíč",
     "module_meta_content_cs": "Obsah",

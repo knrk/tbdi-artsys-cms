@@ -75,14 +75,29 @@ class Module_Users extends Art_Abstract_Module {
 	function companiesAction() {	
 		
 		//Art_Template::setTemplate("index","ajax");
-		$sortById = Art_Router::getFromURI('id');
-		$sortByCompanyName = Art_Router::getFromURI('company_name');
-		$sortByMembershipFrom = Art_Router::getFromURI('membership_from');
-		$sortByMembershipTo = Art_Router::getFromURI('membership_to');
-		
-		$this->view->sortBy = $sortBy = Helper_TBDev::getSortBy($sortById, $sortByCompanyName, $sortByMembershipFrom, $sortByMembershipTo);
-		
-		// $authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy, true);
+		$sortById = (int) Art_Router::getFromURI('id');
+		$sortByCompanyName = (int) Art_Router::getFromURI('company_name');
+		$sortByMembershipFrom = (int) Art_Router::getFromURI('membership_from');
+		$sortByMembershipTo = (int) Art_Router::getFromURI('membership_to');
+
+		// p($sortByMembershipFrom);
+
+				// case 0: $param = 'id'; break;
+				// case 1:	$param = 'idR'; break;
+				// case 2: $param = 'firstname'; break;
+				// case 3:	$param = 'firstnameR'; break;
+				// case 4:	$param = 'surname'; break;
+				// case 5:	$param = 'surnameR'; break;
+				// case 6:	$param = 'membership_from'; break;
+				// case 7:	$param = 'membership_fromR'; break;
+				// case 8:	$param = 'membership_to'; break;
+				// case 9:	$param = 'membership_toR'; break;	
+				// case 10: $param = 'company_name'; break;
+				// case 11: $param = 'company_nameR'; break;
+
+		$this->view->sortBy = $sortBy = Helper_TBDev::getSortBy($sortByMembershipFrom, $sortByMembershipTo, $sortByCompanyName);
+				
+				// $authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy, true);
 		$allUsers = $this->_getAllAuthenticatedUserDataForTable($sortBy, true);
 		
 		// $activeUsers = array();
@@ -2591,6 +2606,7 @@ class Module_Users extends Art_Abstract_Module {
 		}
 
 		if (-1 !== $sortBy) {
+			// p($sortBy);
 			switch ($sortBy) {
 				case 0: $param = 'id'; break;
 				case 1:	$param = 'idR'; break;
@@ -2601,7 +2617,9 @@ class Module_Users extends Art_Abstract_Module {
 				case 6:	$param = 'membership_from'; break;
 				case 7:	$param = 'membership_fromR'; break;
 				case 8:	$param = 'membership_to'; break;
-				case 9:	$param = 'membership_toR'; break;				
+				case 9:	$param = 'membership_toR'; break;	
+				case 10: $param = 'company_name'; break;
+				case 11: $param = 'company_nameR'; break;
 			}
 
 			$authenticatedUsers = Helper_TBDev::getSortedArray($authenticatedUsers, $param);
