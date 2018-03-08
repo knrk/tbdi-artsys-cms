@@ -7,7 +7,7 @@
 	<input type="hidden" name="investmentId" value="<?= $this->investmentId ?>">
 	
 	<label for="custom-name">Vlastní pojmenování</label>
-	<input id="custom-name" type="text" autofocus name="target" value="<?= $this->target ?>">
+	<input id="custom-name" type="text" name="target" value="<?= $this->target ?>">
 	
 	<table class="table-default variable">
 		<caption><b><?= Helper_Default::getCzechMonthName($this->month) ?> <?= $this->year ?> - <?= $this->target ?></b></caption>
@@ -43,13 +43,13 @@
 				<td class="xsmall-td">
 					<input type="checkbox" name="investment-<?= $userId ?>" tabindex="-1" class="cb-investment-list">
 				</td>
-				<td><?= Art_Filter::cutString($user->fullname, 40) ?></td>
+				<td><?= $user->fullname ?></td>
 				<td class="invested-td">
 					<input 	type="text" class="invested" name="invested-<?= $userId ?>" tabindex="-1" 
 							placeholder="<?= __('module_investment_invested') ?>" value="<?= $invested ?>">
 				</td>
 				<td class="interest-td">
-					<input 	type="text" class="interest" tabindex="<?= $tabindex; ?>" name="interest-<?= $userId ?>" 
+					<input 	type="text" class="interest" tabindex="<?= $tabindex; ?>"<?= $i === 1 ? ' autofocus' : '' ?> name="interest-<?= $userId ?>" 
 							placeholder="<?= __('module_investment_interest') ?>" value="<?= $interest ?>">
 				</td>
 				<td class="gain-td">
@@ -71,7 +71,7 @@
 		<?php endforeach; ?>
 	</table>
 	<div class="col-xs-3 mt-15 save-view-buttons">
-		<input type="submit" tabindex="<?= $tabindex + 1; ?>" value="<?= __('save') ?>" class="button">
+		<button type="submit" tabindex="<?= $tabindex + 1; ?>" class="button"><?= __('save') ?></button>
 	</div>
 </form>
 <script>
@@ -96,6 +96,15 @@ $(document).ready(() => {
 		$('.js-date-picker').pickadate({
 			format: 'yyyy-mm-dd'
 		});
+	});
+
+	$(".form input").keypress((event) => {
+		if (event.keyCode === 13) {
+			event.preventDefault();
+			event.stopPropagation();
+		}
+
+		console.log(`Submit hook ${event.keyCode}`);
 	});
 });
 </script>

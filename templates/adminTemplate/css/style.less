@@ -1104,8 +1104,8 @@ textarea:focus, textarea.form-control:focus{
     border-radius: 0px;
 }
 
-input:focus, textarea:focus{
-    border: 2px solid rgb(4, 83, 161);
+input:focus, textarea:focus {
+    border: 2px solid @form-input-focus-border-color;
 }
 
 textarea {
@@ -1904,6 +1904,10 @@ i.no-active{
     padding: 4px 8px;
     min-width: 120px;
     max-width: 300px;
+
+    &:focus {
+        border-color: @form-input-focus-border-color;
+    }
 
     &:hover {
         background-color: @button-bg-hover-color;
