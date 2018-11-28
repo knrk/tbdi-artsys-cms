@@ -289,19 +289,15 @@ class Art_Model_Ajax_Response {
 	 * 
 	 *	@param int [optional] $options
 	 */
-	function execute($option = NULL)
-	{
+	function execute($option = NULL) {
 		$redirect = $this->_is_redirected;
 		
 		//Input validation
-		if( NULL !== $option )
-		{
-			if( in_array($option, array(Art_Main::OK,  Art_Main::ALERT, Art_Main::ERROR)) )
-			{
+		if (NULL !== $option) {
+			if (in_array($option, array(Art_Main::OK, Art_Main::ALERT, Art_Main::ERROR))) {
 				$this->_setExitStatus($option);
 			}
-			if( in_array($option, array(Art_Ajax::REDIRECT)) )
-			{
+			if (in_array($option, array(Art_Ajax::REDIRECT))) {
 				$redirect = true;
 			}
 		}
@@ -313,15 +309,13 @@ class Art_Model_Ajax_Response {
 		$response['status'] = $this->_exitStatus;
 		
 		//If ok - save alert to session
-		if($this->_exitStatus == Art_Main::OK && $redirect)
-		{
+		if ($this->_exitStatus == Art_Main::OK && $redirect) {
 			Art_Session::set(Art_Main::ALERT_SESSION_NAME, $this->_messages[$this->_exitStatus]);
 			Art_Session::set(Art_Ajax::SESSION_STATUS_NAME, $this->_exitStatus);
 			Art_Session::set(Art_Ajax::SESSION_RESPONSE_NAME, $this->_name);
 		}
 		//Send error to client
-		else
-		{
+		else {
 			//Prepare fields
 			$response['fields'] = $this->getFieldsByStatus(Art_Main::ALERT);
 			//Prepare messages

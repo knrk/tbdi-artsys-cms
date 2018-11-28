@@ -2,11 +2,12 @@
 	<div class="col-sm-6 action-name">
 		<h2><?= __('module_default_value') ?></h2>
 	</div>
-	<div class="col-sm-6 action-submenu">
-		<div class="action-new">
+	<div class="col-sm-6 action-submenu page-actions">
+		<div class="action-new tile">
 			<a href="/<?= Art_Router::getLayer() ?>/default_value/new">
-			<i class="fa fa-plus fa-2x"></i>
-			<?= __('add') ?></a>
+				<?= icon('add'); ?>
+				<?= __('add') ?>
+			</a>
 		</div>
 	</div>
 </div>

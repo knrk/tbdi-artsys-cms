@@ -1,8 +1,20 @@
 	
-	<div class="user-profile">
-		<span class="small-ico f-l r r10"><i class="fa fa-user"></i></span>
-		<p><?= $this->user->fullname ?></p>
+	<div class="user">
+		<i>
+			<?= icon('user-' . $this->user->gender); ?>
+		</i>
+		<?php
+		echo sprintf("<em>%s</em>", $this->user->fullname); 
+
+		if ($this->user->isManager) {
+			echo sprintf("<span>%s</span>", __('manager'));
+		}
+		if ($this->user->isSupervisor) {
+			echo sprintf("<span>%s</span>", __('supervisor'));
+		}
+
+		?>
 	</div>
-	<div class="user-action">
+	<div class="actions">
 		<?= Art_Widget::render('login', 'embedd', array('size' => 'small')); ?>
 	</div>

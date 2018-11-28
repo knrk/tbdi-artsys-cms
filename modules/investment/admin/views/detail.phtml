@@ -12,6 +12,7 @@
 				<?php else : ?>
 					<button <?= $this->unpublish_request->getHTML(array('id'=>$key)) ?> title="<?= __('unpublish') ?>"><i class="fa fa-eye-slash"></i></button>
 				<?php endif; ?>
+				<button <?= $this->export_csv->getHTML(array('id' => $key)) ?> title="<?= __('export_csv') ?>"><i class="fa fa-file"></i></button>
 			</caption>
 			<colgroup>
 				<col class="w30">

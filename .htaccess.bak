@@ -1,13 +1,35 @@
+# PHP ini settings
+#php_flag display_startup_errors on
+#php_flag display_errors on
+
+# - - - - - - - - - - - - - ALLOWED FILES - - - -
+# Disallow reading of these files
+#<FilesMatch "\.(?:cfg|ini|log|php|phtml|txt|sql)$">
+#    Order allow,deny
+#    Deny from all
+#    Allow from 127.0.0.1
+#</FilesMatch>
+
+# Allow index.php from other servers
+<Files index\.php>
+   Order Allow,Deny
+   Allow from All
+</Files>
+#<Files adminer.php>
+#    Order Allow,Deny
+#    Allow from all
+#</Files>
 
 # Disable indexing of folders if index.php or index.html not exists
-# Options -Indexes
+Options -Indexes
 
 # - - - - - - - - - - - - - MOD_REWRITE - - - -
+
 RewriteEngine On
-# RewriteBase /
+RewriteBase /
 
 # Unsets trailing slash directive from directories
-# DirectorySlash Off
+DirectorySlash Off
 
 # /foo/bar/    =>      /foo/bar
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -22,8 +44,7 @@ RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
 
 # /foo  =>             ?param1=foo
-# RewriteCond %{ENV:REDIRECT_STATUS} ^$
-# RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^/]+)$ ?param1=$1 [L,NC,QSA]
 
@@ -58,3 +79,9 @@ ExpiresByType text/html "access 1 month"
 ExpiresByType text/x-javascript "access 1 week"
 ExpiresByType application/x-shockwave-flash "access 1 month"
 ExpiresByType image/x-icon "access 1 month"
+
+
+<FilesMatch "\.(gif|jpe?g|png|ico)$">
+Order Allow,Deny
+Allow from All
+</FilesMatch>

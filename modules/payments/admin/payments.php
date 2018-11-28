@@ -56,49 +56,43 @@ class Module_Payments extends Art_Abstract_Module {
 		$this->view->delete_single_request = $delete_single_request;
 	}
 	
-	function deleteSingleAction()
-	{
-		if( Art_Ajax::isRequestedBy(self::REQUEST_DELETE_SINGLE) )
-		{
-			$response = Art_Ajax::newResponse();	
+	function deleteSingleAction() {
+		if (Art_Ajax::isRequestedBy(self::REQUEST_DELETE_SINGLE)) {
 			
+			$response = Art_Ajax::newResponse();	
 			$payment = new Service_Payment(Art_Router::getId());
 			
-			if ( $payment->isLoaded() )
-			{
+			if ($payment->isLoaded()) {
 				$payment->delete();
 				
 				$response->addMessage(__('module_payments_delete_success'));
 				$response->addVariable('content', Art_Module::createAndRenderModule('payments'));
-			}
-			else
-			{
+			} else {
 				$response->addAlert(__('module_payments_delete_fail'));
 			}
 
 			$response->execute();
-		}
-		else
-		{
+		} else {
 			$this->showTo(Art_User::NO_ACCESS);
 		}
 	}
 	
 	function newAction() {
-		if ( Art_Ajax::isRequestedBy(self::REQUEST_ADD)) {
+		if (Art_Ajax::isRequestedBy(self::REQUEST_ADD)) {
 			
 			$response = Art_Ajax::newResponse();
 			$data = Art_Ajax::getData();
 			
 			//Set each field validation options
-			$fields =  Service_Payment::getCols('insert');
+			$fields = Service_Payment::getCols('insert');
 			$sql_data = Helper_Default::getValidatedSQLData($fields, self::getFieldsValidators(), $data, $response);
 					
 			//Everything is valid
 			if ($response->isValid()) {
 				$servicePayment = new Service_Payment();
 				$servicePayment->setDataFromArray($sql_data);
-				$servicePayment->received_date = dateSQL($data['received_date']);
+
+				$servicePayment->received_date = dateSQL($data['recieved_date_submit']);
 				$servicePayment->save();
 				
 				$response->addMessage(__('module_payments_new_success'));

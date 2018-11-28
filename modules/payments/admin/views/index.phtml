@@ -2,10 +2,10 @@
 	<div class="col-sm-6 action-name">
 		<h2><?= __('module_payments_header') ?></h2>
 	</div>
-	<div class="col-sm-6 action-submenu">
-		<div class="action-new">
+	<div class="col-sm-6 page-actions">
+		<div class="action-new tile">
 			<a href="/<?= Art_Router::getLayer() ?>/payments/new">
-			<i class="fa fa-plus fa-2x"></i>
+			<?= icon('add'); ?>
 			<?= __('add') ?></a>
 		</div>
 	</div>

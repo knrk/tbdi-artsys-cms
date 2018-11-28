@@ -20,16 +20,11 @@ final class Art_Register extends Art_Abstract_Component {
 	 *	Default namespace
 	 */
 	const DEFAULT_NAMESPACE = '_default';
-
-	/**
-	 *	Path to configuration file
-	 */
-	const CONFIGURATION_INI_PATH = 'configuration.ini';
 	
-	/**
-	 *	Database register namespace
-	 */
-	const DB_NAMESPACE = 'database';
+	// /**
+	//  *	Database register namespace
+	//  */
+	// const DB_NAMESPACE = 'database';
 	
 	
 	/**

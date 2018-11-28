@@ -129,21 +129,15 @@ final class Art_Event extends Art_Abstract_Component {
 	 *	@param int [optional] $status_code Art_Main::OK, Art_Main::ALERT, Art_Main::ERROR
 	 *	@return void
 	 */
-	static function trigger( $name, $data = NULL, $status_code = Art_Main::OK )
-	{
-		if( static::isExisting($name) )
-		{
-			if( $data instanceof Art_Model_Event_Data )
-			{
+	static function trigger($name, $data = NULL, $status_code = Art_Main::OK) {
+		if (static::isExisting($name)) {
+			if ($data instanceof Art_Model_Event_Data) {
 				$ev_data = $data;
-			}
-			else
-			{
+			} else {
 				$ev_data = new Art_Model_Event_Data($name, $data, $status_code, count(static::$_callbacks[$name]));
 			}
 			
-			foreach( static::$_callbacks[$name] AS $callback_func )
-			{
+			foreach (static::$_callbacks[$name] as $callback_func) {
 				call_user_func($callback_func, $ev_data);
 				$ev_data->nextCurrentNum();
 			}

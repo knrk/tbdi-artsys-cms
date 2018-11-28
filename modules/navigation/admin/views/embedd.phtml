@@ -1,7 +1,39 @@
+<nav>
+	<div class="profile">
+		<?= Art_Widget::render('users', 'embedd'); ?>
+	</div>
+	<ul>
+		<?php $active_first = empty($this->active_nodes_ids); ?>
+		<?php foreach ( $this->nodes as $parentNode ) : ?>
+		<!-- <div role="tabpanel" class="tab-pane<?= in_array($parentNode->id, $this->active_nodes_ids) || $active_first ? ' fade in active"':''?>" id="<?= $parentNode->getType()->type ?>"> -->
+			<li role="presentation"<?= in_array($parentNode->id, $this->active_nodes_ids) || $active_first ? ' class="active"' : '' ?>>
+				<input type="radio" name="navigator" id="navigation-<?= $parentNode->getType()->type ?>"<?= in_array($parentNode->id, $this->active_nodes_ids) || $active_first ? ' checked' : '' ?>/>
+				<label for="navigation-<?= $parentNode->getType()->type ?>" class="navigation-<?= $parentNode->getType()->type ?>" aria-controls="<?= $parentNode->getType()->type ?>" role="tab">
+					<?= icon($parentNode->getType()->type); ?>
+					<?= $parentNode->name ?>
+				</label>
+				<ul>
+					<?php foreach ( $parentNode->childs as $childNode ) : ?>
+					<li<?= in_array($childNode->id, $this->active_nodes_ids) ? ' class="active"' : '' ?>>
+						<a href="<?= $childNode->url ?>">
+							&mdash; <?= $childNode->name ?>
+						</a>
+					</li>
+					<?php endforeach; ?>
+				</ul>
+			</li>
+		<!-- </div> -->
+		<?php $active_first = false; ?>
+		<?php endforeach; ?>	
+	</ul>
+</nav>
+
 <!-- Nav tabs -->
+<?php 
+/*
 <ul class="nav nav-tabs" role="tablist" id="nav-tabs">
 	<?php $active_first = empty($this->active_nodes_ids); ?>
-	<?php foreach ( $this->nodes as $parentNode ) : /* @var $parentNode Art_Model_Node */ ?>
+	<?php foreach ( $this->nodes as $parentNode ) : ?>
 		<li role="presentation"<?= in_array($parentNode->id, $this->active_nodes_ids) || $active_first ? ' class="active"':''?>>
 			<a class="navigation-<?= $parentNode->getType()->type ?>" href="#<?= $parentNode->getType()->type ?>" aria-controls="<?= $parentNode->getType()->type ?>" role="tab" data-toggle="tab">
 				<i></i>
@@ -16,10 +48,10 @@
 <!-- Tab panes -->
 <div class="nav-tab-content">
 	<?php $active_first = empty($this->active_nodes_ids); ?>
-	<?php foreach ( $this->nodes as $parentNode ) : /* @var $parentNode Art_Model_Node */ ?>
+	<?php foreach ( $this->nodes as $parentNode ) : ?>
 	<div role="tabpanel" class="tab-pane<?= in_array($parentNode->id, $this->active_nodes_ids) || $active_first ? ' fade in active"':''?>" id="<?= $parentNode->getType()->type ?>">
 		<ul>
-			<?php foreach ( $parentNode->childs as $childNode ) : /* @var $childNode Art_Model_Node */ ?>
+			<?php foreach ( $parentNode->childs as $childNode ) :  ?>
 			<li<?= in_array($childNode->id, $this->active_nodes_ids) ? ' class="active"':''?>>
 				<a href="<?= $childNode->url ?>">
 					<?= $childNode->name ?>
@@ -33,3 +65,7 @@
 </div>
 
 <div class="clearfix"></div>
+
+
+*/
+?>

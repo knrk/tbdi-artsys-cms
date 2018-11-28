@@ -6,14 +6,15 @@
 	<meta name="viewport" content="width=1200 initial-scale=0.5" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<link rel="icon" href="/favicon.png">
-	<?= Art_Template::loadExtensions(array('jquery', 'bootstrap','ckeditor', 'date-picker', 'chosen')) ?>
-	<?= Art_Template::renderCSS(array( 'system.less', 'style.less' )); ?>
+	<?= Art_Template::loadExtensions(array('jquery', 'bootstrap', 'ckeditor', 'date-picker', 'chosen')) ?>
+	<?= Art_Template::renderCSS(array('system.less', 'style.less')); ?>
 	<?= Art_Template::renderJS(); ?>
 </head>
 <body>
-    <div id="alertBox"></div>
+    <!-- <div id="alertBox"></div>
     <div class="celar"></div>
-	
+	 -->
+	<?php /*
 	<div class="head-bar">
 		<div class="app-name">
 			<a href="/<?= Art_Router::getLayer() ?>">
@@ -24,14 +25,15 @@
 			<?= Art_Widget::render('users', 'embedd'); ?>
 		</div>
 	</div>
+	*/
+	?>
 	<div class="page-border">
 		<div class="menu">
 			<?= Art_Template::renderModuleContainer('menu') ?>	
 		</div>
 		<div class="page">
 			<?= Art_Template::renderContent() ?>
-			<div class="clear last"></div>
 		</div>
-	</div>
+	</div>	
 </body>
 </html>

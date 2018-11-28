@@ -1,27 +1,28 @@
-<form>
 <div class="row">
 	<div class="col-sm-6 action-name">
 		<h2><?= __('module_emaildump') ?></h2>
 	</div>
-	<div class="col-sm-6 action-submenu">
-	</div>
 </div>
-<div class="clear"></div>
 <table class="table-default">
+	<colgroup>
+		<col class="w10">
+		<col class="w25">
+		<col class="w5">
+		<col class="w35">
+	</colgroup>
 	<tr>
-		<th class="text-center"><?= __('module_emaildump_to') ?></th>
-		<th class="text-center"><?= __('module_emaildump_bcc') ?></th>
-		<th class="text-center"><?= __('module_emaildump_subject') ?></th>
-		<th class="text-center"><?= __('module_emaildump_date') ?></th>
+		<th><?= __('module_emaildump_date') ?></th>
+		<th><?= __('module_emaildump_to') ?></th>
+		<th><?= __('module_emaildump_bcc') ?></th>
+		<th><?= __('module_emaildump_subject') ?></th>
 	</tr>
-	<?php foreach($this->emaildumps AS $emaildumps): ?>
-	<?php $href = '/'.Art_Router::getLayer().'/emaildump/detail/'.$emaildumps->id; ?>
+	<?php foreach($this->emaildumps as $emaildumps): ?>
+	<?php $href = '/' . Art_Router::getLayer() . '/emaildump/detail/' . $emaildumps->id; ?>
 		<tr>
-			<td class="text-left"><a href="<?= $href ?>"><?= Art_Filter::cutString(substr($emaildumps->to_address,3,-6),30) ?></a></td>
-			<td class="text-left"><a href="<?= $href ?>"><?= $emaildumps->countBcc ?></a></td>
-			<td class="text-left"><a href="<?= $href ?>"><?= Art_Filter::cutString($emaildumps->subject,150) ?></a></td>
-			<td class="text-left"><?= nice_datetime($emaildumps->message_date) ?></td>
+			<td><?= nice_datetime($emaildumps->message_date) ?></td>
+			<td><a href="<?= $href ?>"><?= substr($emaildumps->to_address, 3, -6) ?></a></td>
+			<td><a href="<?= $href ?>"><?= $emaildumps->countBcc ?></a></td>
+			<td><a href="<?= $href ?>"><?= $emaildumps->subject ?></a></td>
 		</tr>
 	<?php endforeach; ?>
 </table>
-</form>

@@ -1,15 +1,21 @@
 <h2><?= __('module_article_new_article') ?></h2>
 <form <?= $this->request->getHTML() ?>>
 	<table class="table-default articles">
+		<colgroup>
+			<col class="w10">
+			<col class="w90">
+		</colgroup>
 		<tr>
-			<td class="xsmall-td text-right">
-				Titulek
+			<td class="text-right">
+				<?= __('module_article_title') ?>
 			</td>
 			<td>
 				<input type="text" name="title" placeholder="<?= __('module_article_title') ?>" value="">
 			</td>
-			<td class="xsmall-td text-right">
-				URL
+		</tr>
+		<tr>
+			<td class="text-right">
+				<?= __('module_article_url') ?>
 			</td>
 			<td colspan="2">
 				<input type="text" name="url_name" placeholder="<?= __('module_article_url') ?>" value="">
@@ -17,11 +23,10 @@
 		</tr>
 		<tr>
 			<td class="text-right">
-				Perex
+				<?= __('module_article_perex') ?>
 			</td>
-			<td colspan="5">
-				<textarea placeholder="<?= __('module_article_perex') ?>" name="perex" rows="3"></textarea>
-				
+			<td>
+				<textarea placeholder="<?= __('module_article_perex') ?>" name="perex" rows="3"></textarea>				
 			</td>
 		</tr>
 		<tr>
@@ -29,29 +34,29 @@
 				<textarea class="ckeditor" name="content" placeholder="<?= __('module_article_content') ?>"></textarea>
 			</td>
 		</tr>
+	</table>
+
+	<hr class="separator"/>
+	<h3><?= __('module_article_meta') ?></h3>
+	<table class="table-default articles">	
 		<tr>
-			<td colspan="6">
-				META nastavení
-			</td>
-		</tr>
-		<tr>
-			<td colspan="6">
+			<td>
 				<input type="text" name="meta_title" placeholder="<?= __('module_article_meta_title') ?>" value="">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="6">
+			<td>
 				<input type="text" name="meta_keywords" placeholder="<?= __('module_article_meta_keywords') ?>" value="">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="6">
+			<td>
 				<input type="text" name="meta_description" placeholder="<?= __('module_article_meta_description') ?>" value="">
 			</td>
 		</tr>
 	</table>
-	<div class="text-center">
-		<input type="submit" value="<?= __('save') ?>" class="button-save">
+	<div class="save-view-buttons mt-15">
+		<input type="submit" value="<?= __('save') ?>" class="button">
 	</div>
 </form>
 

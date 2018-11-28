@@ -209,7 +209,7 @@ class Helper_TBDev_Import extends Art_Abstract_Helper {
 		$user->id_currency = 1;	
 		$user->save();
 
-if ( ART_DEBUG ) :
+if ( DEBUG ) :
 		$password = 'pass';
 else:
 		$password = Art_User::generatePassword();
@@ -223,7 +223,7 @@ endif;
 		$user_data->password = Art_User::hashPassword($password, $user_data->salt);
 		$user_data->verif = 1;
 		$user_data->verif_date = $manExt[$key][0];
-if ( ART_DEBUG ) :		
+if ( DEBUG ) :		
 		$user_data->pass_changed_date = dateSQL();	// TODO so far
 endif;
 		$user_data->setUser($user);
@@ -396,7 +396,7 @@ endif;
 		$user->id_currency = 1;	
 		$user->save();
 
-if ( ART_DEBUG ) :
+if ( DEBUG ) :
 		$password = 'pass';
 else:
 		$password = Art_User::generatePassword();
@@ -412,7 +412,7 @@ endif;
 		$user_data->verif = 1;
 		$user_data->verif_date = $value[13];
 		$user_data->verif_id = 10;
-if ( ART_DEBUG ) :		
+if ( DEBUG ) :		
 		$user_data->pass_changed_date = dateSQL();	// TODO so far
 endif;
 		$user_data->born_day = $value[3];
@@ -562,7 +562,7 @@ endif;
 		$user->id_currency = 1;	
 		$user->save();
 		
-if ( ART_DEBUG ) :
+if ( DEBUG ) :
 		$password = 'pass';
 else:
 		$password = Art_User::generatePassword();
@@ -578,7 +578,7 @@ endif;
 		$user_data->verif = 1;
 		$user_data->verif_date = $value[12];
 		$user_data->verif_id = 10;
-if ( ART_DEBUG ) :		
+if ( DEBUG ) :		
 		$user_data->pass_changed_date = dateSQL();	// TODO so far
 endif;
 		$user_data->born_day = $value[3];

@@ -13,7 +13,7 @@
  */
 class Art_Model_User_X_User_Group extends Art_Abstract_Model_DB {
 
-	// protected static $_caching = false;
+	protected static $_caching = true;
 	
     protected static $_table = 'user_x_user_group';
     

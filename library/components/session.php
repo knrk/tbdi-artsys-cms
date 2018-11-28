@@ -60,9 +60,8 @@ final class Art_Session extends Art_Abstract_Component {
 	 *	@static
 	 *	@return string
 	 */
-	static function getToken()
-	{
-		return self::get( self::TOKEN_NAME );
+	static function getToken() {
+		return self::get(self::TOKEN_NAME);
 	}
 	
 	
@@ -72,10 +71,8 @@ final class Art_Session extends Art_Abstract_Component {
 	 *	@param string $name
 	 *	@param string $value
 	 */
-	static function set($name, $value)
-	{
-		if( !empty($name) )
-		{
+	static function set($name, $value) {
+		if (!empty($name)) {
 			$_SESSION[$name] = $value;
 			self::$_data[$name] = $value;
 		}
@@ -87,18 +84,15 @@ final class Art_Session extends Art_Abstract_Component {
      *  @static
      *  @return void
      */
-	static function init()
-	{
-		if(parent::init())
-		{
+	static function init() {
+		if (parent::init()) {
 			session_start();
 
 			//Load all session variables
 			self::loadData();
 			
-			//Crteate token if not exists
-			if( NULL === self::getToken() )
-			{	
+			//Create token if not exists
+			if (NULL === self::getToken()) {	
 				self::set(self::TOKEN_NAME, rand_str(32));
 			}
 			
@@ -114,8 +108,7 @@ final class Art_Session extends Art_Abstract_Component {
 	 *	@access protected
 	 *	@return void
 	 */
-	static protected function loadData()
-	{
+	static protected function loadData() {
 		self::$_data = $_SESSION;
 	}	
 
@@ -128,8 +121,7 @@ final class Art_Session extends Art_Abstract_Component {
 	 *	@param string $name
 	 *	@return void
 	 */
-	static public function remove($name)
-	{
+	static public function remove($name) {
 		unset($_SESSION[$name]);
 		unset(self::$_data[$name]);
 	}

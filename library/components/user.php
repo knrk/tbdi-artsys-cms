@@ -225,50 +225,45 @@ final class Art_User extends Art_Abstract_Component {
      *  @static
      *  @return void
      */
-    static function init()
-    {
-        if(parent::init())
-        {			
+    static function init() {
+        if (parent::init()) {			
+			
 			//If is requested as CRON
-			if( Art_Server::isCron() )
-			{
+			if (Art_Server::isCron()) {
 				//User with ID 2 is a CRON user
 				$user = new Art_Model_User(array('user_number' => static::USER_NUMBER_CRON));
 				
-				if( !$user->isLoaded() )
-				{
+				if (!$user->isLoaded()) {
 					self::_createCronUser();
-				}
-				else
-				{
+				} else {
 					static::$_instance = $user;
 				}
 				
 				static::$_login = new Art_Model_Login;
-			}
-			else
-			{
+
+			} else {
+
 				$login = new Art_Model_Login();
 				
 				//If logtag is valid
-				if( Art_Validator::validate(ri($_COOKIE[self::LOG_TAG_NAME]), Art_Validator::IS_LOG_TAG) )
-				{
+				if (Art_Validator::validate(ri($_COOKIE[self::LOG_TAG_NAME]), Art_Validator::IS_LOG_TAG)) {
 					$login->load(array('log_tag' => $_COOKIE[self::LOG_TAG_NAME]));
 				}
 				
 				//If logtag was found
-				if( $login->isLoaded() && $login->getUser()->isLoaded() )
-				{
+				if ($login->isLoaded() && $login->getUser()->isLoaded()) {
+
 					//Save instance
 					self::$_instance = $login->getUser();
 					self::$_login = $login;		
 
 					//Refresh logtag
 					self::_refreshLogTag();
-				}
-				else
-				{
+
+				} else {
+					
 					self::_createNewUser();
+
 				}
 			}
 		}
@@ -404,6 +399,7 @@ final class Art_User extends Art_Abstract_Component {
 	 *	
 	 *	@static
 	 *	@return string Salt (32 chars)
+	 *  @todo remove generting Salt for hashPassword
 	 */
 	static function generateSalt()
 	{
@@ -419,11 +415,14 @@ final class Art_User extends Art_Abstract_Component {
 	 *	@param string $salt Salt used for hashing the second password
 	 *	@param string $pass_h HASHED password
 	 *	@return bool True if passwords equals
+	 *  @todo Replace matching algorithm
 	 */
-	static function matchPasswords($pass,$salt,$pass_h)
-	{
-		$pass_h2 = static::hashPassword($pass,$salt);
-		return ($pass_h2 === $pass_h && strlen($pass_h) > 10);
+	// static function matchPasswords($pass, $salt, $pass_h) {
+	// 	$pass_h2 = static::hashPassword($pass, $salt);
+	// 	return (($pass_h2 === $pass_h) && (strlen($pass_h) > 10));
+	// }
+	static function matchPasswords($pass, $pass_h) {
+		return (password_verify($pass, $pass_h) && (strlen($pass_h) > 10));
 	}
 	
 	
@@ -436,7 +435,8 @@ final class Art_User extends Art_Abstract_Component {
 	 *	@return string Hashed password
 	 */
 	static function hashPassword($password, $salt) {
-		return substr(password_hash($password, PASSWORD_BCRYPT, ['cost' => 8, 'salt' => $salt]), 0, 60);
+		// return substr(password_hash($password, PASSWORD_BCRYPT, ['cost' => 8, 'salt' => $salt]), 0, 60);
+		return substr(password_hash($password, PASSWORD_BCRYPT, ['cost' => 8]), 0, 60);
 	}
 	
 	

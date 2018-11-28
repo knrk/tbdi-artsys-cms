@@ -1,17 +1,21 @@
 <h2><?= __('module_article_edit_article') ?></h2>
 
-<form <?= $this->request->getHTML() ?>>
-	<div class="background-white pa-15" style="padding-top: 0px">
-		<div class="clearfix"></div>
-<table class="table-default articles">
+<form <?= $this->request->getHTML() ?>>	
+	<table class="table-default articles">
+		<colgroup>
+			<col class="w10">
+			<col class="w90">
+		</colgroup>
 		<tr>
-			<td class="xsmall-td text-right">
+			<td class="text-right">
 				Titulek
 			</td>
 			<td>
 				<input type="text" name="title" placeholder="<?= __('module_article_title') ?>" value="<?= $this->article->title ?>">
 			</td>
-			<td class="xsmall-td text-right">
+		</tr>
+		<tr>
+			<td class="text-right">
 				URL
 			</td>
 			<td colspan="2">
@@ -22,9 +26,8 @@
 			<td class="text-right">
 				Perex
 			</td>
-			<td colspan="5">
+			<td>
 				<textarea placeholder="<?= __('module_article_perex') ?>" name="perex" rows="3"><?= $this->article->perex ?></textarea>
-				
 			</td>
 		</tr>
 		<tr>
@@ -32,33 +35,30 @@
 				<textarea class="ckeditor" rows="8" name="content" placeholder="<?= __('module_article_content') ?>"><?= $this->article->content ?></textarea>
 			</td>
 		</tr>
+	</table>
+
+	<hr class="separator"/>
+	<h3><?= __('module_article_meta') ?></h3>
+	<table class="table-default articles">
 		<tr>
-			<td colspan="6">
-				META nastavení
-			</td>
-		</tr>
-		<tr>
-			<td colspan="6">
+			<td>
 				<input type="text" name="meta_title" placeholder="<?= __('module_article_meta_title') ?>" value="<?= $this->article->meta_title ?>">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="6">
+			<td>
 				<input type="text" name="meta_keywords" placeholder="<?= __('module_article_meta_keywords') ?>" value="<?= $this->article->meta_keywords ?>">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="6">
+			<td>
 				<input type="text" name="meta_description" placeholder="<?= __('module_article_meta_description') ?>" value="<?= $this->article->meta_description ?>">
 			</td>
 		</tr>
-</table>
-<div class="col-xs-9">
-		</div>
-		
-	<div class="text-center col-xs-3 pr-10 mt-10">
-	<input type="submit" value="<?= __('save') ?>" class="btn">
-</div>
-		<div class="clearfix"></div>
+	</table>
+	
+	<div class="save-view-buttons mt-15">
+		<input type="submit" value="<?= __('save') ?>" class="button">
+	</div>
+
 </form>
-</div>

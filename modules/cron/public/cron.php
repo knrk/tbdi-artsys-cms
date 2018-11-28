@@ -41,9 +41,10 @@ class Module_Cron extends Art_Abstract_Module {
                     //6 days after membership ends
 				if ( $remainingDays == -6 )
 				{
-if (!self::$local_DEBUG) :
-					Helper_Email::sendForfeitedMembershipMail($value);
-endif;
+					if (!self::$local_DEBUG) {
+						Helper_Email::sendForfeitedMembershipMail($value);
+					}
+
 					$object->data .= '6 days after membership ends - '.$membershipTo.' | '.$value->getData()->email.'<br>';
 				}
 			}
@@ -57,9 +58,10 @@ endif;
 
 				if ( $daysAfterApproval == 7 )
 				{
-if (!self::$local_DEBUG) :
-					Helper_Email::sendUnpaidMembershipMail($value);
-endif;
+					if (!self::$local_DEBUG) {
+						Helper_Email::sendUnpaidMembershipMail($value);
+					}
+
 					$object->data .= 'Unpaid membership - 7 days after approval - '.$gotApp[0]->created_date.' : '.$value->getData()->email.'<br>';
 				}
 			}
@@ -75,17 +77,19 @@ endif;
 				{
 					//$value->active = 0;
 					//$value->save();
-if (!self::$local_DEBUG) :
-					Helper_Email::sendTerminateApplicationMail($value);
-endif;
+					if (!self::$local_DEBUG) {
+						Helper_Email::sendTerminateApplicationMail($value);
+					}
 					$object->data .= 'Terminate application - 14 days after not got application - '.$notGotApp[0]->created_date.' / '.$value->getData()->email.'<br>';
 				}
 			}
 		}	
-if (!self::$local_DEBUG) :
-		Helper_Email::sendReportMail($object);
-else:
-		p($object->data);
-endif;
+		
+		if (!self::$local_DEBUG) {
+			Helper_Email::sendReportMail($object);
+		}
+		else {
+			p($object->data);
+		}
 	}
 }

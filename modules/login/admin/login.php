@@ -39,17 +39,17 @@ class Module_Login extends Art_Abstract_Module {
 				Art_Validator::NOT_EMPTY => ['message' => __('module_login_no_password')]		
 			));
 			
-			if($response->isValid())
-			{
-				$user_data = new Art_Model_User_Data(array('email'=>Art_Main::getPost('email')));			
-				if($user_data->isLoaded())
-				{
-					if($user_data->verif == 1)
-					{
+			if ($response->isValid()) {
+				$user_data = new Art_Model_User_Data(array('email' => Art_Main::getPost('email')));			
+				
+				if ($user_data->isLoaded()) {
+					
+					if ($user_data->verif == 1) {
+						
 						$user = new Art_Model_User($user_data);
 
-						if(Art_User::matchPasswords(Art_Main::getPost('pass'),$user->getData()->salt,$user->getData()->password))
-						{
+						if (Art_User::matchPasswords(Art_Main::getPost('pass'), $user->getData()->password)) {
+							
 							//Create new login
 							$login = new Art_Model_Login();
 							$login->id_user = $user->id;
@@ -93,9 +93,7 @@ class Module_Login extends Art_Abstract_Module {
 							*/
 							$response->addMessage(__('module_login_logged_in'));
 							$response->willRedirect();
-						}
-						else
-						{
+						} else {
 							//Invalid login
 							$response->addMessage(__('module_login_invalid_creditentals'),Art_Main::ALERT);
 						}
@@ -117,6 +115,7 @@ class Module_Login extends Art_Abstract_Module {
 					$response->addMessage(__('module_login_invalid_creditentals'),Art_Main::ALERT);
 				}
 			}
+
 			$response->execute();
 		}
 		else

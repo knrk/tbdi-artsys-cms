@@ -5,17 +5,17 @@
 	<div class="col-sm-6 action-submenu page-actions">
 		<div class="action-new tile">
 			<a href="/<?= Art_Router::getLayer() ?>/investment/new">
-			<i class="fa fa-plus fa-2x"></i>
+			<?= icon('add'); ?>
 			<?= __('investment-add') ?></a>
 		</div>
 		<div class="action-new tile">
 			<a href="/<?= Art_Router::getLayer() ?>/investment/newmonth">
-				<i class="fa fa-calendar-plus-o fa-2x"></i>
+				<?= icon('document-new'); ?>
 				<?= __('investment-create') ?></a>
 		</div>
 		<div class="action-new tile">
 			<a href="/<?= Art_Router::getLayer() ?>/investment/terminated">
-				<i class="fa fa-file-excel-o fa-2x"></i>
+			<?= icon('document-retired'); ?>
 				<?= __('terminated') ?></a>
 		</div>
 	</div>

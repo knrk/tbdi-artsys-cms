@@ -856,11 +856,11 @@ class Art_Model_Remote_Site {
 			echo '<hr><h2>Requesting: '.$this->_url.'</h2>';
 			echo '<h3>Status: '.($this->getHeader('Status') ? $this->getHeader('Status') : $this->getResponseCode()).'</h3>';
 			echo '<h3>Request header</h3>';
-			p(curl_getinfo($this->_curl_handler, CURLINFO_HEADER_OUT ));
+			// p(curl_getinfo($this->_curl_handler, CURLINFO_HEADER_OUT ));
 			echo '<h3>Response header</h3>';
-			p($this->_header);
+			// p($this->_header);
 			echo '<h3>Response body</h3>';
-			p(htmlentities($this->_body));
+			// p(htmlentities($this->_body));
 		}
 		
 		//Close handler

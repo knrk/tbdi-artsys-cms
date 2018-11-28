@@ -1,6 +1,5 @@
 <?php
 /**
- *  @author Pastuszek Jakub <pastuszek@itart.cz>
  *  @package modules/login/cabinet
  */
 class Module_Login extends Art_Abstract_Module {

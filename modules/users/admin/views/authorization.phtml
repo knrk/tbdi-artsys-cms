@@ -9,74 +9,77 @@
 
 	</div>
 </div>
+
 <table class="table-default">
+	<colgroup>
+		<col class="w20">
+		<col class="w25">
+		<col class="w55">
+	</colgroup>
 	<tr>
-		<th>ID</th>
-		<th></th>
-		<th><?= __('firstname') ?></th>
-		<th><?= __('surname') ?></th>
-		<th><?= __('email') ?></th>
-		<th><?= __('phone_number') ?></th>
+		<th>
+			<?= __('firstname') ?>
+			<span> / </span>
+			<?= __('surname') ?>
+		</th>
+		<th>
+			<?= __('email') ?>
+			<span>/</span>
+			<?= __('phone_number') ?>
+		</th>
 		<th><?= __('module_users_registered') ?></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
 	</tr>
 	<?php 
-		foreach ($this->usersToAuth as $data) : /* @var $data Art_Model_User_Data */
+		foreach ($this->usersToAuth as $data) : 
 	?>
 		<tr>
-			<td><?= $data->user_number ?></td>
-			<td><?= ($data->gender) ? '<i class="fa fa-mars" aria-hidden="true"></i>' : '<i class="fa fa-venus" aria-hidden="true"></i>' ?></td>
-			<td><?= Art_Filter::cutString($data->name,60) ?></td>
-			<td><a href="<?= $data->a_detail ?>">
-				<?php if ( NULL !== $data->emailNotGotApp && NULL === $data->emailGotApp) : ?><span style="color:red"><?php endif; ?>
-						<?= Art_Filter::cutString($data->surname,40) ?>
-				<?php if ( NULL !== $data->emailNotGotApp && NULL === $data->emailGotApp) : ?></span><?php endif; ?>
+			<td>
+				<a href="<?= $data->a_detail ?>" class="contact-person<?= (NULL !== $data->emailNotGotApp && NULL === $data->emailGotApp) ? ' overdue' : '' ?>" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $data->user_number ?>">
+					<span class="first-name"><?= $data->name ?></span>
+					<span class="last-name"><?= $data->surname ?></span>
 				</a>
 			</td>
-			<td><?= Art_Filter::cutString($data->email,100) ?></td>
-			<td><?= Art_Filter::cutString($data->p_phone,14) ?></td>
-			<td><?= Art_Filter::date($data->created_date) ?></td>
-			<td class="text-center">
-				<button <?= $this->requestResendReg->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_resend_reg_email') ?>"><i class="fa fa-envelope-square"></i></button>
+			<td>
+				<div><?= $data->email ?></div>
+				<div><?= $data->p_phone ?></div>
 			</td>
-			<td class="text-center">
-				<?php if ( NULL === $data->emailGotApp) : ?>
-					<button <?= $this->requestGotApp->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_got_application') ?>"><i class="fa fa-ticket" style="color:purple;"></i></button>
-				<?php else : ?>
-					<i class="fa fa-ticket" style="color:green;" title="<?= __('module_users_got_application_date').nice_date($data->emailGotApp->created_date) ?>"></i>
-				<?php endif; ?>
-			</td>
-			<td class="text-center">
-				<?php if ( NULL === $data->emailGotApp) : ?>
-					<?php if ( NULL === $data->emailNotGotApp ) : ?>
-						<button <?= $this->requestNotGotApp->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_not_got_application') ?>"><i class="fa fa-times" style="color:navy;"></i></button>
+			<td>
+				<?= nice_date($data->created_date) ?>
+
+				<div class="inline-actions">
+					<button <?= $this->requestResendReg->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_resend_reg_email') ?>"<?= !MAIL ? ' diabled' : ''?>><i class="fa fa-envelope"></i></button>
+					<!--  -->
+					<?php if (NULL === $data->emailGotApp) : ?>
+						<button <?= $this->requestGotApp->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_got_application') ?>"<?= !MAIL ? ' diabled' : ''?>><i class="fa fa-envelope-o"></i></button>
 					<?php else : ?>
-						<i class="fa fa-times" style="color:red;" title="<?= __('module_users_not_got_application_date').nice_date($data->emailNotGotApp->created_date) ?>"></i>
+						<button readonly><i class="fa fa-envelope-o success" title="<?= __('module_users_got_application_date').nice_date($data->emailGotApp->created_date) ?>"></i></button>
 					<?php endif; ?>
-				<?php endif; ?>
-			</td>
-			<td class="text-center">
-				<?php if ( NULL !== $data->emailGotApp) : ?>
-					<?php if ( $data->verif ) : ?>
-						<i title="<?= __('authorized') ?>" class="fa fa-check"></i>		
-					<?php else : ?>
-						<a href="<?= $data->a_auth ?>" title="<?= __('authorize') ?>"><i class="fa fa-plus"></i></a>
+					<!--  -->
+					<?php if (NULL === $data->emailGotApp) : ?>
+						<?php if (NULL === $data->emailNotGotApp ) : ?>
+							<button <?= $this->requestNotGotApp->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_not_got_application') ?>"<?= !MAIL ? ' diabled' : ''?>><i class="fa fa-times"></i></button>
+						<?php else : ?>
+							<button readonly><i class="fa fa-times error" title="<?= __('module_users_not_got_application_date').nice_date($data->emailNotGotApp->created_date) ?>"></i></button>
+						<?php endif; ?>
 					<?php endif; ?>
-				<?php endif; ?>
+					<!--  -->
+					<?php if (NULL !== $data->emailGotApp) : ?>
+						<?php if ( $data->verif ) : ?>
+							<i title="<?= __('authorized') ?>" class="fa fa-check"></i>		
+						<?php else : ?>
+							<a href="<?= $data->a_auth ?>" title="<?= __('authorize') ?>"><i class="fa fa-plus"></i></a>
+						<?php endif; ?>
+					<?php endif; ?>
+					<!--  -->
+					<?php if (NULL !== $data->emailGotApp && $data->verif) : ?>
+						<button <?= $this->requestResendAuth->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_resend_auth_email') ?>"<?= !MAIL ? ' diabled' : ''?>><i class="fa fa-key"></i></button>
+					<?php endif; ?>	
+					<!--  -->
+					<a href="<?= $data->a_edit ?>"><i class="fa fa-pencil edit"></i></a>
+					<!--  -->
+					<button <?= $this->requestDelete->getHTML(array('id' => $data->p_userId)) ?>><i class="fa fa-trash-o"></i></button>
+				</div>
 			</td>
-			<td class="text-center">
-				<?php if ( NULL !== $data->emailGotApp && $data->verif) : ?>
-					<button <?= $this->requestResendAuth->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_resend_auth_email') ?>"><i class="fa fa-key"></i></button>
-				<?php endif; ?>	
-			</td>
-			<td class="text-center"><a href="<?= $data->a_edit ?>"><i class="fa fa-pencil edit"></i></a></td>
-			<td class="text-center"><button <?= $this->requestDelete->getHTML(array('id' => $data->p_userId)) ?>><i class="fa fa-trash-o"></i></button></td>
 		</tr>
 	<?php endforeach; ?>
 </table>
@@ -95,6 +98,7 @@
 <?php
 	if (!empty($this->firmsToAuth)) :
 ?>
+<hr class="separator"/>
 	
 <div class="row">
 	<div class="col-sm-6 action-name">
@@ -105,25 +109,80 @@
 
 	
 <table class="table-default">
+	<colgroup>
+		<col class="w20">
+		<col class="w25">
+		<col class="w55">
+	</colgroup>
 	<tr>
-		<th>ID</th>
-		<th><?= __('company_name') ?></th>
-		<th><?= __('fullname') ?></th>
-		<th><?= __('email') ?></th>
-		<th><?= __('phone_number') ?></th>
+		<th>
+			<?= __('module_users_company') ?>
+			<span>/</span>
+			<?= __('module_users_company_contact') ?>
+		</th>
+		<th>
+			<?= __('email') ?>
+			<span>/</span>
+			<?= __('phone_number') ?>
+		</th>
 		<th><?= __('module_users_registered') ?></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
 	</tr>
+
 	<?php 
-		foreach( $this->firmsToAuth as $data ) : /* @var $data Art_Model_User_Data */
+		foreach( $this->firmsToAuth as $data ) : 
 	?>
+		<tr>
+			<td>
+				<a href="<?= $data->a_detail ?>" class="contact-person<?= (NULL !== $data->emailNotGotApp && NULL === $data->emailGotApp) ? ' overdue' : '' ?>" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $data->user_number ?>">
+					<span><?= $data->company->company_name ?></span>
+					<span class="first-name"><?= $data->name ?></span>
+					<span class="last-name"><?= $data->surname ?></span>
+				</a>
+			</td>
+			<td>
+				<div><?= $data->email ?></div>
+				<div><?= $data->p_phone ?></div>
+			</td>
+			<td>
+				<?= nice_date($data->created_date) ?>
+
+				<div class="inline-actions">
+					<button <?= $this->requestResendReg->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_resend_reg_email') ?>"<?= !MAIL ? ' diabled' : ''?>><i class="fa fa-envelope"></i></button>
+					<!--  -->
+					<?php if (NULL === $data->emailGotApp) : ?>
+						<button <?= $this->requestGotApp->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_got_application') ?>"<?= !MAIL ? ' diabled' : ''?>><i class="fa fa-envelope-o"></i></button>
+					<?php else : ?>
+						<button readonly><i class="fa fa-envelope-o success" title="<?= __('module_users_got_application_date').nice_date($data->emailGotApp->created_date) ?>"></i></button>
+					<?php endif; ?>
+					<!--  -->
+					<?php if (NULL === $data->emailGotApp) : ?>
+						<?php if (NULL === $data->emailNotGotApp ) : ?>
+							<button <?= $this->requestNotGotApp->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_not_got_application') ?>"<?= !MAIL ? ' diabled' : ''?>><i class="fa fa-times"></i></button>
+						<?php else : ?>
+							<button readonly><i class="fa fa-times error" title="<?= __('module_users_not_got_application_date').nice_date($data->emailNotGotApp->created_date) ?>"></i></button>
+						<?php endif; ?>
+					<?php endif; ?>
+					<!--  -->
+					<?php if (NULL !== $data->emailGotApp) : ?>
+						<?php if ( $data->verif ) : ?>
+							<i title="<?= __('authorized') ?>" class="fa fa-check"></i>		
+						<?php else : ?>
+							<a href="<?= $data->a_auth ?>" title="<?= __('authorize') ?>"><i class="fa fa-plus"></i></a>
+						<?php endif; ?>
+					<?php endif; ?>
+					<!--  -->
+					<?php if (NULL !== $data->emailGotApp && $data->verif) : ?>
+						<button <?= $this->requestResendAuth->getHTML(array('id' => $data->p_userId)) ?> title="<?= __('module_users_resend_auth_email') ?>"<?= !MAIL ? ' diabled' : ''?>><i class="fa fa-key"></i></button>
+					<?php endif; ?>	
+					<!--  -->
+					<a href="<?= $data->a_edit ?>"><i class="fa fa-pencil edit"></i></a>
+					<!--  -->
+					<button <?= $this->requestDelete->getHTML(array('id' => $data->p_userId)) ?>><i class="fa fa-trash-o"></i></button>
+				</div>
+			</td>
+		</tr>
+<?php
+/*
 		<tr>
 			<td><?= $data->user_number ?></td>
 			<td>
@@ -185,7 +244,7 @@
 			</td>
 			<td class="text-center"><a href="<?= $data->a_edit ?>"><i class="fa fa-pencil edit"></i></a></td>
 			<td class="text-center"><button <?= $this->requestDelete->getHTML(array('id' => $data->p_userId)) ?>><i class="fa fa-trash-o"></i></button></td>
-		</tr>
+		</tr>*/?>
 	<?php endforeach; ?>
 </table>
 	

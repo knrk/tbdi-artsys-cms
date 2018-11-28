@@ -5,16 +5,17 @@
  */
 class Module_Investment extends Art_Abstract_Module {
 	
-	const REQUEST_ADD			= 'fE5gI1apB1';
-	const REQUEST_DELETE_SINGLE	= 'g4Kn2mXd4r';
-	const REQUEST_TERMINATE_SINGLE = 'f2cEh4arD6';
-	const REQUEST_PREMATURE_TERMINATION = 'f2cEh2arD5';
-	const REQUEST_EDIT			= 'f1rE2cGSew';
-	const REQUEST_NEW_MONTH		= 'R4vjW8s6bA';
-	const REQUEST_DELETE_INVESTMENT	= 'g4Ev1hSwr2g';
-	const REQUEST_PUBLISH_INVESTMENT	= 'f5rD1awiB1';
-	const REQUEST_UNPUBLISH_INVESTMENT	= 'uz1F1eH2dw';
-	const REQUEST_EDIT_SINGLE			= '5Ffse1jZ1q';
+	const REQUEST_ADD						= 'fE5gI1apB1';
+	const REQUEST_DELETE_SINGLE				= 'g4Kn2mXd4r';
+	const REQUEST_TERMINATE_SINGLE 			= 'f2cEh4arD6';
+	const REQUEST_PREMATURE_TERMINATION 	= 'f2cEh2arD5';
+	const REQUEST_EDIT						= 'f1rE2cGSew';
+	const REQUEST_NEW_MONTH					= 'R4vjW8s6bA';
+	const REQUEST_DELETE_INVESTMENT			= 'g4Ev1hSwr2g';
+	const REQUEST_PUBLISH_INVESTMENT		= 'f5rD1awiB1';
+	const REQUEST_UNPUBLISH_INVESTMENT		= 'uz1F1eH2dw';
+	const REQUEST_EDIT_SINGLE				= '5Ffse1jZ1q';
+	const REQUEST_EXPORT_CSV				= "T4gj28s5bl";
 	
 	const SESSION_PREFIX	= 'invest-';
 	
@@ -184,6 +185,12 @@ class Module_Investment extends Art_Abstract_Module {
 				$unpublish_request->setAction('/'.Art_Router::getLayer().'/investment/unpublishInvestment/$id'); 
 				$unpublish_request->setRefresh(); 
 				$this->view->unpublish_request = $unpublish_request;
+
+				// Export CSV request
+				$export_csv = Art_Ajax::newRequest(self::REQUEST_EXPORT_CSV);
+				$export_csv->setAction('/' . Art_Router::getLayer() . '/investment/exportCsv/$id');
+				$export_csv->setRefresh();
+				$this->view->export_csv = $export_csv;
 
 				//Delete investment by button
 				$delete_request = Art_Ajax::newRequest(self::REQUEST_DELETE_INVESTMENT); 
@@ -688,27 +695,41 @@ class Module_Investment extends Art_Abstract_Module {
   		} else {
   			$this->showTo(Art_User::NO_ACCESS);
   		}
-  	}
+	}
+	  
+	function exportCsvAction() {
+		if (Art_Ajax::isRequestedBy(self::REQUEST_EXPORT_CSV)) {
+			$response = Art_Ajax::newResponse();
+
+			// get records
+			// create csv
+
+
+			$response->willRedirect();
+			$response->execute();
+			
+		} else {
+			$this->showTo(Art_User::NO_ACCESS);
+		}
+	}
 	
 	static function getFieldsValidators() {
-		return	array(
-					'id_user' => array(
-						Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_id_user_not_integer')]),
-					'value'	=> array(
+		return array(
+			'id_user' => array(Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_id_user_not_integer')]),
+			'value'	=> array(
 						Art_Validator::MIN_VALUE => ['value' => 0,'message'	=> __('module_investment_v_value_min')],
-						Art_Validator::IS_INTEGER => ['message'	=> __('module_investment_v_value_not_integer')]),
+						Art_Validator::IS_INTEGER => ['message'	=> __('module_investment_v_value_not_integer')])
 		);
 	}
 	
 	static function getNewMonthFieldsValidators() {
-		return	array(
-					'month' => array(
-						Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_month_not_integer')]),
-					'year' => array(
-						Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_year_not_integer')]),
-					'target' => array(
+		return array(
+			
+			'month' => array(Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_month_not_integer')]),
+			'year' => array(Art_Validator::IS_INTEGER => ['message' => __('module_investment_v_year_not_integer')]),
+			'target' => array(
 						Art_Validator::IS_STRING => ['message' => __('module_investment_v_target_not_string')],
-						Art_Validator::REGEX	=>	['value' => "/^[a-zA-Z-\s_\d]+$/", 'message'	=> __('module_investment_v_target_not_right')]),
+						Art_Validator::REGEX	=>	['value' => "/^[a-zA-Z-\s_\d]+$/", 'message'	=> __('module_investment_v_target_not_right')])
 	/*'date'	=> array(
 		Art_Validator::IS_STRING => ['message'		=> __('module_investment_v_date_not_string')]),
 	'interest'	=> array(

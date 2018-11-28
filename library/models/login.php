@@ -18,6 +18,8 @@
  *	@method Art_Model_Login		setUser(Art_Model_User $user)	Sets owner of this login
  */
 class Art_Model_Login extends Art_Abstract_Model_DB {
+
+	// protected static $_caching = false;
 	
     protected static $_table = 'login';
     

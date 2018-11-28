@@ -824,16 +824,24 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *	@return Service_Price[]
 	 */		
 	static function getServicePricesForServiceForUser ($user, $service) {		
+
+		// echo 'user:';
+		// print_r($user);
+		// echo 'service:';
+		// print_r($service);
+
 		$servicePrices = array();
 
 		if ($user->isLoaded() && NULL !== $service) {	
+			// print_r($service);
 			//Fetch all User Groups of which the User belongs
-			foreach (Art_Model_User_X_User_Group::fetchAllPrivileged(array('id_user' => $user->id)) as $userUserGroup ) /* @var $userUserGroup Art_Model_User_X_User_Group */ {
-				//Fetch all Service Prices of which the User Group belongs
-				foreach (User_Group_X_Service_Price::fetchAllPrivileged(array('id_user_group'=>$userUserGroup->id_user_group)) as $userGroupServicePrice)
-					/* @var $userGroupServicePrice User_Group_X_Service_Price */
-				{
+			foreach (Art_Model_User_X_User_Group::fetchAllPrivileged(array('id_user' => $user->id)) as $userUserGroup ) {				
+				foreach (User_Group_X_Service_Price::fetchAllPrivileged(array('id_user_group' => $userUserGroup->id_user_group)) as $userGroupServicePrice) {
 					$servicePrice = $userGroupServicePrice->getServicePrice();
+					// echo 'idservice:';
+					// print_r($servicePrice->id_service);
+					// echo 'servisid:';
+					// print_r($service->id);
 					if ($servicePrice->id_service == $service->id) {
 						$servicePrice->id_user_group_x_service_price = $userGroupServicePrice->id;
 						if (!in_array($servicePrice, $servicePrices)) {
@@ -968,12 +976,12 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *  @param Art_Model_User	$user
 	 *	@return boolean
 	 */	
-	static function isUserAuthenticated( $user )
-	{
-		if ( $user->isLoaded() )
-		{
-			if ( !empty(Art_Model_User_X_User_Group::fetchAll(array('id_user'=>$user->id,'id_user_group'=>Art_Model_User_Group::getAuthorizedId()))) )
-			{
+	static function isUserAuthenticated($user) {
+		if ($user->isLoaded()) {
+			if (!empty(Art_Model_User_X_User_Group::fetchAll(array(
+					'id_user' => $user->id,
+					'id_user_group' => Art_Model_User_Group::getAuthorizedId())))
+				) {
 				return true;
 			}
 		}
@@ -1312,9 +1320,8 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *  @param Invite_Code	$code
 	 *	@return string
 	 */
-	static function getInvitedCodeURL ( $code )
-	{
-		$url = Art_Server::getDomain().'/invitation?code='.$code->code;
+	static function getInvitedCodeURL($code) {
+		$url = Art_Server::getHost() . '/invitation?code=' . $code->code;
 		
 		return $url;
 	}
@@ -1728,22 +1735,32 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	 *	Get sorted array according to objects property
 	 *
 	 *	@param array $array
-	 *	@param string $param
+	 *	@param string $customSorter
 	 *	@return array
 	 */
-	static function getSortedArray ( $array, $param )
-	{
-		usort($array,'static::_'.$param);
-		
+	static function getSortedArray ($array, $customSorter) {
+		usort($array, 'static::_' . $customSorter);
 		return $array;
+	}
+
+	static function convertForSort($a, $b) {
+		static $czechCharsS = array('Á', 'Č', 'Ď', 'É', 'Ě' , 'Ch' , 'Í', 'Ň', 'Ó', 'Ř', 'Š', 'Ť', 'Ú', 'Ů' , 'Ý', 'Ž', 'á', 'č', 'ď', 'é', 'ě' , 'ch' , 'í', 'ň', 'ó', 'ř', 'š', 'ť', 'ú', 'ů' , 'ý', 'ž');
+		static $czechCharsR = array('AZ','CZ','DZ','EZ','EZZ','HZZZ','IZ','NZ','OZ','RZ','SZ','TZ','UZ','UZZ','YZ','ZZ','az','cz','dz','ez','ezz','hzzz','iz','nz','oz','rz','sz','tz','uz','uzz','yz','zz');
+
+		$aa = str_replace($czechCharsS, $czechCharsR, $a);
+		$bb = str_replace($czechCharsS, $czechCharsR, $b);
+		
+		return strnatcasecmp($aa, $bb);
 	}
 
 	static function _id($a, $b) { return $a->user_number > $b->user_number; }
 	static function _idR($a, $b) { return $b->user_number > $a->user_number; }
 	static function _firstname($a, $b) { return strcasecmp($a->name, $b->name); }
 	static function _firstnameR($a, $b) { return strcasecmp($b->name, $a->name); }
-	static function _surname($a, $b) { return strcasecmp($a->surname, $b->surname); }
-	static function _surnameR($a, $b) { return strcasecmp($b->surname, $a->surname); }
+	// static function _surname($a, $b) { return strcasecmp($a->surname, $b->surname); }
+	static function _surname($a, $b) { return static::convertForSort($a->surname, $b->surname); }
+	// static function _surnameR($a, $b) { return strcasecmp($b->surname, $a->surname); }
+	static function _surnameR($a, $b) { return static::convertForSort($b->surname, $a->surname); }
 	static function _company_name($a, $b) { return strcasecmp($a->company_name, $b->company_name); }
 	static function _company_nameR($a, $b) { return strcasecmp($b->company_name, $a->company_name); }
 	static function _membership_from($a, $b) { return strtotime($a->membership_from) > strtotime($b->membership_from); }

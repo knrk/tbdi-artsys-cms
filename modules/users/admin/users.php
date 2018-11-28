@@ -47,7 +47,7 @@ class Module_Users extends Art_Abstract_Module {
 		
 		$this->view->sortBy = $sortBy = Helper_TBDev::getSortBy($sortById, $sortByFirstname, $sortBySurname, $sortByMembershipFrom, $sortByMembershipTo);
 		
-		$allUsers = $this->_getAllAuthenticatedUserDataForTable($sortBy);
+		$allUsers = $this->_getAllAuthenticatedUserDataForTable($sortBy === -1 ? 4 : $sortBy);
 		// $authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy);
 		
 		// $activeUsers = array();
@@ -992,10 +992,10 @@ class Module_Users extends Art_Abstract_Module {
 		}
 	}
 	
-	function authorizationAction()
-	{	
+	function authorizationAction() {	
 		//Get all user data restricted by not set pass_changed_date
-		$usersData = Art_Model_User_Data::fetchAllPrivileged(array('pass_changed_date'=>''));
+		// $usersData = Art_Model_User_Data::fetchAllPrivileged(array('pass_changed_date' => ''));
+		$usersData = Art_Model_User_Data::fetchAllPrivileged(array('verif' => 0));
 		
 		//Get all user data restricted by not be part of authorized group
 //		$users = Helper_TBDev::getPropertyFromObjectsInArray(Art_Model_User_Data::fetchAllPrivileged(),'id_user');
@@ -1011,24 +1011,24 @@ class Module_Users extends Art_Abstract_Module {
 		$usersToAuth = array();
 		$firmsToAuth = array();
 
-		foreach ( $usersData as $value ) /* @var $value Art_Model_User_Data */
-		{
+		foreach ($usersData as $value) {
 			$userData = $value;
-			$user = $userData->getUser();	/* @var $user Art_Model_User */
+			$user = $userData->getUser();
+			
 
-			if ( 2 < $user->getRights() ) 
-			{
+			if (intVal($user->getRights()) < 2) {
 				continue;
 			}
+
+			// p($userData);
+
 			
 			//Init Users not to be shown here
-			if ( strtotime($userData->created_date) < strtotime((new Art_Model_User(1))->created_date) + 600 )
-			{
+			if (strtotime($userData->created_date) < strtotime((new Art_Model_User(1))->created_date) + 600) {
 				continue;
 			}
 
-			if ( !$user->active )
-			{
+			if (!$user->active) {
 				continue;
 			}
 			
@@ -1038,8 +1038,7 @@ class Module_Users extends Art_Abstract_Module {
 			
 			$userData->a_edit = '/'.Art_Router::getLayer().'/users/edit/'.$user->id;
 			
-			if ( Helper_TBDev::isUserRepresentsCompany($user) )
-			{
+			if (Helper_TBDev::isUserRepresentsCompany($user)) {
 				$userData->a_auth = '/'.Art_Router::getLayer().'/users/authorizefirm/'.$user->id;
 				$userData->a_completeReg = '/'.Art_Router::getLayer().'/users/completefirmregistration/'.$user->id;
 				
@@ -1047,30 +1046,27 @@ class Module_Users extends Art_Abstract_Module {
 				$userData->isRegCompleted = !empty(Art_Model_User_Group::fetchAll(array('name'=>Helper_TBDev::GROUP_COMPANY.$companyAddress->company_name)));
 
 				$userData->a_detail = '/'.Art_Router::getLayer().'/users/detailcompany/'.$user->id;
-				
 				$userData->company = $companyAddress;
 				
 				$firmsToAuth[] = $userData;
 			}
-			else if ( $user->user_number < 50000 )
-			{
+			else if ($user->user_number < 50000) {
+
 				$userData->a_auth = '/'.Art_Router::getLayer().'/users/authorizeuser/'.$user->id;
 				$userData->a_detail = '/'.Art_Router::getLayer().'/users/detail/'.$user->id;
 				
 				$usersToAuth[] = $userData;
+
 			}
 				
 			$userData->emailGotApp = null;
 			$userData->emailNotGotApp = null;
 
-			foreach (User_X_Email::fetchAllPrivileged(array('id_user'=>$user->id)) as $userEmail) /* @var $userEmail User_X_Email */ 
-			{
-				if ( Helper_TBDev::EMAIL_TYPE_GOT_APP == $userEmail->email_type )
-				{
+			foreach (User_X_Email::fetchAllPrivileged(array('id_user'=>$user->id)) as $userEmail) {
+				if (Helper_TBDev::EMAIL_TYPE_GOT_APP == $userEmail->email_type) {
 					$userData->emailGotApp = $userEmail;
 				}
-				else if ( Helper_TBDev::EMAIL_TYPE_NOT_GOT_APP == $userEmail->email_type )
-				{
+				else if (Helper_TBDev::EMAIL_TYPE_NOT_GOT_APP == $userEmail->email_type) {
 					$userData->emailNotGotApp = $userEmail;
 				}
 			} 
@@ -1609,13 +1605,15 @@ class Module_Users extends Art_Abstract_Module {
 		}
 	}
 	
-	function embeddAction() 
-	{				
+	function embeddAction() {		
 		$user = Art_User::getCurrentUser();
-		
+
 		$this->view->user = $user;
+		$this->view->user->isManager = intVal($user->getRights()) === 20 ? true : false;
+		$this->view->user->isSupervisor = intVal($user->getRights()) === 50 ? true : false;
+		$this->view->user->gender = intVal($user->getData()->gender) === 1 ? "male" : "female";
 	}
-	
+
 	function sendMailAction() 
 	{	
 		if( Art_Ajax::isRequestedBy(self::REQUEST_SEND_SELECTED) )
@@ -1788,53 +1786,43 @@ class Module_Users extends Art_Abstract_Module {
 		}
 	}			
 	
-	function resendRegistrationMailAction()
-	{	//d(Art_Session::get());
-		if(Art_Ajax::isRequestedBy(self::REQUEST_RESEND_REG))
-		{
-			$response = Art_Ajax::newResponse();
+	function resendRegistrationMailAction() {
+		if (Art_Ajax::isRequestedBy(self::REQUEST_RESEND_REG)) {
 			
+			$response = Art_Ajax::newResponse();
 			$user = new Art_Model_User(Art_Router::getId());
 
-			if( $user->isLoaded() )
-			{
-				$userData = $user->getData();
+			if ($user->isLoaded()) {
 
-				$resource = Art_Model_Resource_Db::fetchAll(array('name'=>Helper_TBDev_PDF::RESOURCE_CONTRACT.$user->user_number.Helper_TBDev_PDF::RESOURCE_EXT_PDF));
+				$userData = $user->getData();
+				$resource = Art_Model_Resource_Db::fetchAll(array('name' => Helper_TBDev_PDF::RESOURCE_CONTRACT.$user->user_number.Helper_TBDev_PDF::RESOURCE_EXT_PDF));
 				
-				if ( empty($resource) )
-				{
+				if (empty($resource)) {
 					$response->addAlert(__('module_users_resend_reg_email_error'));
 				}
 
-				if ( $time_rem = $this->_timeRemaining( static::SESSION_REG_MAIL.$user->id ) )
-				{
-					$response->addAlert(sprintf(__('module_users_spam_alert'),$time_rem));
+				if ($time_rem = $this->_timeRemaining(static::SESSION_REG_MAIL.$user->id)) {
+					$response->addAlert(sprintf(__('module_users_spam_alert'), $time_rem));
 				}
 
-				if ( $response->isValid() )
-				{
+				if ($response->isValid()) {
+
 					$resource = $resource[0];
 					$url = Art_Server::getHost().'/resource/'.$resource->hash;
-
 					Helper_Email::sendRegistrationMail($userData->email, $url);
-
 					$response->addMessage(__('module_users_resend_reg_email_success'));
-
-					$response->addVariable('content', Art_Module::createAndRenderModule('users','authorization'));
+					$response->addVariable('content', Art_Module::createAndRenderModule('users', 'authorization'));
 					
 					Art_Session::set(self::SESSION_REG_MAIL.$user->id, time());
 				}
 				
 				$response->execute();
 			}
-			else
-			{
+			else {
 				$this->showTo(Art_User::NO_ACCESS);
 			}
 		}
-		else
-		{
+		else {
 			$this->showTo(Art_User::NO_ACCESS);
 		}
 	}		
@@ -2007,122 +1995,97 @@ class Module_Users extends Art_Abstract_Module {
   		}
   	}
 	
-	function deleteAction()
-	{
-  		if( Art_Ajax::isRequestedBy(self::REQUEST_DELETE_USER) )
-  		{
+	function deleteAction() {
+  		if (Art_Ajax::isRequestedBy(self::REQUEST_DELETE_USER)) {
+
   			$response = Art_Ajax::newResponse();			
-  
 			$user = new Art_Model_User(Art_Router::getId());
 
-			if( $user->isLoaded() )
-  			{
-  				if( !$user->isPrivileged() )
-  				{
+			if ($user->isLoaded()) {
+				if (!$user->isPrivileged()) {
   					$this->allowTo(Art_User::NO_ACCESS);
   				}
 
-				if ( !empty(Service_Payment::fetchAll(array('id_user'=>$user->id))) 
-						|| !empty(Service_Payment::fetchAll(array('id_user_paid_by'=>$user->id))) )
-				{
+				if (	!empty(Service_Payment::fetchAll(array('id_user'=>$user->id))) || 	
+						!empty(Service_Payment::fetchAll(array('id_user_paid_by'=>$user->id)))) {
 					$response->addAlert(__('module_users_delete_contained_in_payments'));
-				}
-				else if ( !empty(Helper_TBDev::getAllInvitedUsers($user)) )
-				{
+				} 
+				elseif (!empty(Helper_TBDev::getAllInvitedUsers($user))) {
 					$response->addAlert(__('module_users_delete_contained_invited_users'));
 				}
-				else 
-				{
-					if ( Helper_TBDev::isUserAuthenticated($user) )
-					{
+				else  {
+					if (Helper_TBDev::isUserAuthenticated($user)) {
 						Helper_Email::sendUnmemberMail($user);
-					}
-					else
-					{
+					} else {
 						Helper_Email::sendTerminateApplicationMail($user);
 					}
 
-					foreach ( Art_Model_User_X_User_Group::fetchAll(array('id_user'=>$user->id)) as $userUserGroup )
-					{
+					foreach ( Art_Model_User_X_User_Group::fetchAll(array('id_user' => $user->id)) as $userUserGroup) {
 						$userUserGroup->delete();
 					}
 					
-					foreach (User_X_Invite_Code::fetchAll(array('id_user'=>$user->id)) as $userInvCode )
-					{
+					foreach (User_X_Invite_Code::fetchAll(array('id_user' => $user->id)) as $userInvCode) {
 						$userInvCode->delete();
 					}
 					
-					foreach (Invite_Code::fetchAll(array('id_user'=>$user->id)) as $invCode )
-					{
+					foreach (Invite_Code::fetchAll(array('id_user' => $user->id)) as $invCode) {
 						$invCode->delete();
 					}
 					
-					foreach (User_X_Service::fetchAll(array('id_user'=>$user->id)) as $userService )
-					{
+					foreach (User_X_Service::fetchAll(array('id_user' => $user->id)) as $userService) {
 						$userService->delete();
 					}
 					
-					foreach (Service_Investment_Value::fetchAll(array('id_user'=>$user->id)) as $investment )
-					{
+					foreach (Service_Investment_Value::fetchAll(array('id_user' => $user->id)) as $investment) {
 						$investment->delete();
 					}
 					
-					foreach (Service_Investment_Deposit::fetchAll(array('id_user'=>$user->id)) as $investmentDeposit )
-					{
+					foreach (Service_Investment_Deposit::fetchAll(array('id_user' => $user->id)) as $investmentDeposit) {
 						$investmentDeposit->delete();
 					}
 					
-					foreach (User_X_Request::fetchAll(array('id_user'=>$user->id)) as $request )
-					{
+					foreach (User_X_Request::fetchAll(array('id_user' => $user->id)) as $request) {
 						$request->delete();
 					}
 					
-					if ( Helper_TBDev::isUserRepresentsCompany($user) )
-					{
+					if (Helper_TBDev::isUserRepresentsCompany($user)) {
 						$representant = Helper_TBDev::getCompanyRepresentant($user);						
-						if ( $representant->id !== $user->id )
-						{
-							foreach ($representant->getAddresses() as $value) 
-							{
+						if ($representant->id !== $user->id) {
+							foreach ($representant->getAddresses() as $value) {
 								$value->delete();
 							}
-							foreach ($representant->getGroups() as $value) 
-							{
+
+							foreach ($representant->getGroups() as $value) {
 								$value->delete();
-							}					
+							}
 							$representant->getData()->delete();
 							$representant->delete();
 						}
 					}
 					
-					foreach (User_X_Company::fetchAll(array('id_user'=>$user->id)) as $userCompany )
-					{
+					foreach (User_X_Company::fetchAll(array('id_user' => $user->id)) as $userCompany) {
 						$userCompany->delete();
 					}
 					
-					foreach (User_X_Email::fetchAll(array('id_user'=>$user->id)) as $userEmail )
-					{
+					foreach (User_X_Email::fetchAll(array('id_user' => $user->id)) as $userEmail) {
 						$userEmail->delete();
 					}
 					
-					foreach (User_X_Request::fetchAll(array('id_user'=>$user->id)) as $userRequest )
-					{
+					foreach (User_X_Request::fetchAll(array('id_user' => $user->id)) as $userRequest) {
 						$userRequest->delete();
 					}
 					
-					(new User_X_Manager(array('id_user'=>$user->id)))->delete();
+					(new User_X_Manager(array('id_user' => $user->id)))->delete();
 					
-					foreach ($user->getAddresses() as $value) /* @var $value Art_Model_Address */ 
-					{
+					foreach ($user->getAddresses() as $value) {
 						$value->delete();
 					}
 					
 					$resource =  new Art_Model_Resource_Db(Helper_TBDev_PDF::RESOURCE_CONTRACT.$user->user_number.Helper_TBDev_PDF::RESOURCE_EXT_PDF);
-					if ( NULL !== $resource && $resource->isLoaded() )
-					{
+					if ( NULL !== $resource && $resource->isLoaded()) {
 						unlink($resource->path);
 						$resource->delete();
-					}	
+					}
 					
 					$user->getData()->delete();
 					$user->delete();
@@ -2130,16 +2093,14 @@ class Module_Users extends Art_Abstract_Module {
 					$response->addMessage(__('module_users_delete_success'));
 				}
 			}
-  			else
- 			{
+  			else {
 				$response->addAlert(__('module_users_delete_not_found'));
   			}
 			
 			$response->willRedirect();
 			$response->execute();
   		}
-  		else
-  		{
+  		else {
   			$this->showTo(Art_User::NO_ACCESS);
   		}
   	}
@@ -2322,18 +2283,16 @@ class Module_Users extends Art_Abstract_Module {
 		}
   	}
 	
-	function invCodesAction ()
-	{
+	function invCodesAction() {
 		$codes = Invite_Code::fetchAllPrivileged();
 		
-		foreach ($codes as $value)	/* @var $value Invite_Code */
-		{
+		foreach ($codes as $value){
 			$value->URL = Helper_TBDev::getInvitedCodeURL($value);
 
-			$userData = new Art_Model_User_Data(array('id_user'=>$value->id_user));
+			$userData = new Art_Model_User_Data(array('id_user' => $value->id_user));
 			$value->fullname = Art_Model_User_Data::getFullname($userData);
 			
-			$userData = new Art_Model_User_Data(array('id_user'=>$value->created_by));
+			$userData = new Art_Model_User_Data(array('id_user' => $value->created_by));
 			$value->gen_by_fullname = Art_Model_User_Data::getFullname($userData);
 		}
 		

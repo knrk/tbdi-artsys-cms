@@ -213,12 +213,10 @@ final class Art_Router extends Art_Abstract_Component {
 	 *	@static
 	 *	@return void
 	 */
-	static function setNoAccess( $change_layer = false )
-	{
+	static function setNoAccess($change_layer = false) {
 		http_response_code(401);
 		
-		if( $change_layer )
-		{
+		if ($change_layer) {
 			self::$_layer = self::NO_ACCESS_LAYER;
 		}
 		
@@ -407,40 +405,40 @@ final class Art_Router extends Art_Abstract_Component {
 	 *	@example matchRoutes('/product/42') Compares this URL to all router rules
 	 *	@example matchRoutes(array('product','42')
 	 */
-	static function matchRoutes($url = NULL, $domain = NULL)
-	{
+	static function matchRoutes($url = NULL, $domain = NULL) {
+		// p('matchRoutes->url');
+		// print_r(is_null($url));
+
 		//Default URL is the current url from rewrite
-		if( NULL === $url )
-		{
+		if (NULL === $url) {
 			$url = implode('/', self::$_rewrite_params);
 		}
 		
 		//Default domain is current
-		if( NULL === $domain )
-		{
+		if (NULL === $domain) {
 			$domain = Art_Server::getDomain();
 		}
+
+		// p('matchRoutes->domain');
+		// print_r($domain);
 		
 		//Get matching params and route
 		$matched = static::getMatchingData($url, $domain);
 
+		// p('matchRoutes->matched');
+		// print_r($matched);
+
 		//If no matching route was found
-		if( NULL === $matched )
-		{
+		if (NULL === $matched) {
 			self::setNotFound();
-		}
-		else
-		{
+		} else {
 			self::$_params = $matched['params'];
 			self::$_matching_route = $matched['route'];
 
 			//Put layer to its own variable
-			if( isset(self::$_params['layer']) )
-			{
+			if (isset(self::$_params['layer'])) {
 				self::$_layer = self::$_params['layer'];
-			}
-			else
-			{
+			} else {
 				self::$_params['layer'] = self::$_layer;
 			}
 		}
@@ -455,14 +453,11 @@ final class Art_Router extends Art_Abstract_Component {
 	 *	@param string $domain [optional]  Domain to compare with
 	 *	@return array
 	 */
-	static function getMatchingData($url, $domain = NULL)
-	{
+	static function getMatchingData($url, $domain = NULL) {
 		//For each route
-		foreach(array_reverse(self::$_routes) AS $route) /* @var $route Art_Model_Route */
-		{
+		foreach(array_reverse(self::$_routes) AS $route) /* @var $route Art_Model_Route */ {
 			//If route match
-			if( NULL !== ($params = $route->match($url, $domain)) )
-			{
+			if (NULL !== ($params = $route->match($url, $domain))) {
 				return array( "params" => $params, "route" => $route );
 			}
 		}
@@ -547,13 +542,18 @@ final class Art_Router extends Art_Abstract_Component {
 		
 		//Get current layer rights - if not set, layer has no access
 		$rights = self::getLayerAccess(self::getLayer());
+		// p($rights);
 		
 		if (Art_User::hasPrivileges($rights)) {
 			$access = true;
 		}
+		// p(Art_User::hasPrivileges($rights));
 		
 		//Check for token validity if AJAX
 		if (Art_Server::isAjax()) {
+			// p(Art_Session::getToken());
+			// p('====');
+			// p(Art_Main::getPost(Art_Session::TOKEN_NAME, NULL));
 			if (Art_Session::getToken() === Art_Main::getPost(Art_Session::TOKEN_NAME, NULL)) {
 				$access = true;
 			} else {
@@ -565,7 +565,7 @@ final class Art_Router extends Art_Abstract_Component {
 		if (!Art_User::getCurrentUser()->isActive()) {
 			$access = false;
 		}
-
+		
 		//245
 		// if (!(Art_Server::getIp() === '81.200.53.245' || Art_Server::getIp() === '81.19.13.54') && 
 		// 	Art_Server::getDomain() == APP_DOMAIN && 
@@ -575,13 +575,12 @@ final class Art_Router extends Art_Abstract_Component {
 		// }
 		
 		$userData = Art_User::getCurrentUser()->getData();
-		
 		//If pass changed before year of 2010
 		if (Art_User::isRegistered() && !Art_Server::isAjax() && 
-			(strtotime($userData->pass_changed_date) < 1262300400 || NULL == $userData->gender)) {
+		(strtotime($userData->pass_changed_date) < 1262300400 || NULL == $userData->gender)) {
 			$access = false;
 		}
-		
+		// p('last: '.gettype($access) . ', ' . $access);
 		if (!$access) {
 			self::setNoAccess(true);
 		}

@@ -1,6 +1,5 @@
 <?php
 /**
- *  @author Robin Zoň <zon@itart.cz>
  *  @package library
  *	@final
  */
@@ -567,7 +566,8 @@ final class Art_Main {
 			Art_Main::_loadPost();
 
             //Load system components
-			Art_Component::initialize(array('register','config','db'));
+			// Art_Component::initialize(array('register','config','db'));
+			Art_Component::initialize(array('register', 'db'));
 
 			//Load locales and domains
 			static::$_default_locale = APP_LANG_TAG;
@@ -605,7 +605,7 @@ final class Art_Main {
 			Art_Main::_loadHelpers();
 			
 			//Call for labels
-			Art_Event::trigger(Art_Event::LABEL_SETUP);	
+			// Art_Event::trigger(Art_Event::LABEL_SETUP);	
 			
 			//Call for router setup
 			Art_Event::trigger(Art_Event::ROUTER_SETUP);
@@ -619,9 +619,12 @@ final class Art_Main {
 			//Match routes in router
 			Art_Router::matchRoutes();
 
+			// p(Art_Router::getLayer());
+			
 			//Restrict users from accessing certain layers
 			Art_Router::doFirewall();
 			
+			// p(Art_Router::getLayer());
 			//Load modules based on router setup
 			Art_Module::loadModulesCurrLayer();
 			
@@ -641,9 +644,9 @@ final class Art_Main {
              * TEST AREA
 			 */
 
-			//d(Art_User::getCurrentUser());
-			//d(Art_Router::dumpRoute());
-			//d(Art_Module::getModules());
+			// d(Art_User::getCurrentUser());
+			// Art_Router::dumpRoute();
+			// d(Art_Module::getModules());
 			Art_Minify::disable();
 			
 			/*
@@ -1086,10 +1089,8 @@ final class Art_Main {
 	 *	@access protected
 	 *	@return void
 	 */
-	protected static function _render()
-	{
-		if( Art_Template::render() )
-		{
+	protected static function _render() {
+		if (Art_Template::render()) {
 			self::$_isRendered = true;
 		}
 	}

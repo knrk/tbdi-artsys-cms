@@ -1,8 +1,5 @@
-
-
 <?php
 /**
- *  @author Jakub Pastuszek <pastuszek@itart.cz>
  *  @package modules/meta/admin
  */
 class Module_Meta extends Art_Abstract_Module {
@@ -148,12 +145,12 @@ class Module_Meta extends Art_Abstract_Module {
 			
 			$sql_data = Helper_Default::getValidatedSQLData($fields, self::getFieldsValidators(), $data, $response);
 
-			p($sql_data);
+			// p($sql_data);
 			
 			//Everything is valid
 			if ($response->isValid()) {
 				$meta->setDataFromArray($sql_data);
-				p($response);
+				// p($response);
 				$meta->save();
 				
 				$response->addMessage(__('module_meta_edit_succ'));

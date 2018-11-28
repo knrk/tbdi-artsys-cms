@@ -80,7 +80,7 @@ p($pass);*/
 			$userDataFields = Art_Model_User_Data::getCols('insert');
 			$addressFields = Art_Model_Address::getCols('insert');
 
-if ( !ART_DEBUG ) :
+if ( !DEBUG ) :
 			//Only check input 
 			Helper_Default::getValidatedSQLData($userDataFields, self::getUserDataFieldsValidators(), $data, $response);
 			Helper_Default::getValidatedSQLData($addressFields, self::getDeliveryFieldsValidators(), $data, $response, Art_Model_Address::DELIVERY_PREFIX);		
@@ -112,7 +112,7 @@ if ( !ART_DEBUG ) :
 			{
 				$response->addAlert(__('module_registration_v_charter_confirm'));
 			}	
-endif; //ART_DEBUG
+endif;
 
 			if( $response->isValid() )
 			{
@@ -195,7 +195,7 @@ endif; //ART_DEBUG
 			$userDataFields = Art_Model_User_Data::getCols('insert');
 			$addressFields = Art_Model_Address::getCols('insert');
 
-if ( !ART_DEBUG ) :	
+if ( !DEBUG ) :	
 			//Only check input 
 			Helper_Default::getValidatedSQLData(array_merge($addressFields,array('person-function')), self::getFirmFieldsValidators(), $data, $response);
 			
@@ -245,7 +245,7 @@ if ( !ART_DEBUG ) :
 			{
 				$response->addAlert(__('module_registration_v_charter_confirm'));
 			}	
-endif; //ART_DEBUG			
+endif;		
 			
 			if( $response->isValid() )
 			{
@@ -313,26 +313,21 @@ endif; //ART_DEBUG
 		}
 	}
 	
-	function confirmnaturalAction()
-	{
-		if( Art_Ajax::isRequestedBy(self::REQUEST_BACK) )
-		{
-			$response = Art_Ajax::newResponse();
+	function confirmnaturalAction() {
+		if (Art_Ajax::isRequestedBy(self::REQUEST_BACK)) {
 			
+			$response = Art_Ajax::newResponse();
 			$response->willRedirect();
-
 			$response->execute();
 		}
-		else if( Art_Ajax::isRequestedBy(self::REQUEST_REGISTER) )
-		{
+		else if (Art_Ajax::isRequestedBy(self::REQUEST_REGISTER)) {
+			
 			$response = Art_Ajax::newResponse();
 			$data = array();
 			
 			//Get data from SESSION
-			foreach(Art_Session::get() AS $field_name => $field_value)
-			{		
-				if ( 0 === strpos($field_name, self::SESSION_PREFIX) )
-				{
+			foreach(Art_Session::get() as $field_name => $field_value) {		
+				if (0 === strpos($field_name, self::SESSION_PREFIX)) {
 					$data[substr($field_name, strlen(self::SESSION_PREFIX))] = $field_value;
 				}
 			}
@@ -347,13 +342,10 @@ endif; //ART_DEBUG
 			//Select row containing state according to CURRENCY_FROM_ADDRESS_STATE
 			$country = new Art_Model_Country($data[Helper_TBDev::CURRENCY_FROM_ADDRESS_STATE.'country']);
 
-			if ( $country->isLoaded() )
-			{
+			if ($country->isLoaded()) {
 				//Get currency from address country currency
 				$insertUser->id_currency = $country->id_currency;
-			}
-			else
-			{
+			} else {
 				$insertUser->id_currency = Art_User::DEFAULT_CURRENCY_ID;
 			}			
 			
@@ -369,15 +361,11 @@ endif; //ART_DEBUG
 
 			$fields = Art_Model_User_Data::getCols('insert');
 
-			foreach($fields AS $field_name)
-			{
+			foreach($fields AS $field_name) {
 				//If field is not set
-				if( !isset($data[$field_name]) )
-				{
+				if (!isset($data[$field_name])) {
 					$sql_data[$field_name] = null;
-				}
-				else
-				{
+				} else {
 					$sql_data[$field_name] = $data[$field_name];
 				}
 			}					
@@ -388,7 +376,7 @@ endif; //ART_DEBUG
 			$insertUserData = new Art_Model_User_Data();
 			$insertUserData->setDataFromArray($sql_data);
 			$insertUserData->setUser($insertUser);
-			$insertUserData->password = Art_User::hashPassword($passwd,$salt);
+			$insertUserData->password = Art_User::hashPassword($passwd, $salt);
 			$insertUserData->salt = $salt;
 			$insertUserData->save();
 			
@@ -400,8 +388,7 @@ endif; //ART_DEBUG
 			$insertUserToGroup->setGroup(Art_Model_User_Group::getRegistered());
 			$insertUserToGroup->save();
 			
-			if ( self::ENABLE_INVITE_CODE )
-			{
+			if (self::ENABLE_INVITE_CODE ) {
 				//*************************//
 				//****** INVITE CODE ******//
 
@@ -419,8 +406,7 @@ endif; //ART_DEBUG
 			$insertUserToGroup->id_manager = Helper_TBDev::getManagerForUser($insertUser)->id;
 			$insertUserToGroup->save();
 			
-			if ( self::ENABLE_ADDRESS_DELIVERY )
-			{
+			if (self::ENABLE_ADDRESS_DELIVERY) {
 				//*************************************//
 				//******* USER DELIVERY ADDRESS *******//
 
@@ -429,15 +415,11 @@ endif; //ART_DEBUG
 
 				$fields = Art_Model_Address::getCols('insert');
 
-				foreach($fields AS $field_name)
-				{
+				foreach ($fields as $field_name) {
 					//If field is not set
-					if( !isset($data[Art_Model_Address::DELIVERY_PREFIX.$field_name]) )
-					{
+					if (!isset($data[Art_Model_Address::DELIVERY_PREFIX.$field_name])) {
 						$sql_data[$field_name] = NULL;
-					}
-					else
-					{
+					} else {
 						$sql_data[$field_name] = $data[Art_Model_Address::DELIVERY_PREFIX.$field_name];
 					}
 				}					
@@ -450,9 +432,8 @@ endif; //ART_DEBUG
 				$insertDeliveryUserAddress->save();
 			}
 
-			if ( self::ENABLE_ADDRESS_CONTACT &&
-					Helper_Default::isPropertyChecked($data,Art_Model_Address::CONTACT_PREFIX.'active') )
-			{	
+			if (self::ENABLE_ADDRESS_CONTACT &&
+				Helper_Default::isPropertyChecked($data,Art_Model_Address::CONTACT_PREFIX.'active')) {	
 				//************************************//
 				//******* USER CONTACT ADDRESS *******//
 
@@ -461,15 +442,11 @@ endif; //ART_DEBUG
 
 				$fields = Art_Model_Address::getCols('insert');
 
-				foreach($fields AS $field_name)
-				{
+				foreach ($fields as $field_name) {
 					//If field is not set
-					if( !isset($data[Art_Model_Address::CONTACT_PREFIX.$field_name]) )
-					{
+					if (!isset($data[Art_Model_Address::CONTACT_PREFIX.$field_name])) {
 						$sql_data[$field_name] = null;
-					}
-					else
-					{
+					} else {
 						$sql_data[$field_name] = $data[Art_Model_Address::CONTACT_PREFIX.$field_name];
 					}
 				}					
@@ -483,7 +460,7 @@ endif; //ART_DEBUG
 			}
 			
 			//Create registration document
-			$contactAddr = ( empty($insertContactUserAddress) ) ? 
+			$contactAddr = (empty($insertContactUserAddress)) ? 
 								$insertDeliveryUserAddress->stringify : $insertContactUserAddress->stringify;
 
 			$resource = Helper_TBDev_PDF::registrationDocForPerson(
@@ -494,12 +471,14 @@ endif; //ART_DEBUG
 					$insertDeliveryUserAddress->stringify,				
 					$insertUserData->email,
 					Helper_TBDev::getTelephoneForUser($insertUser)
-					);
+			);
 			
 			$url = Art_Server::getHost().'/resource/'.$resource->hash;
 			
 			//Send registraion mail
-			Helper_Email::sendRegistrationMail($data['email'], $url);
+			if (MAIL) {
+				Helper_Email::sendRegistrationMail($data['email'], $url);
+			}
 			
 			//Save email and pdf url to session
 			Art_Session::set('resend_email', $data['email']);
@@ -509,11 +488,10 @@ endif; //ART_DEBUG
 			$response->willRedirect();
 			
 			$response->execute();
-		}
-		else
-		{
-			if( !$this->isWidget() )
-			{
+
+		} else {
+			
+			if (!$this->isWidget()) {
 				Art_Template::setTemplate('index', 'clubTemplate');
 			}
 	
@@ -521,18 +499,15 @@ endif; //ART_DEBUG
 			$data = array();
 			
 			//Get data from SESSION
-			foreach(Art_Session::get() AS $field_name => $field_value)
-			{		
-				if ( 0 === strpos($field_name, self::SESSION_PREFIX) )
-				{
+			foreach (Art_Session::get() AS $field_name => $field_value) {		
+				if (0 === strpos($field_name, self::SESSION_PREFIX)) {
 					$data[substr($field_name, strlen(self::SESSION_PREFIX))] = $field_value;
 				}
 			}
 
 			$this->view->data = $data;
 
-			if ( !empty($data) )
-			{
+			if (!empty($data)) {
 				$deliveryAddressCountry = new Art_Model_Country($data[Art_Model_Address::DELIVERY_PREFIX.'country']);
 				
 				$this->view->deliveryAddressCountry = (NULL !== $deliveryAddressCountry) ? $deliveryAddressCountry->name : null;
@@ -556,9 +531,7 @@ endif; //ART_DEBUG
 				$requestRegister = Art_Ajax::newRequest(self::REQUEST_REGISTER);
 				$requestRegister->setRedirect('/registration/donenatural');
 				$this->view->requestRegister = $requestRegister; 
-			}
-			else
-			{
+			} else {
 				redirect_to('/registration');
 			}
 		}
@@ -1179,9 +1152,12 @@ endif; //ART_DEBUG
 					$response->addAlert(__('module_registration_v_not_existed_email'));
 				}
 				else
-				{					
-					if ( empty(Art_Model_User_X_User_Group::fetchAll(array('id_user'=>$userData->id_user,'id_user_group'=>Art_Model_User_Group::getAuthorizedId()))) )
-					{
+				{	
+					$userinfo = Art_Model_User_X_User_Group::fetchAll(array(
+						'id_user' => $userData->id_user, 
+						'id_user_group' => Art_Model_User_Group::getAuthorizedId()));
+					
+					if (empty($userinfo)) {
 						$response->addAlert(__('module_registration_v_not_authorized_email'));
 					}
 					else

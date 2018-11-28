@@ -1,4 +1,4 @@
-<?php if(Art_User::getRights()==0): ?>
+<?php if (Art_User::getRights() == 0) : ?>
 <form name="login-embedd" <?= $this->login_request->getHTML() ?>>
 	<div class="col-md-12 col-xs-12">
 		<input name="email" type="text" class="form-control email" placeholder="<?= __('email') ?>">
@@ -11,14 +11,16 @@
 		<?php /*<a href="<?= Art_Server::getRelativePath()?>/registrace">Registrovat se</a> */?>
 	</div>
 </form>
+
 <?php else: ?>
-	<?php if ($this->size == 'small') : ?>
-		<a href="javascript:;" <?= $this->logout_request->getHTML() ?>>
-			Odhlásit<i class="fa fa-sign-out marg-left-5"></i>
-		</a>
+
+<?php if ($this->size == 'small') : ?>
+	<a href="javascript:;" <?= $this->logout_request->getHTML() ?>>
+		<?= __('logout'); ?>
+	</a>
 	<?php else: ?>
 		<form name="login-embedd-logout" <?= $this->logout_request->getHTML() ?>>
-			<div class="col-md-12 col-xs-12 text-center  logout-box">
+			<div class="col-md-12 col-xs-12 text-center logout-box">
 				<input type="submit" class="btn btn-info logout-button" value="<?= __('log_out') ?>">
 			</div>
 		</form>

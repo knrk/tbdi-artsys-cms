@@ -146,11 +146,9 @@ final class Art_Server extends Art_Abstract_Component {
 	 *	@static
 	 *	@return string
 	 */
-	static function getDocumentRoot()
-	{
-		if( NULL === static::$_document_root )
-		{
-			static::$_document_root = realpath( $_SERVER['DOCUMENT_ROOT'] );
+	static function getDocumentRoot() {
+		if (NULL === static::$_document_root) {
+			static::$_document_root = realpath($_SERVER['DOCUMENT_ROOT']);
 		}
 		
 		return static::$_document_root;
@@ -284,10 +282,16 @@ final class Art_Server extends Art_Abstract_Component {
      *  @access protected
      *  @return void
      */
-	protected static function _loadRelativePath()
-	{
+	protected static function _loadRelativePath() {
 		//Get index.php path and explode
 		self::$_relativePath = explode('/', $_SERVER['SCRIPT_NAME']);
+
+		// p(self::$_relativePath);
+		// p('---');
+		// p($_SERVER['SCRIPT_NAME']);
+		// p('---');
+		// p(dirname($_SERVER['SCRIPT_NAME']));
+
 		
 		//If is not in root
 		if( count(self::$_relativePath) > 2 )

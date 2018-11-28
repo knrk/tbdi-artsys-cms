@@ -1,28 +1,34 @@
+<div class="membership-details">
+	<div class="paid-until">
+		<?php if (!$this->isManager) : ?>
+			<?= __('paid-until') ?> <?= $this->membership_to ?>
+		<?php endif; ?>
+	</div>
 
-<?php if ( !$this->isManager ) : ?>
-	<div class="col-xs-4">	
-		<?= null//__('account-balance') ?> 
-		<?= __('paid-until') ?>
-		<?= $this->membership_to ?>
-	</div>	
-<?php endif;?>
+	<div class="login-details">		
+		<?php
+		echo sprintf("%s %s", 
+			__('logged-as'),
+			$this->isCompany ? Helper_TBDev::getCompanyNameForUser($this->user) : $this->user->fullname
+		);
 
-<div class="col-xs-5 role">
-	<span>
-		<?php if ( $this->isManager ) : ?>
-			<?= __('manager') ?>:
-		<?php endif;?>
-			
-		<?php if ( $this->isCompany ) : ?>
-			<?= Helper_TBDev::getCompanyNameForUser($this->user) ?>
-		<?php else : ?>
-			<?= $this->user->fullname ?>
-		<?php endif;?>
-	</span>
-	
-	<?php if ( !$this->isManager ) : ?>
-		<?= 'Váš konzultant' ?>: <a href="<?= $this->p_managerDetail?>"><?= $this->manager->fullname ?></a> 
-	<?php endif;?>	
+		if ($this->isManager) {
+			echo sprintf(" %s %s", __('membership-with-rights'), __('manager'));
+		}
 
-	<span class="text-small"><small>Členské číslo <span><?= $this->user->user_number ?></span></small></span>
+		
+		echo sprintf(", %s <b>%s</b>",
+			__('member-id-is'),
+			$this->user->user_number
+		);
+
+		if (!$this->isManager) {
+			echo sprintf(', %s: <a href="%s"><b>%s</b></a>',
+					__('your-consultant-is'),
+					$this->p_managerDetail,
+					$this->manager->fullname 
+			);
+		}
+		?>		
+	</div>
 </div>

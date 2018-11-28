@@ -3,16 +3,16 @@
 		<div class="col-sm-6 action-name">
 			<h2><?= __('module_meta_metas') ?></h2>
 		</div>
-		<div class="col-sm-6 action-submenu">
-			<button class="action-delete" <?= $this->delete_request->getHTML() ?>>
-				<i class="fa fa-trash-o fa-2x"></i>
-				<?= __('delete') ?>
-			</button>
-			<div class="action-new">
+		<div class="col-sm-6 action-submenu page-actions">
+			<div class="action-new tile">
 				<a href="/<?= Art_Router::getLayer() ?>/meta/new">
-				<i class="fa fa-plus fa-2x"></i>
+				<?= icon('add') ?>
 				<?= __('add') ?></a>
 			</div>
+			<button class="action-delete tile" <?= $this->delete_request->getHTML() ?>>
+				<?= icon('add') ?>
+				<?= __('delete') ?>
+			</button>
 		</div>
 	</div>
 		

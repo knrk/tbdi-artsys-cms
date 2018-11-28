@@ -429,8 +429,9 @@ final class Art_Template extends Art_Abstract_Component {
 	 *	@static
 	 *	@return bool True if template was found
 	 */
-    static function render()
-    {
+    static function render() {
+		// p('template->render: ');
+		// print_r(self::getFolder().'/'.self::$_templateName.'.phtml');
         return require(ftest(self::getFolder().'/'.self::$_templateName.'.phtml'));
     }
 	
@@ -439,24 +440,25 @@ final class Art_Template extends Art_Abstract_Component {
 	 *	Render main site content
 	 *	@return void
 	 */
-	static function renderContent()
-	{
+	static function renderContent() {
 		$output = '';
 		//Main errors
-		if(Art_Main::isError())
-		{
+		if (Art_Main::isError()) {
 			$output .= '<div>'.Art_Main::getErrorMessage().'</div>';
 		}
 
 		//Template not found or no access error
-		if(self::$_alert)
-		{
+		if (self::$_alert) {
 			$output .= '<div>'.self::$_alert.'</div>';
 		}
-		elseif(self::$_contentModule)
-		{
+		else if (self::$_contentModule) {
+			// p('template->renderContent');
+			// print_r(self::$_contentModule);
 			$output .= self::$_contentModule->render();	
 		}
+		
+		// p('template->renderContent');
+		// print_r($output);
 		return $output;
 	}
 	

@@ -1,5 +1,4 @@
 <h2><?= __('module_payments_new_membership_header') ?></h2>
-
 <form <?= $this->request->getHTML() ?> class="form">
 	<div class="investment-new">
 		<div class="row">
@@ -38,7 +37,7 @@
 
 		<div class="row pt-10">
 			<label><?= __('module_payments_payment_date') ?></label>
-			<input name="received_date" type="text" class="js-date-picker"
+			<input name="recieved_date" type="text" class="js-date-picker"
 				 value="<?= nice_date($this->currentDate) ?>">
 		</div>
 	</div>
@@ -55,11 +54,10 @@ $(document).ready(() => {
 	});
 	$('.chosen-container').removeClass('chosen-disabled');
 
-	$('.js-date-picker').click(() => {
-		$('.js-date-picker').pickadate({
-			format: 'yyyy-mm-dd'
-		});
+	$('.js-date-picker').pickadate({
+		format: 'yyyy-mm-dd'
 	});
+
 });
 </script>
 

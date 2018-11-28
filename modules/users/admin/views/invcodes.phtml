@@ -26,9 +26,9 @@
 <table class="table-default">
 	<colgroup>
 		<col class="w20">
-		<col class="w40">
+		<col class="w15">
 		<col class="w20">
-		<col class="20">
+		<col class="w45">
 	</colgroup>
 	<tr>
 		<th><?= __('module_users_code_owner') ?></th>
@@ -40,7 +40,7 @@
 	<?php foreach ($this->codes as $value) : ?>
 	<tr>
 		<td><?= $value->fullname ?></td>
-		<td><?= $value->URL ?></td>
+		<td><a href="<?= $value->URL ?>"><?= $value->code ?></a></td>
 		<td><?= $value->gen_by_fullname ?></td>
 		<td><?= $value->note ?></td>
 	</tr>

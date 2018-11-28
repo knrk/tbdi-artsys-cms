@@ -29,69 +29,85 @@ var Art_Ajax = {
     /**
      *	Call jQuery $.ajax function with prepared options
      */
-    call: function(options) {
-		if (typeof options === "object") {
-			options.method = "POST";
-			// options.dataType = "json";
+    call : function(options)
+    {
+	if(typeof options === "object")
+	{
+	    options.method = "POST";
+	    options.dataType = "json";
 
-	    	if (typeof options.data === "object"  && options.data !== null ) {
-				if (options.data instanceof FormData) {
-		    		if (typeof options.name !== "undefined") {
-						options.data.append(Art_Ajax.request_name, options.name);
-		    		}
-				
-					options.data.append(Art_Ajax.token_name, Art_Ajax.token);
-		    		options.data.append(Art_Ajax.request_guid_name, Art_Ajax.request_guid);
-				}
-				else {
-		    		if (typeof options.name !== "undefined") {
-						options.data[Art_Ajax.request_name] = options.name;
-		    		}
-		    		options.data[Art_Ajax.token_name] = Art_Ajax.token;
-		    		options.data[Art_Ajax.request_guid_name] = Art_Ajax.request_guid;
-				}
-			}
-			
-	    	else if (typeof options.data === "string") {
-				if (typeof options.name !== "undefined") {
-		    		options.data = options.data+'&'+Art_Ajax.request_name+'='+options.name;
-				}
-				options.data = options.data+'&'+Art_Ajax.token_name+'='+Art_Ajax.token;
-				options.data = options.data+'&'+Art_Ajax.request_guid_name+'='+Art_Ajax.request_guid;
-	    	}
-	    	else {
-				options.data = "";
+	    if( typeof options.data === "object"  && options.data !== null )
+	    {
+		if( options.data instanceof FormData )
+		{
+		    if( typeof options.name !== "undefined" )
+		    {
+			options.data.append(Art_Ajax.request_name,options.name);
+		    }
+		    options.data.append(Art_Ajax.token_name, Art_Ajax.token);
+		    options.data.append(Art_Ajax.request_guid_name, Art_Ajax.request_guid);
+		}
+		else
+		{
+		    if( typeof options.name !== "undefined" )
+		    {
+			options.data[Art_Ajax.request_name] = options.name;
+		    }
+		    options.data[Art_Ajax.token_name] = Art_Ajax.token;
+		    options.data[Art_Ajax.request_guid_name] = Art_Ajax.request_guid;
+		}
+	    }
+	    else if( typeof options.data === "string" )
+	    {
+		if( typeof options.name !== "undefined" )
+		{
+		    options.data = options.data+'&'+Art_Ajax.request_name+'='+options.name;
+		}
+		options.data = options.data+'&'+Art_Ajax.token_name+'='+Art_Ajax.token;
+		options.data = options.data+'&'+Art_Ajax.request_guid_name+'='+Art_Ajax.request_guid;
+	    }
+	    else
+	    {
+		options.data = "";
 		
-				if (typeof options.name !== "undefined") {
-		    		options.data = Art_Ajax.request_name+'='+options.name+'&';
-				}
-				options.data = options.data+'&'+Art_Ajax.token_name+'='+Art_Ajax.token;
-				options.data = options.data+'&'+Art_Ajax.request_guid_name+'='+Art_Ajax.request_guid;
-	    	}
+		if( typeof options.name !== "undefined" )
+		{
+		    options.data = Art_Ajax.request_name+'='+options.name+'&';
+		}
+		options.data = options.data+'&'+Art_Ajax.token_name+'='+Art_Ajax.token;
+		options.data = options.data+'&'+Art_Ajax.request_guid_name+'='+Art_Ajax.request_guid;
+	    }
 	    
-	    	if (typeof options.progress !== "undefined") {
-				options.xhr = function() {
-		    		var xhr = new window.XMLHttpRequest();
-		    		(xhr.upload || xhr).addEventListener("progress", function(evt) {
-						if (evt.lengthComputable) {
-			    			options.progress(evt.loaded*100 / evt.total);
-						}
-		   			}, false);
+	    if( typeof options.progress !== "undefined" )
+	    {
+		options.xhr = function() {
+		    var xhr = new window.XMLHttpRequest();
+		    (xhr.upload || xhr).addEventListener("progress", function(evt) 
+		    {
+			if (evt.lengthComputable) 
+			{
+			    options.progress(evt.loaded*100 / evt.total);
+			}
+		   }, false);
 
-		   			return xhr;
-				};
-	    	}
-			
-			// options.beforeSend = function(xhr) {
-			// 	xhr.setRequestHeader("Authorization", "Basic " + btoa(options.user + ":" + options.pass));
-			// }
+		   return xhr;
+		};
+	    }
+
+	    // if( typeof options.error === "undefined" )
+	    // {
+		// options.error = function(data) {
+		//     console.log(data.responseText);
+		// };
+	    // }
 	    
-	    	return $.ajax(options);
-		}
-		else {
-	    	console.log('Invalid argument supplied for ajax()');
-		}
-	},
+	    return $.ajax(options);
+	}
+	else
+	{
+	    console.log('Invalid argument supplied for ajax()');
+	}
+    },
     
     /**
      *	Add "invalid-class" tag to fields (by name)
@@ -133,232 +149,256 @@ var Art_Ajax = {
      *	@param string event
      *	@return bool False if not found or no data-action
      */
-    bindElementToAjax : function(element, event) {
-		var $element = $(element);
-		
-		//If element is not found found
-		if (!$element.length) {
-			return null;
-		}
+    bindElementToAjax : function(element, event) 
+    {
+	var $element = $(element);
 	
-		//Decode params
-		var paramsJSON = $element.attr('data-params');
-		paramsJSON = paramsJSON.replace(/\'/gi,'\"');
-		var params = JSON.parse(paramsJSON);
-		
-		var callAjax = function(ev) {
-			if (typeof ev !== "undefined") {
-				ev.preventDefault();
-			}
-			
-			//Show confirm window if set
-			if (typeof params.confirm !== "undefined" && params.confirm.length) {
-				if (!confirm(params.confirm)) {
-					return false;
-				}
-			}
-		
-			//Update all CKEditor textareas
-			CKupdate();
-		
-			//If form - serialize data
-			if ($element.is('form')) {
-				var $form = $element;
-				var $username = $($form[0][0]).val();
-				var $password = $($form[0][1]).val();
-				var form_data = $form.serialize();
-			}
-			else if (element.form) {
-				var $form = $(element.form);
-				var $username = $($form[0][0]).val();
-				var $password = $($form[0][1]).val();
-				var form_data = $form.serialize();
-			}
-			else {
-				var $form = null;
-				var form_data = null;
-			}
-			
-			//Disable all inputs
-			if ($form !== null) {
-				var $disabled = $form.find('input:enabled, select:enabled, textarea:enabled');
-				$disabled.prop('disabled',true);
-			}
-			else {
-				var $disabled = $element;
-				$element.prop('disabled',true);
-			}
-			
-			//Call AJAX
-			Art_Ajax.call({
-				name: params.name,
-				url: params.action,
-				user: $username,
-				pass: $password,
-				data: form_data,
-				success: function(data) {
-					console.log(data);
-				
-					//If status OK
-					if (data.status === Art_Ajax.status.ok) {
-						//Reenable disabled inputs
-						$disabled.prop('disabled', false);
-				
-						//If data-update is set
-						if (typeof params.update === "object") {
-							for (var i in params.update) {
-								var updatedElement = params.update[i].element;
-								var from_var = params.update[i].from;			 
-								var is_animated = params.update[i].animate;
-						
-								//If variable with HTML code is set
-								if (typeof data.variables[from_var] !== "undefined") {
-									//Get updated element
-									var $updatedElement = $(updatedElement);
-							
-									//Update only content of element
-									if (typeof params.update.only_content !== "undefined" && params.update.only_content === true) {
-										if (!is_animated) {
-											$updatedElement.html(data.variables[from_var]);
-										} 
-										else {
-											$updatedElement.stop().animate({'opacity':0}, Art_Ajax.animation_time, function() {
-												$updatedElement.html(data.variables[from_var]).animate({'opacity':1});
-											});
-										}
-									}
-								
-									//Replace element
-									else {
-										if (!is_animated) {
-											$updatedElement.replaceWith(data.variables[from_var]);
-										} 
-										else {
-											$updatedElement.stop().animate({'opacity':0},Art_Ajax.animation_time,function(){
-											$(this).replaceWith(data.variables[from_var]);
-											$(updatedElement).css({'opacity':0}).animate({'opacity':1},Art_Ajax.animation_time);
-											});
-										}
-									}
-								}			
-							}
-					
-							//Rebind all elements to ajax
-							Art_Ajax.rebindAllElements();
-						}
-
-						//If element is form or part of form
-						if (null !== $form) {
-							Art_Ajax.resetFieldsInvalid($form);
-						}
-				
-				
-						//If redirect is set
-						if (typeof params.redirect !== "undefined") {
-							//If empty - refresh
-							if (params.redirect === ".") {
-								window.location.href = window.location.href;
-							}
-							//If set - redirect
-							else {
-								window.location.href = params.redirect;
-							}
-						}
-						//If not redirecting - show alerts
-						else {
-							Art_AlertBox.show(data.messages);
-						}
-				
-						//Run data-success callback function
-						if (typeof $element.attr('data-success') === "function") {
-							var callback = $element.attr('data-success');
-							callback();
-						}
-					}
-				
-					//If status ALERT
-					else if(data.status === Art_Ajax.status.alert) {
-						//Reenable disabled inputs
-						$disabled.prop('disabled', false);
-						
-						Art_AlertBox.show(data.messages, Art_Ajax.status.alert);
-						if (null !== $form) {
-							Art_Ajax.resetFieldsInvalid($form);
-							Art_Ajax.makeFieldsInvalid($form,data.fields);
-						}
-					
-						//Run data-alert callback function
-						if (typeof $element.attr('data-alert') === "function") {
-							var callback = $element.attr('data-alert');
-							callback();
-						}
-					}
-					
-					//If status ERROR
-					else if(data.status === Art_Ajax.status.error) {			
-						Art_AlertBox.show(data.messages, Art_Ajax.status.error);
-					
-						//Run data-alert callback function
-						if (typeof $element.attr('data-alert') === "function") {
-							var callback = $element.attr('data-error');
-							callback();
-						}
-					}
-				},
-				error: function(data, status) {
-					console.log(status, data);
-				},
-				failure: function(data, status) {
-					console.log(status, data);
-				}
-			});
-		};	
-		
-		//Add event listener
-		$element.unbind(event, callAjax).bind(event, callAjax);
-		
-		//If auto submit
-		if (typeof params.auto_submit !== "undefined" && params.auto_submit && typeof params.auto_submit_time !== "undefined") {
-			var timeout;
-			var auto_submit = function() {
-				clearTimeout(timeout);
-				timeout = setTimeout(function() {
-					callAjax();
-				},params.auto_submit_time * 1000);
-			};
-			
-			//params.auto_submit_time
-			$element.find('input,select,textarea').unbind('change',auto_submit).bind('change',auto_submit);
-		}
+	//If element is not found found
+	if(!$element.length)
+	{
+	    return null;
+	}
 	
-		//If element has async file input and is form or is part of form
-		if (params.file_async) {
-			//If element is form
-			if ($element.is('form')) {
-				//Get all uploaders
-				var $uploaders = $element.find('.file_uploader');
-
-				//Convert extensions to array
-				switch (typeof params.file_extensions) {
-					case "string":
-						var extensions = params.file_extensions.split(',');
-						break;
-					case "object":
-					case "array":
-						var extensions = params.file_extensions;
-					break;
-					default:
-						var extensions = [];
-				}
-
-				//Bind events to all file inputs
-				$uploaders.each(function(){
-					$(this).Art_Uploader(params.action,params.file_request_name,extensions,params.file_max_size_single,params.file_max_size_sum);
-				});
-			}
+	//Decode params
+	var paramsJSON = $element.attr('data-params');
+	paramsJSON = paramsJSON.replace(/\'/gi,'\"');
+	var params = JSON.parse(paramsJSON);
+	
+	var callAjax = function(ev)
+	{
+	    if( typeof ev !== "undefined" )
+	    {
+		ev.preventDefault();
+	    }
+	    
+	    //Show confirm window if set
+	    if(typeof params.confirm !== "undefined" && params.confirm.length)
+	    {
+		if(!confirm(params.confirm))
+		{
+		    return false;
 		}
-		
-		return element;
+	    }
+	 
+	    //Update all CKEditor textareas
+	    CKupdate();
+	 
+	    //If form - serialize data
+	    if( $element.is('form') )
+	    {
+		var $form = $element;
+		var form_data = $form.serialize();
+	    }
+	    else if( element.form )
+	    {
+		var $form = $(element.form);
+		var form_data = $form.serialize();
+	    }
+	    else
+	    {
+		var $form = null;
+		var form_data = null;
+	    }
+	    
+	    //Disable all inputs
+	    if( $form !== null )
+	    {
+		var $disabled = $form.find('input:enabled, select:enabled, textarea:enabled');
+		$disabled.prop('disabled',true);
+	    }
+	    else
+	    {
+		var $disabled = $element;
+		$element.prop('disabled',true);
+	    }
+	    
+	    //Call AJAX
+	    Art_Ajax.call(
+	    {
+		name: params.name,
+		url: params.action,
+		data: form_data,
+		success: function(data) 
+		{
+		    console.log(data);
+		    
+		    //If status OK
+		    if(data.status === Art_Ajax.status.ok)
+		    {
+			//Reenable disabled inputs
+			$disabled.prop('disabled',false);
+			
+			//If data-update is set
+			if(typeof params.update === "object")
+			{
+			    for(var i in params.update)
+			    {
+				var updatedElement = params.update[i].element;
+				var from_var = params.update[i].from;			 
+				var is_animated = params.update[i].animate;
+				
+				//If variable with HTML code is set
+				if(typeof data.variables[from_var] !== "undefined")
+				{
+				    //Get updated element
+				    var $updatedElement = $(updatedElement);
+				    
+				    //Update only content of element
+				    if( typeof params.update.only_content !== "undefined" && params.update.only_content === true )
+				    {
+					if( !is_animated )
+					{
+					    $updatedElement.html(data.variables[from_var]);
+					}
+					else
+					{
+					    $updatedElement.stop().animate({'opacity':0},Art_Ajax.animation_time,function(){
+						$updatedElement.html(data.variables[from_var]).animate({'opacity':1});
+					    });
+					}
+				    }
+				    //Replace element
+				    else
+				    {
+					if( !is_animated )
+					{
+					    $updatedElement.replaceWith(data.variables[from_var]);
+					}
+					else
+					{
+					    $updatedElement.stop().animate({'opacity':0},Art_Ajax.animation_time,function(){
+						$(this).replaceWith(data.variables[from_var]);
+						$(updatedElement).css({'opacity':0}).animate({'opacity':1},Art_Ajax.animation_time);
+					    });
+					}
+				    }
+				}			
+			    }
+			    
+			    //Rebind all elements to ajax
+			    Art_Ajax.rebindAllElements();
+			}
+
+			//If element is form or part of form
+			if( null !== $form )
+			{
+			    Art_Ajax.resetFieldsInvalid($form);
+			}
+			
+			
+			//If redirect is set
+			if( typeof params.redirect !== "undefined")
+			{
+			    //If empty - refresh
+			    if( params.redirect === "." )
+			    {
+				window.location.href = window.location.href;
+			    }
+			    //If set - redirect
+			    else
+			    {
+				window.location.href = params.redirect;
+			    }
+			}
+			//If not redirecting - show alerts
+			else
+			{
+			    Art_AlertBox.show(data.messages);
+			}
+			
+			//Run data-success callback function
+			if( typeof $element.attr('data-success') === "function" )
+			{
+			    var callback = $element.attr('data-success');
+			    callback();
+			}
+		    }
+		    //If status ALERT
+		    else if(data.status === Art_Ajax.status.alert)
+		    {
+			//Reenable disabled inputs
+			$disabled.prop('disabled',false);
+			
+			Art_AlertBox.show(data.messages, Art_Ajax.status.alert);
+			if( null !== $form )
+			{
+			    Art_Ajax.resetFieldsInvalid($form);
+			    Art_Ajax.makeFieldsInvalid($form,data.fields);
+			}
+			
+			//Run data-alert callback function
+			if( typeof $element.attr('data-alert') === "function" )
+			{
+			    var callback = $element.attr('data-alert');
+			    callback();
+			}
+		    }
+		    //IF status ERROR
+		    else if(data.status === Art_Ajax.status.error)
+		    {			
+			Art_AlertBox.show(data.messages, Art_Ajax.status.error);
+			
+			//Run data-alert callback function
+			if( typeof $element.attr('data-alert') === "function" )
+			{
+			    var callback = $element.attr('data-error');
+			    callback();
+			}
+		    }
+		}
+	    });
+	};	
+	
+	//Add event listener
+	$element.unbind(event,callAjax).bind(event,callAjax);
+	
+	//If auto submit
+	if( typeof params.auto_submit !== "undefined" && params.auto_submit && typeof params.auto_submit_time !== "undefined" )
+	{
+	    var timeout;
+	    var auto_submit = function()
+	    {
+		clearTimeout(timeout);
+		timeout = setTimeout(function(){
+		    callAjax();
+		},params.auto_submit_time*1000);
+	    };
+	    
+	    //params.auto_submit_time
+	    $element.find('input,select,textarea').unbind('change',auto_submit).bind('change',auto_submit);
+	}
+	
+	//If element has async file input and is form or is part of form
+	if( params.file_async )
+	{
+	    //If element is form
+	    if( $element.is('form') )
+	    {
+		//Get all uploaders
+		var $uploaders = $element.find('.file_uploader');
+
+		//Convert extensions to array
+		switch( typeof params.file_extensions )
+		{
+		    case "string":
+			var extensions = params.file_extensions.split(',');
+			break;
+		    case "object":
+		    case "array":
+			var extensions = params.file_extensions;
+			break;
+		    default:
+			var extensions = [];
+		}
+
+		//Bind events to all file inputs
+		$uploaders.each(function(){
+		    $(this).Art_Uploader(params.action,params.file_request_name,extensions,params.file_max_size_single,params.file_max_size_sum);
+		});
+	    }
+	}
+	
+	return element;
     },
     
 

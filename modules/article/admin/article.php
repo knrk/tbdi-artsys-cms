@@ -45,6 +45,7 @@ class Module_Article extends Art_Abstract_Module {
 	function indexAction() 
 	{		
 		$articles = Article::fetchAllPrivileged(NULL,array('id_article_category','sort'));
+		// p($articles);
 		$this->view->sort_buttons = Art_Model::sortButtons($articles, 'id_article_category');
 		$this->view->articles = $articles;
 
@@ -93,55 +94,43 @@ class Module_Article extends Art_Abstract_Module {
 		$this->view->move_down_request = $move_down_request;
 	}
 	
-	function moveUpAction()
-	{
-		if( Art_Ajax::isRequestedBy(self::REQUEST_MOVE_UP) )
-		{
+	function moveUpAction() {
+		if (Art_Ajax::isRequestedBy(self::REQUEST_MOVE_UP)) {
 			$this->_moveByDirection('up');
 		}
-		else
-		{
+		else {
 			$this->showTo(Art_User::NO_ACCESS);
 		}
 	}
 	
-	function moveDownAction()
-	{
-		if( Art_Ajax::isRequestedBy(self::REQUEST_MOVE_DOWN) )
-		{
+	function moveDownAction() {
+		if (Art_Ajax::isRequestedBy(self::REQUEST_MOVE_DOWN)) {
 			$this->_moveByDirection('down');
 		}
-		else
-		{
+		else {
 			$this->showTo(Art_User::NO_ACCESS);
 		}
 	}
 	
-	function deleteSingleAction()
-	{
-		if( Art_Ajax::isRequestedBy(self::REQUEST_DELETE_SINGLE) )
-		{
+	function deleteSingleAction() {
+		if (Art_Ajax::isRequestedBy(self::REQUEST_DELETE_SINGLE)) {
 			$response = Art_Ajax::newResponse();
 			$article = new Article(Art_Router::getId());
-			if( $article->isLoaded() )
-			{
-				if( !$article->isPrivileged() )
-				{
+			if ($article->isLoaded()) {
+				if (!$article->isPrivileged()) {
 					$this->allowTo(Art_User::NO_ACCESS);
 				}
 
-				$article->delete();				
+				$article->delete();
 			}
-			else
-			{
+			else {
 				$response->addMessage(__('module_article_deleted_not_found'));
 			}
 			
 			$response->addVariable('content', Art_Module::createAndRenderModule('article'));
 			$response->execute();
 		}
-		else
-		{
+		else {
 			$this->showTo(Art_User::NO_ACCESS);
 		}
 	}
@@ -480,17 +469,14 @@ class Module_Article extends Art_Abstract_Module {
 	}
 	
 	//Move article up or down in its category
-	protected function _moveByDirection( $dir )
-	{
+	protected function _moveByDirection($dir) {
 		$response = Art_Ajax::newResponse();
 
 		//Load article
 		$article_1 = new Article(Art_Router::getId());
 
-		if( $article_1->isLoaded() && $article_1->isPrivileged() )
-		{
-			switch( strtolower($dir) )
-			{
+		if ($article_1->isLoaded() && $article_1->isPrivileged()) {
+			switch (strtolower($dir)) {
 				case 'up':
 					$article_2 = $article_1->getUpper();
 					break;
@@ -499,8 +485,7 @@ class Module_Article extends Art_Abstract_Module {
 					break;
 			}
 
-			if( $article_2->isLoaded() && $article_2->isPrivileged() )
-			{
+			if ($article_2->isLoaded() && $article_2->isPrivileged()) {
 				Article::swapPositions($article_1, $article_2);
 			}
 		}

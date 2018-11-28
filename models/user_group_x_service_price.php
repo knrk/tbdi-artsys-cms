@@ -19,6 +19,8 @@
  *	@method this		setServicePrice(Service_Price $service_price)
  */
 class User_Group_X_Service_Price extends Art_Abstract_Model_DB {
+
+	protected static $_caching = false;
     
     protected static $_table = 'user_group_x_service_price';
 		        

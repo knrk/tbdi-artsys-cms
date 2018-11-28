@@ -88,6 +88,8 @@ class Art_Model_User extends Art_Abstract_Model_DB {
      */
     function hasPrivileges($object) {
         if (is_numeric($object)) {
+			// p($object);
+			// p($this->getRights());
             return $this->getRights() >= $object;
 		} else {
             if (method_exists($object, 'getRights')) {

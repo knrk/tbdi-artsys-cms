@@ -1,12 +1,5 @@
 <?php
 /**
- *  @author Robin Zoň <zon@itart.cz>
- *  @package library
- */
-
-
-
-/**
  *	Redirects relatively or absolutely if http:// or https:// if found
  * 
  *	@param string [optional] $path
@@ -159,14 +152,10 @@ function re( &$variable, $default = '' )
  *	@param mixed [optional] $default
  *	@return mixed
  */
-function rn( &$variable, $default = '' )
-{
-	if( NULL === $variable )
-	{
+function rn(&$variable, $default = '') {
+	if (NULL === $variable) {
 		return $default;
-	}
-	else
-	{
+	} else {
 		return $variable;
 	}
 }
@@ -177,30 +166,25 @@ function rn( &$variable, $default = '' )
  *  @param string $message what to log
  *  @return void
  */
-function log_error($message)
-{	
+function log_error($message) {	
 	//Create dir if not exists
-	$dir = dirname(ART_ERROR_LOG);
-	if( !empty($dir) && !file_exists($dir) )
-	{
+	$dir = dirname(LOG_FILE);
+	if (!empty($dir) && !file_exists($dir)) {
 		mkdir($dir, 0777, true);
 	}
 	
 	//Create and open a file if not exists
-	$file = fopen(ART_ERROR_LOG, 'a+');
+	$file = fopen(LOG_FILE, 'a+');
    
     //If user was initialized
-    if( class_exists('Art_User') && Art_User::isInitialized() )
-    {
+    if (class_exists('Art_User') && Art_User::isInitialized()) {
         $user = (Art_User::getId().' - '.Art_User::getRights().' - ');
-    }
-	else
-	{
+    } else {
 		$user = '';
 	}
             
     //Script path from where error was called
-    $errorPath = str_replace($_SERVER['DOCUMENT_ROOT'],'',debug_backtrace()[0]['file']);
+    $errorPath = str_replace($_SERVER['DOCUMENT_ROOT'], '', debug_backtrace()[0]['file']);
     
     //String to be written to file
     $content = (date('Y-m-d H:i:s').' - '.$errorPath.' - '.$_SERVER['REQUEST_URI'].' - '.$_SERVER['REMOTE_ADDR'].' - '.$user.$message)." \n";
@@ -241,11 +225,13 @@ function ftest($path)
  */
 function cookie_set($name, $value, $time, $domain = NULL) {
 	if (NULL === $domain) {
-		foreach(Art_Main::getDomains() AS $domain ) {
-			setcookie($name, $value, $time, "/" . Art_Server::getRelativePath(), $domain, false, true);
+		foreach (Art_Main::getDomains() as $domain ) {
+			// setcookie($name, $value, $time, "/" . Art_Server::getRelativePath(), $domain, false, true);
+			setcookie($name, $value, $time, "/", $domain, false, true);
 		}
 	} else {
-		setcookie($name, $value, $time, "/" . Art_Server::getRelativePath(), $domain, false, true);
+		// setcookie($name, $value, $time, "/" . Art_Server::getRelativePath(), $domain, false, true);
+		setcookie($name, $value, $time, "/", $domain, false, true);
 	}
 	
 	$_COOKIE[$name] = $value;
@@ -260,10 +246,12 @@ function cookie_set($name, $value, $time, $domain = NULL) {
 function cookie_unset($name, $domain = NULL) {
 	if (NULL === $domain) {
 		foreach (Art_Main::getDomains() AS $domain ) {
-			setcookie($name, '', 0, "/" . Art_Server::getRelativePath(), $domain, false, true);
+			// setcookie($name, '', 0, "/" . Art_Server::getRelativePath(), $domain, false, true);
+			setcookie($name, '', 0, "/", $domain, false, true);
 		}
 	} else {
-		setcookie($name, '', 0, "/" . Art_Server::getRelativePath(), $domain, false, true);
+		// setcookie($name, '', 0, "/" . Art_Server::getRelativePath(), $domain, false, true);
+		setcookie($name, '', 0, "/", $domain, false, true);
 	}	
 	
 	unset($_COOKIE[$name]);
@@ -842,4 +830,9 @@ function trimForeSlash( $content )
 function relativePath( $path )
 {
 	return str_replace(Art_Server::getDocumentRoot().'/', '', $path);
+}
+
+
+function icon ($name) {
+	include_once(realpath(dirname(__FILE__) . '/../') . '/extensions/svg/external/' . $name . '.svg');
 }

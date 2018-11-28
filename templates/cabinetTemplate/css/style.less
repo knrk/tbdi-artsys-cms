@@ -77,11 +77,21 @@ html {
         }
     }
 
-    > div:first-child > div {
+    > div:first-child > div,
+    > div:first-child > div > div {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-end;
         justify-content: flex-end;
+        
+        .membership-details {
+            font-size: 13px;
+            flex-direction: column;
+
+            .paid-until span {
+                font-weight: 800;
+            }
+        }
     }
 
     .configuration {

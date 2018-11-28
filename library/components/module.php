@@ -345,14 +345,15 @@ final class Art_Module extends Art_Abstract_Component {
 	 *	@static
 	 *	@return void
 	 */
-	static function loadModulesCurrLayer()
-	{
-		self::$_availableModules = self::scanModules( Art_Router::getLayer() );
+	static function loadModulesCurrLayer() {
+		self::$_availableModules = self::scanModules(Art_Router::getLayer());
+
+		// p('loadModulesCurrLayer: ');
+		// print_r(self::$_availableModules);
 		
-		self::_loadModules( self::$_availableModules );
+		self::_loadModules(self::$_availableModules);
 		
-		if( !self::exists('error','noAccess') || !self::exists('error','notFound') )
-		{
+		if (!self::exists('error','noAccess') || !self::exists('error','notFound')) {
 			trigger_error('Module_Error for layer '.Art_Router::getLayer().' not found or not compatible', E_USER_ERROR);
 		}
 	}
@@ -401,31 +402,29 @@ final class Art_Module extends Art_Abstract_Component {
 	 *	@param string $layer
 	 *	@return array
 	 */
-	static function scanModules( $layer )
-	{
+	static function scanModules($layer) {
 		$output = array();
 		
 		//Get module names
 		$iterator = new FilesystemIterator('modules');
 		
 		//For each module
-		foreach ($iterator AS $file_info) 
-		{
+		foreach ($iterator as $file_info) {
 			//Create dir and file path
 			$module_name = $file_info->getFilename();
 			$module_dir = 'modules/'.$module_name.'/'.$layer;
 			$module_file = $module_name.'.php';
+
+			// p($module_dir . '/' . $module_file);
 			
 			//IF exists in current layer
-			if( is_readable($module_dir.'/'.$module_file) )
-			{
+			if (is_readable($module_dir.'/'.$module_file)) {
 				$output[] = array('type' => $module_name,
 									'class' => Art_Filter::moduleClassName($module_name),
 									'dir' => $module_dir,
 									'file' => $module_file);
 			}
-			elseif( is_readable($module_dir) )
-			{
+			elseif (is_readable($module_dir)) {
 				trigger_error('Module_'.$module_name.' '.$layer.' layer is missing '.$module_file.' file', E_USER_ERROR);
 			}
 		}
@@ -442,14 +441,11 @@ final class Art_Module extends Art_Abstract_Component {
      *	@param array $modules
      *	@return void
      */
-    static protected function _loadModules(array &$modules)
-	{
-		//Include all modules
-		foreach($modules AS &$module)
-		{
+    static protected function _loadModules(array &$modules) {
+		//Include all
+		foreach($modules as &$module) {
 			//Include each file once only
-			if( !isset($module['loaded']) || $module['loaded'] !== true )
-			{
+			if (!isset($module['loaded']) || $module['loaded'] !== true) {
 				require(ftest($module['dir'].'/'.$module['file']));
 				$module['loaded'] = true;
 			}
@@ -601,48 +597,45 @@ final class Art_Module extends Art_Abstract_Component {
 	 *	@static
 	 *	@return void
 	 */
-	static function createContentModule()
-	{		
+	static function createContentModule() {		
+		
 		$section = Art_Router::getSection();
 		$action = Art_Router::getAction();
+
+		// p('createContentModule->'.$section . '/' . $action);
 		
 		$module = NULL;
 		
 		//If section & action is set
-		if( $section && $action )
-		{
+		if ($section && $action) {
 			//If user is trying to access embedd action from nonAjax
-			if( $action == 'embedd' && !Art_Server::isAjax() )
-			{
-				$module = self::errorNotFound( Art_Module::STAGE_LOAD );
+			if ($action == 'embedd' && !Art_Server::isAjax()) {
+				$module = self::errorNotFound(Art_Module::STAGE_LOAD);
 			}
 			//If module not exists
-			elseif( !self::exists($section, $action) )
-			{
-				$module = self::errorNotFound( Art_Module::STAGE_LOAD );
+			else if (!self::exists($section, $action)) {
+				$module = self::errorNotFound(Art_Module::STAGE_LOAD);
 			}
-			else
-			{
+			else {
 				$module = self::createModule($section, array('action' => $action));	
 			}
 		}
+
 		//If section only
-		elseif($section)
-		{
+		else if($section) {
 			//If module exists
-			if( self::exists($section) )
-			{
+			if (self::exists($section)) {
 				$module = self::createModule($section);	
+				// p('module:');
+				// print_r($module);
 			}
-			else
-			{
-				$module = self::errorNotFound( Art_Module::STAGE_LOAD );
+			else {
+				$module = self::errorNotFound(Art_Module::STAGE_LOAD);
 			}
 		}
 
 		//Put module to content
-		if( NULL !== $module )
-		{
+		if (NULL !== $module) {
 			Art_Template::setContentModule($module);
 		}
 		
@@ -775,18 +768,15 @@ final class Art_Module extends Art_Abstract_Component {
 	 *	@param string $action
 	 *	@return bool True if exists
 	 */
-    static function exists($name, $action = 'index')
-    {
-		//Normalize name and action
+    static function exists($name, $action = 'index') {
+		// Normalize name and action
         $name = Art_Filter::moduleClassName($name);
 		$action = Art_Filter::moduleAction($action);
 		
-        if(class_exists($name) && method_exists($name,$action))
-        {
+        if (class_exists($name) && method_exists($name, $action)) {
             return true;
         }
-        else
-        {
+        else {
             return false;
         }
     }

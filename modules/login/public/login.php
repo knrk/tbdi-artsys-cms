@@ -10,6 +10,7 @@ class Module_Login extends Art_Abstract_Module {
 	
     function embeddAction() 
 	{
+		// p(Art_Router::getLayer());
 		$login_request = Art_Ajax::newRequest(self::REQUEST_LOGIN);	
 		$login_request->setAction('/login/login');
 		$login_request->setRefresh();
@@ -21,13 +22,18 @@ class Module_Login extends Art_Abstract_Module {
 		$this->view->logout_request = $logout_request;
 	}
 	
-	function loginAction()
-	{
+	function loginAction() {
+		// Art_Router::$_layer = "cabinet";
+		// print_r('xxxx');
+		// p('loginAction->Router:getLayer'.Art_Router::getLayer());
 		$this->showTo(self::ALLOW_AJAX);
+		// d('\n\n'.'in loginAction');
+
 		
-		if(Art_Server::isAjax())
-		{
+		if (Art_Server::isAjax()) {
 			$response = Art_Ajax::newResponse();
+
+			// p("in loginAction->isAjax");
 			
 			$response->validateField('email', Art_Main::getPost('email'), array(
 				Art_Validator::NOT_EMPTY => ['message' => __('module_login_no_email')],
@@ -37,18 +43,19 @@ class Module_Login extends Art_Abstract_Module {
 			$response->validateField('pass', Art_Main::getPost('pass'), array(
 				Art_Validator::NOT_EMPTY => ['message' => __('module_login_no_password')]		
 			));
+
+			// p('\n\n'.Art_Router::getLayer());
 			
-			if($response->isValid())
-			{
-				$user_data = new Art_Model_User_Data(array('email'=>Art_Main::getPost('email')));			
-				if($user_data->isLoaded())
-				{
-					if($user_data->verif == 1)
-					{
+			if ($response->isValid()) {
+				$user_data = new Art_Model_User_Data(array('email' => Art_Main::getPost('email')));
+				// p('\n\n'.$user_data);
+
+				if ($user_data->isLoaded()) {
+					if ($user_data->verif == 1) {
+				
 						$user = new Art_Model_User($user_data);
 
-						if(Art_User::matchPasswords(Art_Main::getPost('pass'),$user->getData()->salt,$user->getData()->password))
-						{
+						if (Art_User::matchPasswords(Art_Main::getPost('pass'), $user->getData()->password)) {
 							//Create new login
 							$login = new Art_Model_Login();
 							$login->id_user = $user->id;
@@ -57,10 +64,12 @@ class Module_Login extends Art_Abstract_Module {
 							$login->login_date = dateSQL();
 							$login->ip = Art_Server::getIp();
 
+							// p($login);
+
 							$login->save();
 
 							//Save log_tag to cookie
-							cookie_set(Art_User::LOG_TAG_NAME,$login->log_tag,$login->login_expire);
+							cookie_set(Art_User::LOG_TAG_NAME, $login->log_tag, $login->login_expire);
 							/*
 							//Load current basket
 							$basket_old = Basket::getOpenedBasket();
@@ -82,14 +91,13 @@ class Module_Login extends Art_Abstract_Module {
 							$loginLog = $login->id_user . '#' . time();
 
 							Art_Event::trigger(Art_Event::USER_LOG_IN, $loginLog);
-							
+
 							$response->addMessage(__('module_login_logged_in'));
 							$response->willRedirect();
 						}
-						else
-						{
+						else {
 							//Invalid login
-							$response->addMessage(__('module_login_invalid_creditentals'),Art_Main::ALERT);
+							$response->addMessage(__('module_login_invalid_creditentals'), Art_Main::ALERT);
 						}
 					}
 					else
@@ -108,6 +116,7 @@ class Module_Login extends Art_Abstract_Module {
 					$response->addMessage(__('module_login_invalid_creditentals'),Art_Main::ALERT);
 				}
 			}
+
 			$response->execute();
 		}
 		else
@@ -116,11 +125,9 @@ class Module_Login extends Art_Abstract_Module {
 		}
 	}
 	
-	function indexAction()
-	{
+	function indexAction() {
 		$loginTag = Art_Router::getFromURI('loginTag');
-		if (empty($loginTag) || !$this->_isValidLoginTag($loginTag))
-		{
+		if (empty($loginTag) || !$this->_isValidLoginTag($loginTag)) {
 			$this->showTo(Art_User::NO_ACCESS);
 		}
 		
