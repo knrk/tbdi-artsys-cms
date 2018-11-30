@@ -12,13 +12,16 @@
 	</div>
 </div> -->
 <?php if ($this->count > 10) : ?>
-<div class="filter-container">
+<div class="table-filter collapsed">
 	<?= Art_Widget::render('filter', 'embeddCompany') ?>
+	<div class="filter-handle">
+		<?= __('module_filter_quick_header') ?>
+	</div>
 </div>
 <?php endif; ?>
-	
+
 <?php if (!empty($this->usersData)) : ?>	
-	<table class="table-default table-list">
+	<table class="table-default table-list" data-sortable>
 		<colgroup>
 			<col class="w25">
 			<col class="w20">
@@ -26,30 +29,26 @@
 			<col class="w15">
 			<col class="w15">
 		</colgroup>
-		<tr>
-			<!-- <th>
-				<?= Helper_Default::renderSortUpDown($this->sortBy, 'id') ?>
-				ID
-			</th> -->
-			<th>
-				<?= Helper_Default::renderSortUpDown($this->sortBy, 'company_name') ?>
-				<?= __('company_name') ?>
-			</th>
-			<th><?= __('email') ?></th>
-			<th></th>
-			<th>
-				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_from') ?>
-				<?= __('module_users_membership_from') ?>
-			</th>
-			<th>
-				<?= Helper_Default::renderSortUpDown($this->sortBy, 'membership_to') ?>
-				<?= __('module_users_membership_to') ?>
-			</th>
-		</tr>
-		
+		<thead>
+			<tr>
+				<th data-sorted="true" data-sorted-direction="ascending">
+					<span><?= __('company_name') ?></span>
+				</th>
+				<th data-sortable="false">
+					<span><?= __('email') ?></span>
+				</th>
+				<th data-sortable="false"></th>
+				<th>
+					<span><?= __('module_users_membership_from') ?></span>
+				</th>
+				<th>
+					<span><?= __('module_users_membership_to') ?></span>
+				</th>
+			</tr>
+		</thead>
 		<?php foreach ($this->usersData as $data) : /* @var $data Art_Model_User_Data */ ?>
 		<tr>
-			<td>
+			<td data-value="<?= $data->company_name_escaped ?>">
 				<a href="<?= $data->a_detail ?>" class="company-name" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $data->_user->user_number ?>"><?= $data->company_name ?></a>
 				<div <?= $data->getUser()->active ? 'class="company-contact-person"' : 'class="company-contact-person overdue"' ?>>
 					<?= $data->fullname ?>
@@ -69,10 +68,10 @@
 			<td class="text-center">
 				<?=  Art_Widget::render('note', 'embedd', array('id_user' => $data->p_userId))  ?>
 			</td>
-			<td>
+			<td data-value="<?= $data->membership_from_unixtime ?>">
 				<?= $data->membership_from ?>
 			</td>
-			<td>
+			<td data-value="<?= $data->membership_to_unixtime ?>">
 				<?= $data->membership_to_colored ?>
 				<div class="inline-actions">
 					<a href="<?= $data->a_edit ?>"><i class="fa fa-pencil"></i></a>
@@ -89,10 +88,10 @@
 	
 <script>
 $(document).ready(() => {
-	$('.chosen-select').chosen({
-		max_selected_options: -1
-	});
-	$('.chosen-container').removeClass('chosen-disabled');
+	// $('.chosen-select').chosen({
+	// 	max_selected_options: -1
+	// });
+	// $('.chosen-container').removeClass('chosen-disabled');
 
 	function filterRows (cellSelector) {
 		let value = event.currentTarget.value;
@@ -112,6 +111,15 @@ $(document).ready(() => {
 		filterRows('company-name');
 	});
 
-    $('[data-toggle="tooltip"]').tooltip();
+	$('[data-toggle="tooltip"]').tooltip();
+
+	if ($('.table-filter')) {
+		$('.table-filter .filter-handle').click((event) => {
+			event.preventDefault();
+			event.stopPropagation();
+
+			$(event.currentTarget).parent().toggleClass('collapsed');
+		});
+	}
 });
 </script>

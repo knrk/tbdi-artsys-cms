@@ -50,7 +50,7 @@ class Module_Payments extends Art_Abstract_Module {
 		
 		//Delete item by button
 		$delete_single_request = Art_Ajax::newRequest(self::REQUEST_DELETE_SINGLE); 
-		$delete_single_request->setAction('/'.Art_Router::getLayer().'/payments/deleteSingle/$id'); 
+		$delete_single_request->setAction('/' . Art_Router::getLayer() . '/payments/deleteSingle/$id'); 
 		$delete_single_request->addUpdate('content','.module_payments_index'); 
 		$delete_single_request->setConfirmWindow(__('module_payments_delete_single_confirm')); 
 		$this->view->delete_single_request = $delete_single_request;

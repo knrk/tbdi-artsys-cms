@@ -7,19 +7,5 @@
 			<input id="company-name" name="name" type="text" class="form-control" placeholder="<?= __('firstname') ?>"
 				value="<?= Helper_Default::getPropertyOrNull($this->data,'name') ?>">
 		</div>
-		<div>
-			<label for="filter-service-type"><?= __('service') ?></label>
-			<select id="filter-service-type" class="chosen-select" name="service-type">
-				<option value="0">Nevybráno</option>
-				<?php foreach ($this->services as $service) : /* @var $service Service */ ?>
-				<option value="<?= $service->id ?>"<?= 
-						Helper_Default::getSelectedOrNull($this->data,'service-type',$service->id) ?>
-						><?= $service->name ?></option>
-				<?php endforeach; ?>
-			</select>
-		</div>
-		<div class="submit">
-			<input type="submit" class="button" value="<?= __('module_filter_do_it') ?>">
-		</div>
 	</div>
 </form>

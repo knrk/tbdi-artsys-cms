@@ -807,6 +807,14 @@ final class Art_Template extends Art_Abstract_Component {
 						Art_Main::appendCSS('extensions/chosen/external/chosen.min.css', true, array('uri_root' => Art_Server::getRelativePath().'/extensions/chosen/external'));
 					}
 					break;
+				case 'sortable':
+					if (!in_array('sortable', static::$_loaded_extensions)) {
+						static::$_loaded_extensions[] = 'sortable';
+
+						Art_Main::appendJS('extensions/sortable/external/sortable.min.js');
+						// Art_Main::appendCSS('extensions/sortable/external/sortable.min.css', true, array('uri_root' => Art_Server::getRelativePath().'/extensions/chosen/external'));
+					}
+					break;
 				case 'fancybox':
 				case 'fancy_box':
 				case 'fancy-box':

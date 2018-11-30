@@ -11,61 +11,62 @@
 	</div>
 </div>
 
-<div class="filter-container">
+<div class="table-filter collapsed">
 	<?= Art_Widget::render('filter', 'embeddPayment') ?>
+	<div class="filter-handle">
+		<?= __('module_filter_quick_header') ?>
+	</div>
 </div>
 
-<table class="table-default">
+<table class="table-default table-list" data-sortable>
 	<colgroup>
-		<col class="w25">
-		<col class="w25">
-		<col class="w10">
 		<col class="w15">
+		<col class="w60">
 		<col class="w20">
 	</colgroup>
-	<tr>
-		<th><?= __('module_payments_user') ?></th>
-		<th><?= __('module_payments_payer') ?></th>
-		<th><?= __('module_payments_service') ?></th>
-		<th><?= __('module_payments_value') ?></th>
-		<th><?= __('module_payments_date') ?></th>
-	</tr>
-	<?php foreach ($this->payments as $key => $payment) : /* @var $payment Service_Payment */ ?>
-	<tr>
-		<!-- <td>
-			<?= $payment->user_number ?>
-		</td> -->
-		<td>
-			<span class="user-name"><?= $payment->user_fullname ?></span>
-		</td>
-		<td>
-			<span class="company-name"><?= $payment->user_paid_by_fullname ?></span>
-		</td>
-		<td>
-			<?= $payment->service_name ?>
-		</td>
-		<td>
-			<?= money_format('%n', $payment->value) ?>
-		</td>
-		<td>
-			<?= nice_date($payment->date) ?>
-			<?php if ($this->lastPayments[$payment->user_id][$payment->service_id] == $key ) : ?>
-			<div class="inline-actions">
-				<button <?= $this->delete_single_request->getHTML(array('id'=>$payment->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
-			</div>
-			<?php endif; ?>
-		</td>
-	</tr>
-	<?php endforeach; ?>
+	<thead>
+		<tr>
+			<th data-sorted="true" data-sorted-direction="ascending">
+				<span><?= __('module_payments_date') ?></span>
+			</th>
+			<th data-sortable="false">
+				<span><?= __('module_payments_payer') ?></span>
+			</th>
+			<th data-sortable="false">
+				<span><?= __('module_payments_value') ?></span>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($this->payments as $key => $payment) : ?>
+		<tr>
+			<td>
+				<?= nice_date($payment->date) ?>				
+			</td>
+			<td>
+				<b class="payer-name"><?= $payment->user_paid_by_fullname; ?></b>
+				<?php if ($payment->user_fullname !== $payment->user_paid_by_fullname) : ?>
+					<?= __('module_payments_paid_instead') ?>
+					<span class="user-name"><?= $payment->user_fullname; ?></span>
+				<?php endif; ?>
+				<?= __('module_payments_paid_for') ?>
+				<b><?= $payment->service_name ?></b>
+			</td>
+			<td>
+				<?= money_format('%n', $payment->value) ?>
+				<?php if ($this->lastPayments[$payment->user_id][$payment->service_id] == $key ) : ?>
+				<div class="inline-actions">
+					<button <?= $this->delete_single_request->getHTML(array('id'=>$payment->id)) ?> title="<?= __('delete') ?>"><i class="fa fa-trash-o"></i></button>
+				</div>
+				<?php endif; ?>
+			</td>		
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
 </table>
 
 <script>
 $(document).ready(() => {
-	$('.chosen-select').chosen({
-		max_selected_options: -1
-	});
-	$('.chosen-container').removeClass('chosen-disabled');
-
 	function filterRows (cellSelector) {
 		let value = event.currentTarget.value;
 
@@ -80,11 +81,15 @@ $(document).ready(() => {
 		});
 	}
 
-	$("#user-name").keyup((event) => {
-		filterRows('user-name');
+	$("#payer-name").keyup((event) => {
+		filterRows('payer-name');
 	});
-	$("#company-name").keyup((event) => {
-		filterRows('company-name');
+
+	$('.table-filter .filter-handle').click((event) => {
+		event.preventDefault();
+		event.stopPropagation();
+
+		$(event.currentTarget).parent().toggleClass('collapsed');
 	});
 });
 </script>

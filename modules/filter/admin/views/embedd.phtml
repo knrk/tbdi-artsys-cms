@@ -1,32 +1,27 @@
 <h3><?= __('module_filter_header') ?></h3>
 
 <form method="post" class="form">
-	<div class="filter">
-
-		<div>
-			<label for="filter-firstname"><?= __('firstname') ?></label>
-			<input id="filter-firstname" name="name" type="text" class="form-control" placeholder="<?= __('firstname') ?>"
-				value="<?= Helper_Default::getPropertyOrNull($this->data,'name') ?>">
-		</div>
+	<div class="filter">		
 		<div>
 			<label for="filter-lastname"><?= __('surname') ?></label>
 			<input id="filter-lastname" name="surname" type="text" class="form-control" placeholder="<?= __('surname') ?>"
 				value="<?= Helper_Default::getPropertyOrNull($this->data,'surname') ?>">
-		</div>		
+		</div>	
+		<div>
+			<label for="filter-email"><?= __('email') ?></label>
+			<input id="filter-email" name="email" type="text" class="form-control" placeholder="<?= __('email') ?>"
+				value="<?= Helper_Default::getPropertyOrNull($this->data, 'email') ?>">
+		</div>	
 		<div>
 			<label for="filter-service-type"><?= __('service') ?></label>
 			<select id="filter-service-type" class="chosen-select" name="service-type">
 				<option value="0">Nevybráno</option>
-				<?php foreach ($this->services as $service) : /* @var $service Service */ ?>
+				<?php foreach ($this->services as $service) : ?>
 				<option value="<?= $service->id ?>"<?= 
 						Helper_Default::getSelectedOrNull($this->data,'service-type',$service->id) ?>
 						><?= $service->name ?></option>
 				<?php endforeach; ?>
 			</select>
 		</div>
-		<div class="submit">
-			<input type="submit" class="button" value="<?= __('module_filter_do_it') ?>">
-		</div>
 	</div>
-
 </form>

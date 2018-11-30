@@ -1714,6 +1714,7 @@ class Helper_TBDev extends Art_Abstract_Helper {
 		$sort = -1;
 		
 		foreach (func_get_args() as $k => $value) {
+			// print_r($value);
 			if (NULL !== $value) {
 				if (0 == $value) {
 					$sort = $i;
@@ -1723,8 +1724,6 @@ class Helper_TBDev extends Art_Abstract_Helper {
 			}
 			
 			$i += 2;
-
-			// p($i);
 		}
 
 		return $sort;
@@ -1743,14 +1742,17 @@ class Helper_TBDev extends Art_Abstract_Helper {
 		return $array;
 	}
 
-	static function convertForSort($a, $b) {
+
+
+	static function convertForSort($a) {
 		static $czechCharsS = array('Á', 'Č', 'Ď', 'É', 'Ě' , 'Ch' , 'Í', 'Ň', 'Ó', 'Ř', 'Š', 'Ť', 'Ú', 'Ů' , 'Ý', 'Ž', 'á', 'č', 'ď', 'é', 'ě' , 'ch' , 'í', 'ň', 'ó', 'ř', 'š', 'ť', 'ú', 'ů' , 'ý', 'ž');
 		static $czechCharsR = array('AZ','CZ','DZ','EZ','EZZ','HZZZ','IZ','NZ','OZ','RZ','SZ','TZ','UZ','UZZ','YZ','ZZ','az','cz','dz','ez','ezz','hzzz','iz','nz','oz','rz','sz','tz','uz','uzz','yz','zz');
 
 		$aa = str_replace($czechCharsS, $czechCharsR, $a);
-		$bb = str_replace($czechCharsS, $czechCharsR, $b);
+
+		// print_r($aa); echo '///';
 		
-		return strnatcasecmp($aa, $bb);
+		return $aa;
 	}
 
 	static function _id($a, $b) { return $a->user_number > $b->user_number; }
@@ -1758,9 +1760,9 @@ class Helper_TBDev extends Art_Abstract_Helper {
 	static function _firstname($a, $b) { return strcasecmp($a->name, $b->name); }
 	static function _firstnameR($a, $b) { return strcasecmp($b->name, $a->name); }
 	// static function _surname($a, $b) { return strcasecmp($a->surname, $b->surname); }
-	static function _surname($a, $b) { return static::convertForSort($a->surname, $b->surname); }
+	static function _surname($a, $b) { return strnatcasecmp(static::convertForSort($a->surname), static::convertForSort($b->surname)); }
 	// static function _surnameR($a, $b) { return strcasecmp($b->surname, $a->surname); }
-	static function _surnameR($a, $b) { return static::convertForSort($b->surname, $a->surname); }
+	static function _surnameR($a, $b) { return strnatcasecmp(static::convertForSort($b->surname), static::convertForSort($a->surname)); }
 	static function _company_name($a, $b) { return strcasecmp($a->company_name, $b->company_name); }
 	static function _company_nameR($a, $b) { return strcasecmp($b->company_name, $a->company_name); }
 	static function _membership_from($a, $b) { return strtotime($a->membership_from) > strtotime($b->membership_from); }

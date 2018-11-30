@@ -3,14 +3,9 @@
 <form method="post" class="form">
 	<div class="filter payments">
 		<div>
-			<label for="user-name"><?= __('module_payments_user') ?></label>
-			<input 	id="user-name" name="name" type="text" class="form-control" placeholder="<?= __('module_payments_user') ?>"
-					value="<?= Helper_Default::getPropertyOrNull($this->data,'name') ?>">
-		</div>
-		<div>
-			<label for="company-name"><?= __('module_payments_payer') ?></label>
-			<input 	id="company-name" name="company" type="text" class="form-control" placeholder="<?= __('module_payments_payer') ?>"
-					value="<?= Helper_Default::getPropertyOrNull($this->data,'name') ?>">
+			<label for="payer-name"><?= __('module_payments_payer') ?></label>
+			<input 	id="payer-name" name="payer-name" type="text" class="form-control" placeholder="<?= __('module_payments_payer') ?>"
+					value="<?= Helper_Default::getPropertyOrNull($this->data, 'name') ?>">
 		</div>
 	</div>
 </form>

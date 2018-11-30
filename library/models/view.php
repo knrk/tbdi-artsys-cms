@@ -67,9 +67,11 @@ class Art_Model_View {
 		{
 			$type = $module->getType();
 			$showName = $module->getShowName();
-			$output = '<div class="module_container module_'.$type.'_'.$module->getActionName().' '.$type.'_container">'.
+			// $output = '<div class="module_container module_'.$type.'_'.$module->getActionName().' '.$type.'_container">'.
+			$output = '<div class="module_container module_'.$type.'_'.$module->getActionName().' ' . $type . '-container">'.
 						( $showName ? '<h3 class="module_header '.$type.'_header">'.$module->getName().'</h3>' : '' ).
-						'<div class="module_content '.$type.'_content">';
+						// '<div class="module_content '.$type.'_content ' .$type.'-content">';
+						'<div class="module_content ' . $type . '-content">';
 		}
 		
 		$output .= call_user_func(function($path) 

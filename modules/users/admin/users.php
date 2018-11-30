@@ -75,30 +75,18 @@ class Module_Users extends Art_Abstract_Module {
 	function companiesAction() {	
 		
 		//Art_Template::setTemplate("index","ajax");
-		$sortById = (int) Art_Router::getFromURI('id');
-		$sortByCompanyName = (int) Art_Router::getFromURI('company_name');
-		$sortByMembershipFrom = (int) Art_Router::getFromURI('membership_from');
-		$sortByMembershipTo = (int) Art_Router::getFromURI('membership_to');
+		$sortById = Art_Router::getFromURI('id');
+		$sortByCompanyName = Art_Router::getFromURI('company_name');
+		$sortByMembershipFrom = Art_Router::getFromURI('membership_from');
+		$sortByMembershipTo = Art_Router::getFromURI('membership_to');
 
-		// p($sortByMembershipFrom);
-
-				// case 0: $param = 'id'; break;
-				// case 1:	$param = 'idR'; break;
-				// case 2: $param = 'firstname'; break;
-				// case 3:	$param = 'firstnameR'; break;
-				// case 4:	$param = 'surname'; break;
-				// case 5:	$param = 'surnameR'; break;
-				// case 6:	$param = 'membership_from'; break;
-				// case 7:	$param = 'membership_fromR'; break;
-				// case 8:	$param = 'membership_to'; break;
-				// case 9:	$param = 'membership_toR'; break;	
-				// case 10: $param = 'company_name'; break;
-				// case 11: $param = 'company_nameR'; break;
-
-		$this->view->sortBy = $sortBy = Helper_TBDev::getSortBy($sortByMembershipFrom, $sortByMembershipTo, $sortByCompanyName);
+		$this->view->sortBy = $sortBy = Helper_TBDev::getSortBy($sortById, null, null, $sortByMembershipFrom, $sortByMembershipTo, $sortByCompanyName);
 				
-				// $authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy, true);
-		$allUsers = $this->_getAllAuthenticatedUserDataForTable($sortBy, true);
+		// $authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy, true);
+		$allUsers = $this->_getAllAuthenticatedUserDataForTable($sortBy === -1 ? 10 : $sortBy, true);
+		// echo 'srtb:';
+		// print_r($sortBy);
+		// $allUsers = $this->_getAllAuthenticatedUserDataForTable(10, true);
 		
 		// $activeUsers = array();
 		// $nonactiveUsers = array();
@@ -2538,6 +2526,7 @@ class Module_Users extends Art_Abstract_Module {
 			$value->a_service = '/' . Art_Router::getLayer() . '/users/service/' . $user->id . '-';
 			$membership_from = Helper_TBDev::getMembershipFromForUser($user);
 			$value->membership_from = !is_null($membership_from) ? nice_date($membership_from) : '';
+			$value->membership_from_unixtime = $membership_from;
 
 			if (NULL === $value->membership_from) {
 				$value->membership_from = null; 
@@ -2545,6 +2534,7 @@ class Module_Users extends Art_Abstract_Module {
 				$value->membership_to_colored = null;
 			} else {	
 				$value->membership_to = Helper_TBDev::getMembershipToForUser($user);
+				$value->membership_to_unixtime = $value->membership_to;
 				// p($value->membership_to);
 				if ($value->membership_to) {
 					$value->membership_to_colored = Helper_TBDev::renderTrueFalseDateTo(dateSQL($value->membership_to) < dateSQL(), nice_date($value->membership_to));
@@ -2554,6 +2544,7 @@ class Module_Users extends Art_Abstract_Module {
 
 			if ($onlyCompany && Helper_TBDev::isUserRepresentsCompany($user)) {
 				$value->company_name = Helper_TBDev::getCompanyAddress($user)->company_name;
+				$value->company_name_escaped = Helper_TBDev::convertForSort($value->company_name);
 				$value->a_edit = '/'.Art_Router::getLayer().'/users/editcompany/'.$user->id;
 				$value->a_detail = '/'.Art_Router::getLayer().'/users/detailcompany/'.$user->id;
 			} else {
@@ -2580,6 +2571,8 @@ class Module_Users extends Art_Abstract_Module {
 				case 10: $param = 'company_name'; break;
 				case 11: $param = 'company_nameR'; break;
 			}
+
+			// print_r($authenticatedUsers);
 
 			$authenticatedUsers = Helper_TBDev::getSortedArray($authenticatedUsers, $param);
 		}
