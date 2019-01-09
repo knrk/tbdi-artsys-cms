@@ -26,15 +26,17 @@
 <?php if (!empty($this->usersData)) : ?>	
 	<table class="table-default table-list" data-sortable>
 		<colgroup>
-			<col class="w30">
+			<col class="f50">
 			<col class="w25">
+			<col class="w30">
 			<col class="f30">
 			<col class="w15">
 			<col class="w15">
 		</colgroup>
 		<thead>
 			<tr>
-				<th>
+				<th data-sortable="false"></th>
+				<th data-sorted="true" data-sorted-direction="ascending">
 					<span><?= __('firstname') ?> / <?= __('surname') ?></span>
 				</th>
 				<th data-sortable="false">
@@ -54,6 +56,11 @@
 		<tbody>
 			<?php foreach( $this->usersData as $data ) : ?>
 			<tr<?= $data->getUser()->active ? '' : ' class="inactive"' ?>>
+				<td class="no-border no-r-padding">
+					<span class="avatar" style="background-color: rgba(<?= Helper_Default::getColorRGB($data->getUser()->user_number); ?>, 0.4)">
+						<?= mb_substr($data->name, 0, 1); ?><?= mb_substr($data->surname, 0, 1); ?>
+					</span>
+				</td>
 				<td data-value="<?= $data->surname ?>">
 					<a href="<?= $data->a_detail ?>" class="contact-person" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $data->_user->user_number ?>">
 						<span class="first-name"><?= $data->name ?></span>
@@ -62,10 +69,15 @@
 					
 					<div class="services">
 						<?php foreach( $data->services as $service ) : ?>
-							<a href="<?= $data->a_service.$service->id ?>"<?= $serviceColor = in_array($service->type, $data->actServices) ? ' class="active"' : null ?> data-service-id="<?= $service->id; ?>">
+							<?php $activeService = in_array($service->type, $data->actServices); ?>
+							<a<?= $activeService ? ' href="' . $data->a_service.$service->id . '"' : null; ?><?= $serviceColor = $activeService ? ' class="active"' : null ?> data-toggle="tooltip" title="<?= $service->name ?>"  data-service-id="<?= $service->id; ?>">
+							<!-- <a href="<?= $data->a_service.$service->id ?>"<?= $serviceColor = in_array($service->type, $data->actServices) ? ' class="active"' : null ?> data-service-id="<?= $service->id; ?>"> -->
 								<i class="fa fa-<?= $service->fa_icon ?>"></i>
 							</a>
 						<?php endforeach; ?>
+						<?php if (empty($data->services)) : ?>
+							<em><?= __('module_users_no_services') ?></em>
+						<?php endif; ?>
 					</div>
 				</td>
 				<td>

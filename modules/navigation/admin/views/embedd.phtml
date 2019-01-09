@@ -1,7 +1,4 @@
 <nav>
-	<div class="profile">
-		<?= Art_Widget::render('users', 'embedd'); ?>
-	</div>
 	<ul>
 		<?php $active_first = empty($this->active_nodes_ids); ?>
 		<?php foreach ( $this->nodes as $parentNode ) : ?>

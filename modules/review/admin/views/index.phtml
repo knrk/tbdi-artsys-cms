@@ -4,6 +4,7 @@
 	</div>
 </div>
 
+<?php if (count($this->reviews) > 0) : ?>
 <table class="table-default">
 	<colgroup>
 		<col class="w20">
@@ -36,3 +37,8 @@
 		</tr>
 	<?php endforeach; ?>
 </table>
+<?php else : ?>
+<div class="empty-state reviews">
+	<?= __('module_review_reviews_none'); ?>
+</div>
+<?php endif; ?>

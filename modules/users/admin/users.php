@@ -83,23 +83,23 @@ class Module_Users extends Art_Abstract_Module {
 		$this->view->sortBy = $sortBy = Helper_TBDev::getSortBy($sortById, null, null, $sortByMembershipFrom, $sortByMembershipTo, $sortByCompanyName);
 				
 		// $authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy, true);
-		$allUsers = $this->_getAllAuthenticatedUserDataForTable($sortBy === -1 ? 10 : $sortBy, true);
+		$authenticatedUsersData = $this->_getAllAuthenticatedUserDataForTable($sortBy == -1 ? 10 : $sortBy, true);
 		// echo 'srtb:';
 		// print_r($sortBy);
 		// $allUsers = $this->_getAllAuthenticatedUserDataForTable(10, true);
 		
-		// $activeUsers = array();
-		// $nonactiveUsers = array();
+		$activeUsers = array();
+		$nonactiveUsers = array();
 		
-		// foreach ($authenticatedUsersData as $value) /* @var $value Art_Model_User_Data */ {		
-		// 	if ($value->getUser()->active) {
-		// 		$activeUsers[] = $value;
-		// 	} else {
-		// 		$nonactiveUsers[] = $value;
-		// 	}
-		// }
+		foreach ($authenticatedUsersData as $value) {
+			if ($value->getUser()->active) {
+				$activeUsers[] = $value;
+			} else {
+				$nonactiveUsers[] = $value;
+			}
+		}
 		
-		// $allUsers = array_merge($activeUsers, $nonactiveUsers);
+		$allUsers = array_merge($activeUsers, $nonactiveUsers);
 
 		// p($allUsers);
 

@@ -2,11 +2,9 @@
 	<div class="col-sm-6 action-name">
 		<h2><?= __('module_users_requests_header') ?></h2>
 	</div>
-	<div class="col-sm-6 action-submenu">
-
-	</div>
 </div>
-	
+
+<?php if (count($this->userRequests) > 0) : ?>
 <table class="table-default">
 	<colgroup>
 		<col class="w20">
@@ -18,21 +16,17 @@
 	</colgroup>
 	<tr>
 		<th>
-			<?= __('firstname') ?>
-			<span> / </span>
-			<?= __('surname') ?>
+			<?= __('firstname') ?> / <?= __('surname') ?>
 		</th>
 		<th>
-			<?= __('email') ?>
-			<span>/</span>
-			<?= __('phone_number') ?>
+			<?= __('email') ?> / <?= __('phone_number') ?>
 		</th>
 		<th><?= __('service') ?></th>
 		<!-- <th><?= __('price') ?></th>
 		<th><?= __('interval') ?></th> -->
 		<th><?= __('from') ?></th>
 	</tr>
-	<?php foreach ($this->userRequests as $value) : /* @var $value User_X_Request */ ?>
+	<?php foreach ($this->userRequests as $value) : ?>
 		<tr<?= $value->accepted ? ' class="accepted"' : '' ?>>
 			<td>
 				<a href="<?= $value->a_detail ?>" class="contact-person" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $value->_user->user_number ?>">
@@ -51,7 +45,7 @@
 				<?= nice_date($value->created_date) ?>
 				<div class="inline-actions">
 					<?php if (!$value->accepted) : ?>
-						<a href="<?= '/'.Art_Router::getLayer().'/service/activaterequest/'.$value->id_user.'-'.$value->id_service ?>" title="<?= __('pass') ?>"><i class="fa fa-check"></i></a>
+						<a href="<?= '/' . Art_Router::getLayer() . '/service/activaterequest/' . $value->id_user . '-' . $value->id_service ?>" title="<?= __('pass') ?>"><i class="fa fa-check"></i></a>
 						<a href="<?= $value->a_sendEmail ?>" title="<?= __('module_users_requests_send_email') ?>"><i class="fa fa-envelope"></i></a>
 					<?php endif; ?>
 					<button <?= $this->requestDelete->getHTML(array('id' => $value->id)) ?>><i class="fa fa-trash-o"></i></button>
@@ -60,3 +54,8 @@
 		</tr>
 	<?php endforeach; ?>
 </table>
+<?php else : ?>
+<div class="empty-state requests">
+	<?= __('module_users_requests_none'); ?>
+</div>
+<?php endif; ?>

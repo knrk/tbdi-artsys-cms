@@ -28,12 +28,15 @@
 	*/
 	?>
 	<div class="page-border">
-		<div class="menu">
+		<aside class="menu">
 			<?= Art_Template::renderModuleContainer('menu') ?>	
-		</div>
-		<div class="page">
+		</aside>
+		<header class="header">
+			<?= Art_Widget::render('users', 'embedd'); ?>
+		</header>
+		<main class="page">
 			<?= Art_Template::renderContent() ?>
-		</div>
+		</main>
 	</div>	
 </body>
 </html>

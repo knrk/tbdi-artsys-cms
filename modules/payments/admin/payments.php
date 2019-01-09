@@ -13,7 +13,7 @@ class Module_Payments extends Art_Abstract_Module {
 		$payments = Service_Payment::fetchAllPrivileged(null, array(array('name' => 'id', 'type' => Art_Model_Db_Order::TYPE_DESC)));
 		$lastPayments = array();
 		
-		foreach ($payments as $key => $value) /* @var $value Service_Payment */ {
+		foreach ($payments as $key => $value) {
 			$user = new Art_Model_User($value->id_user);
 			$userData = $user->getData();
 			
@@ -34,7 +34,7 @@ class Module_Payments extends Art_Abstract_Module {
 			
 			$userGroupServicePrice = new User_Group_X_Service_Price($value->id_user_group_x_service_price);
 			$servicePrice = $userGroupServicePrice->getServicePrice();
-			$service = $servicePrice->getService();	/* @var $service Service */
+			$service = $servicePrice->getService();
 			$payments[$key]->service_name = $service->name;
 			$payments[$key]->service_id = $service->id;
 			$payments[$key]->user_id = $user->id;

@@ -42,20 +42,8 @@ col.f300 {
 }
 .cols-loop(@n: 20, @unit: '%', @j: 1, @step-size: 5);
 
-@table-default-bg-color: #fff;
-@table-default-th-bg-color: #242A30;
-@table-default-td-accepted-bg-color: #efefef;
-@table-default-td-inactive-bg-color: #ececec;
-@table-default-th-text-color: #fff;
-@table-default-th-hover-text-color: #ddd;
-@table-default-td-bg-color: #fff;
-@table-default-td-hover-color: #ededed; // f4f4f4
-@table-default-link-color: #082945;
-@table-default-link-hover-color: #3b5c9a;
-
 .table-default {
     width: 100%;
-    margin-top: 20px;
     table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0 5px;
@@ -83,62 +71,26 @@ col.f300 {
                 span:after {
                     content: '';
                     display: flex;
-                    width: 20px;
-                    height: 20px;   
+                    width: 14px;
+                    height: 14px;   
                     align-items: center;
                     margin-left: 8px;                    
                 }
             }
-            th[data-sorted-direction="ascending"] {
-                span:after { 
-                    background-image: url('data:image/svg+xml;utf8,\
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">\
-                        <g fill="#fff">\
-                            <g>\
-                                <g>\
-                                    <rect x="2.344" y="480" width="384" height="32"/>\
-                                    <rect x="2.344" y="384" width="320" height="32"/>\
-                                    <rect x="2.344" y="288" width="256" height="32"/>\
-                                    <rect x="2.344" y="192" width="192" height="32"/>\
-                                    <rect x="2.344" y="96" width="128" height="32"/>\
-                                    <rect x="2.344" width="64" height="32"/>\
-                                    <polygon points="487.032,428.688 466.344,449.376 466.344,128 434.344,128 434.344,449.376 413.656,428.688 391.032,451.312 \
-                                        450.344,510.624 509.656,451.312"/>\
-                                    <rect x="434.344" y="64" width="32" height="32"/>\
-                                    <rect x="434.344" width="32" height="32"/>\
-                                </g>\
-                            </g>\
-                        </g>\
-                    </svg>');
-                    // background-image: url('data:image/svg+xml;utf8,\
-                    //     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" xml:space="preserve">\
-                    //         <g fill="#fff">\
-                    //             <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z"/>\
-                    //         </g>\
-                    //     </svg>');
-                }
-            }
+            th[data-sorted-direction="ascending"],
             th[data-sorted-direction="descending"] {
                 span:after { 
                     background-image: url('data:image/svg+xml;utf8,\
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">\
-                        <g fill="#fff">\
-                            <g>\
-                                <g>\
-                                    <rect x="2.344" width="400" height="32"/>\
-                                    <rect x="2.344" y="96" width="320" height="32"/>\
-                                    <rect x="2.344" y="192" width="256" height="32"/>\
-                                    <rect x="2.344" y="288" width="192" height="32"/>\
-                                    <rect x="2.344" y="384" width="128" height="32"/>\
-                                    <rect x="2.344" y="480" width="64" height="32"/>\
-                                    <polygon points="487.032,428.688 466.344,449.376 466.344,128 434.344,128 434.344,449.376 413.656,428.688 391.032,451.312 \
-                                        450.344,510.624 509.656,451.312"/>\
-                                    <rect x="434.344" y="64" width="32" height="32"/>\
-                                    <rect x="434.344" width="32" height="32"/>\
-                                </g>\
-                            </g>\
-                        </g>\
-                    </svg>');
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 21.825 21.825" style="enable-background:new 0 0 21.825 21.825;" xml:space="preserve">\
+                            <path fill="#fff" d="M16.791,13.254c0.444-0.444,1.143-0.444,1.587,0c0.429,0.444,0.429,1.143,0,1.587l-6.65,6.651\
+                                c-0.206,0.206-0.492,0.333-0.809,0.333c-0.317,0-0.603-0.127-0.81-0.333l-6.65-6.651c-0.444-0.444-0.444-1.143,0-1.587\
+                                s1.143-0.444,1.587,0l4.746,4.762V1.111C9.791,0.492,10.299,0,10.918,0c0.619,0,1.111,0.492,1.111,1.111v16.904L16.791,13.254z"/>\
+                        </svg>');
+                }
+            }
+            th[data-sorted-direction="descending"] {
+                span:after {
+                    transform: rotate(180deg);
                 }
             }
             th[data-sortable="false"] {
@@ -163,12 +115,6 @@ col.f300 {
         b {
             color: @page-layout-emphasized-text-color;
         }
-    }
-
-    tr th:first-of-type, 
-    tr td:first-of-type {
-        padding-left: 12px;
-        padding-right: 12px;
     }
 
     tr.inactive td {
@@ -210,6 +156,11 @@ col.f300 {
         padding: 0px 3px 0px 3px;
         font-weight: 600;
 
+        &:first-of-type {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
         a {
             display: inline-flex;
             align-items: center;
@@ -228,23 +179,35 @@ col.f300 {
     td {
         background: @table-default-td-bg-color;
         padding: 7px;
-        border-bottom: 1px solid @table-row-border-color;
-        border-right: 1px solid @list-border-color;
+        // border-bottom: 1px solid @table-row-border-color;
+        // border-right: 1px solid @list-border-color;
         position: relative;
         // border-top: 1px solid transparent;
         // border-bottom: 1px solid transparent;
 
+        &:first-of-type {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+        &:first-of-type:not(.no-border) {
+            padding-right: 0;
+        }
+
         &:first-child {
-            padding-left: 8px;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
-            // border-left: 1px solid transparent;
         }
         &:last-child {
             border-right: 0;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
             // border-right: 1px solid transparent;
+        }
+        &.no-border {
+            border: 0;
+        }
+        &.no-r-padding {
+            padding-right: 0;   
         }
 
         .inline-actions {
@@ -313,6 +276,12 @@ col.f300 {
         }
     }
     .services {
+        em {
+            font-weight: 200;
+            font-style: normal;
+            color: @page-layout-minor-text-color;
+            font-size: 11px;
+        }
         a {
             margin-right: 6px;
             display: inline-flex;

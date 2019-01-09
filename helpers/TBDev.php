@@ -520,7 +520,8 @@ class Helper_TBDev extends Art_Abstract_Helper {
 		
 		if ( $user->isLoaded() )
 		{		
-			$sql = Art_Main::db()->query('SELECT id FROM service WHERE id IN(SELECT DISTINCT id_service FROM service_price WHERE id IN(SELECT id_service_price FROM user_group_x_service_price WHERE id_user_group IN(SELECT id_user_group FROM user_x_user_group WHERE id_user = '.$user->id.'))) ORDER BY sort;');		
+			$sql = Art_Main::db()->query('SELECT id FROM service WHERE id IN(SELECT DISTINCT id_service FROM service_price WHERE id IN(SELECT id_service_price FROM user_group_x_service_price WHERE id_user_group IN(SELECT id_user_group FROM user_x_user_group WHERE id_user = '.$user->id.'))) ORDER BY sort;');
+			// echo 'SELECT id FROM service WHERE id IN(SELECT DISTINCT id_service FROM service_price WHERE id IN(SELECT id_service_price FROM user_group_x_service_price WHERE id_user_group IN(SELECT id_user_group FROM user_x_user_group WHERE id_user = '.$user->id.'))) ORDER BY sort;';
 
 			foreach ($sql->fetchAll() as $value) /* @var $value  */ 
 			{

@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    background-color: @header-bg-color;
+    min-height: 64px;
+    border-bottom: 1px solid @main-nav-border-color;
+
+    .users-container,
+    .users-content {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .user {
+        display: grid;
+        justify-content: end;
+        grid-template-columns: auto auto;
+        margin-right: 20px;
+
+        i {
+            display: flex;
+            align-items: center;
+            grid-row: 1 e('/') 3;
+            padding: 5px;
+            margin-right: 5px;
+        }
+
+        em {
+            font-weight: 600;
+            font-style: normal;
+            display: flex;
+            align-items: flex-end;
+        }
+        em + span {
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+    }
+
+    .actions {
+        padding: 0 20px;
+        margin: 10px 0;
+        border-left: 1px solid @main-nav-border-color;
+        display: flex;
+        align-items: center;
+
+        a {
+            font-weight: 500;
+        }
+    }
+
+
+    svg {
+        height: 32px;
+        width: 32px;
+    }
+}

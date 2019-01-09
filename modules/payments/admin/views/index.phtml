@@ -26,7 +26,7 @@
 	</colgroup>
 	<thead>
 		<tr>
-			<th data-sorted="true" data-sorted-direction="ascending">
+			<th data-sorted="true" data-sorted-direction="descending">
 				<span><?= __('module_payments_date') ?></span>
 			</th>
 			<th data-sortable="false">
@@ -40,8 +40,8 @@
 	<tbody>
 		<?php foreach ($this->payments as $key => $payment) : ?>
 		<tr>
-			<td>
-				<?= nice_date($payment->date) ?>				
+			<td data-value="<?= $payment->date ?>">
+				<?= nice_date($payment->date) ?>
 			</td>
 			<td>
 				<b class="payer-name"><?= $payment->user_paid_by_fullname; ?></b>

@@ -1,19 +1,33 @@
 // @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,300italic&subset=latin,latin-ext);
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Poppins:300,400,500,600,700,800');
 
+@import 'header';
 @import 'colors';
 @import 'navigation';
+@import 'illustrations';
+@import 'cards';
+@import 'list';
+@import 'avatar';
 
 body, html {
-    height: 100%;
     background: @bg-color;
     padding: 0px;
     width: 100%;
+    height: 100vh;
     z-index: 10;
     margin: 0px;
     font-family: 'Open Sans';
     font-weight: 100;
     cursor: default;
+}
+
+body {
+    background: @bg-color;
+    cursor: default;
+    min-width: 1150px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 * {
@@ -24,10 +38,6 @@ body, html {
     margin: 0px auto;
 }
 
-body {
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
 
 a, a:hover{
     text-decoration: none;
@@ -732,117 +742,6 @@ label{
     }
 }
 
-body {
-    background: @bg-color;
-    cursor: default;
-    min-width: 1150px;
-    height: 100vh;
-    overflow-y: hidden;
-}
-
-html {
-    height: 100vh;
-    overflow-y: hidden;
-}
-
-// .head-bar {
-//     display: flex;
-//     flex-direction: row;
-
-//     height: @page-layout-header-height;
-//     background: @page-layout-header-bg-color;
-//     position: relative;
-//     top: 0;
-//     z-index: 5;
-//     width: 100%;
-//     left: 0px;
-//     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.26);
-//     line-height: @page-layout-header-height;
-//     min-width: 1150px;
-
-//     .app-name {
-//         flex: 1 0 75%;
-//         padding-left: 10px;
-//         text-transform: uppercase;
-
-//         a {
-//             color: white;
-//             font-weight: 800;
-//         }
-//     }
-//     .profile {
-//         flex: 1 0 25%;
-
-//         > div > div {
-//             display: flex;
-//             justify-content: flex-end;
-//         }
-//     }
-//     .user-profile {
-//         display: flex;
-//         white-space: nowrap;
-//         align-items: center;
-//         padding-right: 20px;
-//         border-right: 1px solid white;
-        
-//         p {
-//             margin: 0;
-//             text-transform: uppercase;
-//             font-size: 11px;
-//             font-weight: 800;
-//             color: white;
-//         }
-//     }
-//     .user-action {
-//         a {
-//             display: block;
-//             color: white;
-//             padding: 0 15px;
-//             font-weight: 600;
-//             font-size: 13px;
-//             line-height: @page-layout-header-height;
-            
-//             &:hover {
-//                 text-decoration: none;
-//                 background-color: rgba(255, 255, 255, 0.2);
-//             }
-//         }
-//     }
-// }
-
-// .head-bar .small-ico {
-//     width: 25px;
-//     height: 25px;
-//     border: none;
-//     padding: 0px;
-//     margin: 0px auto;
-//     display: flex;
-//     flex-direction: row;
-//     align-content: center;
-//     align-items: center;
-//     justify-content: center;
-//     border-radius: 50%;
-//     background-color: rgba(255, 255, 255, 0.4);
-// }
-
-// .calendar-border{
-//     position: relative;
-//     width: auto;
-//     display: inline-block;
-//     transition: 0.5s ease-in-out 0s;
-// }
-
-// .calendar-box{
-//     width: 300px;
-//     left: -137px;
-//     transition: 0.5s ease-in-out 0s;
-// }
-
-// .np{
-//     padding: 0px;
-// }
-
-
 .page-border {
     width: 100%;
     min-width: 1150px;
@@ -908,20 +807,40 @@ html {
     }
 }
 
-
-/*** CONTENT START ***/
 .page {
     width: calc(100% - 225px);
-    // height: calc(100vh - 50px);
     height: 100vh;
-    float: left;
-    overflow-y: scroll;
-    padding: 20px 20px;
+    padding: 20px 40px;
+    padding-bottom: 90px;
+    overflow-y: auto;
+    position: relative;
 
     h1, h2, h3 {
         font-family: 'Poppins';
         font-weight: 300;
         margin-top: 0;
+    }
+
+    h2 {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: 400;
+    }
+
+    .save-view-buttons {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        .btn {
+            min-width: 100px;
+            max-width: 300px;
+        }
     }
 }
 
@@ -1299,6 +1218,7 @@ i.no-active{
 
 
 nav {
+    padding-top: 64px;
     background-color: @main-nav-bg-color;
     border-right: 1px solid @main-nav-border-color;
     height: 100%;
@@ -1361,30 +1281,6 @@ nav {
 .no-display {
     display: none;
 }
-
-.page {
-    padding: 20px 40px;
-    overflow-y: auto;
-
-    label {
-        font-weight: 400;
-    }
-
-    .save-view-buttons {
-        padding: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-
-        .btn {
-            min-width: 100px;
-            max-width: 300px;
-        }
-    }
-}
-
-
 
 .input[type=submit].button,
 .button {
@@ -1776,5 +1672,8 @@ hr.separator {
 }
 
 .tooltip {
-    width: 200px;
+    .tooltip-inner {
+        min-width: 50px;
+        max-width: 300px;
+    }
 }

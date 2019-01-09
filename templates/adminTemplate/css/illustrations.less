@@ -1,0 +1,19 @@
+.empty-state {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden; 
+    padding: 0 40px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    
+    &.requests {        
+        background-image: url("/extensions/svg/external/empty-state-requests.svg");
+    }
+    &.reviews {
+        background-image: url("/extensions/svg/external/empty-state-reviews.svg");
+        background-size: 75%;
+    }
+}

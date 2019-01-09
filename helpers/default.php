@@ -504,4 +504,12 @@ class Helper_Default extends Art_Abstract_Helper {
 			return 'UNDEF';
 		}
 	}
+
+	static function getColorRGB($num) {
+		$hash = md5('color' . $num);
+		return  '' 	. hexdec(substr($hash, 0, 2)) . ', '
+					. hexdec(substr($hash, 2, 2)) . ', '
+					. hexdec(substr($hash, 4, 2)) 
+					. '';
+	}
 }

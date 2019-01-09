@@ -1,108 +1,87 @@
-<h2><?= __('module_users_service_detail') ?></h2>
-<div class="col-xs-6">
-		<div class="col-xs-12"><h3><?= __('module_users_personal_info') ?></h3></div>
-		<div class="col-xs-4"><?= __('fullname') ?></div>
-		<div class="col-xs-8">
-			<?= $this->user->fullname ?>
-		</div>
+<h2><?= __('module_users_service_detail') ?> <?= $this->user->fullname ?></h2>
 
-		<div class="clearfix"></div>
-		<div class="col-xs-4"><?= __('phone_number') ?></div>
-		<div class="col-xs-8">
-			<?= $this->phone ?>
-		</div>
-		<div class="clearfix"></div>
-		<div class="col-xs-4"><?= __('email') ?></div>
-		<div class="col-xs-8">
-			<?= $this->data->email ?>
-		</div>
+<div class="card-container service-detail">
+	<aside class="user-details">
+		<h4><?= __('module_users_personal_info') ?></h4>
+		<label><?= __('fullname') ?></label>
+		<div><?= $this->user->fullname ?></div>
+		<label><?= __('phone_number') ?></label>
+		<div><?= $this->phone ?></div>
+		<label><?= __('email') ?></label>
+		<div><?= $this->data->email ?></div>
+		<hr>
+		<h4><?= __('module_users_service_info') ?></h4>
+		<label><?= __('module_users_service_type') ?></label>
+		<div><?= $this->service->name ?></div>
+		<label><?= __('from') ?></label>
+		<div><?= $this->service->active_from ?></div>
+		<label><?= __('to') ?></label>
+		<div><?= $this->service->active_to ?></div>
+		<label><?= __('module_users_service_actual_price') ?></label>
+		<div><?= $this->service->actual_price ?></div>
+		<label><?= __('module_users_service_time_interval') ?></label>
+		<div><?= $this->service->time_interval ?></div>
+	</aside>
+	<main class="table-list">
+		<?php if (!empty($this->payments)) : ?>
+			<h4><?= __('module_users_payments') ?></h4>
+			<ul>
+				<?php foreach ($this->payments as $payment) : ?>
+				<li>
+					<?= nice_date(substr($payment->created_date,0,10)) ?><br>
+					<?= __('module_payments_payer'); ?>
+					<b><?= $payment->paid_by_fullname ?></b>
+					<?= __('module_payments_paid_for'); ?>
+					<b><?= $payment->service->name ?>,</b>
+					<b><?= money_format('%n', $payment->value) ?></b>
+
+				</li>
+				<?php endforeach; ?>
+			</ul>	
+		<?php endif; ?>
+
+		<?php if ($this->isInvestment) : ?>
+			<?php if (!empty($this->deposits)) : ?>
+				<h4><?= __('module_users_deposits') ?></h4>
+				<ul>
+					<?php foreach ($this->deposits as $value) : ?>
+					<li>
+						<?= nice_date($value->date) ?>
+						<?= __('module_investment_date_added') ?>
+						<b><?= money_format('%n', $value->value) ?></b>.
+						<?= __('module_investment_date_will_expire') ?>
+						<?= nice_date($value->expiry_date) ?>
+					</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+
+			<?php if (!empty($this->investmentValues)) : ?>
+				<hr>
+				<h4><?= __('module_users_interests') ?></h4>
+				<ul class="timeline-list">
+					<?php foreach ($this->investmentValues as $value) : ?>
+					<li>
+						V měsíci
+						<b><?= Helper_Default::getCzechMonthName($value->investment->month) . '/' . $value->investment->year ?></b>
+						byl úrok ve výši
+						<b><?= $value->interest ?>%</b>.<br>
+						Z ivestice
+						<?= money_format('%n', $value->invested) ?>
+						bylo dne
+						<?= $value->payment_date ?>
+						vyplaceno
+						<b><?= money_format('%n', $value->invested * $value->interest / 100) ?></b>
+						<?php if ($this->hasCommission) : ?>
+						(<?= $value->commission ?> <?= __('module_investment_commision') ?>)
+						<?php endif; ?>
+						<?php if (!empty($value->note)) : ?>
+							<br><em><?= $value->note ?></em>
+						<?php endif; ?>
+					</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+		<?php endif; ?>
+	</main>
 </div>
-
-<div class="col-xs-6">
-		<div class="col-xs-12"><h3><?= __('module_users_service_info') ?></h3></div>
-		<div class="col-xs-4"><?= __('module_users_service_type') ?></div>
-		<div class="col-xs-8">
-			<?= $this->service->name ?>
-		</div>
-
-		<div class="clearfix"></div>
-		<div class="col-xs-4"><?= __('from') ?></div>
-		<div class="col-xs-8">
-			<?= $this->service->active_from ?>
-		</div>
-		<div class="clearfix"></div>
-		<div class="col-xs-4"><?= __('to') ?></div>
-		<div class="col-xs-8">
-			<?= $this->service->active_to ?>
-		</div>
-		<div class="clearfix"></div>
-		<div class="col-xs-4"><?= __('module_users_service_actual_price') ?></div>
-		<div class="col-xs-8">
-			<?= $this->service->actual_price ?>
-		</div>
-		<div class="clearfix"></div>
-		<div class="col-xs-4"><?= __('module_users_service_time_interval') ?></div>
-		<div class="col-xs-8">
-			<?= $this->service->time_interval ?>
-		</div>
-</div>
-
-<div style="clear:both;"></div>
-
-<?php if ( !empty($this->payments) ) : ?>
-	<div class="col-md-12 col-xs-12"><h3><?= __('module_users_payments') ?></h3></div>
-	
-	<?php foreach ( $this->payments as $payment ): /* @var $payment Service_Payment */ ?>
-	
-		<div class="col-md-3 col-xs-3"><?= $payment->service->name ?></div>
-		<div class="col-md-3 col-xs-3"><?= $payment->paid_by_fullname ?></div>
-		<div class="col-md-3 col-xs-3"><?= $payment->value ?></div>
-		<div class="col-md-3 col-xs-3"><?= substr($payment->created_date,0,10) ?></div>
-	
-	<?php endforeach; ?>
-<?php endif; ?>
-
-<?php if ( $this->isInvestment ) : ?>
-		
-		<div class="col-md-12 col-xs-12"><h3><?= __('module_users_interests') ?></h3></div>
-		
-		<?php if ( !empty($this->investmentValues) ) : ?>
-		<table class="table-default">
-			<tr>
-				<th><?= __('module_investment_month_year') ?></th>
-				<th><?= __('module_investment_interest') ?></th>
-				<th><?= __('module_investment_invested') ?></th>
-				<th><?= __('module_investment_gain') ?></th>			
-				<?php if ( $this->hasCommission ) : ?>
-					<th><?= __('module_investment_commision') ?></th>
-				<?php endif; ?>
-				<th><?= __('module_investment_payment_date') ?></th>	
-				<th><?= __('note') ?></th>
-			</tr>
-			
-			<?php foreach ( $this->investmentValues as $value ): /* @var $value Service_Investment_Value */ ?>
-			<tr <?= (0 == $value->investment->visible) ? 'style="color: grey;"' : null ?>>
-				<td><?= Helper_Default::getCzechMonthName($value->investment->month).' '.$value->investment->year ?></td>
-				<td><?= $value->interest ?>%</td>
-				<td><?= $value->invested ?></td>
-				<td><?= $value->invested * $value->interest / 100 ?></td>
-				<?php if ( $this->hasCommission ) : ?>
-					<td><?= $value->commission ?></td>
-				<?php endif; ?>	
-				<td><?= $value->payment_date ?></td>
-				<td><?= $value->note ?></td>
-			</tr>
-			<?php endforeach; ?>		
-		</table>	
-		<?php endif; ?>		
-		
-		<div class="col-md-12 col-xs-12"><h3><?= __('module_users_deposits') ?></h3></div>
-
-		<?php foreach ( $this->deposits as $value ): /* @var $value Service_Investment_Deposit */ ?>
-
-			<div class="col-md-6 col-xs-6"><?= $value->value ?></div>
-			<div class="col-md-3 col-xs-3"><?= __('module_investment_date').': '.nice_date($value->date) ?></div>
-			<div class="col-md-3 col-xs-3"><?= __('module_investment_expiry_date').': '.nice_date($value->expiry_date) ?></div>
-
-		<?php endforeach; ?>
-<?php endif; ?>

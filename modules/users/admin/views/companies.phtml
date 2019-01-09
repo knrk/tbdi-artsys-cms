@@ -1,5 +1,9 @@
 <h2><?= __('module_users_companies_header') ?></h2>
 
+<div>
+	<?php echo __('module_users_count_registered_companies') . ': ' . $this->count ?>
+</div>
+
 <!-- <div class="row">
 	<div class="col-sm-6 action-submenu">
 		
@@ -46,20 +50,25 @@
 				</th>
 			</tr>
 		</thead>
-		<?php foreach ($this->usersData as $data) : /* @var $data Art_Model_User_Data */ ?>
+		<?php foreach ($this->usersData as $data) : ?>
 		<tr>
 			<td data-value="<?= $data->company_name_escaped ?>">
 				<a href="<?= $data->a_detail ?>" class="company-name" data-toggle="tooltip" data-placement="bottom" title="ID: <?= $data->_user->user_number ?>"><?= $data->company_name ?></a>
 				<div <?= $data->getUser()->active ? 'class="company-contact-person"' : 'class="company-contact-person overdue"' ?>>
 					<?= $data->fullname ?>
 				</div>
+				
 				<div class="services">
-					<?php foreach( $data->services as $service ) : /* @var $service Service */ ?>
-						<a href="<?= $data->a_service.$service->id ?>"<?= $serviceColor = in_array($service->type, $data->actServices) ? ' class="active"' : null ?>>
+					<?php foreach ($data->services as $service) : ?>
+					<?php $activeService = in_array($service->type, $data->actServices); ?>
+						<a<?= $activeService ? ' href="' . $data->a_service.$service->id . '"' : null; ?><?= $serviceColor = $activeService ? ' class="active"' : null ?> data-toggle="tooltip" title="<?= $service->name ?>">
 							<i class="fa fa-<?= $service->fa_icon ?>"></i>
 						</a>
 					<?php endforeach; ?>
-				</div>
+					<?php if (empty($data->services)) : ?>
+						<em><?= __('module_users_no_services') ?></em>
+					<?php endif; ?>
+				</div>				
 			</td>
 			<td>
 				<div><?= $data->email ?></div>
@@ -81,11 +90,7 @@
 		<?php endforeach; ?>
 	</table>
 <?php endif; ?>
-		
-<div>
-	<?php echo __('module_users_count') . ': ' . $this->count ?>
-</div>
-	
+			
 <script>
 $(document).ready(() => {
 	// $('.chosen-select').chosen({
